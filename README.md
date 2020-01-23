@@ -1,6 +1,6 @@
-# DropBlood
+# BloodDrop
 
-DropBlood is an platform help people to find blood donars, our goal is [Drop of blood is equal life]
+BloodDrop is an platform help people to find blood donars, our goal is [Save life give blood]
 
 ## Getting Started
 
@@ -8,26 +8,25 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+To run project you should install all packages so first of all do this 
 
 ```
-Give examples
+npm install
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+In this project you have two environment to development and to production so:
+Run this Order to work as development
 
 ```
-until finished
+npm run start
+```
+
+And to run Build 
+
+```
+npm run build
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
@@ -58,9 +57,18 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Webpack Build Tool](https://webpack.js.org/).
+* [PostCSS Preprocessor](https://postcss.org/).
+* [BEM Methodology](https://en.bem.info/methodology/quick-start/).
+
+
+## Aimed Quality Standards
+- Web Accessibility.
+- Cross-Browser Compatibility (down to IE10).
+- Responsive up from 320px.
+- Code Modularity and Maintainability.
+
+
 
 ## Contributing
 
