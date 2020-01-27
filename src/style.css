@@ -81,7 +81,7 @@
     font: 1.5em Tahoma, Helvetica, Arial, Sans-Serif;
 
 }
-.header__details-a {
+.details-a {
 	   color: #fff;
   background: rgb(245, 113, 112);
   padding: 0.6em 1em;
@@ -121,47 +121,53 @@
   animation-duration: 20s;
 }
      
- /* start about us*/
-      .about-us{
-         position: relative;
-         text-align: center;
+ /* start about us and emergencies */
+ .about-us,.emergencies{
          width:100%;  
-         height:100vh; 
-
-      }
-      .about-us__conetnt{
-                display: inline-flex;
-         flex-direction:row;   
-         justify-content: center;        
-      }
-      .about-us__div{
-         background:#fff;
-        width:50%; 
-     box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.2);
-     border-radius:20px; 
-     padding:2em 3em;
-     height:auto;  
-      }
-      .about-us__h3{
-         font-size:2em; 
-         color:#777; 
-      }
-      .about-us__p{
          margin-top:1em;
-         line-height:1.5em;  
-         margin-bottom:2em;
-      }
-.about-us__a{
-    color:#fff;
-         background:#00b894;
-         padding:0.5em 1.2em;
-         font-weight:bolder;  
+ }
+ .about-us__content,.emergencies__content{
+   width:100%;
+   display: grid;
+   grid-template-columns:repeat(2,1fr);  
+   grid-gap:20px;  
+ }
+.about-us__mob,.emergencies__mob{
+  width:100%;
+  height:100%;  
+}
+.about-us__img{
+  float: right;
+    width:60%; 
+    height:40%;
+}
+.about-us__info,.emergencies__info{
+   padding:2em;  
+   width: 100%; 
+   height:100%;
+}
+.about-us__container,.emergencies__container{ 
+  margin-top:3em; 
+   width:70%; 
+}
+.about-us__h3,.emergencies__h3{
+  font-size:2em;
+  font-family: Roboto, sans-serif;
+  margin-bottom: 1em;
+ 
+}
+.about-us__p,.emergencies__p{
+   margin-bottom:2em; 
 }
 
-
-
-
-
+/* start emergencies*/
+.emergencies__img{
+    width:60%; 
+    height:40%;
+}
+.emergencies__container{
+   float: right;
+}
 
 
 /* start media */
