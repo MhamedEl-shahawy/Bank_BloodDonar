@@ -72,7 +72,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/MhamedEl-shahawy/Bank_BloodDonar/blob/master/dce1d02a2b25635815f4ffdd9d2400a349f1cbee) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 

@@ -10,8 +10,9 @@
 </head>
 <body>
 	<!-- start heder -->
- <header class="header">
- 	 <nav class="header__nav">
+   <header class="header">
+    <div class="header__inner">
+         <nav class="header__nav">
  	 	 <a href="#" class="header__a_logo"><img src="./images/logo.png"></a>
  	 	 <ul class="header__ul">
  	 	 	 <li class="header__li"><a class="header__a" href="#">About</a></li>
@@ -21,18 +22,33 @@
 
  	 	 </ul>
  	 </nav>
- 	 <div class="header__land">
- 	 	<div class="header__coatiner">
- 	 		 <h2 class="header__h2">Blood Drop</h2>
- 	 		 <p class="header__p">World First social media <br/>
- 	 		 platform for Blood Donation.</p>
- 	 		 <a class="header__a_background" href="#">Find Blood Now</a>
- 	 	</div>
- 	 	<div class="header__icon">
- 	 		 <img  src="./images/avatar.png">
+ 	 <div class="header__details">
+ 	 	<div class="header__details-container">
+ 	 	<h1 class="header__h1">Savelife Connect</h1>
+ 	 	<p class="header__p">Connecting Blood Donars With Recipoints</p>
+ 	 	<a href="#" class="header__details-a">Find Blood</a>
+ 	 	<a href="#" class="header__details-a">Donate Blood</a>
  	 	</div>
  	 </div>
- </header>
+    </div>
+
+    <!--Waves Container-->
+    <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+        </svg>
+    </div>
+    <!--Waves end-->
+</header>
+
  <!-- start about us -->
  <section class="about-us">
  	<div class="about-us__conetnt">
@@ -48,64 +64,8 @@
        </div> 
  	</div>
  </section>
- <!-- blood donation -->
- <section class="free-blood">
- 	 <div class="free-blood__info">
- 	 	<h3 class="free-blood__h3">Save life give blood 100% free</h3>
- 	 	<p class="free-blood__p">
- 	 	   The Blood You Donate Gives Someone Another Chance At Life. One Day That Someone May Be A Close Relative, A Friend, A Loved One—Or Even You, Mother’s tears cannot save her child’s life but your blood can..
- 	 	</p>
- 	  <a  class="free-blood__a" href="#">Find Donar Now</a>
-
- 	 </div>
- 	 <div class="free-blood__div">
- 	 	 <img  class="free-blood__img" src="./images/hand.png">
- 	 </div>
- </section>
- <!--  Footer -->
 
 
-<footer>
-  <ul>
-    <li><h3>About me</h3></li>
-    <li><p>
-      Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.
-      </p></li>
-  </ul>
-   <ul>
-     <li><h3>CUSTOMER CARE</h3></li>
-    <li>Contact</li>
-    <li>Returns/Exchange</li>
-    <li>Gift Voucher</li>
-    <li>Wishlist</li>
-     <li>Special</li>
-     <li>Customer Services</li>
-     <li>Customer Services</li>
-  </ul>
-   <ul>
-     <li><h3>INFORMATION</h3></li>
-     <li>About us</li>
-    <li>Delivery Information</li>
-    <li>Privacy Policy</li>
-    <li>Support</li>
-     <li>Order Tracking</li>
-  </ul>
-   <ul>
-    <li><h3>NEWS</h3></li>
-    <li>Blog</li>
-    <li>Press</li>
-    <li>Exhibitions</li>
-  </ul>
-    <ul>
-    <li><h3>CONTACT INFORMATION</h3></li>
-   <li> <p>
-      291 South 21th Street, 
-Suite 721 New York NY 10016
-     </p></li>
-      <li> <a href="#">+ 1235 2355 98</a></li>
-      <li><a href="#">info@yoursite.com</a></li>
 
-  </ul>
-</footer>
 </body>
 </html>
