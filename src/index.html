@@ -20,6 +20,19 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+    ></script>
+    
+    <script type="text/javascript">
+      $(window).on("scroll", () => {
+        if ($(window).scrollTop()) {
+          $(".header__nav").addClass("black");
+        } else {
+          $(".header__nav").removeClass("black");
+        }
+      });
+    </script>
   </head>
   <body>
     <!-- start heder -->
