@@ -20,30 +20,37 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+    ></script>
+    
+    <script type="text/javascript">
+      $(window).on("scroll", () => {
+        if ($(window).scrollTop()) {
+          $(".header__nav").addClass("black");
+        } else {
+          $(".header__nav").removeClass("black");
+        }
+      });
+    </script>
   </head>
   <body>
     <!-- start heder -->
     <header class="header">
       <div class="header__inner">
-        <nav>
-  <div class="container">
-    <a href="#" id="brand"><img src="./images/logo.png"></a>
-    <button>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    
-    <ul class="navbar-menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="bloodNeeds.html">Blood Needs</a></li>
-      <li><a href="#">Acceptable Type</a></li>
-      <li><a href="#">Hospital & Reasearch</a></li>
-      <li><a href="#">How to Donate</a></li>
-    </ul>
-    
-  </div>
-</nav>
+        <nav class="header__nav">
+          <a href="#" class="header__a_logo"><img src="./images/logo.png"/></a>
+          <ul class="header__ul">
+            <li class="header__li"><a class="header__a" href="#">About</a></li>
+            <li class="header__li">
+              <a class="header__a" href="#">FindBlood</a>
+            </li>
+            <li class="header__li"><a class="header__a" href="#">Donate</a></li>
+            <li class="header__li">
+              <a class="header__a" href="#">Sign up</a>
+            </li>
+          </ul>
+        </nav>
         <div class="header__details">
           <div class="header__details-container">
             <h1 class="header__h1">Savelife Connect</h1>
@@ -94,8 +101,10 @@
         </svg>
       </div>
       <!--Waves end-->
-    </header>
-
+      </header>
+   <!-- start page conetnt --> 
+     
+   
     <!-- start about us -->
     <section class="about-us">
       <div class="about-us__content">
@@ -165,74 +174,42 @@
         </div>
       </div>
     </section>
+   <!-- end page conetnt --> 
+
     <!-- Start Footer -->
-  <footer>
-  <ul>
-    <li><h3>About me</h3></li>
-    <li><p>
+   <footer class="footer">
+  <ul class="footer__ul ">
+    <h3 class="footer__h3">About Us</h3>
+    <li class="footer__li footer__ul_align_center"><img src="./images/target.png" alt=""></li>
+    <li class="footer__li">
+      <p class="foote__p">
       Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.
       </p></li>
   </ul>
-   <ul>
-     <li><h3>CUSTOMER CARE</h3></li>
-    <li>Contact</li>
-    <li>Returns/Exchange</li>
-    <li>Gift Voucher</li>
-    <li>Wishlist</li>
-     <li>Special</li>
-     <li>Customer Services</li>
-     <li>Customer Services</li>
+   <ul class="footer__ul">
+    <h3 class="footer__h3">SPECIAL SERVICES</h3>
+    <li class="footer__li"><a class="footer__a" href="#">Autologous Donations</a></li>
+    <li class="footer__li"><a class="footer__a" href="#">Directed Donations</a></li>
+    <li class="footer__li"><a class="footer__a" href="#">Therapeutic Apheresis</a></li>
+    <li class="footer__li"><a class="footer__a" href="#">Bone Marrow</a></li>
   </ul>
-   <ul>
-     <li><h3>INFORMATION</h3></li>
-     <li>About us</li>
-    <li>Delivery Information</li>
-    <li>Privacy Policy</li>
-    <li>Support</li>
-     <li>Order Tracking</li>
+   <ul class="footer__ul">
+    <h3 class="footer__h3">Contact us</h3>
+     <li class="footer__li">Address : Ft. Lauderdale, 3000 W Cypress Creek Road</li>
+    <li class="footer__li">Phone : +2 36 265 (8060)</li>
+    <li class="footer__li"><a href="#" class="footer__a">Privacy Policy</a></li>
+    <li class="footer__li">Email : info@bloodlab.com</li>
   </ul>
-   <ul>
-    <li><h3>NEWS</h3></li>
-    <li>Blog</li>
-    <li>Press</li>
-    <li>Exhibitions</li>
+   <ul class="footer__ul last">
+    <h3 class="footer__h3">Newsletter</h3>
+    <li class="footer__li"><p class="foote__p">Heaven fruitful doesn't over lesser in days. Appear creeping seas</p></li>
+    <li class="footer__li">
+    <input  type="text" class="footer__form-control" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'">  
+    <button class="btn" type="button"><i class="fas fa-paper-plane"></i></button>
+      </li>
   </ul>
-    <ul>
-    <li><h3>CONTACT INFORMATION</h3></li>
-   <li> <p>
-      291 South 21th Street, 
-Suite 721 New York NY 10016
-     </p></li>
-      <li> <a href="#">+ 1235 2355 98</a></li>
-      <li><a href="#">info@yoursite.com</a></li>
 
-  </ul>
 </footer>
     <!-- End Footer -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-  
-  'use strict';
-  
-   var c, currentScrollTop = 0,
-       navbar = $('nav');
-
-   $(window).scroll(function () {
-      var a = $(window).scrollTop();
-      var b = navbar.height();
-     
-      currentScrollTop = a;
-     
-      if (c < currentScrollTop && a > b + b) {
-        navbar.addClass("scrollUp");
-      } else if (c > currentScrollTop && !(a <= b)) {
-        navbar.removeClass("scrollUp");
-      }
-      c = currentScrollTop;
-  });
-  
-});
-    </script>
   </body>
 </html>
