@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>BloodDrop</title>
+    <meta
+      name="description"
+      content="BloodDrop is an platform to help people to find blood donar"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+ <style type="text/css">
+  * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Roboto Mono", monospace;
+}
+   /* nav */
+nav .container {
+  width: 80%;
+  margin: 0 auto;
+  clear: both;
+}
+nav img{
+    max-height:50%;
+    max-width:70%;  
+}
+nav a {
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+}
+
+nav {
+  background: #fff;
+  height: 80px;
+  line-height: 80px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9998;
+  transition: all 0.5s;
+}
+
+nav.scrollUp {
+  transform: translateY(-80px);
+}
+
+nav ul.navbar-menu {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: right;
+}
+
+nav ul.navbar-menu li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav ul.navbar-menu li a {
+  color: #666;
+  font-size: 14px;
+}
+
+nav a#brand {
+  text-transform: uppercase;
+  foat: left;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+nav button {
+  background: none;
+  width: 30px;
+  height: 40px;
+  margin-top: 20px;
+  border: none;
+  float: right;
+  display: inline-block;
+  cursor: pointer;
+  display: none;
+}
+
+nav button span {
+  width: 30px;
+  height: 40px;
+  height: 2px;
+  background: #333;
+  display: block;
+  margin: 5px 0;
+}
+/* start table */
+table {
+  border: 1px solid #f1f1f1;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 90%;
+  table-layout: fixed;
+  height:100%;
+ margin:auto; 
+ margin-top: 10em;
+
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+  border:1px solid #111; 
+}
+
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding:1em 1.5em; 
+  color:#f00; 
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+/* Start footer */
+
+footer{
+  position:absolute;
+  width:100%;
+  height:auto;
+  top:100%;
+  background-color:#E76B6A;
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr 2fr;
+  padding:3em;
+}
+footer ul li{
+  list-style:none;
+  color:#fff;
+  font-size:1em;
+  font-family:sans;
+  cursor:pointer;
+  line-height:30px;
+  transition:0.5s;
+}
+footer ul li p{
+  font-size:0.82em;
+}
+footer ul li a{
+  color: #48A9A6;
+}
+footer ul li:hover{
+  color:#f00;
+}
+ </style>
+  </head>
+
+  <body>
+           <nav>
+  <div class="container">
+    <a href="#" id="brand"><img src="./images/logo.png"></a>
+    <button>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="navbar-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Blood Needs</a></li>
+      <li><a href="#">Acceptable Type</a></li>
+      <li><a href="#">Hospital & Reasearch</a></li>
+      <li><a href="#">How to Donate</a></li>
+    </ul>
+    
+  </div>
+</nav>
+<!--  start Table -->
+<table>
+  <caption>PATIENTS BLOODS</caption>
+  <thead>
+    <tr>
+      <th scope="col">Number</th>
+      <th scope="col">Blood Type</th>
+      <th scope="col">Department</th>
+      <th scope="col">Patient</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Data</th>
+      <th scope="col">Done</th>
+      <th scope="col">Accepts</th>
+
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Account">16</td>
+      <td data-label="Due Date">B+</td>
+      <td data-label="Amount">Internal Diseases</td>
+      <td data-label="Period">Someone</td>
+      <td data-label="Quantity">50</td>
+      <td data-label="Date">18/2/2020</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">A+,O-,B+</td>
+
+    </tr>
+    <tr>
+      <td scope="row" data-label="Account">14</td>
+      <td data-label="Due Date">B-</td>
+      <td data-label="Amount">Dentistry</td>
+      <td data-label="Period">Someone</td>
+      <td data-label="Quantity">5</td>
+      <td data-label="Date">18/10/2019</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">A+,O-,AB+,AB-</td>
+
+    </tr>
+    <tr>
+      <td scope="row" data-label="Account">2</td>
+      <td data-label="Due Date">O+</td>
+      <td data-label="Amount">Burn center </td>
+      <td data-label="Period">MD SH</td>
+      <td data-label="Quantity">0</td>
+      <td data-label="Date">18/12/2020</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">B+,O-,A-</td>
+
+    </tr>
+    <tr>
+      <td scope="row" data-label="Acount">5</td>
+      <td data-label="Due Date">AB+</td>
+      <td data-label="Amount">Internal Diseases</td>
+      <td data-label="Period">Ahmed</td>
+      <td data-label="Quantity">10</td>
+      <td data-label="Date">1/11/2019</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">O-,O+</td>
+
+    </tr>
+       <tr>
+      <td scope="row" data-label="Acount">8</td>
+      <td data-label="Due Date">O-</td>
+      <td data-label="Amount">Burn center</td>
+      <td data-label="Period">Someone</td>
+      <td data-label="Quantity">15</td>
+      <td data-label="Date">18/1/2020</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">AB-</td>
+
+    </tr>
+       <tr>
+      <td scope="row" data-label="Acount">7</td>
+      <td data-label="Due Date">A-</td>
+      <td data-label="Amount">Dentistry</td>
+      <td data-label="Period">Someone</td>
+      <td data-label="Quantity">25</td>
+      <td data-label="Date">15/11/2019</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">A+,O-,AB+</td>
+     
+    </tr>
+       <tr>
+      <td scope="row" data-label="Acount">4</td>
+      <td data-label="Due Date">AB-</td>
+      <td data-label="Amount">Burn center</td>
+      <td data-label="Period">Someone</td>
+      <td data-label="Quantity">20</td>
+      <td data-label="Date">18/12/2019</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">A+,O-</td>
+
+
+    </tr>
+
+  </tbody>
+</table>
+
+<table>
+  <caption>DONARS BLOODS</caption>
+  <thead>
+    <tr>
+      <th scope="col">Number</th>
+      <th scope="col">Blood Type</th>
+      <th scope="col">Department</th>
+      <th scope="col">Patient</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Data</th>
+      <th scope="col">Done</th>
+      <th scope="col">Accepts</th>
+
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Account">16</td>
+      <td data-label="Due Date">B+</td>
+      <td data-label="Amount">Internal Diseases</td>
+      <td data-label="Period">Someone</td>
+      <td data-label="Quantity">50</td>
+      <td data-label="Date">18/2/2020</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">A+,O-,B+</td>
+
+    </tr>
+    <tr>
+      <td scope="row" data-label="Account">14</td>
+      <td data-label="Due Date">B-</td>
+      <td data-label="Amount">Dentistry</td>
+      <td data-label="Period">Someone</td>
+      <td data-label="Quantity">5</td>
+      <td data-label="Date">18/10/2019</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">A+,O-,AB+,AB-</td>
+
+    </tr>
+    <tr>
+      <td scope="row" data-label="Account">2</td>
+      <td data-label="Due Date">O+</td>
+      <td data-label="Amount">Burn center </td>
+      <td data-label="Period">MD SH</td>
+      <td data-label="Quantity">0</td>
+      <td data-label="Date">18/12/2020</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">B+,O-,A-</td>
+
+    </tr>
+    <tr>
+      <td scope="row" data-label="Acount">5</td>
+      <td data-label="Due Date">AB+</td>
+      <td data-label="Amount">Internal Diseases</td>
+      <td data-label="Period">Ahmed</td>
+      <td data-label="Quantity">10</td>
+      <td data-label="Date">1/11/2019</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">O-,O+</td>
+
+    </tr>
+       <tr>
+      <td scope="row" data-label="Acount">8</td>
+      <td data-label="Due Date">O-</td>
+      <td data-label="Amount">Burn center</td>
+      <td data-label="Period">Someone</td>
+      <td data-label="Quantity">15</td>
+      <td data-label="Date">18/1/2020</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">AB-</td>
+
+    </tr>
+       <tr>
+      <td scope="row" data-label="Acount">7</td>
+      <td data-label="Due Date">A-</td>
+      <td data-label="Amount">Dentistry</td>
+      <td data-label="Period">Someone</td>
+      <td data-label="Quantity">25</td>
+      <td data-label="Date">15/11/2019</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">A+,O-,AB+</td>
+     
+    </tr>
+       <tr>
+      <td scope="row" data-label="Acount">4</td>
+      <td data-label="Due Date">AB-</td>
+      <td data-label="Amount">Burn center</td>
+      <td data-label="Period">Someone</td>
+      <td data-label="Quantity">20</td>
+      <td data-label="Date">18/12/2019</td>
+      <td data-label="Done"></td>
+      <td data-label="Accepts">A+,O-</td>
+
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+ 
+    <!-- End Footer -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+  
+  'use strict';
+  
+   var c, currentScrollTop = 0,
+       navbar = $('nav');
+
+   $(window).scroll(function () {
+      var a = $(window).scrollTop();
+      var b = navbar.height();
+     
+      currentScrollTop = a;
+     
+      if (c < currentScrollTop && a > b + b) {
+        navbar.addClass("scrollUp");
+      } else if (c > currentScrollTop && !(a <= b)) {
+        navbar.removeClass("scrollUp");
+      }
+      c = currentScrollTop;
+  });
+  
+});
+    </script>
+  </body>
+  </html>

@@ -1,98 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="utf-8">	
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
- <title>BloodDrop</title>
- <meta name="description" content="BloodDrop is an platform to help people to find blood donar">
- <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>BloodDrop</title>
+    <meta
+      name="description"
+      content="BloodDrop is an platform to help people to find blood donar"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- start heder -->
+    <header class="header">
+      <div class="header__inner">
+        <nav>
+  <div class="container">
+    <a href="#" id="brand"><img src="./images/logo.png"></a>
+    <button>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="navbar-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="bloodNeeds.html">Blood Needs</a></li>
+      <li><a href="#">Acceptable Type</a></li>
+      <li><a href="#">Hospital & Reasearch</a></li>
+      <li><a href="#">How to Donate</a></li>
+    </ul>
+    
+  </div>
+</nav>
+        <div class="header__details">
+          <div class="header__details-container">
+            <h1 class="header__h1">Savelife Connect</h1>
+            <p class="header__p">Connecting Blood Donars With Recipoints</p>
+            <a href="#" class="details-a">Find Blood</a>
+            <a href="#" class="details-a">Donate Blood</a>
+          </div>
+        </div>
+      </div>
 
-</head>
-<body>
-	<!-- start heder -->
-   <header class="header">
-    <div class="header__inner">
-         <nav class="header__nav">
- 	 	 <a href="#" class="header__a_logo"><img src="./images/logo.png"></a>
- 	 	 <ul class="header__ul">
- 	 	 	 <li class="header__li"><a class="header__a" href="#">About</a></li>
- 	 	 	 <li class="header__li"><a class="header__a" href="#">FindBlood</a></li>
- 	 	 	 <li class="header__li"><a class="header__a"  href="#">Donate</a></li>
- 	 	 	 <li class="header__li"><a class="header__a" href="#">Sign up</a></li>
-
- 	 	 </ul>
- 	 </nav>
- 	 <div class="header__details">
- 	 	<div class="header__details-container">
- 	 	<h1 class="header__h1">Savelife Connect</h1>
- 	 	<p class="header__p">Connecting Blood Donars With Recipoints</p>
- 	 	<a href="#" class="details-a">Find Blood</a>
- 	 	<a href="#" class="details-a">Donate Blood</a>
- 	 	</div>
- 	 </div>
-    </div>
-
-    <!--Waves Container-->
-    <div>
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-            </defs>
-            <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-            </g>
+      <!--Waves Container-->
+      <div>
+        <svg
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
+          </defs>
+          <g class="parallax">
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="0"
+              fill="rgba(255,255,255,0.7"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="rgba(255,255,255,0.5)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgba(255,255,255,0.3)"
+            />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+          </g>
         </svg>
-    </div>
-    <!--Waves end-->
-</header>
+      </div>
+      <!--Waves end-->
+    </header>
 
- <!-- start about us -->
- <section class="about-us">
- 	<div class="about-us__content">
- 		<div class="about-us__mob">
-          <div class="about-us__mob-container">    
- 		   <img class="about-us__img" src="./images/mobbg.svg">
+    <!-- start about us -->
+    <section class="about-us">
+      <div class="about-us__content">
+        <div class="about-us__mob">
+          <div class="about-us__mob-container">
+            <img class="about-us__img" src="./images/2738493.jpg" />
           </div>
-       </div>
-       <div class="about-us__info">
-        <div class="about-us__container">
-         <h3 class="about-us__h3">Find Blood Donars in Your Area</h3>
-         <p class="about-us__p">
-            reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-         </p>
-         <a href="#" class="details-a">Find Blood Now</a>
-       </div>  
-       </div>
- 	</div>
- </section>
-<!--  start emerginer -->
- <!-- start about us -->
- <section class="emergencies">
-    <div class="emergencies__content">
-       
-       <div class="emergencies__info">
-        <div class="emergencies__container">
-         <h3 class="emergencies__h3">Elimination obstacles in emergencies</h3>
-         <p class="emergencies__p">
-            reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-         </p>
-         <a href="#" class="details-a">Find Blood Now</a>
-       </div>  
-       </div>
+        </div>
+        <div class="about-us__info">
+          <div class="about-us__container">
+            <img class="top_img" src="./images/blood-donation.svg">
+            <h3 class="about-us__h3">Find Blood Donars in Your Area</h3>
+            <p class="about-us__p">
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a href="#" class="details-a">Find Blood Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  start emerginer -->
+    <section class="emergencies">
+      <div class="emergencies__content">
+        <div class="emergencies__info">
+          <div class="emergencies__container">
+            <img class="top_img" src="./images/health-care.svg">
+
+            <h3 class="emergencies__h3">
+              Elimination obstacles in emergencies
+            </h3>
+            <p class="emergencies__p">
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a href="#" class="details-a">Find Blood Now</a>
+          </div>
+        </div>
         <div class="emergencies__mob">
-          <div class="emergencies__mob-container">    
-           <img class="emergencies__img" src="./images/mobbg.svg">
+          <div class="emergencies__mob-container">
+            <img class="emergencies__img" src="./images/flat.jpg" />
           </div>
-         </div>
-    </div>
- </section>
+        </div>
+      </div>
+    </section>
+   <!-- start about us -->
+    <section class="about-us">
+      <div class="about-us__content">
+        <div class="about-us__mob">
+          <div class="about-us__mob-container">
+            <img class="about-us__img" src="./images/2655464.jpg" />
+          </div>
+        </div>
+        <div class="about-us__info">
+          <div class="about-us__container">
+            <img class="top_img" src="./images/blood.svg">
+            <h3 class="about-us__h3">What could you do?</h3>
+            <p class="about-us__p">
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a href="#" class="details-a">Find Blood Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Footer -->
+  <footer>
+  <ul>
+    <li><h3>About me</h3></li>
+    <li><p>
+      Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.
+      </p></li>
+  </ul>
+   <ul>
+     <li><h3>CUSTOMER CARE</h3></li>
+    <li>Contact</li>
+    <li>Returns/Exchange</li>
+    <li>Gift Voucher</li>
+    <li>Wishlist</li>
+     <li>Special</li>
+     <li>Customer Services</li>
+     <li>Customer Services</li>
+  </ul>
+   <ul>
+     <li><h3>INFORMATION</h3></li>
+     <li>About us</li>
+    <li>Delivery Information</li>
+    <li>Privacy Policy</li>
+    <li>Support</li>
+     <li>Order Tracking</li>
+  </ul>
+   <ul>
+    <li><h3>NEWS</h3></li>
+    <li>Blog</li>
+    <li>Press</li>
+    <li>Exhibitions</li>
+  </ul>
+    <ul>
+    <li><h3>CONTACT INFORMATION</h3></li>
+   <li> <p>
+      291 South 21th Street, 
+Suite 721 New York NY 10016
+     </p></li>
+      <li> <a href="#">+ 1235 2355 98</a></li>
+      <li><a href="#">info@yoursite.com</a></li>
 
-</body>
+  </ul>
+</footer>
+    <!-- End Footer -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+  
+  'use strict';
+  
+   var c, currentScrollTop = 0,
+       navbar = $('nav');
+
+   $(window).scroll(function () {
+      var a = $(window).scrollTop();
+      var b = navbar.height();
+     
+      currentScrollTop = a;
+     
+      if (c < currentScrollTop && a > b + b) {
+        navbar.addClass("scrollUp");
+      } else if (c > currentScrollTop && !(a <= b)) {
+        navbar.removeClass("scrollUp");
+      }
+      c = currentScrollTop;
+  });
+  
+});
+    </script>
+  </body>
 </html>
