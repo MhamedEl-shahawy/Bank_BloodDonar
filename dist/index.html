@@ -20,169 +20,242 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-    ></script>
-    
-    <script type="text/javascript">
-      $(window).on("scroll", () => {
-        if ($(window).scrollTop()) {
-          $(".header__nav").addClass("black");
-        } else {
-          $(".header__nav").removeClass("black");
-        }
-      });
-    </script>
+   
   </head>
   <body>
     <!-- start heder -->
-    <header class="header">
-      <div class="header__inner">
-        <nav class="header__nav">
-          <a href="#" class="header__a_logo"><img src="imags/logo.e576c1599724c8d26ea7bce875164e76.png"/></a>
-          <ul class="header__ul">
-            <li class="header__li"><a class="header__a" href="#">About</a></li>
-            <li class="header__li">
-              <a class="header__a" href="#">FindBlood</a>
-            </li>
-            <li class="header__li"><a class="header__a" href="#">Donate</a></li>
-            <li class="header__li">
-              <a class="header__a" href="#">Sign up</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="header__details">
-          <div class="header__details-container">
-            <h1 class="header__h1">Savelife Connect</h1>
-            <p class="header__p">Connecting Blood Donars With Recipoints</p>
-            <a href="#" class="details-a">Find Blood</a>
-            <a href="#" class="details-a">Donate Blood</a>
-          </div>
-        </div>
-      </div>
-
-      <!--Waves Container-->
-      <div>
-        <svg
-          class="waves"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 24 150 28"
-          preserveAspectRatio="none"
-          shape-rendering="auto"
-        >
-          <defs>
-            <path
-              id="gentle-wave"
-              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-            />
-          </defs>
-          <g class="parallax">
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="0"
-              fill="rgba(255,255,255,0.7"
-            />
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="3"
-              fill="rgba(255,255,255,0.5)"
-            />
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="5"
-              fill="rgba(255,255,255,0.3)"
-            />
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-          </g>
-        </svg>
-      </div>
-      <!--Waves end-->
-      </header>
-   <!-- start page conetnt --> 
-     
-   
-    <!-- start about us -->
-    <section class="about-us">
-      <div class="about-us__content">
-        <div class="about-us__mob">
-          <div class="about-us__mob-container">
-            <img class="about-us__img" src="imags/2738493.83e4000eef450b1741e267ff088b428e.jpg" />
-          </div>
-        </div>
-        <div class="about-us__info">
-          <div class="about-us__container">
-            <img class="top_img" src="imags/blood-donation.657a4834858311739b9019fecab73ae6.svg">
-            <h3 class="about-us__h3">Find Blood Donars in Your Area</h3>
-            <p class="about-us__p">
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <div class="info-head">
+       <div class="info-head__contact">
+           <p>
+                <span><i class="fas fa-id-card-alt"></i> <strong>Contact: </strong>  East Shibgonj, Sylhet, 3100</span>
+                <span>&nbsp;<i class="fa fa-phone"></i> <strong>Call Us:</strong> +880-1891-82709</span>
             </p>
-            <a href="#" class="details-a">Find Blood Now</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--  start emerginer -->
-    <section class="emergencies">
-      <div class="emergencies__content">
-        <div class="emergencies__info">
-          <div class="emergencies__container">
-            <img class="top_img" src="imags/health-care.5b3f796f5c4c2ecd37e837b78997697b.svg">
+       </div>
+       <div class="info-head__social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-google-plus-g"></i></a>
+         </div>
+    </div>
+    <header class="header-fixed">
 
-            <h3 class="emergencies__h3">
-              Elimination obstacles in emergencies
-            </h3>
-            <p class="emergencies__p">
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a href="#" class="details-a">Find Blood Now</a>
-          </div>
-        </div>
-        <div class="emergencies__mob">
-          <div class="emergencies__mob-container">
-            <img class="emergencies__img" src="imags/flat.ff9eaeac4ce0d8c21b5c094259b8caf4.jpg" />
-          </div>
-        </div>
-      </div>
-    </section>
-   <!-- start about us -->
-    <section class="about-us">
-      <div class="about-us__content">
-        <div class="about-us__mob">
-          <div class="about-us__mob-container">
-            <img class="about-us__img" src="imags/2655464.6009436e74656cb16ee2ff6f778e3d9b.jpg" />
-          </div>
-        </div>
-        <div class="about-us__info">
-          <div class="about-us__container">
-            <img class="top_img" src="imags/blood.147eb61a547239c2465336e7ff4e0feb.svg">
-            <h3 class="about-us__h3">What could you do?</h3>
-            <p class="about-us__p">
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a href="#" class="details-a">Find Blood Now</a>
-          </div>
-        </div>
-      </div>
-    </section>
-   <!-- end page conetnt --> 
+  <div class="header-limiter">
 
+    <h1><a href="#">Company<span>logo</span></a></h1>
+
+    <nav>
+      <a href="#" class="selected">Home</a>
+      <a href="#" >Blood Needs</a>
+      <a href="#">Acceptable</a>
+      <a href="#">How To Donate</a>
+      <a href="#">LogIn</a>
+    </nav>
+
+  </div>
+
+</header>
+<!--  start about us -->
+<section class="about-us">
+   <div class="about-us__info">
+      <h2 class="lead__h2">Who We Are?</h2>
+      <p class="about-us__p lead__p">Blood Buddies is for public donation center with blood donation members in the changing health care system.</p>
+      <ul class="about-us__ul">
+        <li class="about-us__li">Specialist blood donors and clinical supervision.</li>
+        <li class="about-us__li">Specialist blood donors and clinical supervision.</li>
+        <li class="about-us__li">Specialist blood donors and clinical supervision.</li>
+        <li class="about-us__li">Specialist blood donors and clinical supervision.</li>
+        <li class="about-us__li">Specialist blood donors and clinical supervision.</li>
+      </ul>
+   </div>
+   <div class="about-us__img-container">
+       <img src="imags/about_feat_bg.62e3c77c100f6ba6c3f25bffd46dc3ed.jpg" class="about-us__img">
+   </div>
+</section> 
+   <!-- start CAMPAIGNS --> 
+ <section class="campaigns">
+    <div class="container campaigns__container_theme_grid">
+      <div class="campaigns__info">
+        <h2 class="lead__h2">OUR CAMPAIGNS</h2>
+        <p class="campaign_p lead__p">All over the world we have arranged total sixty thousands donation campaign and visit thousands of other venues on various occasions.</p>
+        <a href="#" class="btn_place btn_theme">Load All Campaigns</a>
+      </div>
+      <div class="campaign__slide">
+          <div class="campaign__conatiner-img">
+              <img src="imags/event_3.b0c6e1b70b944c40975256fe17fa0b2c.jpg" class="campaign__img">
+          </div>
+          <div class="campaign__events">
+            
+                <a class="event-date" href="#"><i class="far fa-calendar-alt"></i> 11 March, 2018</a>
+                  <h4 class="campaign__h4">
+                    <a href="#" class="campaign__h4-a">Free Group Checking</a>
+                  </h4>
+                   <p class="event-info">Lorem ipsum dolor sit amet turadipi scing elit lobort issim consecte lodign pharetra. Lobort qssim tronsecte diagnosis sharetrx mauris gone do.</p>
+                   <div class="event-time">
+                    <a href="#"><i class="far fa-clock"></i> 10.00 - 3.00</a>
+                    <a href="#"> <i class="fas fa-map-marker-alt"></i> California, USA</a>
+                  </div>
+               </div>
+      </div>
+    </div>
+ </section>     
+   <!-- end CAMPAIGNS --> 
+   <!--  start statistics -->
+ <section class="statistics">
+    <div class="container statistics__container" id="counter">
+       <div class="statistics__icon">
+           <div class="icon_container">
+              <i class="fas fa-heartbeat"></i>
+           </div>
+           <div class="counter">
+              <p data-count="2578"  class="counter-value">2000</p>
+           </div>
+           <div class="label">
+              <h3>Success Smile</h3>
+           </div>
+       </div>
+         <div class="statistics__icon">
+           <div class="icon_container">
+              <i class="fas fa-stethoscope"></i>
+           </div>
+           <div  class="counter">
+              <p data-count="3100"  class="counter-value">2700</p>
+           </div>
+           <div class="label">
+              <h3>Happy Donors</h3>
+           </div>
+       </div>
+        <div class="statistics__icon">
+           <div class="icon_container">
+              <i class="fas fa-users"></i>
+           </div>
+           <div class="counter">
+              <p data-count="1470"  class="counter-value">1000</p>
+             
+           </div>
+           <div class="label">
+              <h3>Happy Recipient</h3>
+           </div>
+       </div>
+        <div class="statistics__icon">
+           <div class="icon_container">
+             <i class="far fa-building"></i> 
+           </div>
+           <div class="counter">
+              <p data-count="2154"  class="counter-value">1900</p>
+           </div>
+           <div class="label">
+              <h3>Total Awards</h3>
+           </div>
+       </div>
+    </div>
+ </section>
+   <!--  end statistics -->
+   <!-- start service -->
+   <section class="service">
+       <div class="service__label">
+           <h2 class="service__h2">Services</h2>
+       </div>
+       <div class="container container__service"> 
+         <div class="service__items">
+           <div class="service__icons">
+            <i class="fas fa-credit-card"></i>
+           </div> 
+            <div class="service__items-info">
+                <h4 class="service__h4">Laboratory Tests</h4>
+                <p class="service__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   tempor</p>
+                <a class="service__a" href="#">Read More</a>
+            </div>   
+         </div>
+          <div class="service__items">
+           <div class="service__icons">
+           <i class="fas fa-sms"></i>
+           </div> 
+            <div class="service__items-info">
+                <h4 class="service__h4">Donate Emergency</h4>
+                <p class="service__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   tempor</p>
+                <a class="service__a" href="#">Read More</a>
+            </div>   
+         </div>
+          <div class="service__items">
+           <div class="service__icons">
+            <i class="fas fa-bullhorn"></i>
+           </div> 
+            <div class="service__items-info">
+                <h4 class="service__h4">Blood Doanr Basic</h4>
+                <p class="service__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   tempor</p>
+                <a class="service__a" href="#">Read More</a>
+            </div>   
+         </div>
+          <div class="service__items">
+           <div class="service__icons">
+            <i class="fas fa-bus-alt"></i>
+           </div> 
+            <div class="service__items-info">
+                <h4 class="service__h4">How Can I Donate</h4>
+                <p class="service__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   tempor</p>
+                <a class="service__a" href="#">Read More</a>
+            </div>   
+         </div>
+          <div class="service__items">
+           <div class="service__icons">
+            <i class="fas fa-bookmark"></i>
+           </div> 
+            <div class="service__items-info">
+                <h4 class="service__h4">Donor Health Benefitis</h4>
+                <p class="service__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   tempor</p>
+                <a class="service__a" href="#">Read More</a>
+            </div>   
+         </div>
+          <div class="service__items">
+           <div class="service__icons">
+             <i class="fas fa-photo-video"></i>  
+           </div> 
+            <div class="service__items-info">
+                <h4 class="service__h4">Video Gallary</h4>
+                <p class="service__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   tempor</p>
+                <a class="service__a" href="#">Read More</a>
+            </div>   
+         </div>
+       </div>
+   </section>
+   <!-- end service -->
+    <!-- start bus --> 
+ <section class="bus">
+    <div class="container bus__container_theme_grid">
+      <div class="bus__info">
+        <h2 class="lead__h2">Where CAN I DONATE ?</h2>
+        <p class="bus_p lead__p">The Blood You Donate Gives Someone Another Chance At Life. One Day That Someone May Be A Close Relative, A Friend, A Loved One—Or Even You, Mother’s tears cannot save her child’s life but your blood can.</p>
+        <a href="#" class="btn_place btn_theme">Find Location <i class="fas fa-map-marker-alt"></i></a>
+      </div>
+          <div class="bus__conatiner-img">
+              <img src="imags/bus.34cdc2bca072594745602a5ef6add2bc.jpg" class="campaign__img">
+         </div>
+    </div>
+ </section> 
     <!-- Start Footer -->
    <footer class="footer">
+    <div class="footer__top">
+        <div class="lead-logo"><span class="blood">BLOOD</span> BUDIES</div>
+       <div class="lead-p">
+        <p class="footer__top-p">
+         We are world largest and trustful blood donation center. We have been working since 1973 with a prestigious vision to helping patient to provide blood. We are working all over the world, organizing blood donation campaign to grow awareness among the people to donate blood.
+        </p>
+       </div>
+    </div>
+    <div class="footer__container">
   <ul class="footer__ul ">
     <h3 class="footer__h3">About Us</h3>
     <li class="footer__li footer__ul_align_center"><img src="imags/target.7d1849b0e24a4a0eb6aba671c7539feb.png" alt=""></li>
     <li class="footer__li">
-      <p class="foote__p">
+      <p class="footer__p">
       Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.
       </p></li>
   </ul>
@@ -205,11 +278,81 @@
     <li class="footer__li"><p class="foote__p">Heaven fruitful doesn't over lesser in days. Appear creeping seas</p></li>
     <li class="footer__li">
     <input  type="text" class="footer__form-control" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'">  
-    <button class="btn" type="button"><i class="fas fa-paper-plane"></i></button>
+    <button class="btn footer__btn" type="button"><i class="fas fa-paper-plane"></i></button>
       </li>
   </ul>
-
+</div>
+  <p class="copyright-text"> Copyright 2020 - Blood Buddies by TownMonkeys. All Rights Reserved. </p>
 </footer>
     <!-- End Footer -->
-  <script type="text/javascript" src="scr.ff52e2d1e2ce253d5fcb.js"></script></body>
+     <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+    ></script>
+    
+    <script type="text/javascript">
+      
+  $(document).ready(function(){
+
+    var showHeaderAt = 150;
+
+    var win = $(window),
+        body = $('body');
+
+    // Show the fixed header only on larger screen devices
+
+    if(win.width() > 400){
+
+      // When we scroll more than 150px down, we set the
+      // "fixed" class on the body element.
+
+      win.on('scroll', function(e){
+
+        if(win.scrollTop() > showHeaderAt) {
+          body.addClass('fixed');
+        }
+        else {
+          body.removeClass('fixed');
+        }
+      });
+
+    }
+
+  });
+
+</script>
+<script type="text/javascript">
+  var a = 0;
+$(window).scroll(function() {
+
+  var oTop = $('#counter').offset().top - window.innerHeight;
+  if (a == 0 && $(window).scrollTop() > oTop) {
+    $('.counter-value').each(function() {
+      var $this = $(this),
+        countTo = $this.attr('data-count');
+      $({
+        countNum: $this.text()
+      }).animate({
+          countNum: countTo
+        },
+
+        {
+
+          duration: 2000,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function() {
+            $this.text(this.countNum);
+            //alert('finished');
+          }
+
+        });
+    });
+    a = 1;
+  }
+
+});
+</script>
+  <script type="text/javascript" src="scr.c1f1d7d17d1cc6ebca70.js"></script></body>
 </html>
