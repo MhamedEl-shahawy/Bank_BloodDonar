@@ -550,7 +550,8 @@ body {
 }
 .footer__a:hover{
    text-decoration: line-through;
-   text-decoration-color:#000; 
+      text-decoration-color:#f00; 
+
 }
 /* end animation */
 /* start media */
