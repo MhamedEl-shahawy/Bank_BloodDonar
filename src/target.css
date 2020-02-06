@@ -1,4 +1,3 @@
-
 /* start content*/
  .content{
    width:100%;
@@ -364,32 +363,7 @@
 /* Making the header responsive */
 
 @media all and (max-width: 599px) {
-  /* start header */
-  .header-fixed {
-    padding: 20px 0;
-    height: 75px;
-  }
 
-  .header-fixed .header-limiter h1 {
-    float: none;
-    margin: -8px 0 10px;
-    text-align: center;
-    font-size: 24px;
-    line-height: 1;
-  }
-
-  .header-fixed .header-limiter nav {
-    line-height: 1;
-    float:none;
-  }
-
-  .header-fixed .header-limiter nav a {
-    font-size: 13px;
-  }
-
-  body.fixed .header-fixed {
-    display: none;
-  }
  /* start help*/
  .help__detail{
    display:block; 
@@ -441,28 +415,10 @@
      max-width:100%;
      max-height:100%;  
   }
-  .footer__top{
-     display:block;
-     padding:1em; 
-     padding-left:0; 
-  }
-  .lead-logo{
-     width: 100%;
-  }
-  .lead-p{
-     width:100%; 
-  }
-  .footer{
-    padding:1em; 
-  }
-  .footer__container {
-     padding: 0;
-  }
+
 }
 @media (min-width: 1100px){
-   .footer__ul{
-     padding-left:0.5em; 
-   }
+  
    .campaigns__container_theme_grid{
     margin-top:2em; 
     margin-bottom:2em; 
