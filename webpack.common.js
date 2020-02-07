@@ -20,6 +20,10 @@ module.exports = {
      new HtmlWebpackPlugin({  // Also generate a test.html
       filename: 'howDonate.html',
       template: './src/howDonate.html'
+    }),
+    new HtmlWebpackPlugin({  // Also generate a test.html
+      filename: 'signup.html',
+      template: './src/signup.html'
     })
 
   ],

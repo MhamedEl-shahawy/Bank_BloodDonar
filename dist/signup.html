@@ -20,8 +20,10 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="signup.css">
+   
   </head>
-
   <body>
  <!-- start heder -->
     <div class="info-head">
@@ -47,118 +49,52 @@
 
     <nav>
       <a href="index.html">Home</a>
-      <a href="#" class="selected">Blood Needs</a>
+      <a href="bloodNeeds.html">Blood Needs</a>
       <a href="target.html">Acceptable</a>
-      <a href="bloodNeeds.html">How To Donate</a>
+      <a href="howDonate.html">How To Donate</a>
       <a href="login.html">LogIn</a>
     </nav>
 
   </div>
 
 </header>
-<!--  start Table -->
-<table>
-  <caption>Blood Needs</caption>
-  <thead>
-    <tr>
-      <th scope="col">Number</th>
-      <th scope="col">Blood Type</th>
-      <th scope="col">Department</th>
-      <th scope="col">Patient</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Data</th>
-      <th scope="col">Done</th>
-      <th scope="col">Accepts</th>
-
-
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td data-label="Account">16</td>
-      <td data-label="Due Date">B+</td>
-      <td data-label="Amount">Internal Diseases</td>
-      <td data-label="Period">Someone</td>
-      <td data-label="Quantity">50</td>
-      <td data-label="Date">18/2/2020</td>
-      <td data-label="Done"></td>
-      <td data-label="Accepts">A+,O-,B+</td>
-
-    </tr>
-    <tr>
-      <td scope="row" data-label="Account">14</td>
-      <td data-label="Due Date">B-</td>
-      <td data-label="Amount">Dentistry</td>
-      <td data-label="Period">Someone</td>
-      <td data-label="Quantity">5</td>
-      <td data-label="Date">18/10/2019</td>
-      <td data-label="Done"></td>
-      <td data-label="Accepts">A+,O-,AB+,AB-</td>
-
-    </tr>
-    <tr>
-      <td scope="row" data-label="Account">2</td>
-      <td data-label="Due Date">O+</td>
-      <td data-label="Amount">Burn center </td>
-      <td data-label="Period">MD SH</td>
-      <td data-label="Quantity">0</td>
-      <td data-label="Date">18/12/2020</td>
-      <td data-label="Done"></td>
-      <td data-label="Accepts">B+,O-,A-</td>
-
-    </tr>
-    <tr>
-      <td scope="row" data-label="Acount">5</td>
-      <td data-label="Due Date">AB+</td>
-      <td data-label="Amount">Internal Diseases</td>
-      <td data-label="Period">Ahmed</td>
-      <td data-label="Quantity">10</td>
-      <td data-label="Date">1/11/2019</td>
-      <td data-label="Done"></td>
-      <td data-label="Accepts">O-,O+</td>
-
-    </tr>
-       <tr>
-      <td scope="row" data-label="Acount">8</td>
-      <td data-label="Due Date">O-</td>
-      <td data-label="Amount">Burn center</td>
-      <td data-label="Period">Someone</td>
-      <td data-label="Quantity">15</td>
-      <td data-label="Date">18/1/2020</td>
-      <td data-label="Done"></td>
-      <td data-label="Accepts">AB-</td>
-
-    </tr>
-       <tr>
-      <td scope="row" data-label="Acount">7</td>
-      <td data-label="Due Date">A-</td>
-      <td data-label="Amount">Dentistry</td>
-      <td data-label="Period">Someone</td>
-      <td data-label="Quantity">25</td>
-      <td data-label="Date">15/11/2019</td>
-      <td data-label="Done"></td>
-      <td data-label="Accepts">A+,O-,AB+</td>
-     
-    </tr>
-       <tr>
-      <td scope="row" data-label="Acount">4</td>
-      <td data-label="Due Date">AB-</td>
-      <td data-label="Amount">Burn center</td>
-      <td data-label="Period">Someone</td>
-      <td data-label="Quantity">20</td>
-      <td data-label="Date">18/12/2019</td>
-      <td data-label="Done"></td>
-      <td data-label="Accepts">A+,O-</td>
-
-
-    </tr>
-
-  </tbody>
-</table>
-
- <!-- Start Footer -->
-   <footer class="footer">
+<!-- start form  -->
+      <form class="form">
+        <div class="form__title">
+          <p class="form__p">SIGNUP FORM</p>
+          <h2 class="form__h2">Join to Unlock more Features</h2>
+        </div> 
+        <div class="form__container"> 
+          <input type="text" class="form__input" name="first" placeholder="First name">
+          <input type="text" name="last" class="form__input" placeholder="Last name">
+        </div>  
+        <div class="form__container form__container_w"> 
+          <input type="text" class="form__input" name="first" placeholder="Street Address">
+        </div> 
+        <div class="form__container"> 
+          <input type="text" class="form__input" name="first" placeholder="State">
+          <input type="text" name="last" class="form__input" placeholder="City">
+          <input type="number" name="last" class="form__input" placeholder="Zip code">
+          <input type="text" name="last" class="form__input" placeholder="Philippines">
+        </div>
+        <div class="form__container"> 
+          <input type="number" class="form__input" name="first" placeholder="+20">
+          <input type="number" name="last" class="form__input" placeholder="Phone number">
+        </div>  
+         <div class="form__container form__container_w"> 
+          <input type="text" class="form__input" name="first" placeholder="Email">
+        </div> 
+         <div class="form__container form__container_w"> 
+          <input type="password" class="form__input" name="first" placeholder="Password">
+        </div> 
+        <button class="form__button">SIGNUP</button>
+        <p class="form__p form__p_color">
+           By join, you agree with the<a href="#"> Terms of Service </a> and the <a href="#">Privacy Policies </a> of the site.<br>
+           Want to register as a Bloodbank account? <a href="#"> Click here</a>
+        </p>
+      </form>
+      <!--  start footer -->
+      <footer class="footer">
     <div class="footer__top">
         <div class="lead-logo"><span class="blood">BLOOD</span> BUDIES</div>
        <div class="lead-p">

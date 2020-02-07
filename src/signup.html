@@ -21,128 +21,44 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
-    <style type="text/css">
-      *{
-         box-sizing: border-box;
-         margin: 0;
-         padding: 0;
-      }
-        body{
-           position: relative;
-           width:100%;
-           height:100%; 
-           overflow-x: hidden; 
-font-family: 'Roboto', sans-serif;
-
-        }
-        .form{
-           background:#fff; 
-           width:50vw;
-           min-width:30vw;
-           height:auto;   
-           margin: auto; 
-          box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
-
-           padding:2em; 
-           border-radius:7px; 
-         }
-         .form__title{
-           width:100%;
-           text-align: center; 
-         }
-        .form__p{
-           color:#999;
-           margin-bottom:1rem; 
-           text-align: center;
-           width:100%;   
-        }  
-        .form__h2{
-           font-size:2.2em;
-           font-weight:bolder;  
-           margin-bottom:1rem; 
-        }
-
-        .form__container{
-           width:100%; 
-           margin: auto;
-           margin-bottom:1em; 
-           display: inline-flex;
-           justify-content: center;
-        }
-        .form__input{
-          padding: 0.7rem;
-          border-radius: 20px;
-          border: none;
-          width: 48%;
-          margin-bottom:1em;
-          margin: auto; 
-          font-size:1.2em; 
-          border:0.5px solid #999; 
-          transition:0.4s all; 
-        }
-        .form__input:focus{
-            outline:none; 
-            border-color:#F75449; 
-        }
-        .form__container_w .form__input {
-            width: 100%;
-        }
-        .form__container:nth-child(4) .form__input {
-            width: 25%;
-          margin-right:0.5em; 
-        }
-        .form__container:nth-child(5) .form__input:nth-child(1) {
-            width: 25%;
-          margin-right:0.5em; 
-        }
-        .form__container:nth-child(5) .form__input:nth-child(2) {
-            width: 75%;
-        }
-        .form__button{
-           padding:0.5em 0; 
-           background-color:#F75449; 
-           border:none;
-           border-radius:20px;  
-           width:100%;
-           color:#fff; 
-           display: block; 
-           font-size:1.2em;
-           font-weight:bolder;
-           outline:none;
-           cursor: pointer;   
-        }
-        .form__p_color{
-           color:#000; 
-           margin-top:1em; 
-           line-height:22px; 
-        }
-        @media (max-width: 767px) {
-            .form{
-               width:90vw;
-               padding:1em;   
-            }   
-             .form__container:nth-child(4) .form__input {
-            width: 50% !important;
-
-            }
-        } 
-        @media (min-width: 768px) and (max-width: 1200px){
-            .form{
-               width:75vw;
-                  
-            }
-        }
-          @media (min-width: 1201px) and (max-width: 1350px){
-            .form{
-               width:65vw;
-                  
-            }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="signup.css">
+   
   </head>
   <body>
+ <!-- start heder -->
+    <div class="info-head">
+       <div class="info-head__contact">
+           <p>
+                <span><i class="fas fa-id-card-alt"></i> <strong>Contact: </strong>  East Shibgonj, Sylhet, 3100</span>
+                <span>&nbsp;<i class="fa fa-phone"></i> <strong>Call Us:</strong> +880-1891-82709</span>
+            </p>
+       </div>
+       <div class="info-head__social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-google-plus-g"></i></a>
+         </div>
+    </div>
+    <header class="header-fixed">
 
+  <div class="header-limiter">
+
+    <h1><a href="#">Company<span>logo</span></a></h1>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="bloodNeeds.html">Blood Needs</a>
+      <a href="target.html">Acceptable</a>
+      <a href="howDonate.html">How To Donate</a>
+      <a href="login.html">LogIn</a>
+    </nav>
+
+  </div>
+
+</header>
+<!-- start form  -->
       <form class="form">
         <div class="form__title">
           <p class="form__p">SIGNUP FORM</p>
@@ -177,5 +93,83 @@ font-family: 'Roboto', sans-serif;
            Want to register as a Bloodbank account? <a href="#"> Click here</a>
         </p>
       </form>
+      <!--  start footer -->
+      <footer class="footer">
+    <div class="footer__top">
+        <div class="lead-logo"><span class="blood">BLOOD</span> BUDIES</div>
+       <div class="lead-p">
+        <p class="footer__top-p">
+         We are world largest and trustful blood donation center. We have been working since 1973 with a prestigious vision to helping patient to provide blood. We are working all over the world, organizing blood donation campaign to grow awareness among the people to donate blood.
+        </p>
+       </div>
+    </div>
+    <div class="footer__container">
+  <ul class="footer__ul ">
+    <h3 class="footer__h3">About Us</h3>
+    <li class="footer__li footer__ul_align_center"><img src="./images/target.png" alt=""></li>
+    <li class="footer__li">
+      <p class="footer__p">
+      Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.
+      </p></li>
+  </ul>
+   <ul class="footer__ul">
+    <h3 class="footer__h3">SPECIAL SERVICES</h3>
+    <li class="footer__li"><a class="footer__a" href="#">Autologous Donations</a></li>
+    <li class="footer__li"><a class="footer__a" href="#">Directed Donations</a></li>
+    <li class="footer__li"><a class="footer__a" href="#">Therapeutic Apheresis</a></li>
+    <li class="footer__li"><a class="footer__a" href="#">Bone Marrow</a></li>
+  </ul>
+   <ul class="footer__ul">
+    <h3 class="footer__h3">Contact us</h3>
+     <li class="footer__li">Address : Ft. Lauderdale, 3000 W Cypress Creek Road</li>
+    <li class="footer__li">Phone : +2 36 265 (8060)</li>
+    <li class="footer__li"><a href="#" class="footer__a">Privacy Policy</a></li>
+    <li class="footer__li">Email : info@bloodlab.com</li>
+  </ul>
+   <ul class="footer__ul last">
+    <h3 class="footer__h3">Newsletter</h3>
+    <li class="footer__li"><p class="foote__p">Heaven fruitful doesn't over lesser in days. Appear creeping seas</p></li>
+    <li class="footer__li">
+    <input  type="text" class="footer__form-control" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'">  
+    <button class="btn footer__btn" type="button"><i class="fas fa-paper-plane"></i></button>
+      </li>
+  </ul>
+</div>
+  <p class="copyright-text"> Copyright 2020 - Blood Buddies by TownMonkeys. All Rights Reserved. </p>
+</footer>
+    <!-- End Footer -->
+
+ 
+    <!-- End Footer -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+    var showHeaderAt = 150;
+
+    var win = $(window),
+        body = $('body');
+
+    // Show the fixed header only on larger screen devices
+
+    if(win.width() > 400){
+
+      // When we scroll more than 150px down, we set the
+      // "fixed" class on the body element.
+
+      win.on('scroll', function(e){
+
+        if(win.scrollTop() > showHeaderAt) {
+          body.addClass('fixed');
+        }
+        else {
+          body.removeClass('fixed');
+        }
+      });
+
+    }
+
+  });
+    </script>
   </body>
   </html>

@@ -80,7 +80,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Town Monkeys** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Town Monkeys** - *Initial work* - [TownMonkeys](http://github.com/TownMonkeys)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
