@@ -1,3 +1,4 @@
+
 * {
   padding: 0;
   margin: 0;
@@ -59,6 +60,9 @@ a {
     overflow: hidden;
     border-radius: 0px;
     background-clip: padding-box;
+}
+.btn_theme_color{
+   background-color:#777; 
 }
 /* start body */
 body {
@@ -194,6 +198,63 @@ body {
   font-size: 13px;
 }
 /* end header*/
+/* start slide */
+  .swiper-container {
+      width: 100%;
+      height: 80vh;
+    .swiper-slide {
+      display: flex;
+      height: 100%;
+    width: 100%;
+       transition: all 0.5s;
+
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left:7em; 
+      background-image: url("./images/home_1_slider_1.jpg"); 
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: inherit;
+      background-size: cover;
+      color:#fff;
+      .swiper__h3{
+         font-size:2em; 
+         margin-bottom:0.5em; 
+         font-weight: 200;
+      }
+      .swiper__h1{
+         text-transform:uppercase;
+         font-weight:bolder; 
+         font-size:3em; 
+      }
+      .btn_place{
+         text-transform:uppercase;
+      }
+      .swiper-slide__container{
+        width:100%; 
+      }
+    }
+     & .swiper-slide:nth-child(2){
+      background-image:url("./images/home_1_slider_2.jpg"); 
+    }
+    .swiper__slide{
+       display: none;
+       transition: all 1s;
+       color:#fff;
+      &:hover{
+         color:#f00;
+      }
+    }
+    &:hover{
+    .swiper__slide{
+      display: block;
+
+     }
+    }
+}
+
+/*end slide*/
 /* start content*/
  .content{
    width:100%;
@@ -262,8 +323,8 @@ body {
       padding-left: 26px;
     line-height: 36px;
     position: relative;
-}
-.about-us__li:before{
+
+&:before{
   content: '';
     display: inline-block;
     width: 8px;
@@ -281,6 +342,7 @@ body {
     -moz-background-clip: padding;
     background-clip: padding-box;
 }
+}
 /* start campaigns*/
 .campaigns{
    width:100%;
@@ -289,6 +351,7 @@ body {
    display: grid;
    grid-template-columns:repeat(2,1fr);   
    grid-gap:15px;
+   width: 100%;
 }
 .campaigns__info{
    padding: 2em;
@@ -300,6 +363,7 @@ body {
 .btn_theme{
    margin-top:10px; 
 }
+
 .campaign__slide{
     width:100%;
     display: grid;
@@ -338,6 +402,13 @@ body {
     font-weight: 500;
     margin:1em 0;  
     font-size:1.3em; 
+}
+/* start slide campaign*/
+.swipper-campaign{
+   overflow: hidden;
+}
+.pagination{
+   text-align: center;
 }
 /* end campaign*/
 /* start statistics*/

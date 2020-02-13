@@ -24,7 +24,12 @@ module.exports = {
     new HtmlWebpackPlugin({  // Also generate a test.html
       filename: 'signup.html',
       template: './src/signup.html'
+    }),
+    new HtmlWebpackPlugin({  // Also generate a test.html
+      filename: 'dashbourd.html',
+      template: './src/dashbourd.html'
     })
+
 
   ],
   

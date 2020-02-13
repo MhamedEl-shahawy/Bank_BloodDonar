@@ -20,7 +20,8 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
-   
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   </head>
   <body>
     
@@ -52,11 +53,47 @@
       <a href="target.html">Acceptable</a>
       <a href="howDonate.html">How To Donate</a>
       <a href="login.html">LogIn</a>
+      <a href="dashbourd.html">dashbourd</a>
+
     </nav>
 
   </div>
-
 </header>
+<!--  start slide -->
+<!-- Slider main container -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+       <div class="swiper-slide__container">
+        <h3 class="swiper__h3">Donate blood, save life !</h3>
+        <h1 class="swiper__h1">your blood<br>can bring smile<br>in other person face.</h1>
+       </div>
+       <div class="swiper-slide__container">   
+        <a href="#" class="btn_place btn_theme">Donate Now</a>
+        <a href="#" class="btn_place btn_theme btn_theme_color">call: 411-504-872-421</a>
+      </div>
+      </div>
+       <div class="swiper-slide">
+       <div class="swiper-slide__container">
+
+        <h3 class="swiper__h3">Donate blood, save life !</h3>
+        <h1 class="swiper__h1">donate blood<br>and inspires others.</h1>
+       </div>
+       <div class="swiper-slide__container">   
+        <a href="#" class="btn_place btn_theme">Donate Now</a>
+      </div>
+      </div>
+
+
+    </div>
+        <!-- If we need navigation buttons -->
+
+    <div class="swiper__slide swiper-button-prev"></div>
+    <div class="swiper__slide swiper-button-next"></div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+<!-- end slide -->
 <!--  start about us -->
 <section class="about-us">
    <div class="about-us__info">
@@ -82,12 +119,16 @@
         <p class="campaign_p lead__p">All over the world we have arranged total sixty thousands donation campaign and visit thousands of other venues on various occasions.</p>
         <a href="#" class="btn_place btn_theme">Load All Campaigns</a>
       </div>
-      <div class="campaign__slide">
+<!--  start slider -->
+   <div class="swipper-campaign">
+     <div class="swiper-container2">
+    <div class="swiper-wrapper">
+       <div class="swiper-slide">
+        <div class="campaign__slide">
           <div class="campaign__conatiner-img">
               <img src="./images/event_3.jpg" class="campaign__img">
           </div>
           <div class="campaign__events">
-            
                 <a class="event-date" href="#"><i class="far fa-calendar-alt"></i> 11 March, 2018</a>
                   <h4 class="campaign__h4">
                     <a href="#" class="campaign__h4-a">Free Group Checking</a>
@@ -97,8 +138,51 @@
                     <a href="#"><i class="far fa-clock"></i> 10.00 - 3.00</a>
                     <a href="#"> <i class="fas fa-map-marker-alt"></i> California, USA</a>
                   </div>
-               </div>
+            </div>
+          </div>
+        </div>
+      <div class="swiper-slide">
+        <div class="campaign__slide">
+          <div class="campaign__conatiner-img">
+              <img src="./images/event_2.jpg" class="campaign__img">
+          </div>
+          <div class="campaign__events">
+                <a class="event-date" href="#"><i class="far fa-calendar-alt"></i> 11 March, 2018</a>
+                  <h4 class="campaign__h4">
+                    <a href="#" class="campaign__h4-a">Free Group Checking</a>
+                  </h4>
+                   <p class="event-info">Lorem ipsum dolor sit amet turadipi scing elit lobort issim consecte lodign pharetra. Lobort qssim tronsecte diagnosis sharetrx mauris gone do.</p>
+                   <div class="event-time">
+                    <a href="#"><i class="far fa-clock"></i> 10.00 - 3.00</a>
+                    <a href="#"> <i class="fas fa-map-marker-alt"></i> California, USA</a>
+                  </div>
+            </div>
+          </div>
+        </div>
+          <div class="swiper-slide">
+        <div class="campaign__slide">
+          <div class="campaign__conatiner-img">
+              <img src="./images/event_1.jpg" class="campaign__img">
+          </div>
+          <div class="campaign__events">
+                <a class="event-date" href="#"><i class="far fa-calendar-alt"></i> 11 March, 2018</a>
+                  <h4 class="campaign__h4">
+                    <a href="#" class="campaign__h4-a">Free Group Checking</a>
+                  </h4>
+                   <p class="event-info">Lorem ipsum dolor sit amet turadipi scing elit lobort issim consecte lodign pharetra. Lobort qssim tronsecte diagnosis sharetrx mauris gone do.</p>
+                   <div class="event-time">
+                    <a href="#"><i class="far fa-clock"></i> 10.00 - 3.00</a>
+                    <a href="#"> <i class="fas fa-map-marker-alt"></i> California, USA</a>
+                  </div>
+            </div>
+          </div>
+        </div>
       </div>
+    <div class="pagination"></div>
+
+    </div>
+  </div>
+     <!-- end slider -->   
     </div>
  </section>     
    <!-- end CAMPAIGNS --> 
@@ -286,9 +370,7 @@
   <p class="copyright-text"> Copyright 2020 - Blood Buddies by TownMonkeys. All Rights Reserved. </p>
 </footer>
     <!-- End Footer -->
-     <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-    ></script>
+   
     
     <script type="text/javascript">
       
@@ -355,5 +437,35 @@ $(window).scroll(function() {
 
 });
 </script>
+
+
+<script src="https://unpkg.com/swiper/js/swiper.js"></script>
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+
+      },
+
+      centeredSlides: true,
+      
+    speed: 800,
+    cssMode :"zoom",
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    });
+  </script>
+  <script>
+    var swiper = new Swiper('.swiper-container2', {
+      pagination: {
+        el: '.pagination',
+      },      
+    speed: 800,
+    });
+  </script>
   </body>
 </html>
