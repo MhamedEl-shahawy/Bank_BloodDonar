@@ -1,0 +1,103 @@
+<!-- start heder -->
+<div class="info-head">
+     <div class="info-head__contact">
+          <p>
+               <span><i class="fas fa-id-card-alt"></i> <strong>Contact: </strong> East Shibgonj, Sylhet, 3100</span>
+               <span>&nbsp;<i class="fa fa-phone"></i> <strong>Call Us:</strong> +880-1891-82709</span>
+          </p>
+     </div>
+     <div class="info-head__social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-google-plus-g"></i></a>
+     </div>
+</div>
+<header class="header-fixed">
+
+     <div class="header-limiter">
+
+          <h1><a href="#">Company<span>logo</span></a></h1>
+
+          <nav>
+               <a href="/" class="selected">Home</a>
+               <a href="/bloodNeeds">Blood Needs</a>
+               <a href="/target">Acceptable Type</a>
+               <a href="/howToDonate">How To Donate</a>
+
+               <ul class="main-header__item-list">
+                    <% if (!isAuthenticated) { %>
+                    <li class="main-header__item">
+                         <a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a>
+                    </li>
+                    <li class="main-header__item">
+                         <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">Signup</a>
+                    </li>
+                    <% } else { %>
+                    <li class="main-header__item">
+                         <form action="/logout" method="post">
+                              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                              <button type="submit">Logout</button>
+                         </form>
+                    </li>
+                    <% } %>
+               </ul>
+                    <!--<a href="/login">LogIn</a>
+               <a href="/signup">SignUp</a>-->
+          </nav>
+     </div>
+</header>
+
+<!--<div class="backdrop"></div>
+          <header class="main-header">
+               <button id="side-menu-toggle">Menu</button>
+               <nav class="main-header__nav">
+                    <ul class="main-header__item-list">
+                         <li class="main-header__item">
+                              <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
+                         </li>
+                         <li class="main-header__item">
+                              <a class="<%= path === '/bloodNeeds' ? 'active' : '' %>" href="/bloodNeeds">Blood Needs</a>
+                         </li>
+                         <li class="main-header__item">
+                              <a class="<%= path === '/target' ? 'active' : '' %>" href="/target">Acceptable Type</a>
+                         </li>
+                         <li class="main-header__item">
+                              <a class="<%= path === '/howToDonate' ? 'active' : '' %>" href="/howToDonate">How To Donate</a>
+                         </li>
+                         <li class="main-header__item">
+                              <a class="<%= path === '/admin/add-product' ? 'active' : '' %>"
+                                   href="/logIn">LogIn
+                              </a>
+                         </li>
+                         
+                    </ul>
+               </nav>
+          </header>
+
+
+
+
+
+          <nav class="mobile-nav">
+               <ul class="mobile-nav__item-list">
+                    <li class="mobile-nav__item">
+                         <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
+                    </li>
+                    <li class="mobile-nav__item">
+                         <a class="<%= path === '/bloodNeeds' ? 'active' : '' %>" href="/bloodNeeds">Blood Needs</a>
+                    </li>
+                    <li class="mobile-nav__item">
+                         <a class="<%= path === '/target' ? 'active' : '' %>" href="/target">Acceptable Type</a>
+                    </li>
+                    <li class="mobile-nav__item">
+                         <a class="<%= path === '/howToDonate' ? 'active' : '' %>" href="/howToDonate">How To Donate</a>
+                    </li>
+                    <li class="mobile-nav__item">
+                         <a class="<%= path === '/admin/add-product' ? 'active' : '' %>"
+                              href="/logIn">LogIn
+                         </a>
+                    </li>
+                   </ul>
+       </nav>-->
