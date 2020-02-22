@@ -24,8 +24,21 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   </head>
   <body>
-    
-    <!-- start heder -->
+    <div class="loader">
+    <div class="la-ball-square-spin">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+</div>
+<!-- end loader -->
+<section class="main">
+ <!-- start heder -->
     <div class="info-head">
        <div class="info-head__contact">
            <p>
@@ -53,7 +66,6 @@
       <a href="target.html">Acceptable</a>
       <a href="howDonate.html">How To Donate</a>
       <a href="login.html">LogIn</a>
-      <!-- <a href="dashbourd.html">dashbourd</a> -->
 
     </nav>
 
@@ -355,7 +367,7 @@
     <h3 class="footer__h3">Contact us</h3>
      <li class="footer__li">Address : Ft. Lauderdale, 3000 W Cypress Creek Road</li>
     <li class="footer__li">Phone : +2 36 265 (8060)</li>
-    <li class="footer__li"><a href="privacy.html" class="footer__a">Privacy Policy</a></li>
+    <li class="footer__li"><a href="#" class="footer__a">Privacy Policy</a></li>
     <li class="footer__li">Email : info@bloodlab.com</li>
   </ul>
    <ul class="footer__ul last">
@@ -369,8 +381,11 @@
 </div>
   <p class="copyright-text"> Copyright 2020 - Blood Buddies by TownMonkeys. All Rights Reserved. </p>
 </footer>
+</section>
     <!-- End Footer -->
    
+     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
     
     <script type="text/javascript">
       
@@ -438,7 +453,15 @@ $(window).scroll(function() {
 });
 </script>
 
-
+<script type="text/javascript">
+  $(window).load(function() {
+    setTimeout(function(){
+        $(".loader").fadeOut("slow");
+        $('.main').css('opacity','1');
+    }, 3000);
+ 
+});
+</script>
 <script src="https://unpkg.com/swiper/js/swiper.js"></script>
 <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 <script>

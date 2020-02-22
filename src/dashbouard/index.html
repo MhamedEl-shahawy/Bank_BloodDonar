@@ -18,6 +18,21 @@
 		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
+		    <div class="loader">
+    <div class="la-ball-square-spin">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+</div>
+<!-- end loader -->
+<!-- start header -->
+<section class="main">
 		<div class="header">
 			<div class="logo">
 				<i class="fa fa-tachometer"></i>
@@ -32,26 +47,26 @@
 			</div>
 			<nav>
 				<ul>
-					<li class="active">
+					<li  class="tablinks active" onclick="openTab(event, 'dash')">
 						<a href="#">
 							<span><i class="fas fa-chart-pie"></i></span>
 							<span>Dashboard</span>
 						</a>
 					</li>
-					<li>
+					<li  class="tablinks" onclick="openTab(event, 'availabel')">
 						<a href="#">
 
 							<span><i class="far fa-bookmark"></i></span>
 							<span>Availabel Blood</span>
 						</a>
 					</li>
-					<li >
+					<li>
 						<a href="#">
 							<span><i class="fas fa-ambulance"></i></span>
 							<span>Need Blood</span>
 						</a>
 					</li>
-					<li>
+					<li  class="tablinks" onclick="openTab(event, 'bags')">
 						<a href="#">
 							<span><i class="fas fa-plus-circle"></i></span>
 							<span>Add Blood Bags</span>
@@ -75,15 +90,29 @@
 							<span>Charity</span>
 						</a>
 					</li>
+					<li>
+						<a href="#">
+							<span><i class="fas fa-user-circle"></i></span>
+							<span>Account</span>
+						</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
-		<div class="main-content">
+<!-- end header -->
+		<!-- start dash -->
+
+		<div class="main-content" id="dash">
 			<div class="title">
-				Analytics
+				<h3 class="title__h3">dashboard</h3> 
+				<p class="title__p">welcome name</p> 
+
+				<span class="profile">
+					<a class="profile__item" href="#">logout</a>
+				</span>
+
 			</div>
-	
-			<div class="main">
+			<div class="main tabcontent">
 				<div class="widget">
 					<div class="title">Number of views</div>
 					<div class="chart"></div>
@@ -98,5 +127,169 @@
 				</div>
 			</div>
 		</div>
+		<!-- end dash -->
+		<!-- start available -->
+
+		<div class="main-content tabcontent" id="availabel">
+
+	       <div class="container">
+	       	 <button class="add-new">new</button>
+	         <table>
+				  <thead>
+				    <tr>
+				      <th scope="col">name</th>
+				      <th scope="col">quantity</th>
+				      <th scope="col">edit</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td data-label="name">a-</td>
+				      <td data-label="quantity">20</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">a+</td>
+				      <td data-label="quantity">0</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">o-</td>
+				      <td data-label="quantity">6</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">o+</td>
+				      <td data-label="Due Date">0</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				      <tr>
+				      <td scope="row" data-label="name">ab-</td>
+				      <td data-label="Due Date">7</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">ab+</td>
+				      <td data-label="Due Date">8</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				      <tr>
+				      <td scope="row" data-label="name">b-</td>
+				      <td data-label="Due Date">10</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				      <tr>
+				      <td scope="row" data-label="name">b+</td>
+				      <td data-label="Due Date">4</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				  </tbody>
+			 </table>
+	       </div> 		
+	
+		</div>
+		<!-- end available -->
+
+		<!-- start bags -->
+		<div class="main-content tabcontent" id="bags">
+		
+	       <div class="container">
+	       	 <button class="add-new">new bags</button>
+	         <table>
+				  <thead>
+				    <tr>
+				      <th scope="col">name</th>
+				      <th scope="col">charity name</th>
+				      <th scope="col">donar name</th>
+				      <th scope="col">quantity</th>
+				      <th scope="col">edit</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td data-label="name">o-</td>
+				      <td data-label="charityname">resala</td>
+				      <td data-label="donar">fathy</td>
+				      <td data-label="quantity">2</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				   <tr>
+				      <td data-label="name">ab+</td>
+				      <td data-label="charityname">resala</td>
+				      <td data-label="donar"></td>
+				      <td data-label="quantity">20</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				   <tr>
+				      <td data-label="name">o+</td>
+				      <td data-label="charityname"></td>
+				      <td data-label="donar">mustafa</td>
+				      <td data-label="quantity">2</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				       <tr>
+				      <td data-label="name">a-</td>
+				      <td data-label="charityname">mansoura</td>
+				      <td data-label="donar">mohamed</td>
+				      <td data-label="quantity">4</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				  </tbody>
+			 </table>
+	       </div> 		
+		</div>
+	</section>
+
+	     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
