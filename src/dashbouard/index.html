@@ -131,9 +131,34 @@
 		<!-- start available -->
 
 		<div class="main-content tabcontent" id="availabel">
+           <!-- start new item -->
+            <div class="new-items">
+            	<div class="new-items_conatiner">
+            		<h2>new availabel blood</h2>
+            		<p class="red">available blood</p>
+            	<form class="new-items_form">	 
+            		 <label class="new-items_label" for="type">blood type</label>
+            		 <select class="new-items_select" id="type">
+            		 	<option value="a+">a+</option>
+            		 	<option value="a-">a-</option>
+            		 	<option value="o+">o+</option>
+            		 	<option value="o-">o-</option>
+            		 	<option value="b+">b+</option>
+            		 	<option value="b-">b-</option>
 
-	       <div class="container">
-	       	 <button class="add-new">new</button>
+            		 	<option value="ab+">ab+</option>
+            		 	<option value="ab-">ab-</option>
+            		 </select>
+            		 <label class="new-items_label" for="quantity">blood quantity</label>
+            		 <input class="new-items_input" type="number" name="quantity">
+            	</form>	 
+            	<button class="add-new add-new_float" id="addnew">create</button>
+            	</div>
+            </div> 
+           <!-- end new item -->
+           <div class="pd-1">
+	       <div class="container" >
+	       	 <button class="add-new" id="addMain">new</button>
 	         <table>
 				  <thead>
 				    <tr>
@@ -220,11 +245,12 @@
 	       </div> 		
 	
 		</div>
+	</div>
 		<!-- end available -->
 
 		<!-- start bags -->
 		<div class="main-content tabcontent" id="bags">
-		
+		<div class="pd-1">
 	       <div class="container">
 	       	 <button class="add-new">new bags</button>
 	         <table>
@@ -286,6 +312,7 @@
 			 </table>
 	       </div> 		
 		</div>
+	</div>
 	</section>
 
 	     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>

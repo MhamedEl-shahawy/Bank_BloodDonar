@@ -7,6 +7,9 @@ a{
 	 text-decoration:none;  
 	 cursor: pointer;
 }
+.red{
+  color:#eb4d4b;   
+}
 li{
 	 list-style: none;
 }
@@ -288,7 +291,6 @@ body {
 }
 /* main content styles */
 .main-content {
-	padding: 40px;
 	margin-top: 0;
 	padding: 0;
 	padding-top: 44px;
@@ -351,6 +353,46 @@ body {
 	border: 1px solid #ddd;
 }
 /* start lists */
+/* add new item */
+.new-items{
+   position: fixed;
+   width:100%;
+   height:100vh;
+   z-index:999; 
+   background-color:#a52424;
+   margin-left:6px;  
+   justify-content: center;
+   display: none;
+}
+.new-items_conatiner{
+   position: absolute;
+   top:17%;
+   height:auto;
+   width:50%;    
+   background-color:#fff;
+   display: block; 
+   border-radius:5px; 
+   padding:2em; 
+   line-height:40px; 
+   text-transform: capitalize;
+}
+.new-items_form{
+   width:100%; 
+}
+.new-items_select,.new-items_input{
+   width:100%; 
+   padding:0.5em; 
+   font-size:1.2em;
+   text-transform: uppercase; 
+}
+.new-items_label{ 
+ display: block;
+ font-size:1.5em; 
+ }
+/* start conatiner*/
+.pd-1{
+   padding: 1em;
+}
 .container{
 	 width:100%;
 	 height:100%;
@@ -358,6 +400,7 @@ body {
 	 border:1px solid #f1f1f1;
 	 padding-top:2em;    
 }
+
 .add-new{
 	 background-color:#eb4d4b;
 	 border:none;
@@ -368,10 +411,11 @@ body {
 	 float: right;
 	 margin:1em; 
 	 cursor: pointer;  
-	 outline: none;  
 }
-.add-new:active{
-  border:2px dashed #777; 
+
+.add-new_float{
+   float: left;
+   margin-left:0; 
 }
 
 /* start table */
@@ -419,7 +463,7 @@ table th {
 /* tab content */
 .tabcontent {
   display: none;
-  padding: 6px 12px;
+  padding: 0px 12px;
   border: 1px solid #ccc;
   border-top: none;
 }
@@ -521,6 +565,15 @@ table th {
 		margin-left: 70px;
 	}
 }
+@media screen and (min-width: 600px) and (max-width:800px){
+ .tabcontent {
+    padding:0; 
+   }
+   .main-content{
+     margin-left:63px; 
+   }
+}
+
 /* set element styles for desktop */
 @media screen and (min-width: 800px) {
 	.side-nav {
@@ -542,11 +595,25 @@ table th {
 		display: inline-block;
 	}
 	.main-content {
-		margin-left: 200px;
+		margin-left: 182px;
 	}
 }
 
 @media screen and (max-width: 600px) {
+  .tabcontent {
+    padding:0; 
+   }
+  /*start new item*/
+  .new-items{
+     width:100%;
+     height:100%;
+     margin: 0;
+  }
+  .new-items_conatiner{
+     width:80%; 
+  }
+
+  /*start tabel*/
   table {
     border: 0;
   }
@@ -580,10 +647,6 @@ table th {
   }
   
   table td::before {
-    /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
     content: attr(data-label);
     float: left;
     font-weight: bold;
@@ -595,3 +658,7 @@ table th {
   }
 }
 
+
+.show{
+  display: flex;
+}

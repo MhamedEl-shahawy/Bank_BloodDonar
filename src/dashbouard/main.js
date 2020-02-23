@@ -1,3 +1,4 @@
+/* open tab */
 function openTab(evt, cityName) {
   let i, tabcontent, tablinks,firstTab;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -14,12 +15,67 @@ function openTab(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-
-
-  $(window).load(function() {
+/* add class main to display block */
+$(window).load(function() {
     setTimeout(function(){
         $(".loader").fadeOut("slow");
         $('.main').css('opacity','1');
     }, 3000);
  
 });
+
+
+
+
+/* add new item */
+let target = document.querySelector('#addnew');
+let availTabel  = document.querySelector('#availabel table tbody');
+let newItems  = document.querySelector('#availabel .new-items');
+let selectType  = document.querySelector('#availabel #type');
+let quantity =  document.querySelector('#availabel .new-items_input');
+let addNew =  document.querySelector('#availabel #addMain');
+addNew.addEventListener("click",()=>{
+  console.log("me");
+    newItems.classList.toggle("show");
+
+});
+target.addEventListener("click",()=>{
+  newItems.classList.toggle("show");
+
+
+   let vals = [selectType.value,quantity.value];
+   let tr =  document.createElement("tr");
+   let iconsTd = `
+      <td data-label="edit">
+         <span><a><i class="fas fa-edit"></i></a></span>
+         <span><a><i class="fas fa-trash-alt"></i></a></span>
+       </td>
+   `;
+   vals.forEach((val)=>{
+     let td = document.createElement("td");
+     td.setAttribute("data-label","quantity");
+     td.innerHTML = val; 
+     tr.appendChild(td);   
+   });
+
+   tr.insertAdjacentHTML('beforeend',iconsTd);
+   availTabel.appendChild(tr);
+});
+
+/* add event remove to all trash icons */
+document.querySelectorAll('.fa-trash-alt').forEach(item => {
+  item.addEventListener('click', event => {
+  item.offsetParent.parentNode.remove();
+  })
+});
+
+ /* 
+  window.onclick= () => {
+  document.querySelectorAll('.fa-trash-alt').forEach(item => {
+  item.addEventListener('click', event => {
+  item.offsetParent.parentNode.remove();
+  })
+})
+};
+
+ */
