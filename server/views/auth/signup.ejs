@@ -15,8 +15,19 @@
           <h2 class="form__h2">Join to Unlock more Features</h2>
         </div>
          <div class="form__container"> 
-          <input type="text" class="form__input <%= validationErrors.find(e => e.param === 'first') ? 'invalid' : '' %>" name="first" id="first" placeholder="First name"  value="<%= oldInput.first %>">
-          <input type="text" class="form__input <%= validationErrors.find(e => e.param === 'last') ? 'invalid' : '' %>" name="last" id="last" placeholder="Last name"  value="<%= oldInput.last %>">
+          <input 
+             type="text" 
+             class="form__input <%= validationErrors.find(e => e.param === 'first') ? 'invalid' : '' %>" 
+             name="first" 
+             id="first" 
+             placeholder="First name"  
+             value="<%= oldInput.first %>">
+          <input
+            type="text" 
+            class="form__input <%= validationErrors.find(e => e.param === 'last') ? 'invalid' : '' %>" name="last" 
+            id="last" 
+            placeholder="Last name" 
+            value="<%= oldInput.last %>">
         </div>  
         <div class="form__container form__container_w">
                 <input 
@@ -39,6 +50,46 @@
                 placeholder="City"
                 value="<%= oldInput.city %>">
         </div>
+        
+        <div class="form__container form__container_w">
+                <input 
+                   class="form__input <%= validationErrors.find(e => e.param === 'age') ? 'invalid' : '' %>"
+                    type="number" 
+                    name="age" 
+                    id="age" 
+                    value="<%= oldInput.age %>"
+                    placeholder="Age">
+        </div>
+         <div class="form__container"> 
+          <input 
+             type="number" 
+             class="form__input <%= validationErrors.find(e => e.param === 'code') ? 'invalid' : '' %>" name="code" 
+             placeholder="+20" 
+             id="code"  
+             value="<%= oldInput.code %>">
+          <input 
+            type="number" 
+            name="phoneNum" 
+            class="form__input <%= validationErrors.find(e => e.param === 'phoneNum') ? 'invalid" 
+            id="phoneNum"
+            placeholder="Phone number"  
+            value="<%= oldInput.phoneNum %>">
+        </div> 
+         <div class="form__container form__container_w">
+          <select id="bloodType" name="bloodType" 
+                  class="<%= validationErrors.find(e => e.param === 'bloodType') ? 'invalid" 
+                  value="<%= oldInput.bloodType %>">
+           <option value="a-">a-</option> 
+           <option value="a+">a+</option> 
+           <option value="o-">o-</option> 
+           <option value="o+">o+</option> 
+           <option value="ab-">ab-</option> 
+           <option value="ab+">ab+</option> 
+           <option value="b-">b-</option> 
+           <option value="b+">b+</option> 
+
+          </select>
+         </div> 
         <div class="form__container form__container_w">
                 <input 
                     class="form__input <%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>"
@@ -50,48 +101,12 @@
         </div>
         <div class="form__container form__container_w">
                 <input 
-                   class="form__input <%= validationErrors.find(e => e.param === 'age') ? 'invalid' : '' %>"
-                    type="number" 
-                    name="age" 
-                    id="age" 
-                    value="<%= oldInput.age %>"
-                    placeholder="Age">
-        </div>
-         <div class="form__container"> 
-          <input type="number" class="form__input <%= validationErrors.find(e => e.param === 'age') ? 'invalid' : '' %>" name="code" placeholder="+20" id="code"  value="<%= oldInput.code %>">
-          <input type="number" name="phoneNum" class="form__input <%= validationErrors.find(e => e.param === 'age') ? 'invalid" id="phoneNum" placeholder="Phone number"  value="<%= oldInput.phoneNum %>">
-        </div> 
-         <div class="form__container form__container_w">
-          <select id="bloodType" name="bloodType">
-           <option value="a-">a-</option> 
-           <option value="a+">a+</option> 
-           <option value="o-">o-</option> 
-           <option value="o+">o+</option> 
-           <option value="ab-">ab-</option> 
-           <option value="ab+">ab+</option> 
-           <option value="b-">b-</option> 
-           <option value="b+">b+</option> 
-
-          </select>
-         </div>
-        <div class="form__container form__container_w">
-                <input 
-                    class="form__input <%= validationErrors.find(e => e.param === 'passwordConfirm') ? 'invalid' : '' %>"
-                    type="password" 
-                    name="passwordConfirm" 
-                    id="passwordConfirm" 
-                    placeholder="Password Confirm"
-                    value="<%= oldInput.passwordConfirm %>">
-        </div>
-            <div class="form-control">
-                <label for="confirmPassword">Confirm Password</label>
-                <input 
-                    class="<%= validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '' %>"
+                    class="form__input <%= validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '' %>"
                     type="password" 
                     name="confirmPassword" 
                     id="confirmPassword" 
                     value="<%= oldInput.confirmPassword %>">
-            </div>
+        </div>
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <button class="btn" type="submit">Signup</button>
         </form>
