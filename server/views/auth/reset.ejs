@@ -1,21 +1,40 @@
 <%- include('../includes/head.ejs') %>
-    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 
 <body>
-   <%- include('../includes/navigation.ejs') %>
 
     <main>
         <% if (errorMessage) { %>
             <div class="user-message user-message--error"><%= errorMessage %></div>
         <% } %>
-        <form class="login-form" action="/reset" method="POST">
-            <div class="form-control">
-                <label for="email">E-Mail</label>
-                <input type="email" name="email" id="email">
-            </div>
+     <img class="wave" src="../../images/logwave.png">
+     <div class="container">
+        <div class="img">
+            <img src="../../images/./logbg.svg">
+        </div>
+        <div class="login-content">
+        <form class="reset-password login" action="/reset" method="POST">
+            <img src="../../images/reset.png">
+                <h2 class="title title_font">Forgot your password?</h2>
+                <div class="input-div one">
+                   <div class="i">
+                        <i class="fas fa-user"></i>
+                   </div>
+                   <div class="div">
+                        <h5>Email</h5>
+                        <input
+                           class="input"
+                           type="email" 
+                           name="email" 
+                           id="email">
+                   </div>
+                </div>
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <button class="btn" type="submit">Reset Password</button>
+            <button class="btn" type="submit">Email Reset Link</button>
         </form>
+        </div>
+        </div>
+
     </main>
 <%- include('../includes/end.ejs') %>

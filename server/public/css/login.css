@@ -55,7 +55,6 @@ form{
 	margin: 15px 0;
 	color: #333;
 	text-transform: uppercase;
-	font-size: 2.9rem;
 }
 
 .login-content .input-div{
@@ -183,15 +182,32 @@ a.btn {
 	 flex-direction:column;
 	 justify-content: center; 
 }
-
-
+p{
+	position: relative;
+}
+.p_border:after,
+.p_border:before{
+	 content:""; 
+	 position: absolute;
+     border:1px solid #f00;
+     width:39%; 
+     top:50%;
+     right:6%;   
+}
+.p_border:before{
+	 left:6%; 
+}
+.login-content .title_font{
+	 font-size:1.6rem; 
+	 text-transform: none; 
+}
 @media screen and (max-width: 1050px){
 	.container{
 		grid-gap: 5rem;
 	}
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width:1000px){
 	form{
 		width: 290px;
 	}
