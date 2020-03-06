@@ -35,9 +35,9 @@
         }
         .form__input{
           padding: 0.7rem;
-          border-radius: 20px;
+          border-radius: 0;
           border: none;
-          width: 48%;
+          width: 49%;
           margin-bottom:1em;
           margin: auto; 
           font-size:1.2em; 
@@ -45,15 +45,19 @@
           transition:0.4s all; 
         }
         .form__input:focus{
-            outline:none; 
-            border-color:#F75449; 
+           outline: none;
+           border: 1px solid #eb3b5a;
         }
         .form__container_w .form__input {
             width: 100%;
         }
         .form__container:nth-child(4) .form__input {
-            width: 25%;
+            width: 34%;
           margin-right:0.5em; 
+        }
+         .form__container:nth-child(4) .form__input:last-child {
+
+          text-transform: uppercase;
         }
         .form__container:nth-child(5) .form__input:nth-child(1) {
             width: 25%;
@@ -80,6 +84,11 @@
            margin-top:1em; 
            line-height:22px; 
         }
+
+        /*.form__input_select option[value="+20"]{
+         background-image:url('./images/Egypt.png');  
+        
+        }*/
     /* start media */ 
         @media (max-width: 767px) {
             .form{

@@ -13,7 +13,7 @@
 			<img src="img/./logbg.svg">
 		</div>
 		<div class="login-content">
-			<form action="index.html">
+			<form  class="login" action="/login" method="POST">
 				<img src="./img/logavatar.svg">
 				<h2 class="title">Welcome</h2>
            		<div class="input-div one">
@@ -22,7 +22,12 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Username</h5>
-           		   		<input type="text" class="input">
+           		   		<input
+                           class="input <%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
+                           type="email" 
+                           name="email" 
+                           id="email" 
+                           value="<%= oldInput.email %>">
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -31,10 +36,15 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Password</h5>
-           		    	<input type="password" class="input">
+           		    	<input type="password" 
+                           class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>" 
+                           name="password" 
+                           id="password" 
+                           value="<%= oldInput.password %>">
             	   </div>
             	</div>
-            	<a href="#">Forgot Password?</a>
+            	<a href="/reset">Forgot Password?</a>
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             	<input type="submit" class="btn" value="Login">
             </form>
         </div>
