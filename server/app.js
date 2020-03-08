@@ -14,7 +14,7 @@ const errorController = require('./controller/error');
 const User = require('./models/user');
 
 
-const MONGODB_URI = 'mongodb+srv://mego:Manchesterunited4ever@graduation-project-gzx5f.mongodb.net/test?retryWrites=true&w=majority';
+const MONGODB_URI = 'mongodb+srv://mego:Manchesterunited4ever@graduation-project-gzx5f.mongodb.net/bloodBank?retryWrites=true&w=majority';
 const store = new MongoDBStore({
     uri: MONGODB_URI,
     collection: 'sessions'

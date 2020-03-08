@@ -7,6 +7,7 @@ const User = require('../models/user');
 const router = express.Router();
 
 router.get('/login', authController.getLogin);
+router.get('/adminLogin',authController.getAdminLogin);
 
 router.get('/signup', authController.getSignup);
 
@@ -19,7 +20,6 @@ router.post(
       .normalizeEmail(),
     body('password', 'Password has to be valid.')
       .isLength({ min: 5 })
-      .isAlphanumeric()
       .trim()
   ],
   authController.postLogin
@@ -47,19 +47,24 @@ router.post(
       .normalizeEmail(),
     body(
       'password',
-      'Please enter a password with only numbers and text and at least 5 characters.'
+      "Password must include one lowercase character, one uppercase character, a number, and a special character."
     )
-      .isLength({ min: 5 })
-      .isAlphanumeric()
-      .trim(),
+      .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/, "i")
+      .isLength({ min: 5 }),
     body('confirmPassword')
-      .trim()
       .custom((value, { req }) => {
         if (value !== req.body.password) {
           throw new Error('Passwords have to match!');
         }
         return true;
-      })
+      }),
+    check('firstName').isString().trim().escape(),
+    check('lastName').isString().trim().escape(),
+    check('state').isString().trim().escape(),
+    check('city').isString().trim().escape(),
+    check('code').isString().trim().escape(),
+    check('phoneNumber').isNumeric().trim().escape(),
+    check('bloodType').isString().trim().escape() 
   ],
   authController.postSignup
 );

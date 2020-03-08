@@ -17,18 +17,18 @@
         <div class="form__container"> 
           <input 
               type="text" 
-              name="first" 
-              id="fist" 
+              name="firstName" 
+              id="firstName" 
               placeholder="First name"
               class="form__input <%= validationErrors.find(e => e.param === 'first') ? 'invalid' : '' %>"
-              value="<%= oldInput.first %>">
+              value="<%= oldInput.firstName %>">
           <input 
                type="text" 
-               name="last" 
+               name="lastName" 
                class="form__input <%= validationErrors.find(e => e.param === 'last') ? 'invalid' : '' %>" 
-               id="last" 
+               id="lastName" 
                placeholder="Last name"
-               value="<%= oldInput.last %>">
+               value="<%= oldInput.lastName %>">
         </div>  
         <div class="form__container form__container_w"> 
           <input 
@@ -64,6 +64,7 @@
             <option value="ab+">ab+</option>
             <option value="o-">o-</option>
             <option value="o+">o+</option>
+            <option value="None">None</option>
           </select>
          </div>
          <div class="form__container"> 
