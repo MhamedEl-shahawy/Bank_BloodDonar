@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="grid">
+      <nav>
+        <ul>
+          <li>
+            <img src="image/profile.svg" alt="persons photo" />
+          </li>
+          <li data-target="#user" class="active">
+            <i class="fas fa-user-circle fa-lg"></i> User data
+          </li>
+          <li data-target="#find">
+            <i class="fas fa-search-location fa-lg"></i> Find Blood
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <div class="logout"></div>
+        <section class="user active " id="user" data-content>
+          <div class="user-avatar">
+            <img
+              class="user-avatar__img"
+              src="image/profile.svg"
+              alt="person avatar"
+            />
+            <h3 class="user-avatar__name">Avatar name</h3>
+          </div>
+          <div class="user-info">
+            <div class="user-info__basic">
+              <h2 class="basic__city">City <span>Mansoura</span></h2>
+              <h2 class="basic__phone">Phone <span>01000000058</span></h2>
+              <h2 class="basic__age">Age <span>21</span></h2>
+            </div>
+            <div class="user-info__donation">
+              <h2 class="basic__type">Blood Type <span>A+</span></h2>
+              <h2 class="basic__date">Date of donation <span></span></h2>
+              <h2 class="basic__dAllow">Date Allow <span></span></h2>
+            </div>
+          </div>
+        </section>
+
+        <section class="find " id="find" data-content>
+          <!-- Find Search -->
+          <div class="find-search">
+            <!-- choose-type -->
+            <div class="find-search__type">
+              <label for="choose-type">Choose type</label>
+              <select name="choose-type" id="choose-type" required>
+                <option hidden value=""></option>
+                <option value="typeAp">A+</option>
+                <option value="typeAn">A-</option>
+                <option value="typeABp">AB+</option>
+                <option value="typeABn">AB-</option>
+                <option value="typeBp">B+</option>
+                <option value="typeBn">B-</option>
+                <option value="typeOp">O+</option>
+                <option value="typeOn">O-</option>
+              </select>
+            </div>
+
+            <!-- choose-city -->
+            <div class="find-search__city">
+              <label for="choose-city">Choose City</label>
+              <select name="choose-city" id="choose-city" required>
+                <option hidden value=""></option>
+                <option value="mansoura">Mansoura</option>
+                <option value="cairo">Cairo</option>
+              </select>
+            </div>
+            <button class="find-search__button" type="button">Find now</button>
+          </div>
+          <!-- Result -->
+          <div class="find-result">
+            Result
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="index.js" defer></script>
+  </body>
+</html>
