@@ -9,14 +9,14 @@
           name="description"
           content="BloodDrop is an platform to help people to find blood donar"
         />
-		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
 		    <link
       rel="stylesheet"
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-
+        
 		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
@@ -25,7 +25,7 @@
     <ul class="navbar-nav">
       <li class="logo">
         <a href="#" class="nav-link">
-          <span class="link-text logo-text">BloodBank</span>
+          <span class="link-text logo-text" >BloodBank</span>
           <svg
             aria-hidden="true"
             focusable="false"
@@ -53,7 +53,7 @@
       </li>
 
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" id="tab1" onClick="selectTab(1)">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -77,12 +77,12 @@
               ></path>
             </g>
           </svg>
-          <span class="link-text">Cats</span>
+          <span class="link-text">Dashboard</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" id="tab2" onClick="selectTab(2)">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -106,12 +106,12 @@
               ></path>
             </g>
           </svg>
-          <span class="link-text">Aliens</span>
+          <span class="link-text">Available Blood</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" id="tab3" onClick="selectTab(3)">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -135,12 +135,12 @@
               ></path>
             </g>
           </svg>
-          <span class="link-text">Space</span>
+          <span class="link-text">Need Blood</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" id="tab4" onClick="selectTab(4)">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -164,7 +164,7 @@
               ></path>
             </g>
           </svg>
-          <span class="link-text">Shuttle</span>
+          <span class="link-text">Add Blood Bags</span>
         </a>
       </li>
 
@@ -253,7 +253,8 @@
 <div class="head-title">	
  <h2 class="head-title__h2">Dashboard</h2>	
 </div>
-<section class="dash-container">
+<!-- start dashboard -->
+<section class="container-tab" id="tab1Content">
  <div class="head-welcome show" id="welcomeEle">
  	<div class="head-welcome__message">
  	 <h3>Welcome back Anna!</h3>
@@ -313,6 +314,166 @@
 
 </div>
  </section>
+ <!-- end dashboard -->
+<!-- start available -->
+<section class="container-tab" id="tab2Content">
+		<div class="main-content">
+	       <div class="container">
+	       	 <button class="add-new">new</button>
+	         <table>
+				  <thead>
+				    <tr>
+				      <th scope="col">name</th>
+				      <th scope="col">quantity</th>
+				      <th scope="col">edit</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td data-label="name">a-</td>
+				      <td data-label="quantity">20</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">a+</td>
+				      <td data-label="quantity">0</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">o-</td>
+				      <td data-label="quantity">6</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">o+</td>
+				      <td data-label="Due Date">0</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				      <tr>
+				      <td scope="row" data-label="name">ab-</td>
+				      <td data-label="Due Date">7</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">ab+</td>
+				      <td data-label="Due Date">8</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				      <tr>
+				      <td scope="row" data-label="name">b-</td>
+				      <td data-label="Due Date">10</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				      <tr>
+				      <td scope="row" data-label="name">b+</td>
+				      <td data-label="Due Date">4</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				  </tbody>
+			 </table>
+	       </div> 		
+		</div>
+</section>
+<!-- start bags -->
+<section class="container-tab" id="tab3Content">
+    <div class="main-content">
+    <div class="pd-1">
+         <div class="container">
+           <button class="add-new">new bags</button>
+           <table>
+          <thead>
+            <tr>
+              <th scope="col">name</th>
+              <th scope="col">charity name</th>
+              <th scope="col">donar name</th>
+              <th scope="col">quantity</th>
+              <th scope="col">edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="name">o-</td>
+              <td data-label="charityname">resala</td>
+              <td data-label="donar">fathy</td>
+              <td data-label="quantity">2</td>
+              <td data-label="edit">
+                <span><a><i class="fas fa-edit"></i></a></span>
+                <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+              </td>
+            </tr>
+           <tr>
+              <td data-label="name">ab+</td>
+              <td data-label="charityname">resala</td>
+              <td data-label="donar"></td>
+              <td data-label="quantity">20</td>
+              <td data-label="edit">
+                <span><a><i class="fas fa-edit"></i></a></span>
+                <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+              </td>
+            </tr>
+           <tr>
+              <td data-label="name">o+</td>
+              <td data-label="charityname"></td>
+              <td data-label="donar">mustafa</td>
+              <td data-label="quantity">2</td>
+              <td data-label="edit">
+                <span><a><i class="fas fa-edit"></i></a></span>
+                <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+              </td>
+            </tr>
+               <tr>
+              <td data-label="name">a-</td>
+              <td data-label="charityname">mansoura</td>
+              <td data-label="donar">mohamed</td>
+              <td data-label="quantity">4</td>
+              <td data-label="edit">
+                <span><a><i class="fas fa-edit"></i></a></span>
+                <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+              </td>
+            </tr>
+          </tbody>
+       </table>
+         </div>     
+    </div>
+  </div>
+</section>
+
 
 	<script type="text/javascript" src="theme.js"></script>
 	</body>
