@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+:root {
+  --main-color: #a4243b;
+  --second-color: #bac1d2;
+  --text-color: #414141;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 10% 80vh;
+  grid-template-rows: 10% 80vh;
+  grid-template-areas:
+    "nav"
+    "main";
+}
+
+.grid nav {
+  grid-area: nav;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.grid nav a {
+  width: 10%;
+  text-align: center;
+}
+
+.grid nav a img {
+  max-width: 40%;
+}
+
+.grid nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.grid nav ul li {
+  padding: 0 1em;
+}
+
+.grid nav ul li {
+  color: var(--second-color);
+}
+
+.grid nav ul li.active,
+.grid nav ul li:hover {
+  color: var(--main-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.grid main {
+  margin: 0.5em 0;
+
+  grid-area: main;
+  background-color: #f3f0f5;
+}
+
+.grid main [data-content] {
+  display: none;
+}
+
+.grid main .active[data-content] {
+  display: -ms-grid;
+  display: grid;
+}
