@@ -24,6 +24,14 @@ function openTab(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+/* add class main to display block */
+$(window).load(function() {
+    setTimeout(function(){
+        $(".loader").fadeOut("slow");
+        $('.main').css('opacity','1');
+    }, 3000);
+ 
+});
 
 
 /* add new item */
