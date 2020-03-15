@@ -16,7 +16,3 @@ link.forEach(clickLink => {
 });
 
 
-const date = document.querySelector('.basic__date span');
-let d = new Date();
- let da = ` ${d.getDate()} /${d.getMonth() + 1} / ${d.getFullYear()}` ;
- date.innerHTML = da;

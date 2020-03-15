@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="grid">
+      <nav>
+        <a href="index.html">
+          <img src="image/profile.svg" alt="persons photo" />
+        </a>
+        <ul>
+          <li data-target="#home" class="active">Home</li>
+          <li data-target="#donateNow">DONATE NOW</li>
+          <li data-target="#appointments">MY APPOINTMENTS</li>
+          <li data-target="#donations">MY DONATIONS</li>
+          <li data-target="#rateStaff">RATE OUR STAFF</li>
+          <li data-target="#account">MY ACCOUNT</li>
+        </ul>
+      </nav>
+      <main>
+        <section class="home active " id="home" data-content></section>
+        <section class="donateNow " id="donateNow" data-content></section>
+        <section class="appointments " id="appointments" data-content></section>
+        <section class="donations " id="donations" data-content></section>
+        <section class="rateStaff " id="rateStaff" data-content></section>
+        <section class="account " id="account" data-content></section>
+      </main>
+    </div>
+
+    <script src="index.js" defer></script>
+  </body>
+</html>
