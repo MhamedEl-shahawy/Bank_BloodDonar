@@ -1,9 +1,9 @@
-let target = document.querySelector('#addnew');
-let availTabel  = document.querySelector('#availabel table tbody');
-let newItems  = document.querySelector('#availabel .new-items');
-let selectType  = document.querySelector('#availabel #type');
-let quantity =  document.querySelector('#availabel .new-items_input');
-let addNew =  document.querySelector('#availabel #addMain');
+let targets = document.querySelectorAll('.addnew');
+let availTables  = document.querySelectorAll('table tbody');
+let newItems  = document.querySelectorAll('.new-items');
+let selectType  = document.querySelectorAll('.type');
+let quantity =  document.querySelectorAll('.new-items_input');
+let addNew =  document.querySelectorAll('.addMain');
 
 
 
@@ -24,26 +24,22 @@ function openTab(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-/* add class main to display block */
-$(window).load(function() {
-    setTimeout(function(){
-        $(".loader").fadeOut("slow");
-        $('.main').css('opacity','1');
-    }, 3000);
- 
-});
-
 
 /* add new item */
-addNew.addEventListener("click",()=>{
-  console.log("me");
-    newItems.classList.toggle("show");
-
+addNew.forEach((val)=>{
+  val.addEventListener("click",()=>{
+   newItems.forEach((newItem)=>{
+    newItem.classList.toggle("show");
+   })
+   });
+      
 });
-target.addEventListener("click",()=>{
-  newItems.classList.toggle("show");
 
-
+targets.forEach((target)=>{
+  target.addEventListener("click",()=>{
+   newItems.forEach((newItem)=>{
+    newItem.classList.toggle("show");
+   })
    let vals = [selectType.value,quantity.value];
    let tr =  document.createElement("tr");
    let iconsTd = `
@@ -58,10 +54,14 @@ target.addEventListener("click",()=>{
      td.innerHTML = val; 
      tr.appendChild(td);   
    });
+    
 
    tr.insertAdjacentHTML('beforeend',iconsTd);
-   availTabel.appendChild(tr);
+   availTables.forEach((availTable)=>{
+   availTable.appendChild(tr);
+   });
    addTrash();
+});
 });
 /* add event remove to all trash icons */
 function addTrash(){
@@ -72,6 +72,3 @@ document.querySelectorAll('.fa-trash-alt').forEach(item => {
 });
 }
 addTrash();
-
-
-

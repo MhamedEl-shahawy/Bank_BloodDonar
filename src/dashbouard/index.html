@@ -15,6 +15,8 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
+    		<script src="main.js" defer></script>
+
 		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
@@ -129,7 +131,7 @@
             		<p class="red">available blood</p>
             	<form class="new-items_form">	 
             		 <label class="new-items_label" for="type">blood type</label>
-            		 <select class="new-items_select" id="type">
+            		 <select class="new-items_select type">
             		 	<option value="a+">a+</option>
             		 	<option value="a-">a-</option>
             		 	<option value="o+">o+</option>
@@ -143,22 +145,94 @@
             		 <label class="new-items_label" for="quantity">blood quantity</label>
             		 <input class="new-items_input" type="number" name="quantity">
             	</form>	 
-            	<button class="add-new add-new_float" id="addnew">create</button>
+            	<button class="add-new add-new_float addnew">create</button>
             	</div>
             </div> 
            <!-- end new item -->
            <div class="pd-1">
 	       <div class="container" >
-	       	 <button class="add-new" id="addMain">new</button>
+	       	 <button class="add-new addMain">new</button>
 	         <table class="availabel">
 				  <thead>
 				    <tr>
-				      <th scope="col">name</th>
+				      <th scope="col">blod</th>
 				      <th scope="col">quantity</th>
 				      <th scope="col"></th>
 				    </tr>
 				  </thead>
 				  <tbody>
+				    <tr>
+				      <td data-label="name">a-</td>
+				      <td data-label="quantity">20</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">a+</td>
+				      <td data-label="quantity">0</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">o-</td>
+				      <td data-label="quantity">6</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">o+</td>
+				      <td data-label="Due Date">0</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				      <tr>
+				      <td scope="row" data-label="name">ab-</td>
+				      <td data-label="Due Date">7</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">ab+</td>
+				      <td data-label="Due Date">8</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				      <tr>
+				      <td scope="row" data-label="name">b-</td>
+				      <td data-label="Due Date">10</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				      <tr>
+				      <td scope="row" data-label="name">b+</td>
+				      <td data-label="Due Date">4</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
 				  </tbody>
 			 </table>
 	       </div> 		
@@ -168,9 +242,36 @@
 		<!-- end available -->
 <!-- start need blod -->
 		<div class="main-content tabcontent" id="needBlood">
+			   <div class="new-items ">
+            	<div class="new-items_conatiner">
+            		<h2>need bloods</h2>
+            		<p class="red">needs quantity</p>
+            	<form class="new-items_form">	 
+            		 <label class="new-items_label" for="type">blood type</label>
+            		 <select class="new-items_select type">
+            		 	<option value="a+">a+</option>
+            		 	<option value="a-">a-</option>
+            		 	<option value="o+">o+</option>
+            		 	<option value="o-">o-</option>
+            		 	<option value="b+">b+</option>
+            		 	<option value="b-">b-</option>
+            		 	<option value="ab+">ab+</option>
+            		 	<option value="ab-">ab-</option>
+            		 </select>
+            		 <label class="new-items_label" for="department">Department</label>
+            		 <input class="new-items_input" type="text" name="department">
+            		 <label class="new-items_label" for="patient">Patient</label>
+            		 <input class="new-items_input" type="text" name="patient">
+            		 <label class="new-items_label" for="quantity">blood quantity</label>
+            		 <input class="new-items_input" type="number" name="quantity">
+
+            	</form>	 
+            	<button class="add-new add-new_float addnew">create</button>
+            	</div>
+            </div>
 		<div class="pd-1">
 	       <div class="container">
-	       	 <button class="add-new">new need</button>
+	       	 <button class="add-new addMain">new need</button>
 	         <table>
 				  <thead>
 				    <tr>
@@ -231,9 +332,37 @@
 	<!-- end need blood -->
 		<!-- start bags -->
 		<div class="main-content tabcontent" id="bags">
+			  <div class="new-items ">
+            	<div class="new-items_conatiner">
+            		<h2>new blood bags</h2>
+            		<p class="red">bags info</p>
+            	<form class="new-items_form">	 
+            		 <label class="new-items_label" for="type">blood type</label>
+            		 <select class="new-items_select type">
+            		 	<option value="a+">a+</option>
+            		 	<option value="a-">a-</option>
+            		 	<option value="o+">o+</option>
+            		 	<option value="o-">o-</option>
+            		 	<option value="b+">b+</option>
+            		 	<option value="b-">b-</option>
+
+            		 	<option value="ab+">ab+</option>
+            		 	<option value="ab-">ab-</option>
+            		 </select>
+            		 <label class="new-items_label" for="charity">Charity Name</label>
+            		 <input class="new-items_input" type="text" name="charity">
+            		 <label class="new-items_label" for="donarName">Donar Name</label>
+            		 <input class="new-items_input" type="text" name="donarName">
+            		 <label class="new-items_label" for="quantity">blood quantity</label>
+            		 <input class="new-items_input" type="number" name="quantity">
+
+            	</form>	 
+            	<button class="add-new add-new_float addnew">create</button>
+            	</div>
+            </div>
 		<div class="pd-1">
 	       <div class="container">
-	       	 <button class="add-new">new bags</button>
+	       	 <button class="add-new addMain">new bags</button>
 	         <table>
 				  <thead>
 				    <tr>
@@ -297,9 +426,40 @@
 	<!-- end bags -->
 	<!-- start blood donar -->
     	<div class="main-content tabcontent" id="bloodDonar">
+    		  <div class="new-items">
+            	<div class="new-items_conatiner">
+            		<h2>new donar</h2>
+            		<p class="red">donar info</p>
+            	<form class="new-items_form">	 
+            		 <label class="new-items_label" for="type">blood type</label>
+            		 <select class="new-items_select type">
+            		 	<option value="a+">a+</option>
+            		 	<option value="a-">a-</option>
+            		 	<option value="o+">o+</option>
+            		 	<option value="o-">o-</option>
+            		 	<option value="b+">b+</option>
+            		 	<option value="b-">b-</option>
+
+            		 	<option value="ab+">ab+</option>
+            		 	<option value="ab-">ab-</option>
+            		 </select>
+            		 <label class="new-items_label" for="donar">Donar Name</label>
+            		 <input class="new-items_input" type="text" name="donar">
+            		 <label class="new-items_label" for="nationalid">National Id</label>
+            		 <input class="new-items_input" type="text" name="nationalid">
+            		 <label class="new-items_label" for="phone">Phone Number</label>
+            		 <input class="new-items_input" type="number" name="phone">
+                     <label class="new-items_label" for="address">Address</label>
+            		 <input class="new-items_input" type="text" name="address">
+            		 <label class="new-items_label" for="email">Email</label>
+            		 <input class="new-items_input" type="email" name="email">
+            	</form>	 
+            	<button class="add-new add-new_float addnew">create</button>
+            	</div>
+            </div>
 		<div class="pd-1">
 	       <div class="container">
-	       	 <button class="add-new">add Donar</button>
+	       	 <button class="add-new addMain">add Donar</button>
 	         <table>
 				  <thead>
 				    <tr>
@@ -369,13 +529,44 @@
 	<!-- end blood donar -->
 	<!-- start patient -->
 	 	<div class="main-content tabcontent" id="patient">
+	 		 	  <div class="new-items">
+            	<div class="new-items_conatiner">
+            		<h2>new patient</h2>
+            		<p class="red">patient info</p>
+            	<form class="new-items_form">	 
+            		 <label class="new-items_label" for="type">blood type</label>
+            		 <select class="new-items_select type">
+            		 	<option value="a+">a+</option>
+            		 	<option value="a-">a-</option>
+            		 	<option value="o+">o+</option>
+            		 	<option value="o-">o-</option>
+            		 	<option value="b+">b+</option>
+            		 	<option value="b-">b-</option>
+
+            		 	<option value="ab+">ab+</option>
+            		 	<option value="ab-">ab-</option>
+            		 </select>
+            		 <label class="new-items_label" for="patient">Patient Name</label>
+            		 <input class="new-items_input" type="text" name="patient">
+            		 <label class="new-items_label" for="nationalid">National Id</label>
+            		 <input class="new-items_input" type="text" name="nationalid">
+            		 <label class="new-items_label" for="phone">Phone Number</label>
+            		 <input class="new-items_input" type="number" name="phone">
+                     <label class="new-items_label" for="address">Address</label>
+            		 <input class="new-items_input" type="text" name="address">
+            		 <label class="new-items_label" for="email">Email</label>
+            		 <input class="new-items_input" type="email" name="email">
+            	</form>	 
+            	<button class="add-new add-new_float addnew">create</button>
+            	</div>
+            </div>
 		<div class="pd-1">
 	       <div class="container">
-	       	 <button class="add-new">add patient</button>
+	       	 <button class="add-new addMain">add patient</button>
 	         <table>
 				  <thead>
 				    <tr>
-				      <th scope="col">donar name</th>
+				      <th scope="col">patient name</th>
 				      <th scope="col">national id</th>
 				      <th scope="col">phone</th>
 				   
@@ -437,6 +628,23 @@
 	<!-- end patient -->
 	<!-- start charity -->
 		 	<div class="main-content tabcontent charity" id="charity">
+		 		<div class="new-items">
+            	<div class="new-items_conatiner">
+            		<h2>new charity</h2>
+            		<p class="red">charity info</p>
+            	<form class="new-items_form">	 
+            		 <label class="new-items_label" for="charity">charity Name</label>
+            		 <input class="new-items_input" type="text" name="charity">   		 
+                     <label class="new-items_label" for="phone">Phone Number</label>
+            		 <input class="new-items_input" type="number" name="phone">
+                     <label class="new-items_label" for="address">Address</label>
+            		 <input class="new-items_input" type="text" name="address">
+                     <label class="new-items_label" for="description">Description</label>
+            		 <textarea class="new-items_input" name="description"></textarea>
+            	</form>	 
+            	<button class="add-new add-new_float addnew">create</button>
+            	</div>
+            </div>
 		<div class="pd-1">
 	       <div class="container">
 	       	 <button class="add-new">Add Charity</button>
@@ -561,33 +769,6 @@
 	</div>
 	</section>
 
-	     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-         <script type="module">
-             import {html, render} from 'https://unpkg.com/lit-html@0.10.0/lit-html.js';
-             import {repeat} from 'https://unpkg.com/lit-html@0.10.0/lib/repeat.js';
-
-
-
-             // Define a template
-             let addme =[{id:0,name:"a",quantity:"100"},{id:1,name:"o",quantity:"10"},{id:2,name:"ab",quantity:"20"},{id:3,name:"o-",quantity:"50"}];  
-
-             const employeeList = (bloods) => html`
-			    
-			    ${repeat(bloods, (blood) => blood.id, (blood, index) => html`
-			      <tr key=${index}> 
-			       <td data-label="name">${blood.name}</td>
-			       <td data-label="quantity">${blood.quantity}</td>
-			        <td data-label="edit">
-				      	<span><a><i class="fas fa-edit"></i></a></span>
-				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
-
-				      </td>
-			      </tr>
-			    `)}
-			  
-           `; 
-           render(employeeList(addme),  document.querySelector('#availabel table tbody'));
-         </script>
-		<script type="text/javascript"  src="main.js"></script>
+	  
 	</body>
 </html>

@@ -314,7 +314,7 @@ table th {
 .fa-edit{
 	color:#fdcb6e; 
 }
-.blood-type{
+td.blood-type{
   text-transform: uppercase;
 }
 .not-done,.done { 
@@ -455,6 +455,14 @@ hr{
    }
 }
 
+@media screen and (min-width: 600px) and (max-width:950px){
+  .form-container:last-child{
+     grid-template-columns:repeat(3,1fr); 
+   }
+   .change{
+     padding:0; 
+   }
+}
 /* set element styles for desktop */
 @media screen and (min-width: 800px) {
 	.side-nav {
@@ -514,6 +522,21 @@ hr{
      width:80%; 
   }
 }
+@media screen  and (min-width: 500px)  and (max-width:599px) {
+  .form-container:last-child {
+     grid-template-columns:repeat(2,1fr); 
+        grid-row-gap: 10px;
+  }
+}
+@media screen  and (max-width:499px) {
+  .form-container:last-child {
+     grid-template-columns:repeat(1,1fr); 
+     grid-row-gap: 14px;
+  }
+  .change{
+     padding:0; 
+  }
+}
 @media screen and (max-width: 1100px) {
   /*start tabel*/
   table {
@@ -559,3 +582,6 @@ hr{
   }
 }
 
+.show{
+  display: flex;
+}
