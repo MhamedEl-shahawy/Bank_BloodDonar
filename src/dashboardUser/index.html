@@ -17,20 +17,132 @@
           <img src="image/profile.svg" alt="persons photo" />
         </a>
         <ul>
-          <li data-target="#home" class="active">Home</li>
-          <li data-target="#donateNow">DONATE NOW</li>
-          <li data-target="#appointments">MY APPOINTMENTS</li>
-          <li data-target="#donations">MY DONATIONS</li>
-          <li data-target="#rateStaff">RATE OUR STAFF</li>
-          <li data-target="#account">MY ACCOUNT</li>
+          <li data-target="#home"><i class="fas fa-home fa-lg"></i> Home</li>
+          <li data-target="#donateNow" class="active">
+            <i class="fas fa-calendar-check fa-lg"></i>DONATE NOW
+          </li>
+          <li data-target="#appointments">
+            <i class="fas fa-calendar-alt fa-lg"></i>MY APPOINTMENTS
+          </li>
+          <li data-target="#donations">
+            <i class="fas fa-user-friends fa-lg"></i>MY DONATIONS
+          </li>
+          <li data-target="#rateStaff">
+            <i class="fas fa-calendar-check fa-lg"></i>RATE OUR STAFF
+          </li>
+          <li data-target="#account">
+            <i class="fas fa-address-card fa-lg"></i>MY ACCOUNT
+          </li>
         </ul>
       </nav>
       <main>
-        <section class="home active " id="home" data-content></section>
-        <section class="donateNow " id="donateNow" data-content></section>
-        <section class="appointments " id="appointments" data-content></section>
+        <!-- Home  -->
+        <section class="home   " id="home" data-content>
+          <div class="home-header">
+            <div class="home-header__info">
+              <h2>Welcome User,</h2>
+              <p>
+                it's easy to find convenient donor centers and blood drives,
+                schedule appointments, view past donations, manage rewards and
+                more.
+              </p>
+              <p>
+                <span>Critical dates:</span> some dates throughout the year are
+                more challenging due to vacations and seasonal influences. If
+                you are available to donate during these critical periods,
+                please make an appointment:
+              </p>
+              <p>
+                April 8, 2020 - April 14, 2020 <br />
+                May 19, 2020 - May 27, 2020 <br />
+                June 29, 2020 - July 10, 2020 <br />
+                September 1, 2020 - September 9, 2020 <br />
+                November 23, 2020 - November 29, 2020 <br />
+                December 20, 2020 - January 6, 2021
+              </p>
+            </div>
+            <div class="home-header__img">
+              <img src="image/directions.svg" alt="home header img " />
+            </div>
+          </div>
+        </section>
+        <!-- Donate Now  -->
+        <section class="donateNow active " id="donateNow" data-content>
+          <div class="donateNow__header">
+            <h2>Search by Zip</h2>
+            <p>
+              We value your time and do our best to provide donor centers and
+              mobile drives that are convenient for you.
+            </p>
+            <img src="image/form.svg" alt="donateNow header img" />
+          </div>
+          <div class="donateNow__form">
+            <form action="">
+              <!-- Zip Code -->
+              <label for="zipCode"> Zip Code: </label>
+              <input type="text" id="zipCode" name="zipCode" /> <br />
+              <!-- Mobile Drives -->
+              <label for="mobile"> Mobile Drives: </label>
+              yes <input id="mobile" type="radio" name="mobile" value="1" /> No
+              <input id="mobile" type="radio" name="mobile" value="2" /> <br />
+              <!-- Donor Centers -->
+              <label for="donorCenters"> Donor Centers: </label>
+              yes
+              <input
+                id="donorCenters"
+                type="radio"
+                name="donorCenters"
+                value="1"
+              />
+              No
+              <input
+                id="donorCenters"
+                type="radio"
+                name="donorCenters"
+                value="2"
+              />
+              <br />
+              <!-- Donation Type -->
+              <label for="donationType:">Donation Type</label>
+              <select name="donationType" id="donationType">
+                <option value="0" selected>Any</option>
+                <option value="1">Automated Red Cell</option>
+                <option value="2">Plasma</option>
+                <option value="3">Platelet</option>
+                <option value="4">Whole Blood</option>
+              </select>
+              <br />
+              <!-- Start Date -->
+              <label for="startDate">Start Date:</label>
+              <input type="date" name="startdate" id="startDate" /> <br />
+              <!-- End Date -->
+              <label for="endDate">Start Date:</label>
+              <input type="date" name="endtdate" id="endDate" /> <br />
+              <!-- Distance range -->
+              <label for="distance-range">Distance range:</label>
+              <input
+                id="distance-range"
+                type="range"
+                min="0"
+                max="50"
+                step="1"
+                value="10"
+              />
+              <br />
+              <button type="submit">Search</button>
+              <button type="reset">Reset</button>
+            </form>
+          </div>
+        </section>
+        <!-- My Appointments  -->
+        <section class="appointments " id="appointments" data-content>
+          heeeeeeeey
+        </section>
+        <!-- My Donations  -->
         <section class="donations " id="donations" data-content></section>
+        <!-- Rate our Staff  -->
         <section class="rateStaff " id="rateStaff" data-content></section>
+        <!--  My Account  -->
         <section class="account " id="account" data-content></section>
       </main>
     </div>

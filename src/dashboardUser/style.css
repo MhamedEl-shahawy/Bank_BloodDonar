@@ -14,6 +14,7 @@
 
 body {
   font-family: "Rubik", sans-serif;
+  overflow: hidden;
 }
 
 a {
@@ -28,8 +29,9 @@ ul {
 .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 10% 80vh;
-  grid-template-rows: 10% 80vh;
+  -ms-grid-rows: 8vh 85vh;
+  grid-template-rows: 8vh 85vh;
+  gap: 1em 0;
   grid-template-areas:
     "nav"
     "main";
@@ -70,6 +72,10 @@ ul {
   padding: 0 1em;
 }
 
+.grid nav ul li i {
+  padding-right: 0.4em;
+}
+
 .grid nav ul li {
   color: var(--second-color);
 }
@@ -82,8 +88,6 @@ ul {
 }
 
 .grid main {
-  margin: 0.5em 0;
-
   grid-area: main;
   background-color: #f3f0f5;
 }
@@ -95,4 +99,168 @@ ul {
 .grid main .active[data-content] {
   display: -ms-grid;
   display: grid;
+}
+
+.grid main .home-header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60% 40%;
+  grid-template-columns: 60% 40%;
+  width: 85%;
+  padding-top: 1em;
+  margin: auto;
+}
+
+.grid main .home-header__info {
+  padding-top: 0.7em;
+}
+
+.grid main .home-header__info p {
+  width: 75%;
+  text-align: justify;
+  line-height: 1.5;
+  margin-bottom: 1.4em;
+}
+
+.grid main .home-header__info p span {
+  color: var(--main-color);
+}
+
+.grid main .home-header__info p:last-child {
+  line-height: 1.9;
+}
+
+.grid main .home-header__img {
+  padding-top: 5em;
+}
+
+.grid main .home-header__img img {
+  max-width: 100%;
+}
+
+.grid main .donateNow {
+  width: 85%;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1em;
+  padding-top: 0.9em;
+  margin: auto;
+}
+
+.grid main .donateNow__header p {
+  width: 75%;
+  line-height: 1.5;
+  margin-bottom: 1.4em;
+}
+
+.grid main .donateNow__header img {
+  max-width: 80%;
+}
+
+.grid main .donateNow__form form {
+  width: 80%;
+  max-width: 350px;
+  margin: 2em auto;
+  text-align: start;
+  padding: 1em;
+  border: 2px solid var(--text-color);
+}
+
+.grid main .donateNow__form form label {
+  margin-right: 3em;
+  font-weight: bold;
+}
+
+.grid main .donateNow__form form input {
+  margin-bottom: 1.4em;
+  text-align: end;
+}
+
+.grid main .donateNow__form form input[type="text"],
+.grid main .donateNow__form form input[type="date"] {
+  padding: 0.5em;
+  color: black;
+  background: #fefefe;
+  width: 9vw;
+  height: 5vh;
+  font-size: 1.1em;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+.grid main .donateNow__form form input[type="radio"] {
+  cursor: pointer;
+}
+
+.grid main .donateNow__form form select {
+  color: black;
+  margin-bottom: 1.2em;
+  background: #fefefe;
+  width: 9vw;
+  height: 5vh;
+  font-size: 1.1em;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+.grid main .donateNow__form form select option {
+  color: black;
+  font-size: 1.1em;
+}
+
+.grid main .donateNow__form form input[type="range"] {
+  -webkit-appearance: none;
+  width: calc(60% - (73px));
+  height: 10px;
+  border-radius: 5px;
+  background: #d7dcdf;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid main .donateNow__form form input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--text-color);
+  cursor: pointer;
+}
+
+.grid
+  main
+  .donateNow__form
+  form
+  input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: var(--main-color);
+}
+
+.grid main .donateNow__form form button {
+  display: inline-block;
+  width: 20%;
+  margin: 2em auto 0;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+  background: var(--main-color);
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.grid main .donateNow__form form button:active {
+  position: relative;
+  top: 1px;
 }
