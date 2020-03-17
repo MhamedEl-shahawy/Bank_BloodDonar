@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+:root {
+  --main-color: #a4243b;
+  --second-color: #bac1d2;
+  --text-color: #414141;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+.nav {
+  height: 9vh;
+  margin: 0;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    li {
+      padding: 1em;
+      &.active {
+        font-weight: bold;
+        a {
+          color: var(--main-color);
+        }
+      }
+      a {
+        padding-bottom: 0.4em;
+        color: var(--text-color);
+
+        &:hover {
+          color: var(--main-color);
+        }
+      }
+    }
+  }
+}
+
+main {
+  display: grid;
+  width: 90%;
+  margin: 0 auto;
+  grid-template-columns: 30% 70%;
+  gap: 2em;
+  grid-template-rows: 1fr;
+  .main__nav {
+    background-color: #eaeff7;
+    &--header {
+      text-align: center;
+      h3 {
+        color: var(--text-color);
+      }
+      img {
+        max-width: 30%;
+        margin: auto;
+      }
+    }
+    &--desc {
+      width: 90%;
+      padding-top: 0.5em;
+      margin: auto;
+      color: var(--main-color);
+      h4 {
+        margin-bottom: 0.4em;
+      }
+      p {
+        color: var(--text-color);
+        text-align: left;
+      }
+      // user Donate
+      a {
+        display: block;
+        margin-bottom: 0.3em;
+      }
+      // user Donate
+    }
+  }
+  .main__info {
+    width: 90%;
+    margin: 0.3em auto;
+    p {
+      line-height: 1.9;
+      &:first-of-type {
+        line-height: 1.6;
+      }
+    }
+    //user Donate
+    form {
+      width: 80%;
+      max-width: 350px;
+      margin: 2em auto;
+      text-align: start;
+      padding: 1em;
+      border: 2px solid var(--text-color);
+      label {
+        margin-right: 3em;
+        font-weight: bold;
+      }
+      input {
+        margin-bottom: 1.4em;
+        text-align: end;
+
+        &[type="text"],
+        &[type="date"] {
+          padding: 0.5em;
+          color: black;
+          background: #fefefe;
+          width: 9vw;
+          height: 5vh;
+          font-size: 1.1em;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 7px;
+        }
+        &[type="radio"] {
+          cursor: pointer;
+        }
+      }
+      select {
+        color: black;
+        margin-bottom: 1.2em;
+        background: #fefefe;
+        width: 9vw;
+        height: 5vh;
+        font-size: 1.1em;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 7px;
+        option {
+          color: black;
+          font-size: 1.1em;
+        }
+      }
+      input[type="range"] {
+        -webkit-appearance: none;
+        width: calc(60% - (73px));
+        height: 10px;
+        border-radius: 5px;
+        background: #d7dcdf;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        &::-webkit-slider-thumb {
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: var(--text-color);
+          cursor: pointer;
+          &:hover {
+            background-color: var(--main-color);
+          }
+        }
+      }
+      button {
+        display: inline-block;
+        width: 20%;
+        margin: 2em auto 0;
+        padding: 6px 12px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.4;
+        white-space: nowrap;
+        cursor: pointer;
+        background: var(--main-color);
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        &:active {
+          position: relative;
+          top: 1px;
+        }
+      }
+    }
+
+    //user Donate
+    &--links {
+      display: grid;
+      text-align: center;
+      margin-top: 2em;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5em;
+      div {
+        border: 2px solid black;
+        padding: 1.5em 1em;
+        i {
+          color: var(--main-color);
+        }
+        h3 {
+          color: black;
+        }
+      }
+    }
+  }
+}
