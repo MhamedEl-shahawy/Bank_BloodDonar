@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>user Page</title>
+    <title>Donar Portal - Blood Donars</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
@@ -42,36 +42,28 @@
         </div>
       </div>
       <div class="main__info">
-        <h2>Search by Zip</h2>
-        <p>
-          We value your time and do our best to provide donor centers and mobile
-          drives that are convenient for you.
-        </p>
-        <form action="">
-          <!-- Zip Code -->
-          <label for="zipCode"> Zip Code: </label>
-          <input type="text" id="zipCode" name="zipCode" /> <br />
-          <!-- Mobile Drives -->
-          <label for="mobile"> Mobile Drives: </label>
-          yes <input id="mobile" type="radio" name="mobile" value="1" /> No
-          <input id="mobile" type="radio" name="mobile" value="2" /> <br />
-          <!-- Donor Centers -->
-          <label for="donorCenters"> Donor Centers: </label>
-          yes
-          <input
-            id="donorCenters"
-            type="radio"
-            name="donorCenters"
-            value="1"
-          />
-          No
-          <input
-            id="donorCenters"
-            type="radio"
-            name="donorCenters"
-            value="2"
-          />
+        <h2>Donate Now</h2>
+        <div>
+        	<div>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d886760.0783788199!2d31.15797548828123!3d29.751417437704156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1584747070365!5m2!1sar!2seg" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> 
+          </div>
+          <form action="">
+          <!-- Start Date -->
+          <label for="startDate">Start Date:</label>
+          <input type="date" name="startdate" id="startDate" /> <br />
+          <!-- End Date -->
+          <label for="endDate">End Date:</label>
+          <input type="date" name="endtdate" id="endDate" /> <br />
+          <!-- Distance range -->
           <br />
+         <div class="form-group">
+            <label class="control-label" for="show_mobiles">Mobile Drives:</label>
+            <input type="checkbox" name="show_mobiles" value="1" checked="checked" class="hidden">
+            <div is="0" class="btn-group" tabindex="0">
+            <a is="0" class="btn btn-default">No</a>
+            <a is="1" class="btn active btn-success">Yes</a>
+            </div>
+          </div>
           <!-- Donation Type -->
           <label for="donationType:">Donation Type</label>
           <select name="donationType" id="donationType">
@@ -81,27 +73,10 @@
             <option value="3">Platelet</option>
             <option value="4">Whole Blood</option>
           </select>
-          <br />
-          <!-- Start Date -->
-          <label for="startDate">Start Date:</label>
-          <input type="date" name="startdate" id="startDate" /> <br />
-          <!-- End Date -->
-          <label for="endDate">Start Date:</label>
-          <input type="date" name="endtdate" id="endDate" /> <br />
-          <!-- Distance range -->
-          <label for="distance-range">Distance range:</label>
-          <input
-            id="distance-range"
-            type="range"
-            min="0"
-            max="50"
-            step="1"
-            value="10"
-          />
-          <br />
-          <button type="submit">Search</button>
-          <button type="reset">Reset</button>
+          <br>
+          <button type="submit">Update Map</button>
         </form>
+        </div>
       </div>
     </main>
   </body>

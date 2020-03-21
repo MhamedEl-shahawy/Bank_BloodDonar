@@ -3,6 +3,7 @@
   --main-color: #a4243b;
   --second-color: #bac1d2;
   --text-color: #414141;
+  --a-color:#00A8C4;
 }
 
 * {
@@ -13,11 +14,15 @@
 }
 
 body {
+  width:100%
+  height:100%; 
   font-family: "Rubik", sans-serif;
 }
 
 a {
   text-decoration: none;
+     color:var(--a-color);
+
 }
 
 ul {
@@ -128,7 +133,6 @@ main .main__info p:first-of-type {
 
 main .main__info form {
   width: 80%;
-  max-width: 350px;
   margin: 2em auto;
   text-align: start;
   padding: 1em;
@@ -245,4 +249,29 @@ main .main__info--links div i {
 
 main .main__info--links div h3 {
   color: black;
+}
+
+.main__content{
+   width:80%;
+   height:100%; 
+   border:solid 1px #E1E1E8;  
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   padding: 1em;
+   margin-left:10px; 
+}
+.main__content-info{
+   width:44%; 
+   height: 120px;
+}
+.main__a{
+   color:#00A8C4;
+   text-decoration: underline; 
+}
+iframe {
+    display: block;       /* iframes are inline by default */
+    background: #000;
+    border: none;         /* Reset default border */        /* Viewport-relative units */
+    width: 80%;
 }
