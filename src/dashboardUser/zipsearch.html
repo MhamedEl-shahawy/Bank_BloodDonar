@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donar Portal - Blood Donars</title>
+    <title>Donar Portal - Blood donar's</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
@@ -39,40 +39,45 @@
       </div>
       <div class="main__info">
         <h2>Search by Zip</h2>
-        <p>We value your time and do our best to provide donor centers and mobile drives that are convenient for you.</p>
+        <p>
+          We value your time and do our best to provide donor centers and mobile
+          drives that are convenient for you.
+        </p>
         <div>
           <form action="">
-          <label for="zipCode">Zip Code:</label>
-          <input type="number"  name="zipCode" id="zipCode" /> <br />
-          <!-- Start Date -->
-          <label for="startDate">Start Date:</label>
-          <input type="date" name="startdate" id="startDate" /> <br />
-          <!-- End Date -->
-          <label for="endDate">End Date:</label>
-          <input type="date" name="endtdate" id="endDate" /> <br />
-          <!-- Distance range -->
-          <br />
-         <div class="form-group">
-            <label class="control-label" for="show_mobiles">Mobile Drives:</label>
-            <input type="checkbox" name="show_mobiles" value="1" checked="checked" class="hidden">
-            <div is="0" class="btn-group" tabindex="0">
-            <a is="0" class="btn btn-default">No</a>
-            <a is="1" class="btn active btn-success">Yes</a>
+            <label for="zipCode">Zip Code:</label>
+            <input type="number" name="zipCode" id="zipCode" /> <br />
+            <!-- Start Date -->
+            <label for="startDate">Start Date:</label>
+            <input type="date" name="startdate" id="startDate" /> <br />
+            <!-- End Date -->
+            <label for="endDate">End Date:</label>
+            <input type="date" name="enddate" id="endDate" /> <br />
+            <!-- Distance range -->
+            <br />
+            <div class="form-group">
+              <label class="control-label" for="show_mobiles"
+                >Mobile Drives:</label
+              >
+              <input type="checkbox" name="show_mobiles" value="1" checked="checked" />
+              <!-- <div is="0" class="btn-group" tabindex="0">
+                <a is="0" class="btn btn-default">No</a>
+                <a is="1" class="btn active btn-success">Yes</a>
+              </div> -->
             </div>
-          </div>
-          <!-- Donation Type -->
-          <label for="donationType:">Donation Type</label>
-          <select name="donationType" id="donationType">
-            <option value="0" selected>Any</option>
-            <option value="1">Automated Red Cell</option>
-            <option value="2">Plasma</option>
-            <option value="3">Platelet</option>
-            <option value="4">Whole Blood</option>
-          </select>
-          <br>
+            <!-- Donation Type -->
+            <label for="donationType:">Donation Type</label>
+            <select name="donationType" id="donationType">
+              <option value="0" selected>Any</option>
+              <option value="1">Automated Red Cell</option>
+              <option value="2">Plasma</option>
+              <option value="3">Platelet</option>
+              <option value="4">Whole Blood</option>
+            </select>
+            <br />
             <button type="submit">Search</button>
-          <button type="reset">Reset</button>
-        </form>
+            <button type="reset">Reset</button>
+          </form>
         </div>
       </div>
     </main>

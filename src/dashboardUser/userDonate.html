@@ -52,25 +52,16 @@
           <label for="zipCode"> Zip Code: </label>
           <input type="text" id="zipCode" name="zipCode" /> <br />
           <!-- Mobile Drives -->
-          <label for="mobile"> Mobile Drives: </label>
-          yes <input id="mobile" type="radio" name="mobile" value="1" /> No
-          <input id="mobile" type="radio" name="mobile" value="2" /> <br />
+          <div class="form-group">
+            <label class="control-label" for="show_mobiles">Mobile Drives:</label>
+            <input type="checkbox" name="show_mobiles" value="1" checked="checked" >
+          </div>
           <!-- Donor Centers -->
-          <label for="donorCenters"> Donor Centers: </label>
-          yes
-          <input
-            id="donorCenters"
-            type="radio"
-            name="donorCenters"
-            value="1"
-          />
-          No
-          <input
-            id="donorCenters"
-            type="radio"
-            name="donorCenters"
-            value="2"
-          />
+          <div class="form-group">
+            <label class="control-label" for="show_mobiles">Donor Centers:</label>
+            <input type="checkbox" name="show_mobiles" value="1" checked="checked" >
+           
+          </div>
           <br />
           <!-- Donation Type -->
           <label for="donationType:">Donation Type</label>
