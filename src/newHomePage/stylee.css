@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
 :root {
   --backgroundColor: white;
-  --main-color: #9c050e;
+  --main-color: #e74c3c;
   --second-color: #0c1323;
   --text-color: #414141;
   --other-color: #bac1d2;
@@ -18,6 +18,8 @@ body {
   background-color: var(--backgroundColor);
   font-family: "Rubik", sans-serif;
   overflow-x: hidden;
+  margin: 0;
+  padding:0; 
 }
 
 a {
@@ -57,7 +59,7 @@ ul {
 
 .dark {
   background-color: var(--main-color);
-  color: var(--second-color);
+  color:#fff;
 }
 
 .icon {
@@ -617,36 +619,81 @@ ul {
   color: var(--text-color);
 }
 
-footer {
-  border-top: 1px solid var(--second-color);
-  padding: 0.5em 0 0;
-  margin: auto;
-  text-align: center;
+/* start footer*/
+.footer{
+   width:100%;
+}
+.footer__containers{
+   width:100%; 
+   display: grid;
+   grid-gap:10px;
+   grid-template-columns:repeat(2,1fr); 
+   padding:4em;
+}
+.footer__h2{
+   font-size: 2.1em;
+   color: #2c3e50;
+}
+.footer__h2:first-letter{
+  color:var( --main-color) 
+}
+.footer__h2 span{
+  border-top: 4px solid var( --main-color); 
+}
+.footer__h3{
+  width:45%;
+  font-size:2.1em;
+  padding-bottom:0.5em;   
+  border-bottom:3px solid var( --main-color); 
+  color: #2c3e50;
+}
+.footer__containers  div:first-child{
+   padding-top:1.3em; 
+   padding-left:4em; 
+}
+.footer__containers  div:last-child{
+   padding-left:7em; 
+}
+.footer__p{
+   color:var(--text-color);
+}
+.footer__icons span{
+  padding-right:1em;
+  font-size:1.3em; 
+  transition: 0.7s all;
+}
+.footer__icons span:hover i{
+   color:  var(--main-color);
+   cursor: pointer;
 }
 
-footer i {
-  padding-top: 0.5em;
-  margin-right: 0.5em;
-  color: var(--second-color);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.footer__input{
+      border-radius: 29px;
+    background: #dfe6e9;
+    height: 57px;
+    width: 60%; 
+    padding-left:1.5em;
+    font-size:1.2em;  
 }
-
-footer i:hover {
-  color: var(--main-color);
+button{
+     border-radius: 76px;
+    background: var(--main-color);
+    padding: 0.6em 1.3em;
+    font-size: 1.5em;
+    color:#fff; 
 }
-
-footer p {
-  color: var(--second-color);
-  font-weight: bold;
-  text-align: center;
+.footer__quotes{
+   width:100%;
+   padding-top:0.2em; 
+   padding-bottom:0.2em;  
+   background:var(--main-color);
+   text-align: center;  
 }
+.qoutes{
+   font-size:1.5em;
 
-footer p span {
-  padding-top: 0.4em;
-  display: block;
+   color:#fff; 
 }
-
 @media screen and (max-width: 992px) {
   .main-header__desc {
     width: 100%;
