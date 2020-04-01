@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
 :root {
   --backgroundColor: white;
-  --main-color: #e74c3c;
-  --second-color: #0c1323;
+  /* --main-color: #d32f2f; */
+  --main-color: #ea2f2f;
+  /* --second-color: #0c1323; */
+  --second-color: #2c3e50;
   --text-color: #414141;
   --other-color: #bac1d2;
 }
@@ -19,13 +21,16 @@ body {
   font-family: "Rubik", sans-serif;
   overflow-x: hidden;
   margin: 0;
-  padding:0; 
+  padding: 0;
 }
 
 a {
   text-decoration: none;
   color: var(--second-color);
   font-weight: bold;
+}
+h2 {
+  color: var(--second-color);
 }
 
 ul {
@@ -48,7 +53,7 @@ ul {
 }
 
 .button:hover {
-  color: var(--second-color);
+  color: white;
   background-color: var(--main-color);
 }
 
@@ -59,7 +64,7 @@ ul {
 
 .dark {
   background-color: var(--main-color);
-  color:#fff;
+  color: #fff;
 }
 
 .icon {
@@ -127,11 +132,17 @@ ul {
   transform: rotate(-45deg) translate(8px, -10px);
 }
 
-.main-nav {
-  position: -webkit-sticky;
+.nav-bc {
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
+  background-color: white;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   z-index: 999;
+}
+.main-nav {
+  width: 100%;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -336,7 +347,6 @@ ul {
 }
 
 .acceptable {
-  background-color: #fdd1d6;
   padding: 4em 0;
   margin-top: 2em;
   margin: 3em auto;
@@ -542,7 +552,7 @@ ul {
   border-radius: 50%;
   padding: 3px;
   width: 50%;
-  background-color: #ffcdd2;
+  background-color: #f4cecb;
 }
 
 .instructions {
@@ -620,79 +630,83 @@ ul {
 }
 
 /* start footer*/
-.footer{
-   width:100%;
+.footer {
+  width: 100%;
 }
-.footer__containers{
-   width:100%; 
-   display: grid;
-   grid-gap:10px;
-   grid-template-columns:repeat(2,1fr); 
-   padding:4em;
+.footer__containers {
+  width: 100%;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 4em;
+  justify-content: center;
+  align-items: center;
 }
-.footer__h2{
-   font-size: 2.1em;
-   color: #2c3e50;
-}
-.footer__h2:first-letter{
-  color:var( --main-color) 
-}
-.footer__h2 span{
-  border-top: 4px solid var( --main-color); 
-}
-.footer__h3{
-  width:45%;
-  font-size:2.1em;
-  padding-bottom:0.5em;   
-  border-bottom:3px solid var( --main-color); 
+.footer__h2 {
+  font-size: 2.1em;
   color: #2c3e50;
 }
-.footer__containers  div:first-child{
-   padding-top:1.3em; 
-   padding-left:4em; 
+.footer__h2:first-letter {
+  color: var(--main-color);
 }
-.footer__containers  div:last-child{
-   padding-left:7em; 
+.footer__h2 span {
+  border-top: 4px solid var(--main-color);
 }
-.footer__p{
-   color:var(--text-color);
+.footer__h3 {
+  width: 71%;
+  font-size: 2.1em;
+  padding-bottom: 0.5em;
+  border-bottom: 3px solid var(--main-color);
+  color: #2c3e50;
 }
-.footer__icons span{
-  padding-right:1em;
-  font-size:1.3em; 
-  transition: 0.7s all;
+.footer__containers div:first-child {
+  padding-top: 1.3em;
+  padding-left: 4em;
 }
-.footer__icons span:hover i{
-   color:  var(--main-color);
-   cursor: pointer;
+.footer__containers div:last-child {
+  padding-left: 7em;
+}
+.footer__p {
+  color: var(--text-color);
+}
+.footer__icons span {
+  padding-right: 1em;
+  font-size: 1.3em;
+}
+.footer__icons span i {
+  transition: 0.4s ease-in-out;
+}
+.footer__icons span:hover i {
+  color: var(--main-color);
+  cursor: pointer;
 }
 
-.footer__input{
-      border-radius: 29px;
-    background: #dfe6e9;
-    height: 57px;
-    width: 60%; 
-    padding-left:1.5em;
-    font-size:1.2em;  
+.footer__input {
+  border-radius: 29px;
+  background: #dfe6e9;
+  height: 57px;
+  width: 60%;
+  padding-left: 1.5em;
+  font-size: 1.2em;
 }
-button{
-     border-radius: 76px;
-    background: var(--main-color);
-    padding: 0.6em 1.3em;
-    font-size: 1.5em;
-    color:#fff; 
+.footer__containers form .button {
+  padding: 0.6em 0.9em;
+  font-weight: 600;
+  letter-spacing: 1.3;
 }
-.footer__quotes{
-   width:100%;
-   padding-top:0.2em; 
-   padding-bottom:0.2em;  
-   background:var(--main-color);
-   text-align: center;  
+.footer__quotes {
+  width: 100%;
+  margin: 0;
+  /* padding-top:0.2em;  */
+  /* padding-bottom:0.2em;   */
+  background: var(--main-color);
+  text-align: center;
 }
-.qoutes{
-   font-size:1.5em;
-
-   color:#fff; 
+.quotes {
+  font-size: 1.3em;
+  margin: 0;
+  padding: 0.9em 0;
+  color: #fff;
 }
 @media screen and (max-width: 992px) {
   .main-header__desc {

@@ -11,30 +11,33 @@
     <link rel="stylesheet" href="./stylee.css" />
   </head>
   <body>
-    <nav class="grid main-nav">
-      <a href="index.html" class="logo">
-        <img src="./image/logo.png" alt="logo-page" />
-      </a>
-      <ul class="main-nav__link">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#blood"> bloodType</a></li>
-        <li><a href="#instructions"> Instructions</a></li>
-      </ul>
-      <ul class="main-nav__right">
-        <li class="user-btn">
-          <a href="#"><i class="fas fa-user-circle fa-2x"></i></a>
-        </li>
-        <li><a href="#" class="button"> LogIn</a></li>
-        <li><a href="#footer" class="button dark"> contact</a></li>
-      </ul>
-      <!-- Nav Mobile + tablet -->
-      <div class="menu-small ">
-        <div class="one"></div>
-        <div class="two"></div>
-        <div class="three"></div>
-      </div>
-    </nav>
+    <div class="nav-bc">
+      <nav class="grid main-nav">
+        <a href="index.html" class="logo">
+          <img src="./image/logo.png" alt="logo-page" />
+        </a>
+        <ul class="main-nav__link">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#blood"> bloodType</a></li>
+          <li><a href="#instructions"> Instructions</a></li>
+        </ul>
+        <ul class="main-nav__right">
+          <li class="user-btn">
+            <a href="#"><i class="fas fa-user-circle fa-2x"></i></a>
+          </li>
+          <li><a href="#" class="button"> LogIn</a></li>
+          <li><a href="#footer" class="button dark"> contact</a></li>
+        </ul>
+        <!-- Nav Mobile + tablet -->
+        <div class="menu-small ">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+        </div>
+      </nav>
+    </div>
+
     <!-- End nav -->
     <!-- Start header -->
     <header class=" grid main-header ">
@@ -565,31 +568,37 @@
 
     <!-- Start footer -->
     <footer class="footer" id="footer">
-      <div class="footer__containers"> 
-       <div>
-          <h2 class="footer__h2">Blood Donat<span>e</span></h2>
+      <div class="footer__containers">
+        <div>
+          <h2 class="footer__h2">Blood Donate<span>e</span></h2>
           <div class="footer__icons">
-             <span><i class="fab fa-facebook-f"></i></span>
-             <span><i class="fab fa-twitter"></i></span>
-             <span><i class="fab fa-instagram"></i></span>
-             <span><i class="fab fa-youtube"></i></span>
-             <span><i class="fab fa-linkedin-in"></i></span>
-
+            <span><i class="fab fa-facebook fa-lg"></i></span>
+            <span><i class="fab fa-twitter fa-lg"></i></span>
+            <span><i class="fab fa-instagram fa-lg"></i></span>
+            <span><i class="fab fa-youtube fa-lg"></i></span>
+            <span><i class="fab fa-linkedin-in fa-lg"></i></span>
           </div>
-          <p class="footer__p">&copy; 2020 Created By TownMonkeys All Rights Reserved</p>
-       </div>
-       <div>
-          <h3 class="footer__h3">Our Newsletter</h2>
+          <p class="footer__p">
+            &copy; 2020 Created By TownMonkeys All Rights Reserved
+          </p>
+        </div>
+        <div>
+          <h3 class="footer__h3">Our Newsletter</h3>
           <p class="footer__p">Enter Your Email To Get Our News Update</p>
           <form>
-             <input class="footer__input" type="email" name="subscribe" placeholder="Enter Your Email">
-             <button>Submit</button>
+            <input
+              class="footer__input"
+              type="email"
+              name="subscribe"
+              placeholder="Enter Your Email"
+            />
+            <button class="button dark">Submit</button>
           </form>
-       </div>
-     </div>
-       <div class="footer__quotes"> 
-          <p class="qoutes">Every Blood Donor Is A Life Saver</p>
-       </div>
+        </div>
+      </div>
+      <div class="footer__quotes">
+        <p class="quotes">Every Blood Donor Is A Life Saver</p>
+      </div>
     </footer>
     <!-- End footer -->
     <!-- loading page -->
