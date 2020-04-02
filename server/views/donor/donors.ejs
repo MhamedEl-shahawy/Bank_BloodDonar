@@ -1,0 +1,76 @@
+<%- include('../includes/top.ejs') %>
+
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <main class="myContainer">
+    <% if (donors.length > 0) {
+      let i = itemCounterStartInCurrentPage;
+      for (let donor of donors) { %>
+        <li class="myBox">
+          <div class="myItem">          
+              <p><%= i %></p>
+            </div>
+          <!--<div class="myItem">
+            <p> Added by: </p>
+            <p><%= donor.userId.email %></p>
+          </div>
+          <div class="myItem">
+            <p> On:</p>
+            <p> <%= donor.date %> </p>
+          </div>-->
+          <p>Donor Name:</p>
+          <div class="myItem">
+            <%= donor.donorName %>
+          </div>
+          <p>National Id</p>
+          <div class="myItem">
+            <%= donor.nationalId %>
+          </div>
+          <p>Address</p>
+          <div class="myItem">
+            <%= donor.address %>
+          </div>
+          <p>Phone Number</p>
+          <div class="myItem">
+            <%= donor.phoneNumber %>
+          </div>
+          <p>Blood Type</p>
+          <div class="myItem">
+            <%= donor.bloodType %>
+          </div>
+          <p>Donation Day</p>
+          <div class="myItem">
+            <%= donor.donationDay %>
+          </div>
+          <p>Next Donation Day</p>
+          <div class="myItem">
+            <%= donor.nextDonationDay %>
+          </div>
+
+          <% if (isAuthenticated && donor.userId._id.toString() === currentUser._id.toString()) { %>
+          <div class="myItem">
+            <a href="/edit-donor/<%= donor._id %>?edit=true" class="btn">Edit</a>
+          </div>
+          <div class="myItem">
+            <form action="delete-donor" method="POST">
+              <input type="hidden" value="<%= donor._id %>" name="donorId">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+              <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
+            </form>
+            <% } %>
+          </div>
+        </li>
+    <% i--; } %>
+
+    <% } else { %>
+    <p>No donors found.</p>
+    <% } %>
+
+    <%- include('../includes/pagination.ejs', paginationObject) %>
+
+  </main>
+
+  <%- include('../includes/bottom.ejs') %>

@@ -1,9 +1,10 @@
-<%- include('./includes/head.ejs') %>
+<%- include('includes/top.ejs') %>
 </head>
 
 <body>
-    <%- include(./includes/navigation.ejs)%>
-    <h1>Page Not Found!</h1>
+    <%- include('./includes/navigation.ejs') %>
+    <main class="myContainer">
+        <p>Page not found.</p>
+    </main>
 
-<%- include('./includes/footer.ejs')%>    
-<%- intclude(./includes/end.ejs) %>
+    <%- include('includes/bottom.ejs') %>

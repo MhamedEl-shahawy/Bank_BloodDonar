@@ -1,0 +1,47 @@
+<%- include('../includes/top.ejs') %>
+
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <main class="myContainer center">
+
+    <p>Comment initially posted at:
+      <%= patient.date %>
+    </p>
+    <form action="/edit-neededBlood" method="POST">
+
+      <label for="patientName">Patient</label>
+      <input type="text" name="patientName" id="patientName" value="<% if (editing) { %><%= patient.patientName %><% } %>">
+
+      <label for="department">Department</label>
+      <input type="text" name="department" id="department" value="<% if (editing) { %><%= patient.department %><% } %>">
+
+      <label for="quantity">Quantity</label>
+      <input type="text" name="quantity" id="quantity" value="<% if (editing) { %><%= patient.quantity %><% } %>">
+
+     <label for="bloodtype">Blood Type</label>
+      <select class="new-items_select type" name="bloodType" id="bloodType">
+          <option value="a+">a+</option>
+          <option value="a-">a-</option>
+          <option value="o+">o+</option>
+          <option value="o-">o-</option>
+          <option value="b+">b+</option>
+          <option value="b-">b-</option>
+          <option value="ab+">ab+</option>
+          <option value="ab-">ab-</option>
+          <option value="<%if(editing) {%><%=patient.bloodType%><% } %>">
+          <%if(editing) {%><%=patient.bloodType%><% } %></option>
+      </select>
+
+      
+      <% if (editing) { %>
+      <input type="hidden" value="<%= patient._id %>" name="patientId">
+      <% } %>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      <button class="myButton" type="submit">Submit</button>
+    </form>
+  </main>
+
+  <%- include('../includes/bottom.ejs') %>

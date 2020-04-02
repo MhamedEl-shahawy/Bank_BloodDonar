@@ -1,0 +1,59 @@
+<%- include('../includes/top.ejs') %>
+
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <main class="myContainer">
+    <% if (charities.length > 0) {
+      let i = itemCounterStartInCurrentPage;
+      for (let charity of charities) { %>
+        <li class="myBox">
+          <div class="myItem">          
+              <p><%= i %></p>
+            </div>
+          
+          <p>Charity Name:</p>
+          <div class="myItem">
+            <%= charity.charityName %>
+          </div>
+         
+          <p>Address</p>
+          <div class="myItem">
+            <%= charity.address %>
+          </div>
+
+          <p>Phone Number</p>
+          <div class="myItem">
+            <%= charity.phoneNumber %>
+          </div>
+          <p>Description</p>
+          <div class="myItem">
+            <%= charity.description %>
+          </div>
+
+          <% if (isAuthenticated && charity.userId._id.toString() === currentUser._id.toString()) { %>
+          <div class="myItem">
+            <a href="/edit-charity/<%= charity._id %>?edit=true" class="btn">Edit</a>
+          </div>
+          <div class="myItem">
+            <form action="delete-charity" method="POST">
+              <input type="hidden" value="<%= charity._id %>" name="charityId">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+              <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
+            </form>
+            <% } %>
+          </div>
+        </li>
+    <% i--; } %>
+
+    <% } else { %>
+    <p>No charities found.</p>
+    <% } %>
+
+    <%- include('../includes/pagination.ejs', paginationObject) %>
+
+  </main>
+
+  <%- include('../includes/bottom.ejs') %>

@@ -5,17 +5,18 @@ const menuShow = document.querySelector('.main-nav');
 const loading = document.querySelector('.loader-page');
 
 
-window.setTimeout(function() {
-    loading.style.display = 'none';
-    document.body.style.overflow = 'scroll';
-    document.body.style.overflowX = 'hidden';
+// window.setTimeout(function() {
+//     loading.style.display = 'none';
+//     loading.style.visibility = 'hidden';
+//     document.body.style.overflow = 'scroll';
+//     document.body.style.overflowX = 'hidden';
+//   }, 3500);
 
-  }, 3500);
-
-  btnMenu.addEventListener('click', () =>{
+btnMenu.addEventListener('click', () =>{
     btnMenu.classList.toggle('active');
     menuShow.classList.toggle('active');
-    })
+})
+
 
  target.forEach(tab => {
      tab.addEventListener('click', () =>{

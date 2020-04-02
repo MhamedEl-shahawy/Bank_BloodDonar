@@ -1,0 +1,36 @@
+<%- include('../includes/top.ejs') %>
+
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+  <main class="myContainer center">
+    <p>Add a Patient</p>
+    <form action="/add-neededBlood" method="POST">
+      <label for="patientName">Patient</label>
+      <input type="text" name="patientName" id="patientName" />
+
+      <label for="department">Department</label>
+      <input type="text" name="department" id="department" />
+
+      <label for="quantity">Quantity</label>
+      <input type="text" name="quantity" id="quantity" />
+
+      <label for="bloodType">Blood Type</label>
+      <select name="bloodType" id="bloodType">
+        <option value="a+">a+</option>
+        <option value="a-">a-</option>
+        <option value="o+">o+</option>
+        <option value="o-">o-</option>
+        <option value="b+">b+</option>
+        <option value="b-">b-</option>
+        <option value="ab+">ab+</option>
+        <option value="ab-">ab-</option>
+      </select>
+      
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+      <button class="myButton" type="submit">Submit</button>
+    </form>
+  </main>
+
+  <%- include('../includes/bottom.ejs') %>
