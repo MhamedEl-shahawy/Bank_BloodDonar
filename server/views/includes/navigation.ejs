@@ -1,16 +1,15 @@
 <div class="myNav">
-    <div>
-        <a href="/">MEE-MVC</a>
-    </div>
+    
     <div>
         <% if (isAuthenticated) { %>
+        <a href="/index">Home</a>
         <a href="/add-donor">Add A Donor</a>
         <a href="/add-patient">Add A Patient</a>
         <a href="/add-charity">Add A Charity</a>
         <a href="/add-neededBlood">Need Blood</a>
         <a href="/add-blood">Add BLood</a>
-        <a href="/view">Account</a>
         <a href="/add-bag">Add Blood Bags</a>
+        <a href="/user">Account</a>
         <% } %>
         <a href="/display-donors">Display Donors</a>
         <a href="/display-patients">Display Patient</a>

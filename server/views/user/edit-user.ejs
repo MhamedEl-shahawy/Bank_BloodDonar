@@ -1,0 +1,93 @@
+<%- include('../includes/head.ejs')%>
+</head>
+
+<body>
+    <%-include('../includes/userNavigation.ejs')%>
+    <main>
+        <div class="main__nav">
+            <div class="main__nav--header">
+                <h3>Donor Snapshot</h3>
+                <img src="/images/user/profile.svg" alt="Donor Snapshot avatar" />
+            </div>
+            <div class="main__nav--desc">
+                <h4>Welcome USER</h4>
+                <h4>Why donate?</h4>
+                <p>
+                    Your generous donations help the patients in our community, from
+                    children to adults, and help ensure that lifesaving blood products
+                    are available when they are needed most.
+                </p>
+                <h4>What happens after I donate?</h4>
+                <p>
+                    Your donation history and future appointment schedule will be
+                    maintained within this secure Donor Portal, making it easier for you
+                    to keep track of your donations, make needed changes or view test
+                    results and other information specific to you.
+                </p>
+                <h4>Did You Know?</h4>
+                <p>
+                    Search for drives or donor centers by city, county and zip code, or
+                    by using map views!
+                </p>
+            </div>
+        </div>
+        <div class="main__info">
+            <h2>My Account</h2>
+            <p>
+                Update your account at any time by clicking the "Edit" button below.
+            </p>
+            <form action="/donor/<%= user.id %>?_method=PUT" method="POST">
+
+                <div class="form-group">
+                    <label for="firstname" class="control-label">First Name:</label>
+                    <label for="firstname" class="value"><%= user.firstName%></label>
+                </div>
+                <div class="form-group">
+                    <label for="lastname" class="control-label">Last Name:</label>
+                    <label for="lastname" class="value"><%= user.lastName %></label>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="control-label">User Name:</label>
+                    <!-- <%= user.firstName.concat('',user.lastName)%> -->
+                    <label for="username" class="value"><%= user.firstName.concat(' ',user.lastName)%></label>
+                </div>
+                <div class="form-group">
+                    <label for="PrimaryEmail" class="control-label">Primary Email:</label>
+                    <label for="PrimaryEmail" class="value"><%= user.email%></label>
+                </div>
+                <div class="form-group">
+                    <label for="enableAvatar" class="control-label">City:</label>
+                    <input type="text" name="city" value="<%= user.city %>">
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="control-label">Phone:</label>
+                    <input type="text" name="phoneNumber" value="<%= user.phoneNumber %>">
+                </div>
+                <div class="form-group">
+                    <label for="avatarPreview" class="control-label">Blood Type:</label>
+                    <select class="new-items_select type" name="bloodType" id="bloodType">
+                        <option value="a+">a+</option>
+                        <option value="a-">a-</option>
+                        <option value="o+">o+</option>
+                        <option value="o-">o-</option>
+                        <option value="b+">b+</option>
+                        <option value="b-">b-</option>
+                        <option value="ab+">ab+</option>
+                        <option value="ab-">ab-</option>
+                        <option value="<%= user.bloodType %>"></option>
+                    </select>
+                </div>
+
+
+                
+                <div><a href="/donor/password/<%= user.id %>/edit">Change password</a></div>
+                <button type="submit">Edit</button>
+                <a href="/donor/account/view">Cancel</a>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

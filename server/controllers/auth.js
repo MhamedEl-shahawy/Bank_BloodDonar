@@ -7,7 +7,6 @@ const { validationResult } = require('express-validator');
 
 const User = require('../models/user');
 
-const APP_SERVER_URL = process.env.appServerUrl;
 
 const transporter = nodemailer.createTransport(
   sendgridTransport({
@@ -72,7 +71,7 @@ exports.postLogIn = (req, res, next) => {
             req.session.user = user;
             return req.session.save(err => {
               console.log(err);
-              res.redirect('/view');
+              res.redirect('/index');
             });
           }
           // req.flash('error', 'Enter a valid email and password.');

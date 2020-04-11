@@ -1,0 +1,65 @@
+<%- include('../includes/top.ejs') %>
+
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <main class="myContainer">
+
+    <h2>Edit Account Info</h2>
+    <form action="/user/<%= user.id %>?_method=PUT" method="POST">
+
+      <div>
+        <label>First Name:</label>
+        <span><%= user.firstName %></span>
+      </div>
+
+      <div>
+        <label>Last Name:</label>
+        <span><%= user.lastName %></span>
+      </div>
+      <div>
+        <label>E-mail:</label>
+        <span><%= user.email %></span>
+      </div>
+
+      <div>
+        <label>City</label>
+        <input type="text" name="city" value="<%= user.city %>">
+      </div>
+
+      <div>
+        <label>State</label>
+        <input type="text" name="state" value="<%= user.state %>">
+      </div>
+
+      <div>
+        <label>Phone</label>
+        <input type="text" name="phoneNumber" value="<%= user.phoneNumber %>">
+      </div>
+      <div>
+        <label for="bloodtype">Blood Type</label>
+      <select class="new-items_select type" name="bloodType" id="bloodType">
+          <option value="a+">a+</option>
+          <option value="a-">a-</option>
+          <option value="o+">o+</option>
+          <option value="o-">o-</option>
+          <option value="b+">b+</option>
+          <option value="b-">b-</option>
+          <option value="ab+">ab+</option>
+          <option value="ab-">ab-</option>
+          <option value="<%= user.bloodType %>"></option>
+      </select>
+      </div>
+
+
+      <div><a href="/user/password/<%= user.id %>/edit">Change password</a></div>
+      <a href="/user/<%= user.id %>">Cancel</a>
+      <button type="submit">Update</button>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+    </form>
+
+  </main>
+
+  <%- include('../includes/bottom.ejs') %>

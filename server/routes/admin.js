@@ -1,6 +1,7 @@
 const express = require('express');
 const adminController = require('../controllers/admin');
 const isAuth = require('../middleware/is-auth');
+const { check, body } = require('express-validator');
 const router = express.Router();
 
 router.get('/add-donor', isAuth, adminController.getAddDonor);
@@ -56,8 +57,35 @@ router.post('/delete-bag', isAuth, adminController.postDeleteBag);
 /*End Bags Routes */
 
 
-/*Account */
-router.get('/view',isAuth,adminController.getAccountView);
+/*Main page */
+router.get('/index', isAuth, adminController.getIndex);
+/* Account */
+
+router.get('/user', isAuth, adminController.getUser);
+router.get('/user/:id', isAuth, adminController.getUserById);
+router.get('/user/:id/edit', isAuth, adminController.getEditInfo);
+router.get('/user/password/:id/edit', isAuth, adminController.getChangePassword);
+router.put('/user/password/:id',
+    [
+        body(
+            'password',
+            'The password must be at least 3 characters long.'
+        )
+            .isLength({
+                min: 3
+            })
+            .trim(),
+        body('confirmPassword')
+            .trim()
+            .custom((value, { req }) => {
+                if (value !== req.body.password) {
+                    throw new Error('Passwords have to match.');
+                }
+                return true;
+            })
+    ], isAuth, adminController.changePassword);
+router.put('/user/:id', isAuth, adminController.UpdateUser);
+
 
 
 module.exports = router;

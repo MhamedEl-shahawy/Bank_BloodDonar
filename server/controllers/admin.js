@@ -5,7 +5,8 @@ const Needed = require('../models/neededblood');
 const Hospital = require('../models/hospital');
 const User = require('../models/user');
 const Bag = require('../models/bag');
-
+const bcrypt = require('bcryptjs');
+const { validationResult } = require('express-validator');
 const getCurrentDate = () => {
   return new Date();
 };
@@ -930,11 +931,131 @@ exports.postDeleteBag = (req, res, next) => {
 /*Password */
 
 /* Info */
-exports.getAccountView = (req,res,next) => {
-  if(req.session.user.role !== 'superuser') {
+exports.getIndex = (req, res, next) => {
+  if (req.session.user.role !== 'superuser') {
     return res.redirect('/donor/home/index');
   }
-  res.render('donor/view',{
-    pageTitle:'Account View'
+  res.render('donor/view', {
+    pageTitle: 'Main Page'
   });
 };
+
+/*Edit Info */
+
+exports.getUser = async (req, res, next) => {
+  const currentUser = req.user;
+  try {
+    const users = await User.find();
+    res.render('account/index', {
+      users: users,
+      currentUser,
+      pageTitle: 'Account'
+    });
+  } catch (err) {
+    const error = new Error(err);
+    error.httpStatusCode = 500;
+    return next(error);
+  }
+}
+
+exports.getUserById = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+
+    res.render('account/show', {
+      user: user,
+      pageTitle: 'Account'
+    });
+  } catch (err) {
+    const error = new Error(err);
+    error.httpStatusCode = 500;
+    return next(error);
+  }
+}
+
+exports.getEditInfo = async (req, res,next) => {
+  try {
+    const user = await User.findById(req.params.id);
+    res.render('account/edit', 
+    { 
+      user: user,
+      pageTitle:'Edit User' 
+    });
+  } catch(err) {
+    const error = new Error(err);
+    error.httpStatusCode = 500;
+    return next(error);
+  }
+}
+
+exports.getChangePassword = async (req,res,next) => {
+  try{
+    const user = await User.findById(req.params.id);
+    res.render('account/edit-password',{
+      user:user,
+      pageTitle:'Change password'
+    });
+  }catch(err){
+    const error = new Error(err);
+    error.httpStatusCode = 500;
+    return next(error);
+  }
+}
+
+exports.changePassword = async (req,res,next) => {
+  let user;
+  const errors = validationResult(req);
+  try{
+    if(!errors.isEmpty()){
+      console.log(errors.array());
+      return res.status(422).render('account/edit-password', {     
+        pageTitle: 'Change password',
+        errorMessage: errors.array()[0].msg,
+      });
+    }
+    let password = await bcrypt.hash(req.body.password,12);
+    user = await User.findById(req.params.id);
+    user.password = password;
+    await user.save();
+    res.redirect(`/user/${user.id}`);
+  }catch(err){
+    if(user == null) {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    } else {
+      res.render('account/edit',{
+        user:user,
+        errorMessage:errors.array()[0].msg,
+        pageTitle:'Edit'
+      });
+    }
+
+  }
+}
+exports.UpdateUser = async (req, res) => {
+  let user;
+  try {
+    user = await User.findById(req.params.id);
+    user.city = req.body.city;
+    user.state = req.body.state;
+    user.phoneNumber = req.body.phoneNumber;
+    user.bloodType = req.body.bloodType;
+    await user.save();
+    res.redirect(`/user/${user.id}`);
+  } catch (err) {
+    if (user == null) {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    } else {
+      res.render('account/edit', {
+        user: user,
+        errorMessage: 'Error updating User',
+        pageTitle:'Edit'
+      })
+    }
+  }
+}
+
+

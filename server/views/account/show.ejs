@@ -1,0 +1,47 @@
+<%- include('../includes/top.ejs') %>
+
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <main class="myContainer">
+  
+    <div>
+      <label >First Name:</label>
+      <span><%= user.firstName %></span>
+    </div>
+
+    <div>
+      <label >Last Name:</label>
+      <span><%= user.lastName %></span>
+    </div>
+    <div>
+      <label >E-mail:</label>
+      <span><%= user.email %></span>
+    </div>
+
+    <div>
+      <label >City:</label>
+      <span><%= user.city %></span>
+    </div>
+
+    <div>
+      <label >State:</label>
+      <span><%= user.state %></span>
+    </div>
+
+    <div>
+      <label >Phone:</label>
+      <span><%= user.phoneNumber %></span>
+    </div>
+
+    <div>
+      <label >Blood type:</label>
+      <span><%= user.bloodType %></span>
+    </div>
+    
+    <a href="/user/<%= user.id %>/edit">Edit</a>
+  </main>
+
+  <%- include('../includes/bottom.ejs') %>

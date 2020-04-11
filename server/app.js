@@ -5,6 +5,7 @@ const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const flash = require('connect-flash');
 const csrf = require('csurf');
+const methodOverride = require('method-override');
 const helmet = require('helmet');
 const compression = require('compression')
 
@@ -31,6 +32,7 @@ app.set('views', 'views');
 
 app.use(helmet());
 app.use(compression());
+app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded({
     extended: false
@@ -64,7 +66,7 @@ app.use((req, res, next) => {
             }
             // set the user key in the request object to the model user we get from mongoose
             req.user = user;
-            console.log(`Current Session User Email is: ${user.email}`);
+            console.log(`Current Session User Email is: ${user.email} + ${user._id}`);
             next();
         })
         .catch(err => {
