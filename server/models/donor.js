@@ -22,6 +22,10 @@ const donorSchema = new Schema({
         type: String,
         required: true,
     },
+    email:{
+        type:String,
+        required:true
+    },
     donationDay:{
         type:String,
     },

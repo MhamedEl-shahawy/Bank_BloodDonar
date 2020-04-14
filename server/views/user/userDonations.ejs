@@ -1,54 +1,70 @@
 <%- include('../includes/head.ejs')%>
-  </head>
-  <body>
-    <%-include('../includes/userNavigation.ejs')%>
-    <main>
-      <div class="main__nav">
-        <div class="main__nav--header">
-          <h3>Donor Snapshot</h3>
-          <img src="/images/user/profile.svg" alt="Donor Snapshot avatar" />
-        </div>
-        <div class="main__nav--desc">
-          <h4>Welcome USER</h4>
-          <h4>Why donate?</h4>
-          <p>
-            Your generous donations help the patients in our community, from
-            children to adults, and help ensure that lifesaving blood products
-            are available when they are needed most.
-          </p>
-          <h4>What happens after I donate?</h4>
-          <p>
-            Your donation history and future appointment schedule will be
-            maintained within this secure Donor Portal, making it easier for you
-            to keep track of your donations, make needed changes or view test
-            results and other information specific to you.
-          </p>
-          <h4>Did You Know?</h4>
-          <p>
-            Search for drives or donor centers by city, county and zip code, or
-            by using map views!
-          </p>
-        </div>
+</head>
+
+<body>
+  <%-include('../includes/userNavigation.ejs')%>
+  <main>
+    <div class="main__nav">
+      <div class="main__nav--header">
+        <h3>Donor Snapshot</h3>
+        <img src="/images/user/profile.svg" alt="Donor Snapshot avatar" />
       </div>
-      <div class="main__info">
-        <h2>Donation History</h2>
-        <div class="content_area round">
-          <div class="info">
-            The content of this page is not available because your login is not linked to our Donor Database.
-          </div>
-          <br>
-          <p class="intro">
-            If you are a blood donor, you can activate this page by clicking on the "Update Profile" button below. If you are a first time donor, you can come back to this step after your first donation.
-          </p>
-          <br>
-          <br>
-          <a class="btn" href=""><span>Update Profile</span></a>
-          <br>
-          <br>
-        </div>
+      <div class="main__nav--desc">
+        <h4>Welcome USER</h4>
+        <h4>Why donate?</h4>
+        <p>
+          Your generous donations help the patients in our community, from
+          children to adults, and help ensure that lifesaving blood products
+          are available when they are needed most.
+        </p>
+        <h4>What happens after I donate?</h4>
+        <p>
+          Your donation history and future appointment schedule will be
+          maintained within this secure Donor Portal, making it easier for you
+          to keep track of your donations, make needed changes or view test
+          results and other information specific to you.
+        </p>
+        <h4>Did You Know?</h4>
+        <p>
+          Search for drives or donor centers by city, county and zip code, or
+          by using map views!
+        </p>
       </div>
+    </div>
+    <div class="main__info">
+      <h2>Donation History</h2>
+      <p>
+        Your upcoming Donation are below , If you are a first time donor, you can come back to this step after your first donation.
+      </p>
+
+      <% if(donors.length > 0) {
+       donors.forEach(donor => { %>
+        <% if (isAuthenticated && donor.email === currentUser.email) { %>
+          <div>Your name in our Database is :<%= donor.donorName%></div>
+          <div>You have donated a blood bag and your blood type is : <%= donor.bloodType%></div>
+          <div>Your address is : <%= donor.address %></div>
+      <% } %>
+    <%})%>
+    <%} else { %>
+      <div class="info">
+        The content of this page is not available because your E-mail is not linked to our Donor Database.
+      </div>
+      <br>
+      <p class="intro">
+        If you are a first time donor, you can come back to this step after your first donation.
+      </p>
+      <br>
+      <br>
+
+      <br>
+      <br>
+    </div>
+      <% } %>
 
       
-    </main>
-  </body>
+     
+    </div>
+  </main>
+</body>
+
 </html>

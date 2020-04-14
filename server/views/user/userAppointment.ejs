@@ -26,6 +26,25 @@
         <p>
           Your upcoming appointments are below.
         </p>
+
+        <%if (donors.length > 0) {
+          donors.forEach(donor => { %>
+
+            <% if (isAuthenticated && donor.email === currentUser.email) { %>
+              <div>
+                <label for="">Future Appointments</label>
+                <div><%= donor.donationDay %></div>
+  
+                <label for="">Past Appointments</label>
+                <div><%= donor.nextDonationDay %></div>
+              </div>
+              <% } %>
+              <% }) %>
+
+              <% } else { %>
+                <div>Nothing To Show</div>
+                <% } %>
+
       </div>
     </main>
   </body>

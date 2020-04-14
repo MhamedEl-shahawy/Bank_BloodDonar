@@ -43,6 +43,7 @@ exports.postAddDonor = (req, res, next) => {
   const nationalId = req.body.nationalId;
   const phoneNumber = req.body.phoneNumber
   const donationDay = req.body.donationDay;
+  const email = req.body.email;
   const nextDonationDay = req.body.nextDonationDay;
   const address = req.body.address;
   const bloodType = req.body.bloodType;
@@ -54,6 +55,7 @@ exports.postAddDonor = (req, res, next) => {
     phoneNumber,
     donationDay,
     nextDonationDay,
+    email,
     bloodType,
     address,
     userId: req.user._id
@@ -134,6 +136,7 @@ exports.postEditDonor = (req, res, next) => {
   const updateNationalId = req.body.nationalId;
   const updatePhoneNumber = req.body.phoneNumber
   const upadteDonationDay = req.body.donationDay;
+  const updateEmail = req.body.email;
   const updateNextDonationDay = req.body.nextDonationDay;
   const updateAddress = req.body.address;
   const updateBloodType = req.body.bloodType;
@@ -148,6 +151,7 @@ exports.postEditDonor = (req, res, next) => {
       donor.donationDay = upadteDonationDay;
       donor.nextDonationDay = updateNextDonationDay;
       donor.bloodType = updateBloodType;
+      donor.email = updateEmail;
       donor.address = updateAddress;
       donor.editDate = today;
       return donor.save()

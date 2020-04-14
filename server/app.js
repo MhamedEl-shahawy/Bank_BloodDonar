@@ -18,7 +18,7 @@ const User = require('./models/user');
 
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = 'mongodb+srv://mego:Manchesterunited4ever@graduation-project-gzx5f.mongodb.net/bloodBank?retryWrites=true&w=majority';
-const SECRET = process.env.SECRET;
+
 
 const app = express();
 const store = new MongoDBStore({

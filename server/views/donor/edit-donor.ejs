@@ -24,6 +24,10 @@
       <label for="address">Address</label>
       <input type="text" name="address" id="address" value="<% if (editing) { %><%= donor.address %><% } %>">
 
+      <label for="email">E-mail</label>
+      <input type="email" name="email" id="email" value="<% if (editing) { %><%= donor.email %><% } %>">
+
+
      <label for="bloodtype">Blood Type</label>
       <select class="new-items_select type" name="bloodType" id="bloodType">
           <option value="a+">a+</option>

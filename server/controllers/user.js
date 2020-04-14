@@ -1,5 +1,9 @@
 const User = require('../models/user');
+const Donor = require('../models/donor');
+const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
+
+
 
 
 exports.getHome = (req, res, next) => {
@@ -14,16 +18,41 @@ exports.getUserDonate = (req, res, next) => {
     });
 };
 
-exports.getUserAppointment = (req, res, next) => {
-    res.render('user/userAppointment', {
-        pageTitle: 'My Appointment'
-    });
+exports.getUserAppointment = async(req, res, next) => {
+
+    const currentUser = req.user;
+    try {
+        const donors = await Donor.find();
+        res.render('user/userAppointment', {
+            pageTitle: 'My Appointment',
+            donors,
+            currentUser
+        });
+
+    } catch (err) {
+        const error = new Error(err);
+        error.httpStatusCode = 500;
+        return next(error);
+    }
+  
 };
 
-exports.getUserDonation = (req, res, next) => {
-    res.render('user/userDonations', {
-        pageTitle: 'My Donations'
-    });
+exports.getUserDonation = async(req, res, next) => {
+    const currentUser = req.user;
+    try {
+        const donors = await Donor.find();
+        res.render('user/userDonations', {
+            pageTitle: 'MY ACCOUNT',
+            donors,
+            currentUser
+        });
+
+    } catch (err) {
+        const error = new Error(err);
+        error.httpStatusCode = 500;
+        return next(error);
+    }
+    
 };
 
 exports.getUserRate = (req, res, next) => {
@@ -37,6 +66,18 @@ exports.getUserStore = (req, res, next) => {
         pageTitle: 'STORE'
     });
 };
+
+
+/*exports.getAccountLink = (req,res,next) => {
+    res.render('user/accountLinke',{
+        pageTitle:'Account Linke'
+    });
+}*/
+
+
+
+
+
 
 
 
@@ -59,7 +100,7 @@ exports.getUserAccount = async (req, res, next) => {
     }
 };
 
-exports.getUserById = async (req, res) => {
+exports.getUserById = async (req, res,next) => {
     try {
         const user = await User.findById(req.params.id);
 
@@ -89,52 +130,7 @@ exports.getEditInfo = async (req, res, next) => {
     }
 }
 
-exports.getChangePassword = async (req,res,next) => {
-    try{
-      const user = await User.findById(req.params.id);
-      res.render('user/edit-password',{
-        user:user,
-        pageTitle:'UPDATE PASSWORD'
-      });
-    }catch(err){
-      const error = new Error(err);
-      error.httpStatusCode = 500;
-      return next(error);
-    }
-  }
-  
-  exports.changePassword = async (req,res,next) => {
-    let user;
-    const errors = validationResult(req);
-    try{
-      if(!errors.isEmpty()){
-        console.log(errors.array());
-        return res.status(422).render('user/edit-password', {     
-          pageTitle: 'UPDATE PASSWORD',
-          errorMessage: errors.array()[0].msg,
-        });
-      }
-      let password = await bcrypt.hash(req.body.password,12);
-      user = await User.findById(req.params.id);
-      user.password = password;
-      await user.save();
-      res.redirect('/donor/account/view');
-    }catch(err){
-      if(user == null) {
-        const error = new Error(err);
-        error.httpStatusCode = 500;
-        return next(error);
-      } else {
-        res.render('user/edit-user',{
-          user:user,
-          errorMessage:errors.array()[0].msg,
-          pageTitle:'Edit'
-        });
-      }
-  
-    }
-  }
-exports.UpdateUser = async (req, res) => {
+exports.UpdateUser = async (req, res,next) => {
     let user;
     try {
         user = await User.findById(req.params.id);
@@ -154,6 +150,53 @@ exports.UpdateUser = async (req, res) => {
                 errorMessage: 'Error updating User',
                 pageTitle: 'Edit'
             })
+        }
+    }
+}
+
+
+exports.getUpdatePassword = async (req, res, next) => {
+    try {
+        const user = await User.findById(req.params.id);
+        res.render('user/password', {
+            user: user,
+            pageTitle: 'My Account'
+        });
+    } catch (err) {
+        const error = new Error(err);
+        error.httpStatusCode = 500;
+        return next(error);
+    }
+};
+
+exports.UpdatePassword = async (req, res, next) => {
+    let user;
+    const errors = validationResult(req);
+    try {
+        if (!errors.isEmpty()) {
+            console.log(errors.array());
+            return res.status(404).render('user/password', {
+                pageTitle: 'My Account',
+                errorMessage: errors.array()[0].msg,
+            });
+        }
+        let password = await bcrypt.hash(req.body.password, 12);
+        user = await User.findById(req.params.id);
+        user.password = password;
+        await user.save();
+        res.redirect('/donor/account/view');
+
+    } catch (err) {
+        if (user == null) {
+            const error = new Error(err);
+            error.httpStatusCode = 500;
+            return next(error);
+        } else {
+            res.render('user/edit-user', {
+                user: user,
+                errorMessage: errors.array()[0].msg,
+                pageTitle: 'Edit'
+            });
         }
     }
 }

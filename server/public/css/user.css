@@ -393,3 +393,28 @@ div .info {
 .info {
   background-color: white;
 }
+
+div.row {
+  color: #242424;
+  font: 14px Roboto,sans-serif;
+  margin: 0px - 15px;
+}
+div p {
+  margin: 0px 0px 10px
+}
+
+
+
+.sub_area {
+  border: solid 1px #E1E1E8;
+    background-color: #F7F7F9;
+    padding: 10px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+h5.underline{
+  color:#242424;
+  font:16px Robot,sans-serif;
+  margin: 10px 0px;
+  
+}
