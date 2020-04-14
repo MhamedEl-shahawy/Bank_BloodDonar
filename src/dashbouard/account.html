@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dashboard</title>
+		<meta
+          name="description"
+          content="BloodDrop is an platform to help people to find blood donar"
+        />
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    		
+    		<script src="main.js" defer></script>
+
+		<link rel="stylesheet" href="main.css">
+	</head>
+	<body>
+
+<!-- start header -->
+<section class="main">
+		<div class="header">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>BloodBank</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>BloodBank</span>
+			</div>
+			<nav>
+				<ul>
+					<li  class="tablinks">
+						<a href="dashboard.html">
+							<span><i class="fas fa-chart-pie"></i></span>
+							<span>Dashboard</span>
+						</a>
+					</li>
+					<li  class="tablinks">
+						<a href="availabel.html">
+
+							<span><i class="far fa-bookmark"></i></span>
+							<span>Availabel Blood</span>
+						</a>
+					</li>
+					<li class="tablinks">
+						<a href="needBlood.html">
+							<span><i class="fas fa-ambulance"></i></span>
+							<span>Need Blood</span>
+						</a>
+					</li>
+					<li  class="tablinks">
+						<a href="addBags.html">
+							<span><i class="fas fa-plus-circle"></i></span>
+							<span>Add Blood Bags</span>
+						</a>
+					</li>
+					<li  class="tablinks">
+						<a href="donars.html">
+							<span><i class="fas fa-user-plus"></i></span>
+							<span>Donars</span>
+						</a>
+					</li>
+						<li  class="tablinks">
+						<a href="patient.html">
+							<span><i class="fas fa-user-injured"></i></span>
+							<span>Patient</span>
+						</a>
+					</li>
+						<li  class="tablinks">
+						<a href="charity.html">
+							<span><i class="fas fa-handshake"></i></span>
+							<span>Charity</span>
+						</a>
+					</li>
+					<li  class="tablinks active">
+						<a href="account.html">
+							<span><i class="fas fa-user-circle"></i></span>
+							<span>Account</span>
+						</a>
+					</li>
+					<li class="tablinks">
+						<a href="#">
+							<span><i class="fas fa-sign-out-alt"></i></span>
+							<span>Log Out</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+<!-- end header -->
+	<div class="main-content tabcontent" id="account">
+			<div class="pd-1">
+			 <div class="container">
+			 	<h2 class="title-h2">Account Setting</h2>
+			 	<hr/>
+			  <form class="account-setting">
+				 <div class="account-setting__form">
+			  	     <h3>Account Info</h3>
+					 <div class="form-container"> 
+					 <div>
+					<label for="firstName" class="account-setting__label">First Name</label>
+					<input type="text" class="account-setting__input" placeholder="First Name" name="firstName"/>
+					</div>
+					<div>
+						<label for="lastName" class="account-setting__label">Last Name</label>
+						<input type="text" class="account-setting__input" placeholder="Last Name" name="lastName"/>
+						</div>
+					<div>
+					<label for="emailaddress" class="account-setting__label">Email Address</label>
+					<input type="email" class="account-setting__input" placeholder="Email Address" name="emailaddress"/>
+					</div>
+					<div>
+					<label for="phonenumber" class="account-setting__label">Phone Number</label>
+					<input type="number" class="account-setting__input" placeholder="Phone Number" name="phonenumber"/>
+					</div>
+					<div>
+					<label for="city" class="account-setting__label">City</label>
+					<input type="text" class="account-setting__input" placeholder="City Name" name="city"/>
+					</div>
+					<div>
+					<label for="state" class="account-setting__label">State</label>
+                    <input type="text" class="account-setting__input" placeholder="Sate Name" name="state"/>  
+				</div>
+				</div>
+			</div>
+			<div class="account-setting__form">
+				<h3>Change Password</h3>
+				<div class="form-container">
+				<div>
+			   <label for="oldpassword" class="account-setting__label">Old Password</label>
+			   <input type="password" class="account-setting__input" placeholder="Old Password" name="oldpassword"/>
+			   </div>
+			   <div>
+				   <label for="newpassword" class="account-setting__label">New Password</label>
+				   <input type="password" class="account-setting__input" placeholder="New Password" name="newpassword"/>
+				   </div>
+			   <div>
+			   <label for="confirmpassword" class="account-setting__label">Confirm Password</label>
+			   <input type="password" class="account-setting__input" placeholder="Confirm Password" name="confirmpassword"/>
+			   </div>
+			   <div class="change">
+				  <input type="button" class="change__btn" value="Change">  
+			   </div>
+			</div>
+			   
+			  
+			  
+	</div>
+	<div class="save">
+		<button type="submit" class="save__btn">Save Changes</button> 
+	</div>
+			  </form>	
+			</div>
+		</div>
+	</div>
+</section>
+</body>
+</html>

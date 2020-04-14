@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dashboard</title>
+		<meta
+          name="description"
+          content="BloodDrop is an platform to help people to find blood donar"
+        />
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    		
+    		<script src="main.js" defer></script>
+
+		<link rel="stylesheet" href="main.css">
+	</head>
+	<body>
+
+<!-- start header -->
+<section class="main">
+		<div class="header">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>BloodBank</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>BloodBank</span>
+			</div>
+			<nav>
+				<ul>
+					<li  class="tablinks">
+						<a href="dashboard.html">
+							<span><i class="fas fa-chart-pie"></i></span>
+							<span>Dashboard</span>
+						</a>
+					</li>
+					<li  class="tablinks">
+						<a href="availabel.html">
+
+							<span><i class="far fa-bookmark"></i></span>
+							<span>Availabel Blood</span>
+						</a>
+					</li>
+					<li class="tablinks">
+						<a href="needBlood.html">
+							<span><i class="fas fa-ambulance"></i></span>
+							<span>Need Blood</span>
+						</a>
+					</li>
+					<li  class="tablinks">
+						<a href="addBags.html">
+							<span><i class="fas fa-plus-circle"></i></span>
+							<span>Add Blood Bags</span>
+						</a>
+					</li>
+					<li  class="tablinks">
+						<a href="donars.html">
+							<span><i class="fas fa-user-plus"></i></span>
+							<span>Donars</span>
+						</a>
+					</li>
+						<li  class="tablinks">
+						<a href="patient.html">
+							<span><i class="fas fa-user-injured"></i></span>
+							<span>Patient</span>
+						</a>
+					</li>
+						<li  class="tablinks active">
+						<a href="charity.html">
+							<span><i class="fas fa-handshake"></i></span>
+							<span>Charity</span>
+						</a>
+					</li>
+					<li  class="tablinks">
+						<a href="account.html">
+							<span><i class="fas fa-user-circle"></i></span>
+							<span>Account</span>
+						</a>
+					</li>
+					<li class="tablinks">
+						<a href="#">
+							<span><i class="fas fa-sign-out-alt"></i></span>
+							<span>Log Out</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+<!-- end header -->
+<!-- start charity -->
+		 	<div class="main-content tabcontent charity" id="charity">
+		 		<div class="new-items">
+            	<div class="new-items_conatiner">
+            		<h2>new charity</h2>
+            		<p class="red">charity info</p>
+            	<form class="new-items_form">	 
+            		 <label class="new-items_label" for="charity">charity Name</label>
+            		 <input class="new-items_input" type="text" name="charity">   		 
+                     <label class="new-items_label" for="phone">Phone Number</label>
+            		 <input class="new-items_input" type="number" name="phone">
+                     <label class="new-items_label" for="address">Address</label>
+            		 <input class="new-items_input" type="text" name="address">
+                     <label class="new-items_label" for="description">Description</label>
+            		 <textarea class="new-items_input" name="description"></textarea>
+            	</form>	 
+            	<button class="add-new add-new_float addnew">create</button>
+            	</div>
+            </div>
+		<div class="pd-1">
+	       <div class="container">
+	       	 <button class="add-new">Add Charity</button>
+	         <table>
+				  <thead>
+				    <tr>
+				      <th scope="col">charity name</th>
+				      <th scope="col">phone</th>
+				      <th scope="col" style="width:20%">address</th>
+				      <th scope="col" style="width:40%;">description</th>
+				      <th scope="col"></th>				 
+
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td data-label="name">resala</td>
+				      <td data-label="phone">0154782135</td>				   
+				      <td data-label="address">mansoura near mansoura stadium's</td>
+				      <td data-label="description:">
+				      	Duis aute irure dolor in reprehenderit in voluptate velit esse
+				      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+				     
+				    </td>
+				    
+				      <td data-label="edit" class="right">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td data-label="name">al-orman</td>
+				      <td data-label="phone">0154782135</td>				   
+				      <td data-label="address">mansoura near al-moder</td>
+				      <td data-label="description: ">
+				      	Duis aute irure dolor in reprehenderit in voluptate velit esse
+				      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				      	
+				      </td>
+				      <td data-label="edit" class="right">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				       
+				  </tbody>
+			 </table>
+	       </div> 		
+		</div>
+	</div>
+	<!-- end charity -->
+</section>
+</body>
+</html>

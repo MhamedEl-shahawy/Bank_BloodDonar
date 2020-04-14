@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dashboard</title>
+		<meta
+          name="description"
+          content="BloodDrop is an platform to help people to find blood donar"
+        />
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    	
+    		<script src="main.js" defer></script>
+
+		<link rel="stylesheet" href="main.css">
+	</head>
+	<body>
+
+<!-- start header -->
+<section class="main">
+		<div class="header">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>BloodBank</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+		</div>
+		<div class="side-nav">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>BloodBank</span>
+			</div>
+			<nav>
+				<ul>
+					<li  class="tablinks">
+						<a href="dashboard.html">
+							<span><i class="fas fa-chart-pie"></i></span>
+							<span>Dashboard</span>
+						</a>
+					</li>
+					<li  class="tablinks active">
+						<a href="availabel.html">
+
+							<span><i class="far fa-bookmark"></i></span>
+							<span>Availabel Blood</span>
+						</a>
+					</li>
+					<li class="tablinks">
+						<a href="needBlood.html">
+							<span><i class="fas fa-ambulance"></i></span>
+							<span>Need Blood</span>
+						</a>
+					</li>
+					<li  class="tablinks">
+						<a href="addBags.html">
+							<span><i class="fas fa-plus-circle"></i></span>
+							<span>Add Blood Bags</span>
+						</a>
+					</li>
+					<li  class="tablinks">
+						<a href="donars.html">
+							<span><i class="fas fa-user-plus"></i></span>
+							<span>Donars</span>
+						</a>
+					</li>
+						<li  class="tablinks">
+						<a href="patient.html">
+							<span><i class="fas fa-user-injured"></i></span>
+							<span>Patient</span>
+						</a>
+					</li>
+						<li  class="tablinks">
+						<a href="charity.html">
+							<span><i class="fas fa-handshake"></i></span>
+							<span>Charity</span>
+						</a>
+					</li>
+					<li  class="tablinks">
+						<a href="account.html">
+							<span><i class="fas fa-user-circle"></i></span>
+							<span>Account</span>
+						</a>
+					</li>
+					<li class="tablinks">
+						<a href="#">
+							<span><i class="fas fa-sign-out-alt"></i></span>
+							<span>Log Out</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+<!-- end header -->
+<!-- start available -->
+
+		<div class="main-content tabcontent" id="availabel">
+           <!-- start new item -->
+            <div class="new-items ">
+            	<div class="new-items_conatiner">
+            		<h2>new availabel blood</h2>
+            		<p class="red">available blood</p>
+            	<form class="new-items_form">	 
+            		 <label class="new-items_label" for="type">blood type</label>
+            		 <select class="new-items_select type">
+            		 	<option value="a+">a+</option>
+            		 	<option value="a-">a-</option>
+            		 	<option value="o+">o+</option>
+            		 	<option value="o-">o-</option>
+            		 	<option value="b+">b+</option>
+            		 	<option value="b-">b-</option>
+
+            		 	<option value="ab+">ab+</option>
+            		 	<option value="ab-">ab-</option>
+            		 </select>
+            		 <label class="new-items_label" for="quantity">blood quantity</label>
+            		 <input class="new-items_input" type="number" name="quantity">
+            	</form>	 
+            	<button class="add-new add-new_float addnew">create</button>
+            	</div>
+            </div> 
+           <!-- end new item -->
+           <div class="pd-1">
+	       <div class="container" >
+	       	 <button class="add-new addMain">new</button>
+	         <table class="availabel">
+				  <thead>
+				    <tr>
+				      <th scope="col">blod</th>
+				      <th scope="col">quantity</th>
+				      <th scope="col"></th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td data-label="name">a-</td>
+				      <td data-label="quantity">20</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">a+</td>
+				      <td data-label="quantity">0</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">o-</td>
+				      <td data-label="quantity">6</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">o+</td>
+				      <td data-label="Due Date">0</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				      <tr>
+				      <td scope="row" data-label="name">ab-</td>
+				      <td data-label="Due Date">7</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				    <tr>
+				      <td scope="row" data-label="name">ab+</td>
+				      <td data-label="Due Date">8</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				      <tr>
+				      <td scope="row" data-label="name">b-</td>
+				      <td data-label="Due Date">10</td>
+				      <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				      <tr>
+				      <td scope="row" data-label="name">b+</td>
+				      <td data-label="Due Date">4</td>
+				       <td data-label="edit">
+				      	<span><a><i class="fas fa-edit"></i></a></span>
+				      	<span><a><i class="fas fa-trash-alt"></i></a></span>
+
+				      </td>
+				    </tr>
+				  </tbody>
+			 </table>
+	       </div> 		
+	
+		</div>
+	</div>
+		<!-- end available -->
+</section>
+</body>
+</html>

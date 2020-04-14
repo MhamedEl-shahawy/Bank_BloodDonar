@@ -212,8 +212,8 @@ body {
    z-index:999; 
    background-color:#a52424;
    margin-left:6px;  
-   justify-content: center;
    display: none;
+   justify-content: center;
 }
 .new-items_conatiner{
    position: absolute;
@@ -332,7 +332,6 @@ td.blood-type{
 
 /* tab content */
 .tabcontent {
-  display: none;
   padding: 0px 12px;
   border: 1px solid #ccc;
   border-top: none;
