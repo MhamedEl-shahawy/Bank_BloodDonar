@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BloodDonate</title>
+   
+    <link rel="shortcut icon" href="/images/logo_fav.png" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
@@ -14,7 +16,8 @@
     <div class="nav-bc">
       <nav class="grid main-nav">
         <a href="index.html" class="logo">
-          <img src="/images/logo.png" alt="logo-page" />
+          <!-- <img src="/images/logo.png" alt="logo-page" /> -->
+          <img src="/images/logo-home.png" alt="logo-page" />
         </a>
         <ul class="main-nav__link">
           <li><a href="index.html">Home</a></li>
@@ -62,7 +65,7 @@
     <!-- End header -->
 
     <!-- Start About  -->
-    <section id="about" class="about grid">
+    <section  id="about" class="about grid">
       <div class="about__container">
         <h2>About BloodDonate Connect</h2>
         <p>
@@ -71,7 +74,7 @@
           hours a day, 7 days a week. BloodDonate Connect is one of many
           community organizations that work together as one network.
         </p>
-        <a href="#" class="button "
+        <a href="#counter" class="button "
           >Learn More About us <span class="arrow "></span
         ></a>
       </div>
@@ -514,7 +517,10 @@
         </div>
         <div class="instructions-main__desc">
           <div class="left">
-            <img src="/images/donation room.png" alt="image some instructions" />
+            <img
+              src="/images/donation room.png"
+              alt="image some instructions"
+            />
           </div>
           <div class="right">
             <h3>Blood donation</h3>
@@ -565,7 +571,27 @@
     </section>
     <!-- End Post donation -->
     <!-- End section care -->
-
+    <!-- Start counter -->
+    <section id="counter" class="counters">
+      <div class="counters__container">
+        <div class="counters__item">
+          <i class="fas fa-user-plus fa-5x"></i>
+          <div class="counter" data-target="6000">0</div>
+          <h3>Donors</h3>
+        </div>
+        <div class="counters__item">
+          <i class="fas  fa-hospital-alt fa-5x"></i>
+          <div  class="counter" data-target="7000">0</div>
+          <h3>Hospitals</h3>
+        </div>
+        <div class="counters__item">
+          <i class="fas fa-users fa-5x"></i>
+          <div class="counter" data-target="10000">0</div>
+          <h3>Visitors</h3>
+        </div>
+      </div>
+    </section>
+    <!-- End counter -->
     <!-- Start footer -->
     <footer class="footer" id="footer">
       <div class="footer__containers">

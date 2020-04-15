@@ -1,4 +1,4 @@
-const target = document.querySelectorAll('[data-target]')
+const target = document.querySelectorAll('[data-target]');
 const dataContent = document.querySelectorAll('[data-target-content]');
 const btnMenu = document.querySelector('.menu-small');
 const menuShow = document.querySelector('.main-nav');
@@ -31,3 +31,21 @@ btnMenu.addEventListener('click', () =>{
         setData.classList.add('active')
      })
  })
+
+ //counter
+ const counters = document.querySelectorAll('.counter');
+ const speed = 150;
+ counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+        if(count < target){
+            counter.innerText = Math.ceil(count + inc) ;
+            setTimeout(updateCount, 1);
+        }else{
+            count.innerText = target;
+        }
+    };
+    updateCount();
+ });
