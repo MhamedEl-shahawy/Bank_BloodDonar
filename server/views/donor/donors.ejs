@@ -1,11 +1,85 @@
-<%- include('../includes/top.ejs') %>
 
-</head>
+
 
 <body>
+  <section class="main">
   <%- include('../includes/navigation.ejs') %>
+  <div class="main-content tabcontent" id="bloodDonar">
+    <div class="new-items">
+        <div class="new-items_conatiner">
+          <h2>new donar</h2>
+          <p class="red">donar info</p>
+        <form class="new-items_form">	 
+           <label class="new-items_label" for="type">blood type</label>
+           <select class="new-items_select type">
+             <option value="a+">a+</option>
+             <option value="a-">a-</option>
+             <option value="o+">o+</option>
+             <option value="o-">o-</option>
+             <option value="b+">b+</option>
+             <option value="b-">b-</option>
 
-  <main class="myContainer">
+             <option value="ab+">ab+</option>
+             <option value="ab-">ab-</option>
+           </select>
+           <label class="new-items_label" for="donar">Donar Name</label>
+           <input class="new-items_input" type="text" name="donar">
+           <label class="new-items_label" for="nationalid">National Id</label>
+           <input class="new-items_input" type="text" name="nationalid">
+           <label class="new-items_label" for="phone">Phone Number</label>
+           <input class="new-items_input" type="number" name="phone">
+               <label class="new-items_label" for="address">Address</label>
+           <input class="new-items_input" type="text" name="address">
+           <label class="new-items_label" for="email">Email</label>
+           <input class="new-items_input" type="email" name="email">
+        </form>	 
+        <button class="add-new add-new_float addnew">create</button>
+        </div>
+      </div>
+      
+<div class="pd-1">
+   <div class="container">
+      <button class="add-new addMain">add Donar</button>
+     <table>
+    <thead>
+      <tr>
+        <th scope="col">donar name</th>
+        <th scope="col" >national id</th>
+        <th scope="col">phone</th>
+        <th scope="col">last donate year</th>
+        <th scope="col">last donate month</th>
+        <th scope="col">address</th>
+        <th scope="col" >email</th>
+        <th scope="col" class="center">blood type</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="name">fathy ahmed</td>
+        <td data-label="national id">289647562145</td>
+        <td data-label="phone">0154782135</td>
+        <td data-label="last year" class="center">1</td>
+        <td data-label="last month" class="center">0</td>
+        <td data-label="address">mansoura</td>
+        <td data-label="email" class="email">me@yahoo.com</td>
+        <td data-label="blood type" class="center blood-type">a-</td>
+        <td data-label="edit" class="right">
+          <span><a><i class="fas fa-edit"></i></a></span>
+          <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+        </td>
+      </tr>
+  
+    
+         
+    </tbody>
+ </table>
+   </div> 		
+</div>
+</div> 
+</section>
+  <!-- <div class="main-content">
     <% if (donors.length > 0) {
       let i = itemCounterStartInCurrentPage;
       for (let donor of donors) { %>
@@ -20,7 +94,7 @@
           <div class="myItem">
             <p> On:</p>
             <p> <%= donor.date %> </p>
-          </div>-->
+          </div>-------------------------------------
           <p>Donor Name:</p>
           <div class="myItem">
             <%= donor.donorName %>
@@ -73,8 +147,8 @@
     <p>No donors found.</p>
     <% } %>
 
-    <%- include('../includes/pagination.ejs', paginationObject) %>
-
-  </main>
+  </div> -->
+  <%- include('../includes/pagination.ejs', paginationObject) %>
+    
 
   <%- include('../includes/bottom.ejs') %>

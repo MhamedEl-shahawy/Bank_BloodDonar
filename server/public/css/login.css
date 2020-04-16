@@ -202,9 +202,17 @@ p{
 	 font-size:1.6rem; 
 	 text-transform: none; 
 }
+
+/* start error  message*/
+.user-message{
+	 color: #f00;
+}
 @media screen and (max-width: 1050px){
 	.container{
 		grid-gap: 5rem;
+	}
+	.wave{
+		height: 75%;
 	}
 }
 
@@ -221,6 +229,7 @@ p{
 	.img img{
 		width: 400px;
 	}
+	
 }
 
 @media screen and (max-width: 900px){

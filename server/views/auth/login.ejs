@@ -10,9 +10,7 @@
 
 <body>
 	<main>
-		<% if (errorMessage) { %>
-		<div class="user-message user-message--error"><%= errorMessage %></div>
-		<% } %>
+	
 		<img class="wave" src="/images/login/logwave.png">
 		<div class="container">
 			<div class="img">
@@ -48,7 +46,9 @@
 					<input type="submit" class="btn" value="Login">
 					<p>Or</p>
 					<a href="/sign-up" class="btn">SignUp</a>
-
+					<% if (errorMessage) { %>
+						<div class="user-message user-message--error"><%= errorMessage %></div>
+						<% } %>
 				</form>
 			</div>
 		</div>

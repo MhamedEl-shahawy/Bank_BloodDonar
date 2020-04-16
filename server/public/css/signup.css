@@ -1,3 +1,7 @@
+body{
+   background-image: url(/images/login/logwave.png);
+    background-repeat: no-repeat;
+}
 /* start form*/
 .form{
     background:#fff; 
@@ -5,7 +9,7 @@
     min-width:30vw;
     height:auto;   
     margin: auto; 
-    margin-top:2em; 
+    margin-top:4em; 
    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
     padding:2em; 
     border-radius:7px; 
@@ -52,7 +56,7 @@
      width: 100%;
  }
  .form__container:nth-child(4) .form__input {
-     width: 34%;
+     width: 50%;
    margin-right:0.5em; 
  }
   .form__container:nth-child(4) .form__input:last-child {

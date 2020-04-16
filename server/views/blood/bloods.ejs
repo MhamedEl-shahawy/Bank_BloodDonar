@@ -3,8 +3,135 @@
 </head>
 
 <body>
-  <%- include('../includes/navigation.ejs') %>
+  <section class="main">
+    <%- include('../includes/navigation.ejs') %>
+    <div class="main-content tabcontent" id="availabel">
+      <!-- start new item -->
+       <div class="new-items ">
+         <div class="new-items_conatiner">
+           <h2>new availabel blood</h2>
+           <p class="red">available blood</p>
+         <form class="new-items_form">	 
+            <label class="new-items_label" for="type">blood type</label>
+            <select class="new-items_select type">
+              <option value="a+">a+</option>
+              <option value="a-">a-</option>
+              <option value="o+">o+</option>
+              <option value="o-">o-</option>
+              <option value="b+">b+</option>
+              <option value="b-">b-</option>
 
+              <option value="ab+">ab+</option>
+              <option value="ab-">ab-</option>
+            </select>
+            <label class="new-items_label" for="quantity">blood quantity</label>
+            <input class="new-items_input" type="number" name="quantity">
+         </form>	 
+         <button class="add-new add-new_float addnew">create</button>
+         </div>
+       </div> 
+      <!-- end new item -->
+      <div class="pd-1">
+    <div class="container" >
+       <button class="add-new addMain">new</button>
+      <table class="availabel">
+     <thead>
+       <tr>
+         <th scope="col">blod</th>
+         <th scope="col">quantity</th>
+         <th scope="col"></th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td data-label="name">a-</td>
+         <td data-label="quantity">20</td>
+         <td data-label="edit">
+           <span><a><i class="fas fa-edit"></i></a></span>
+           <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+         </td>
+       </tr>
+       <tr>
+         <td scope="row" data-label="name">a+</td>
+         <td data-label="quantity">0</td>
+          <td data-label="edit">
+           <span><a><i class="fas fa-edit"></i></a></span>
+           <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+         </td>
+       </tr>
+       <tr>
+         <td scope="row" data-label="name">o-</td>
+         <td data-label="quantity">6</td>
+         <td data-label="edit">
+           <span><a><i class="fas fa-edit"></i></a></span>
+           <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+         </td>
+       </tr>
+       <tr>
+         <td scope="row" data-label="name">o+</td>
+         <td data-label="Due Date">0</td>
+          <td data-label="edit">
+           <span><a><i class="fas fa-edit"></i></a></span>
+           <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+         </td>
+       </tr>
+         <tr>
+         <td scope="row" data-label="name">ab-</td>
+         <td data-label="Due Date">7</td>
+         <td data-label="edit">
+           <span><a><i class="fas fa-edit"></i></a></span>
+           <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+         </td>
+       </tr>
+       <tr>
+         <td scope="row" data-label="name">ab+</td>
+         <td data-label="Due Date">8</td>
+          <td data-label="edit">
+           <span><a><i class="fas fa-edit"></i></a></span>
+           <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+         </td>
+       </tr>
+         <tr>
+         <td scope="row" data-label="name">b-</td>
+         <td data-label="Due Date">10</td>
+         <td data-label="edit">
+           <span><a><i class="fas fa-edit"></i></a></span>
+           <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+         </td>
+       </tr>
+         <tr>
+         <td scope="row" data-label="name">b+</td>
+         <td data-label="Due Date">4</td>
+          <td data-label="edit">
+           <span><a><i class="fas fa-edit"></i></a></span>
+           <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+         </td>
+       </tr>
+     </tbody>
+  </table>
+    </div> 		
+
+</div>
+</div> 
+  </section>
+
+
+
+
+
+
+
+
+
+<!-- 
   <main class="myContainer">
     <% if (bloods.length > 0) {
       let i = itemCounterStartInCurrentPage;
@@ -50,6 +177,6 @@
 
     <%- include('../includes/pagination.ejs', paginationObject) %>
 
-  </main>
+  </main> -->
 
   <%- include('../includes/bottom.ejs') %>

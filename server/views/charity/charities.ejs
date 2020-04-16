@@ -3,9 +3,84 @@
 </head>
 
 <body>
-  <%- include('../includes/navigation.ejs') %>
+  <section class="main">
+    <%- include('../includes/navigation.ejs') %>
+    <div class="main-content tabcontent charity" id="charity">
+      <div class="new-items">
+           <div class="new-items_conatiner">
+             <h2>new charity</h2>
+             <p class="red">charity info</p>
+           <form class="new-items_form">	 
+              <label class="new-items_label" for="charity">charity Name</label>
+              <input class="new-items_input" type="text" name="charity">   		 
+                  <label class="new-items_label" for="phone">Phone Number</label>
+              <input class="new-items_input" type="number" name="phone">
+                  <label class="new-items_label" for="address">Address</label>
+              <input class="new-items_input" type="text" name="address">
+                  <label class="new-items_label" for="description">Description</label>
+              <textarea class="new-items_input" name="description"></textarea>
+           </form>	 
+           <button class="add-new add-new_float addnew">create</button>
+           </div>
+         </div>
+ <div class="pd-1">
+      <div class="container">
+         <button class="add-new">Add Charity</button>
+        <table>
+       <thead>
+         <tr>
+           <th scope="col">charity name</th>
+           <th scope="col">phone</th>
+           <th scope="col" style="width:20%">address</th>
+           <th scope="col" style="width:40%;">description</th>
+           <th scope="col"></th>				 
 
-  <main class="myContainer">
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td data-label="name">resala</td>
+           <td data-label="phone">0154782135</td>				   
+           <td data-label="address">mansoura near mansoura stadium's</td>
+           <td data-label="description:">
+             Duis aute irure dolor in reprehenderit in voluptate velit esse
+           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+          
+         </td>
+         
+           <td data-label="edit" class="right">
+             <span><a><i class="fas fa-edit"></i></a></span>
+             <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+           </td>
+         </tr>
+         <tr>
+           <td data-label="name">al-orman</td>
+           <td data-label="phone">0154782135</td>				   
+           <td data-label="address">mansoura near al-moder</td>
+           <td data-label="description: ">
+             Duis aute irure dolor in reprehenderit in voluptate velit esse
+           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+             
+           </td>
+           <td data-label="edit" class="right">
+             <span><a><i class="fas fa-edit"></i></a></span>
+             <span><a><i class="fas fa-trash-alt"></i></a></span>
+
+           </td>
+         </tr>
+            
+       </tbody>
+    </table>
+      </div> 		
+ </div>
+</div>
+  </section>
+
+  <!-- <main class="myContainer">
     <% if (charities.length > 0) {
       let i = itemCounterStartInCurrentPage;
       for (let charity of charities) { %>
@@ -54,6 +129,6 @@
 
     <%- include('../includes/pagination.ejs', paginationObject) %>
 
-  </main>
+  </main> -->
 
   <%- include('../includes/bottom.ejs') %>

@@ -1,5 +1,101 @@
-<div class="myNav">
-    
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= pageTitle %></title>
+    <meta
+    name="description"
+    content="BloodDrop is an platform to help people to find blood donar"
+  />
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/dashstyle.css" type="text/css">
+  </head>
+  <body>
+<!-- start header -->
+
+    <% if (isAuthenticated) { %>
+    <div class="header">
+        <div class="logo">
+            <i class="fa fa-tachometer"></i>
+            <span>BloodBank</span>
+        </div>
+        <a href="#" class="nav-trigger"><span></span></a>
+    </div>
+    <div class="side-nav">
+        <div class="logo">
+            <i class="fa fa-tachometer"></i>
+            <span>BloodBank</span>
+        </div>
+        <nav>
+            <ul>
+                <li  class="tablinks active">
+                    <a href="/index">
+                        <span><i class="fas fa-chart-pie"></i></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li  class="tablinks">
+                    <a href="/display-bloods">
+                        <span><i class="far fa-bookmark"></i></span>
+                        <span>Availabel Blood</span>
+                    </a>
+                </li>
+                <li class="tablinks">
+                    <a href="/display-neededBlood">
+                        <span><i class="fas fa-ambulance"></i></span>
+                        <span>Need Blood</span>
+                    </a>
+                </li>
+                <li  class="tablinks">
+                    <a href="/display-bags">
+                        <span><i class="fas fa-plus-circle"></i></span>
+                        <span>Add Blood Bags</span>
+                    </a>
+                </li>
+                <li  class="tablinks">
+                    <a href="/display-donors">
+                        <span><i class="fas fa-user-plus"></i></span>
+                        <span>Donars</span>
+                    </a>
+                </li>
+                    <li  class="tablinks">
+                    <a href="/display-patients">
+                        <span><i class="fas fa-user-injured"></i></span>
+                        <span>Patient</span>
+                    </a>
+                </li>
+                    <li  class="tablinks">
+                    <a href="/display-charities">
+                        <span><i class="fas fa-handshake"></i></span>
+                        <span>Charity</span>
+                    </a>
+                </li>
+                <li  class="tablinks">
+                    <a href="/account">
+                        <span><i class="fas fa-user-circle"></i></span>
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li class="tablinks">
+                    <a href="/">
+                        <span><i class="fas fa-sign-out-alt"></i></span>
+                        <span>Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <% } %>
+
+<!-- end header -->
+
+
+
+
+<!-- 
+<div class="myNav"> 
     <div>
         <% if (isAuthenticated) { %>
         <a href="/index">Home</a>
@@ -29,4 +125,4 @@
         </form>
         <% } %>
     </div>
-</div>
+</div> -->
