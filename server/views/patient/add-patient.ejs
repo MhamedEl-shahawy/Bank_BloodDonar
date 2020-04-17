@@ -1,48 +1,79 @@
-
 <%- include('../includes/navigation.ejs') %>
-  <section class="main">
+<section class="main">
   <div class="main-content tabcontent" id="patient">
     <div class="new-items">
       <div class="new-items_conatiner">
         <h2>new patient</h2>
         <p class="red">patient info</p>
-        <form action="/add-patient"  class="new-items_form" method="POST">
+
+        <form action="/add-patient" method="POST" class="new-items_form">
+          <label for="patientName" class="new-items_label">Patient Name</label>
+          <input class="new-items_input" type="text" name="patientName" id="patientName" />
     
-           <label class="new-items_label" for="type">blood type</label>
-           <select class="new-items_select type">
-             <option value="a+">a+</option>
-             <option value="a-">a-</option>
-             <option value="o+">o+</option>
-             <option value="o-">o-</option>
-             <option value="b+">b+</option>
-             <option value="b-">b-</option>
-
-             <option value="ab+">ab+</option>
-             <option value="ab-">ab-</option>
-           </select>
-           <label class="new-items_label" for="patient">Patient Name</label>
-           <input class="new-items_input" type="text" name="patient">
-           <label class="new-items_label" for="nationalid">National Id</label>
-           <input class="new-items_input" type="text" name="nationalid">
-           <label class="new-items_label" for="phone">Phone Number</label>
-           <input class="new-items_input" type="number" name="phone">
-               <label class="new-items_label" for="address">Address</label>
-           <input class="new-items_input" type="text" name="address">
-           <label class="new-items_label" for="email">Email</label>
-           <input class="new-items_input" type="email" name="email">
-   
+          <label for="nationalId" class="new-items_label">National Id</label>
+          <input  class="new-items_input" type="text" name="nationalId" id="nationalId" />
+    
+          <label for="phoneNumber" class="new-items_label">Phone Number</label>
+          <input class="new-items_input" type="text" name="phoneNumber" id="phoneNumber" />
+    
+          <label for="address" class="new-items_label">Address</label>
+          <input class="new-items_input" type="text" name="address" id="address" />
+    
+          <label for="bloodType" class="new-items_label">Blood Type</label>
+          <select name="bloodType" id="bloodType" class="new-items_select type">
+            <option value="a+">a+</option>
+            <option value="a-">a-</option>
+            <option value="o+">o+</option>
+            <option value="o-">o-</option>
+            <option value="b+">b+</option>
+            <option value="b-">b-</option>
+            <option value="ab+">ab+</option>
+            <option value="ab-">ab-</option>
+          </select>
+    
+          
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+          <button class="add-new add-new_float addnewrs" type="submit">Submit</button>
+        </form>
        
-
-     
-
-      
-      <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
-      <button class="add-new add-new_float addnewrs" type="submit">Submit</button>
-
-    </form>
+      </div>
+    </div>
   </div>
+</section>
+
+<%- include('../includes/bottom.ejs') %>
+
+
+
+<!-- 
+<div class="myNav"> 
+    <div>
+        <% if (isAuthenticated) { %>
+        <a href="/index">Home</a>
+        <a href="/add-donor">Add A Donor</a>
+        <a href="/add-patient">Add A Patient</a>
+        <a href="/add-charity">Add A Charity</a>
+        <a href="/add-neededBlood">Need Blood</a>
+        <a href="/add-blood">Add BLood</a>
+        <a href="/add-bag">Add Blood Bags</a>
+        <a href="/user">Account</a>
+        <% } %>
+        <a href="/display-donors">Display Donors</a>
+        <a href="/display-patients">Display Patient</a>
+        <a href="/display-charities">Display Charities</a>
+        <a href="/display-neededBlood">Display Need Blood</a>
+        <a href="/display-bloods">Display bloods</a>
+        <a href="/display-bags">Display bags</a>
+    </div>
+    <div>
+        <% if (!isAuthenticated) { %>
+        <a href="/log-in">Log In</a>
+        <a href="/sign-up">Sign Up</a>
+        <% } else {%>
+        <form action="/log-out" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />            
+            <button class="myButtonThatLooksLikeLink" type="submit">Log Out</button>
+        </form>
+        <% } %>
+    </div>
 </div>
-  </div>
-  </section>
-
-  <%- include('../includes/bottom.ejs') %>

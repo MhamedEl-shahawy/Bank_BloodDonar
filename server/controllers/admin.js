@@ -203,8 +203,6 @@ exports.postAddPatient = (req, res, next) => {
   const patientName = req.body.patientName;
   const nationalId = req.body.nationalId;
   const phoneNumber = req.body.phoneNumber
-  const donationDay = req.body.donationDay;
-  const nextDonationDay = req.body.nextDonationDay;
   const address = req.body.address;
   const bloodType = req.body.bloodType;
 
@@ -213,8 +211,6 @@ exports.postAddPatient = (req, res, next) => {
     patientName,
     nationalId,
     phoneNumber,
-    donationDay,
-    nextDonationDay,
     bloodType,
     address,
     userId: req.user._id
@@ -222,8 +218,8 @@ exports.postAddPatient = (req, res, next) => {
   patient
     .save()
     .then(result => {
-      console.log(today, `Donor created. Date: ${today}. DonorName: ${patientName}`);
-      res.redirect('/display');
+      console.log(today, `Patient created. Date: ${today}. DonorName: ${patientName}`);
+      res.redirect('/display-patients');
     })
     .catch(err => {
       const error = new Error(err);
@@ -294,8 +290,6 @@ exports.postEditPatient = (req, res, next) => {
   const updatePatientName = req.body.patientName;
   const updateNationalId = req.body.nationalId;
   const updatePhoneNumber = req.body.phoneNumber
-  const upadteDonationDay = req.body.donationDay;
-  const updateNextDonationDay = req.body.nextDonationDay;
   const updateAddress = req.body.address;
   const updateBloodType = req.body.bloodType;
   Patient.findById(patientId)
@@ -306,14 +300,12 @@ exports.postEditPatient = (req, res, next) => {
       patient.patientName = updatePatientName;
       patient.nationalId = updateNationalId;
       patient.phoneNumber = updatePhoneNumber;
-      patient.donationDay = upadteDonationDay;
-      patient.nextDonationDay = updateNextDonationDay;
       patient.bloodType = updateBloodType;
       patient.address = updateAddress;
       patient.editDate = today;
       return patient.save()
         .then(result => {
-          console.log(today, `Comment edited. Edit Date: ${today}. DonorName: ${updatePatientName}`);
+          console.log(today, `Patient edited. Edit Date: ${today}. DonorName: ${updatePatientName}`);
           res.redirect('/display');
         })
         .catch(err => {
@@ -337,8 +329,8 @@ exports.postDeletePatient = (req, res, next) => {
     userId: req.user._id
   })
     .then(() => {
-      console.log(`Donor with id ${patientId} has been deleted.`);
-      res.redirect('/display');
+      console.log(`Patient with id ${patientId} has been deleted.`);
+      res.redirect('/display-patients');
     })
     .catch(err => {
       const error = new Error(err);

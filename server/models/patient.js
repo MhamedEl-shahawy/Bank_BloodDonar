@@ -22,13 +22,6 @@ const patientSchema = new Schema({
         type: String,
         required: true,
     },
-    donationDay:{
-        type:String,
-    },
-    nextDonationDay:{
-        type:String,
-        
-    },
     address: {
         type: String,
         require: true

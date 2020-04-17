@@ -34,6 +34,7 @@
         <td data-label="address"><%= patient.address %></td>
         <td data-label="donation day"><%= patient.donationDay %></td>
         <td data-label="email" class="email">mohamed@gmail.com</td>
+
         <td data-label="blood type" class="blood-type center"><%= patient.bloodType %></td>
         <% if (isAuthenticated && patient.userId._id.toString() === currentUser._id.toString()) { %> 
         <td data-label="edit" class="right">
@@ -42,15 +43,11 @@
             <form action="/delete-patient" method="POST" style="display: inline-block;">
               <input type="hidden" value="<%= patient._id %>" name="patientId">
               <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-              <a type="submit"><i class="fas fa-trash-alt"></i></a>
+              <button class="myButtonThatLooksLikeLink" type="submit"><i class="fas fa-trash-alt"></i></button>
             </form>
           </span>
         </td>
         <% } %> 
-        
-      
-  
-      
       </tr> 
       <% i--; } %>
     <% } else { %>

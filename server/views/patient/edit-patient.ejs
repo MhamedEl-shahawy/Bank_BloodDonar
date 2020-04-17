@@ -38,11 +38,6 @@
           <%if(editing) {%><%=patient.bloodType%><% } %></option>
       </select>
 
-      <label for="donationDay">Donation Day</label>
-      <input type="date" name="donationDay" id="donationDay" value="<% if (editing) { %><%= patient.donationDay %><% } %>">
-
-      <label for="nextDonationDay">Next Donation Day</label>
-      <input type="date" name="nextDonationDay" id="nextDonationDay" value="<% if (editing) { %><%= patient.nextDonationDay %><% } %>">
       
       <% if (editing) { %>
       <input type="hidden" value="<%= patient._id %>" name="patientId">

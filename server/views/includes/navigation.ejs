@@ -83,10 +83,10 @@
                     </a>
                 </li>
                 <li class="tablinks">
-                    <a href="/">
-                        <span><i class="fas fa-sign-out-alt"></i></span>
-                        <span>Log Out</span>
-                    </a>
+                    <form action="/log-out" method="post">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />            
+                        <button class="myButtonThatLooksLikeLink" type="submit">Log Out</button>
+                    </form>
                 </li>
             </ul>
         </nav>
