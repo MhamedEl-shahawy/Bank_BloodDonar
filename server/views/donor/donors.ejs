@@ -46,8 +46,8 @@
         <th scope="col">donar name</th>
         <th scope="col" >national id</th>
         <th scope="col">phone</th>
-        <th scope="col">last donate year</th>
-        <th scope="col">last donate month</th>
+        <th scope="col">Next donation day</th>
+        <th scope="col">last donate day</th>
         <th scope="col">address</th>
         <th scope="col" >email</th>
         <th scope="col" class="center">blood type</th>
@@ -55,25 +55,45 @@
       </tr>
     </thead>
     <tbody>
+      <% if (donors.length > 0) {
+        let i = itemCounterStartInCurrentPage;
+        for (let donor of donors) { %>
       <tr>
-        <td data-label="name">fathy ahmed</td>
-        <td data-label="national id">289647562145</td>
-        <td data-label="phone">0154782135</td>
-        <td data-label="last year" class="center">1</td>
-        <td data-label="last month" class="center">0</td>
-        <td data-label="address">mansoura</td>
-        <td data-label="email" class="email">me@yahoo.com</td>
-        <td data-label="blood type" class="center blood-type">a-</td>
+        <td data-label="name"> <%= donor.donorName %></td>
+        <td data-label="national id"> <%= donor.nationalId %></td>
+        <td data-label="phone"> <%= donor.phoneNumber %></td>
+        <td data-label="last year" class="center"><%= donor.nextDonationDay %></td>
+        <td data-label="last month" class="center"> <%= donor.donationDay %></td>
+        <td data-label="address"><%= donor.address %> </td>
+        <td data-label="email" class="email"><%= donor.userId.email %></td>
+        <td data-label="blood type" class="center blood-type"><%= donor.bloodType %></td>
         <td data-label="edit" class="right">
           <span><a><i class="fas fa-edit"></i></a></span>
           <span><a><i class="fas fa-trash-alt"></i></a></span>
-
         </td>
-      </tr>
   
-    
-         
-    </tbody>
+        <% if (isAuthenticated && donor.userId._id.toString() === currentUser._id.toString()) { %>
+          <td data-label="edit" class="right">
+            <span><a href="/edit-donor/<%= donor._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
+            <span><a><i class="fas fa-trash-alt"></i></a></span>
+          </td>
+        
+          
+          <div class="myItem">
+            <form action="delete-donor" method="POST">
+              <input type="hidden" value="<%= donor._id %>" name="donorId">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+              <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
+            </form>
+            <% } %>
+          </div>
+        </tr> 
+        <% i--; } %>
+
+        <% } else { %>
+        <p>No donors found.</p>
+        <% } %>
+      </tbody>
  </table>
    </div> 		
 </div>

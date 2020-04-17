@@ -48,51 +48,36 @@
           </tr>
         </thead>
         <tbody>
+          <% if (bags.length > 0) {
+            let i = itemCounterStartInCurrentPage;
+            for (let bag of bags) { %>
           <tr>
-            <td data-label="blood type" class="blood-type">o-</td>
-            <td data-label="charity name">resala</td>
-            <td data-label="donar name">fathy</td>
-            <td data-label="quantity">2</td>
-            <td data-label="edit">
-              <span><a><i class="fas fa-edit"></i></a></span>
-              <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-            </td>
-          </tr>
-         <tr>
-            <td data-label="blood type" class="blood-type">ab+</td>
-            <td data-label="charity name">resala</td>
-            <td data-label="donar name"></td>
-            <td data-label="quantity">20</td>
-            <td data-label="edit">
-              <span><a><i class="fas fa-edit"></i></a></span>
-              <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-            </td>
-          </tr>
-         <tr>
-            <td data-label="blood type" class="blood-type">o+</td>
-            <td data-label="charity name"></td>
-            <td data-label="donar name">mustafa</td>
-            <td data-label="quantity">2</td>
-            <td data-label="edit">
-              <span><a><i class="fas fa-edit"></i></a></span>
-              <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-            </td>
-          </tr>
-             <tr>
-            <td data-label="blood type" class="blood-type">a-</td>
-            <td data-label="charity name">mansoura</td>
-            <td data-label="donar name">mohamed</td>
-            <td data-label="quantity">4</td>
-            <td data-label="edit">
-              <span><a><i class="fas fa-edit"></i></a></span>
-              <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-            </td>
-          </tr>
-        </tbody>
+            <td data-label="blood type" class="blood-type"><%= bag.bloodType %></td>
+            <td data-label="charity name">  <%= bag.charityName %></td>
+            <td data-label="donar name"><%= bag.donorName %></td>
+            <td data-label="quantity"> <%= bag.bloodQuantity %></td>
+        
+            <% if (isAuthenticated && bag.userId._id.toString() === currentUser._id.toString()) { %>
+              <td data-label="edit" class="right">
+                <span><a href="/edit-bag/<%= bag._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
+                <span><a><i class="fas fa-trash-alt"></i></a></span>
+              </td>
+            
+              
+              <div class="myItem">
+                <form action="delete-bag" method="POST">
+                  <input type="hidden" value="<%= bag._id %>" name="bagId">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                  <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
+                </form>
+                <% } %>
+              </div>
+            </tr> 
+            <% i--; } %>
+          <% } else { %>
+            <p>No Patients found.</p>
+            <% } %>
+          </tbody>
      </table>
        </div> 		
   </div>

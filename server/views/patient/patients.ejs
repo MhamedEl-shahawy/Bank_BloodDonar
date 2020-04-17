@@ -48,55 +48,47 @@
         <th scope="col">phone</th>
      
         <th scope="col">address</th>
+        <th scope="col">donation day</th>
         <th scope="col">email</th>
         <th scope="col" class="center">blood type</th>
+        
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td data-label="name">fathy ahmed</td>
-        <td data-label="national id">289647562145</td>
-        <td data-label="phone">0154782135</td>
-     
-        <td data-label="address">mansoura</td>
-        <td data-label="email" class="email">me@yahoo.com</td>
-        <td data-label="blood type" class="center blood-type">a-</td>
-        <td data-label="edit" class="right">
-          <span><a><i class="fas fa-edit"></i></a></span>
-          <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-        </td>
-      </tr>
+      <% if (patients.length > 0) {
+        let i = itemCounterStartInCurrentPage;
+        for (let patient of patients) { %>
      <tr>
-        <td data-label="name">ahmed ashraf</td>
-        <td data-label="national id">289647562145</td>
-        <td data-label="phone">0154782135</td>
+        <td data-label="name"><%= patient.patientName %></td>
+        <td data-label="national id">  <%= patient.nationalId %></td>
+        <td data-label="phone"><%= patient.phoneNumber %></td>
     
-        <td data-label="address">cairo</td>
+        <td data-label="address"><%= patient.address %></td>
+        <td data-label="donation day"><%= patient.donationDay %></td>
         <td data-label="email" class="email">mohamed@gmail.com</td>
-        <td data-label="blood type" class="center blood-type">o+</td>
+        <td data-label="blood type" class="blood-type center"><%= patient.bloodType %></td>
+     
+        <% if (isAuthenticated && patient.userId._id.toString() === currentUser._id.toString()) { %>
         <td data-label="edit" class="right">
-          <span><a><i class="fas fa-edit"></i></a></span>
+          <span><a href="/edit-patient/<%= patient._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
           <span><a><i class="fas fa-trash-alt"></i></a></span>
-
         </td>
-      </tr>
-     <tr>
-        <td data-label="name">mohamed magdy</td>
-        <td data-label="national id">289647562145</td>
-        <td data-label="phone">0154782135</td>
-   
-        <td data-label="address">dammieta</td>
-        <td data-label="email" class="email">mto.me@yahoo.com</td>
-        <td data-label="blood type" class="center blood-type">ab-</td>
-        <td data-label="edit" class="right">
-          <span><a><i class="fas fa-edit"></i></a></span>
-          <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-        </td>
-      </tr>
-         
+      
+        
+        <div class="myItem">
+          <form action="delete-patient" method="POST">
+            <input type="hidden" value="<%= patient._id %>" name="patientId">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+            <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
+          </form>
+          <% } %>
+        </div>
+      </tr> 
+      <% i--; } %>
+    <% } else { %>
+      <p>No Patients found.</p>
+      <% } %>
     </tbody>
  </table>
    </div> 		
@@ -166,8 +158,8 @@
     <p>No Patients found.</p>
     <% } %>
 
-    <%- include('../includes/pagination.ejs', paginationObject) %>
-
+    
   </main> -->
+  <%- include('../includes/pagination.ejs', paginationObject) %>
 
   <%- include('../includes/bottom.ejs') %>

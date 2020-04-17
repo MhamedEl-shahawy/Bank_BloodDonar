@@ -10,7 +10,7 @@
   "author": "Mohammed Aboabdo",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.3"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -20,11 +20,11 @@
     "csurf": "^1.11.0",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
-    "express-session": "^1.17.0",
+    "express-session": "^1.17.1",
     "express-validator": "^6.4.0",
     "helmet": "^3.22.0",
     "method-override": "^3.0.0",
-    "mongoose": "^5.9.7",
+    "mongoose": "^5.9.9",
     "nodemailer": "^6.4.6",
     "nodemailer-sendgrid-transport": "^0.2.0"
   }

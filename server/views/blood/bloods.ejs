@@ -43,79 +43,34 @@
        </tr>
      </thead>
      <tbody>
+      <% if (bloods.length > 0) {
+        let i = itemCounterStartInCurrentPage;
+        for (let blood of bloods) { %>
        <tr>
-         <td data-label="name">a-</td>
-         <td data-label="quantity">20</td>
-         <td data-label="edit">
-           <span><a><i class="fas fa-edit"></i></a></span>
-           <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-         </td>
-       </tr>
-       <tr>
-         <td scope="row" data-label="name">a+</td>
-         <td data-label="quantity">0</td>
-          <td data-label="edit">
-           <span><a><i class="fas fa-edit"></i></a></span>
-           <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-         </td>
-       </tr>
-       <tr>
-         <td scope="row" data-label="name">o-</td>
-         <td data-label="quantity">6</td>
-         <td data-label="edit">
-           <span><a><i class="fas fa-edit"></i></a></span>
-           <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-         </td>
-       </tr>
-       <tr>
-         <td scope="row" data-label="name">o+</td>
-         <td data-label="Due Date">0</td>
-          <td data-label="edit">
-           <span><a><i class="fas fa-edit"></i></a></span>
-           <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-         </td>
-       </tr>
-         <tr>
-         <td scope="row" data-label="name">ab-</td>
-         <td data-label="Due Date">7</td>
-         <td data-label="edit">
-           <span><a><i class="fas fa-edit"></i></a></span>
-           <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-         </td>
-       </tr>
-       <tr>
-         <td scope="row" data-label="name">ab+</td>
-         <td data-label="Due Date">8</td>
-          <td data-label="edit">
-           <span><a><i class="fas fa-edit"></i></a></span>
-           <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-         </td>
-       </tr>
-         <tr>
-         <td scope="row" data-label="name">b-</td>
-         <td data-label="Due Date">10</td>
-         <td data-label="edit">
-           <span><a><i class="fas fa-edit"></i></a></span>
-           <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-         </td>
-       </tr>
-         <tr>
-         <td scope="row" data-label="name">b+</td>
-         <td data-label="Due Date">4</td>
-          <td data-label="edit">
-           <span><a><i class="fas fa-edit"></i></a></span>
-           <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-         </td>
-       </tr>
-     </tbody>
+         <td data-label="name"><%= blood.bloodType %></td>
+         <td data-label="quantity"> <%= blood.bloodQuantity %></td>
+       
+         <% if (isAuthenticated && blood.userId._id.toString() === currentUser._id.toString()) { %>
+          <td data-label="edit" class="right">
+            <span><a href="/edit-blood/<%= blood._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
+            <span><a><i class="fas fa-trash-alt"></i></a></span>
+          </td>
+        
+          
+          <div class="myItem">
+            <form action="delete-blood" method="POST">
+              <input type="hidden" value="<%= blood._id %>" name="bloodId">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+              <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
+            </form>
+            <% } %>
+          </div>
+        </tr> 
+        <% i--; } %>
+      <% } else { %>
+        <p>No Patients found.</p>
+        <% } %>
+      </tbody>
   </table>
     </div> 		
 

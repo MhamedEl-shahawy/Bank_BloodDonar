@@ -49,45 +49,43 @@
          </tr>
        </thead>
        <tbody>
+        <% if (patients.length > 0) {
+          let i = itemCounterStartInCurrentPage;
+          for (let patient of patients) { %>
          <tr>
-           <td data-label="blood type" class="blood-type">o-</td>
-           <td data-label="department">burn center</td>
-           <td data-label="patient">fathy</td>
-           <td data-label="quantity">2</td>
-            <td data-label="date">15/03/20 9:44:20 AM</td>
+           <td data-label="blood type" class="blood-type"><%= patient.bloodType %></td>
+           <td data-label="department"><%= patient.department %></td>
+           <td data-label="patient"> <%= patient.patientName %></td>
+           <td data-label="quantity"> <%= patient.quantity %></td>
+            <td data-label="date">  <%=patient.date%></td>
            <td data-label="done"><p class="not-done"></p></td>
-           <td data-label="edit">
+          <!--  <td data-label="edit">
              <span><a><i class="fas fa-edit"></i></a></span>
              <span><a><i class="fas fa-trash-alt"></i></a></span>
 
-           </td>
-         </tr>
-         <tr>
-           <td data-label="blood type" class="blood-type">a-</td>
-           <td data-label="department">dentistry</td>
-           <td data-label="patient">magdy ahmed</td>
-           <td data-label="quantity">5</td>
-           <td data-label="date">17/03/20 10:44:20 PM</td>
-           <td data-label="done"><p  class="done"></p></td>
-           <td data-label="edit">
-             <span><a><i class="fas fa-edit"></i></a></span>
-             <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-           </td>
-         </tr>
-            <tr>
-           <td data-label="blood type" class="blood-type">ab+</td>
-           <td data-label="department">internal diseases</td>
-           <td data-label="patient">ahmed mahmoud</td>
-           <td data-label="quantity">1</td>
-           <td data-label="date">25/03/20 1:00:40 PM</td>
-           <td data-label="done"><p  class="done"></p></td>
-           <td data-label="edit">
-             <span><a><i class="fas fa-edit"></i></a></span>
-             <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-           </td>
-         </tr>
+           </td> -->
+           <% if (isAuthenticated && patient.userId._id.toString() === currentUser._id.toString()) { %>
+            <td data-label="edit" class="right">
+              <span><a href="/edit-neededBlood/<%= patient._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
+              <span><a><i class="fas fa-trash-alt"></i></a></span>
+            </td>
+          
+            
+            <div class="myItem">
+              <form action="delete-patient" method="POST">
+                <input type="hidden" value="<%= patient._id %>" name="patientId">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
+              </form>
+              <% } %>
+            </div>
+          </tr> 
+          <% i--; } %>
+        <% } else { %>
+          <p>No Patients found.</p>
+          <% } %>
+       
+           
        </tbody>
     </table>
       </div> 		
