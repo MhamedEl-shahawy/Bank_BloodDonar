@@ -6,37 +6,10 @@
   <section class="main">
     <%- include('../includes/navigation.ejs') %>
     <div class="main-content tabcontent" id="bags">
-      <div class="new-items ">
-            <div class="new-items_conatiner">
-              <h2>new blood bags</h2>
-              <p class="red">bags info</p>
-            <form class="new-items_form">	 
-               <label class="new-items_label" for="type">blood type</label>
-               <select class="new-items_select type">
-                 <option value="a+">a+</option>
-                 <option value="a-">a-</option>
-                 <option value="o+">o+</option>
-                 <option value="o-">o-</option>
-                 <option value="b+">b+</option>
-                 <option value="b-">b-</option>
-
-                 <option value="ab+">ab+</option>
-                 <option value="ab-">ab-</option>
-               </select>
-               <label class="new-items_label" for="charity">Charity Name</label>
-               <input class="new-items_input" type="text" name="charity">
-               <label class="new-items_label" for="donarName">Donar Name</label>
-               <input class="new-items_input" type="text" name="donarName">
-               <label class="new-items_label" for="quantity">blood quantity</label>
-               <input class="new-items_input" type="number" name="quantity">
-
-            </form>	 
-            <button class="add-new add-new_float addnew">create</button>
-            </div>
-          </div>
+    
   <div class="pd-1">
        <div class="container">
-          <button class="add-new addMain">new bags</button>
+          <a href="/add-bag" class="add-new addMain">new bags</a>
          <table>
         <thead>
           <tr>
