@@ -1,38 +1,8 @@
-<%- include('../includes/top.ejs') %>
+<%- include('../includes/navigation.ejs') %>
 
-</head>
-
-<body>
   <section class="main">
-    <%- include('../includes/navigation.ejs') %>
     <div class="main-content tabcontent" id="needBlood">
-      <div class="new-items ">
-           <div class="new-items_conatiner">
-             <h2>need bloods</h2>
-             <p class="red">needs quantity</p>
-           <form class="new-items_form">	 
-              <label class="new-items_label" for="type">blood type</label>
-              <select class="new-items_select type">
-                <option value="a+">a+</option>
-                <option value="a-">a-</option>
-                <option value="o+">o+</option>
-                <option value="o-">o-</option>
-                <option value="b+">b+</option>
-                <option value="b-">b-</option>
-                <option value="ab+">ab+</option>
-                <option value="ab-">ab-</option>
-              </select>
-              <label class="new-items_label" for="department">Department</label>
-              <input class="new-items_input" type="text" name="department">
-              <label class="new-items_label" for="patient">Patient</label>
-              <input class="new-items_input" type="text" name="patient">
-              <label class="new-items_label" for="quantity">blood quantity</label>
-              <input class="new-items_input" type="number" name="quantity">
-
-           </form>	 
-           <button class="add-new add-new_float addnew">create</button>
-           </div>
-         </div>
+      
  <div class="pd-1">
       <div class="container">
          <button class="add-new addMain">new need</button>
@@ -67,18 +37,18 @@
            <% if (isAuthenticated && patient.userId._id.toString() === currentUser._id.toString()) { %>
             <td data-label="edit" class="right">
               <span><a href="/edit-neededBlood/<%= patient._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
-              <span><a><i class="fas fa-trash-alt"></i></a></span>
+              <span>
+                <form action="/delete-patient" method="POST" style="display: inline-block;">
+                   <input type="hidden" value="<%= patient._id %>" name="patientId">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                  <a type="submit"><i class="fas fa-trash-alt"></i></a>
+                </form>
+              </span>
             </td>
-          
+            <% } %> 
             
-            <div class="myItem">
-              <form action="delete-patient" method="POST">
-                <input type="hidden" value="<%= patient._id %>" name="patientId">
-                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-                <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
-              </form>
-              <% } %>
-            </div>
+
+      
           </tr> 
           <% i--; } %>
         <% } else { %>

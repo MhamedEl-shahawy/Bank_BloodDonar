@@ -57,21 +57,26 @@
             <td data-label="donar name"><%= bag.donorName %></td>
             <td data-label="quantity"> <%= bag.bloodQuantity %></td>
         
+
+
             <% if (isAuthenticated && bag.userId._id.toString() === currentUser._id.toString()) { %>
               <td data-label="edit" class="right">
                 <span><a href="/edit-bag/<%= bag._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
-                <span><a><i class="fas fa-trash-alt"></i></a></span>
+                <span>
+                  <form action="delete-bag" method="POST" style="display: inline-block;">
+                    <input type="hidden" value="<%= bag._id %>" name="bagId">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                    <a type="submit"><i class="fas fa-trash-alt"></i></a>
+                  </form>
+                </span>
               </td>
+              <% } %> 
+
+
+
+
+
             
-              
-              <div class="myItem">
-                <form action="delete-bag" method="POST">
-                  <input type="hidden" value="<%= bag._id %>" name="bagId">
-                  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-                  <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
-                </form>
-                <% } %>
-              </div>
             </tr> 
             <% i--; } %>
           <% } else { %>

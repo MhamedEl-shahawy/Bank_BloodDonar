@@ -46,21 +46,21 @@
            <td data-label="phone"><%= charity.phoneNumber %></td>				   
            <td data-label="address"><%= charity.address %></td>
            <td data-label="description:">  <%= charity.description %></td>
-         <% if (isAuthenticated && charity.userId._id.toString() === currentUser._id.toString()) { %>
-          <td data-label="edit" class="right">
-            <span><a href="/edit-charity/<%= charity._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
-            <span><a><i class="fas fa-trash-alt"></i></a></span>
-          </td>
-        
-          
-          <div class="myItem">
-            <form action="delete-charity" method="POST">
-              <input type="hidden" value="<%= charity._id %>" name="charityId">
-              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-              <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
-            </form>
-            <% } %>
-          </div>
+
+           <% if (isAuthenticated && charity.userId._id.toString() === currentUser._id.toString()) { %>
+            <td data-label="edit" class="right">
+              <span><a href="/edit-charity/<%= charity._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
+              <span>
+                <form action="delete-charity" method="POST" style="display: inline-block;">
+                  <input type="hidden" value="<%= charity._id %>" name="charityId">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                  <a type="submit"><i class="fas fa-trash-alt"></i></a>
+                </form>
+              </span>
+            </td>
+            <% } %> 
+
+
         </tr> 
         <% i--; } %>
       <% } else { %>

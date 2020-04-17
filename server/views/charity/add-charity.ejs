@@ -1,27 +1,47 @@
-<%- include('../includes/top.ejs') %>
 
-</head>
+<%- include('../includes/navigation.ejs') %>
+<section class="main">
+<div class="main-content tabcontent">
+  <form action="/add-charity" method="POST">
+       
+    <div class="new-items">
+      <div class="new-items_conatiner">
+        <h2>new charity</h2>
+        <p class="red">charity info</p>
+      <form class="new-items_form">	 
+         <label class="new-items_label" for="charity">charity Name</label>
+         <input class="new-items_input" type="text" name="charity">   		 
+             <label class="new-items_label" for="phone">Phone Number</label>
+         <input class="new-items_input" type="number" name="phone">
+             <label class="new-items_label" for="address">Address</label>
+         <input class="new-items_input" type="text" name="address">
+             <label class="new-items_label" for="description">Description</label>
+         <textarea class="new-items_input" name="description"></textarea>
+      </form>	 
+      <button class="add-new add-new_float addnew">create</button>
+      </div>
+    </div>      
 
-<body>
-  <%- include('../includes/navigation.ejs') %>
-  <main class="myContainer center">
-    <p>Add a Patient</p>
-    <form action="/add-charity" method="POST">
-      <label for="charityName">Charity Name</label>
-      <input type="text" name="charityName" id="charityName" />
-
-      <label for="phoneNumber">Phone</label>
-      <input type="text" name="phoneNumber" id="phoneNumber" />
-
-      <label for="address">Address</label>
-      <input type="text" name="address" id="address" />
-
-      <label for="description">Description</label>
-      <textarea name="description" id="description" cols="30" rows="10" placeholder="Enter your Description Here"></textarea>
+      </form>	 
       
-      <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
-      <button class="myButton" type="submit">Submit</button>
-    </form>
-  </main>
+    </div>
+    
+    
+    
+    
+    
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+    <button class="myButton" type="submit">Submit</button>
+  </form>
+</div>
+</section>
+
+<%- include('../includes/bottom.ejs') %>
+
+
+
+
+
+
 
   <%- include('../includes/bottom.ejs') %>

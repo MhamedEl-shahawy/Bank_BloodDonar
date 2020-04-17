@@ -1,48 +1,51 @@
-<%- include('../includes/top.ejs') %>
 
-</head>
+<%- include('../includes/navigation.ejs') %>
+<section class="main">
+<div class="main-content tabcontent" id="patient">
+  <form action="/add-donor" method="POST">
+    <div class="new-items">
+      <div class="new-items_conatiner">
+        <h2>new donar</h2>
+        <p class="red">donar info</p>
+      <form class="new-items_form">	 
+         <label class="new-items_label" for="type">blood type</label>
+         <select class="new-items_select type">
+           <option value="a+">a+</option>
+           <option value="a-">a-</option>
+           <option value="o+">o+</option>
+           <option value="o-">o-</option>
+           <option value="b+">b+</option>
+           <option value="b-">b-</option>
 
-<body>
-  <%- include('../includes/navigation.ejs') %>
-  <main class="myContainer center">
-    <p>Add a Donor</p>
-    <form action="/add-donor" method="POST">
-      <label for="donorName">Donor Name</label>
-      <input type="text" name="donorName" id="donorName" />
-
-      <label for="nationalId">National Id</label>
-      <input type="text" name="nationalId" id="nationalId" />
-
-      <label for="phoneNumber">Phone Number</label>
-      <input type="text" name="phoneNumber" id="phoneNumber" />
-
-      <label for="address">Address</label>
-      <input type="text" name="address" id="address" />
-
-      <label for="email">E-mail</label>
-      <input type="email" name="email" id="email" />
-
-      <label for="bloodType">Blood Type</label>
-      <select name="bloodType" id="bloodType">
-        <option value="a+">a+</option>
-        <option value="a-">a-</option>
-        <option value="o+">o+</option>
-        <option value="o-">o-</option>
-        <option value="b+">b+</option>
-        <option value="b-">b-</option>
-        <option value="ab+">ab+</option>
-        <option value="ab-">ab-</option>
-      </select>
-
-      <label for="donationDay">Donation Dy</label>
-      <input type="date" name="donationDay" id="donationDay" />
-
-      <label for="nextDonationDay">Next Donation Day</label>
-      <input type="date" name="nextDonationDay" id="nextDonationDay" />
+           <option value="ab+">ab+</option>
+           <option value="ab-">ab-</option>
+         </select>
+         <label class="new-items_label" for="donar">Donar Name</label>
+         <input class="new-items_input" type="text" name="donar">
+         <label class="new-items_label" for="nationalid">National Id</label>
+         <input class="new-items_input" type="text" name="nationalid">
+         <label class="new-items_label" for="phone">Phone Number</label>
+         <input class="new-items_input" type="number" name="phone">
+             <label class="new-items_label" for="address">Address</label>
+         <input class="new-items_input" type="text" name="address">
+         <label class="new-items_label" for="email">Email</label>
+         <input class="new-items_input" type="email" name="email">
+      </form>	 
+      <button class="add-new add-new_float addnew">create</button>
+      </div>
+    </div>
+      </form>	 
       
-      <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
-      <button class="myButton" type="submit">Submit</button>
-    </form>
-  </main>
+    </div>
+    
+    
+    
+    
+    
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+    <button class="myButton" type="submit">Submit</button>
+  </form>
+</div>
+</section>
 
-  <%- include('../includes/bottom.ejs') %>
+<%- include('../includes/bottom.ejs') %>

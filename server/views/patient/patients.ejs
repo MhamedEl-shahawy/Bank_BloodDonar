@@ -1,45 +1,12 @@
-<%- include('../includes/top.ejs') %>
 
-</head>
 
-<body>
+<%- include('../includes/navigation.ejs') %>
+
   <section class="main">
-    <%- include('../includes/navigation.ejs') %>
     <div class="main-content tabcontent" id="patient">
-      <div class="new-items">
-        <div class="new-items_conatiner">
-          <h2>new patient</h2>
-          <p class="red">patient info</p>
-        <form class="new-items_form">	 
-           <label class="new-items_label" for="type">blood type</label>
-           <select class="new-items_select type">
-             <option value="a+">a+</option>
-             <option value="a-">a-</option>
-             <option value="o+">o+</option>
-             <option value="o-">o-</option>
-             <option value="b+">b+</option>
-             <option value="b-">b-</option>
-
-             <option value="ab+">ab+</option>
-             <option value="ab-">ab-</option>
-           </select>
-           <label class="new-items_label" for="patient">Patient Name</label>
-           <input class="new-items_input" type="text" name="patient">
-           <label class="new-items_label" for="nationalid">National Id</label>
-           <input class="new-items_input" type="text" name="nationalid">
-           <label class="new-items_label" for="phone">Phone Number</label>
-           <input class="new-items_input" type="number" name="phone">
-               <label class="new-items_label" for="address">Address</label>
-           <input class="new-items_input" type="text" name="address">
-           <label class="new-items_label" for="email">Email</label>
-           <input class="new-items_input" type="email" name="email">
-        </form>	 
-        <button class="add-new add-new_float addnew">create</button>
-        </div>
-      </div>
 <div class="pd-1">
    <div class="container">
-      <button class="add-new addMain">add patient</button>
+      <a href="/add-patient" class="add-new addMain" >add patient</a>
      <table>
     <thead>
       <tr>
@@ -68,22 +35,22 @@
         <td data-label="donation day"><%= patient.donationDay %></td>
         <td data-label="email" class="email">mohamed@gmail.com</td>
         <td data-label="blood type" class="blood-type center"><%= patient.bloodType %></td>
-     
+        <% if (isAuthenticated && patient.userId._id.toString() === currentUser._id.toString()) { %> 
         <td data-label="edit" class="right">
-          <span><a><i class="fas fa-edit"></i></a></span>
-          <span><a  href="/edit-patient/<%= patient._id %>?edit=true"><i class="fas fa-trash-alt"></i></a></span>
+          <span><a href="/edit-patient/<%= patient._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
+          <span>
+            <form action="/delete-patient" method="POST" style="display: inline-block;">
+              <input type="hidden" value="<%= patient._id %>" name="patientId">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+              <a type="submit"><i class="fas fa-trash-alt"></i></a>
+            </form>
+          </span>
         </td>
+        <% } %> 
         
-        <form action="/delete-patient" method="POST">
-          <input type="hidden" value="<%= patient._id %>" name="patientId">
-          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-          <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
-        </form>
-        <!-- <% if (isAuthenticated && patient.userId._id.toString() === currentUser._id.toString()) { %> -->
-        
-        <div class="myItem">
-       <!--    <% } %> -->
-        </div>
+      
+  
+      
       </tr> 
       <% i--; } %>
     <% } else { %>
