@@ -31,7 +31,7 @@
         <td data-label="last year" class="center"><%= donor.nextDonationDay %></td>
         <td data-label="last month" class="center"> <%= donor.donationDay %></td>
         <td data-label="address"><%= donor.address %> </td>
-        <td data-label="email" class="email"><%= donor.userId.email %></td>
+        <td data-label="email" class="email"><%= donor.email %></td>
         <td data-label="blood type" class="center blood-type"><%= donor.bloodType %></td>
         
       <% if (isAuthenticated && donor.userId._id.toString() === currentUser._id.toString()) { %>
