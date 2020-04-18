@@ -2,12 +2,12 @@
 <%- include('../includes/navigation.ejs') %>
 <section class="main">
 <div class="main-content tabcontent" id="patient">
-  <form action="/add-bag" method="POST">
+  
     <div class="new-items ">
       <div class="new-items_conatiner">
         <h2>new blood bags</h2>
         <p class="red">bags info</p>
-      <form class="new-items_form">	 
+      <form action="/add-bag" method="POST" class="new-items_form">	 
          <label class="new-items_label" for="type">blood type</label>
          <select class="new-items_select type">
            <option value="a+">a+</option>
@@ -26,21 +26,20 @@
          <input class="new-items_input" type="text" name="donarName">
          <label class="new-items_label" for="quantity">blood quantity</label>
          <input class="new-items_input" type="number" name="quantity">
-
+    
+         <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+         <button class="add-new add-new_float addnew" type="submit">Submit</button>
       </form>	 
-      <button class="add-new add-new_float addnew">create</button>
+      <button >create</button>
       </div>
     </div>
     
-      </form>	 
+    
       
     </div>
     
-    
-    <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
-    <button class="myButton" type="submit">Submit</button>
-  </form>
-</div>
+
+ 
 </section>
 
   <%- include('../includes/bottom.ejs') %>

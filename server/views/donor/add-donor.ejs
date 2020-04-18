@@ -2,12 +2,12 @@
 <%- include('../includes/navigation.ejs') %>
 <section class="main">
 <div class="main-content tabcontent" id="patient">
-  <form action="/add-donor" method="POST">
-    <div class="new-items">
-      <div class="new-items_conatiner">
-        <h2>new donar</h2>
-        <p class="red">donar info</p>
-      <form class="new-items_form">	 
+  <div class="new-items">
+    <div class="new-items_conatiner">
+      <h2>new donar</h2>
+      <p class="red">donar info</p>
+      <form action="/add-donor" class="new-items_form" method="POST">
+
          <label class="new-items_label" for="type">blood type</label>
          <select class="new-items_select type">
            <option value="a+">a+</option>
@@ -30,22 +30,18 @@
          <input class="new-items_input" type="text" name="address">
          <label class="new-items_label" for="email">Email</label>
          <input class="new-items_input" type="email" name="email">
+
+           
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+    <button class="add-new add-new_float addnew" type="submit">Submit</button>
       </form>	 
-      <button class="add-new add-new_float addnew">create</button>
       </div>
     </div>
-      </form>	 
+      	 
       
     </div>
-    
-    
-    
-    
-    
-    <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
-    <button class="myButton" type="submit">Submit</button>
-  </form>
-</div>
+
+
 </section>
 
 <%- include('../includes/bottom.ejs') %>

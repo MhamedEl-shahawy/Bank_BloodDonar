@@ -17,23 +17,19 @@
          <input class="new-items_input" type="text" name="address">
              <label class="new-items_label" for="description">Description</label>
          <textarea class="new-items_input" name="description"></textarea>
+         <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+         <button  class="add-new add-new_float addnew" type="submit">Submit</button>
       </form>	 
-      <button class="add-new add-new_float addnew">create</button>
+      
       </div>
     </div>      
 
-      </form>	 
+    
       
     </div>
     
-    
-    
-    
-    
-    <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
-    <button class="myButton" type="submit">Submit</button>
-  </form>
-</div>
+
+
 </section>
 
 <%- include('../includes/bottom.ejs') %>
