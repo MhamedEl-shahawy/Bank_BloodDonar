@@ -329,7 +329,10 @@ td.blood-type{
   background-color:#26de81;
 
 }
-
+form button{
+	border: none;
+	cursor: pointer;
+}
 /* tab content */
 .tabcontent {
   padding: 0px 12px;

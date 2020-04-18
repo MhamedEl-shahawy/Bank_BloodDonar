@@ -29,11 +29,7 @@
            <td data-label="quantity"> <%= patient.quantity %></td>
             <td data-label="date">  <%=patient.date%></td>
            <td data-label="done"><p class="not-done"></p></td>
-          <!--  <td data-label="edit">
-             <span><a><i class="fas fa-edit"></i></a></span>
-             <span><a><i class="fas fa-trash-alt"></i></a></span>
-
-           </td> -->
+     
            <% if (isAuthenticated && patient.userId._id.toString() === currentUser._id.toString()) { %>
             <td data-label="edit" class="right">
               <span><a href="/edit-neededBlood/<%= patient._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
@@ -41,7 +37,7 @@
                 <form action="/delete-patient" method="POST" style="display: inline-block;">
                    <input type="hidden" value="<%= patient._id %>" name="patientId">
                   <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-                  <a type="submit"><i class="fas fa-trash-alt"></i></a>
+                  <button style="border: none;"  type="submit"><i class="fas fa-trash-alt"></i></button>
                 </form>
               </span>
             </td>
