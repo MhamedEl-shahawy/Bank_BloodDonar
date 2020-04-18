@@ -35,7 +35,7 @@
             <td data-label="edit" class="right">
               <span><a href="/edit-charity/<%= charity._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
               <span>
-                <form action="delete-charity" method="POST" style="display: inline-block;">
+                <form action="/delete-charity" method="POST" style="display: inline-block;">
                   <input type="hidden" value="<%= charity._id %>" name="charityId">
                   <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                   <a type="submit"><i class="fas fa-trash-alt"></i></a>
