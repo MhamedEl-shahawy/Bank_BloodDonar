@@ -712,7 +712,7 @@ exports.getEditBlood = (req, res, next) => {
       if (!blood) {
         return res.redirect('/');
       }
-      res.render('blood/edit-blood', {
+      res.render('blood/edit-blood  ', {
         pageTitle: 'Edit Blood',
         editing: editMode,
         blood
@@ -868,6 +868,7 @@ exports.getEditBag = (req, res, next) => {
       return next(error);
     });
 };
+
 
 exports.postEditBag = (req, res, next) => {
   const today = getCurrentDate();
