@@ -1,70 +1,86 @@
+<%- include('../includes/navigation.ejs') %>
 
-  <%- include('../includes/navigation.ejs') %>
-
-  <section class="main">
-    <div class="main-content tabcontent" id="account">
-      <div class="pd-1">
-       <div class="container">
-         <h2 class="title-h2">Account Setting</h2>
-         <hr/>
+<section class="main">
+  <div class="main-content tabcontent" id="account">
+    <div class="pd-1">
+      <div class="container">
+        <h2 class="title-h2">Account Setting</h2>
+        <hr />
         <form class="account-setting" action="/user/<%= user.id %>?_method=PUT" method="POST">
-         <div class="account-setting__form">
-               <h3>Edit Account</h3>
-           <div class="form-container"> 
-           <div>
-          <label for="firstName" class="account-setting__label">First Name</label>
-          <input type="text" class="account-setting__input" placeholder="First Name" name="firstName" value="<%= user.firstName %>"/>
-          </div>
-          <div>
-            <label for="lastName" class="account-setting__label">Last Name</label>
-            <input type="text" class="account-setting__input" placeholder="Last Name" name="lastName" value="<%= user.lastName %>"/>
+          <div class="account-setting__form">
+            <h3>Edit Account</h3>
+            <div class="form-container">
+              <div>
+                <label for="firstName" class="account-setting__label">First Name: </label>
+                <span><%= user.firstName %></span>
+                <!--<input type="text" class="account-setting__input" placeholder="First Name" name="firstName"
+                  value="<%= user.firstName %>" />-->
+              </div>
+              <div>
+                <label for="lastName" class="account-setting__label">Last Name: </label>
+                <span><%= user.lastName %></span>
+                <!--<input type="text" class="account-setting__input" placeholder="Last Name" name="lastName"
+                  value="<%= user.lastName %>" />-->
+              </div>
+              <div>
+                <label for="emailaddress" class="account-setting__label">E-mail: </label>
+                <span><%= user.email %></span>
+                <!--<input type="email" class="account-setting__input" placeholder="Email Address" name="emailaddress"
+                  value="<%= user.email %>" />-->
+              </div>
+              <div>
+                <label for="phonenumber" class="account-setting__label">Phone Number</label>
+                <input type="number" class="account-setting__input" placeholder="Phone Number" name="phoneNumber"
+                  value="<%= user.phoneNumber %>" />
+              </div>
+              <div>
+                <label for="city" class="account-setting__label">City</label>
+                <input type="text" class="account-setting__input" placeholder="City Name" name="city"
+                  value="<%= user.city %>" />
+              </div>
+              <div>
+                <label for="state" class="account-setting__label">State</label>
+                <input type="text" class="account-setting__input" placeholder="Sate Name" name="state"
+                  value="<%= user.state %>" />
+              </div>
+              <div>
+                <label for="bloodType" class="account-setting__label">Blood Type: </label>
+                <select class="new-items_select type" name="bloodType" id="bloodType">
+                  <option value="a+">a+</option>
+                  <option value="a-">a-</option>
+                  <option value="o+">o+</option>
+                  <option value="o-">o-</option>
+                  <option value="b+">b+</option>
+                  <option value="b-">b-</option>
+                  <option value="ab+">ab+</option>
+                  <option value="ab-">ab-</option>
+                  <option value="<%= user.bloodType %>"></option>
+              </select>
+              </div>
             </div>
-          <div>
-          <label for="emailaddress" class="account-setting__label">Email Address</label>
-          <input type="email" class="account-setting__input" placeholder="Email Address" name="emailaddress" value="<%= user.email %>"/>
           </div>
-          <div>
-          <label for="phonenumber" class="account-setting__label">Phone Number</label>
-          <input type="number" class="account-setting__input" placeholder="Phone Number" name="phonenumber" value="<%= user.phoneNumber %>"/>
+
+          <div class="account-setting__form">
+            <div class="account-setting__form">
+              <h2>You can Change your password below:- </h2>
+              <h3><a href="/user/password/<%= user.id %>/edit">Change Password</a></h3>
+            </div> 
           </div>
-          <div>
-          <label for="city" class="account-setting__label">City</label>
-          <input type="text" class="account-setting__input" placeholder="City Name" name="city" value="<%= user.city %>"/>
+
+          <div class="save">
+            <button type="submit" class="save__btn">Update</button>
+            <a  class="save__btn" style="background-color: crimson;" href="/user/<%= user.id %>">Cancel</a>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
           </div>
-          <div>
-          <label for="state" class="account-setting__label">State</label>
-                    <input type="text" class="account-setting__input" placeholder="Sate Name" name="state" value="<%= user.state %>"/>  
-        </div>
-        </div>
-      </div>
-      <div class="account-setting__form">
-        <h3>Change Password</h3>
-        <div class="form-container">
-        
-        
-         
-         <div class="change">
-          <a href="/user/password/<%= user.id %>/edit" class="change__btn"> Change Password </a>
-           <a href="/user/<%= user.id %>">Cancel</a> 
-         </div>
-      </div>
-         
-        
-        
-  </div>
-  <div class="save">
-    <button type="submit" >Update</button>
-    <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
-  </div>
-        </form>	
+        </form>
       </div>
     </div>
   </div>
-  </section>
-  
-  <%- include('../includes/bottom.ejs') %>
+</section>
 
-  <!-- 
+<%- include('../includes/bottom.ejs') %>
+
+<!-- 
 
   <main class="myContainer">
 
@@ -122,4 +138,3 @@
     </form>
 
   </main> -->
-

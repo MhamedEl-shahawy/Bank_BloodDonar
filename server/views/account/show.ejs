@@ -1,72 +1,71 @@
-
-  <%- include('../includes/navigation.ejs') %>
+<%- include('../includes/navigation.ejs') %>
 
 <section class="main">
   <div class="main-content tabcontent" id="account">
     <div class="pd-1">
-     <div class="container">
-       <h2 class="title-h2">Account Setting</h2>
-       <hr/>
-      <form class="account-setting">
-       <div class="account-setting__form">
-             <h3>Account Info</h3>
-         <div class="form-container"> 
-         <div>
-        <label for="firstName" class="account-setting__label">First Name</label>
-        <input type="text" class="account-setting__input" placeholder="First Name" name="firstName" value="<%= user.firstName %>"/>
-        </div>
-        <div>
-          <label for="lastName" class="account-setting__label">Last Name</label>
-          <input type="text" class="account-setting__input" placeholder="Last Name" name="lastName" value="<%= user.lastName %>"/>
+      <div class="container">
+        <h2 class="title-h2">Account Setting</h2>
+        <hr />
+        <form class="account-setting">
+          <div class="account-setting__form">
+            <h3>Account Info</h3>
+            <div class="form-container">
+              <div>
+                <label for="firstName" class="account-setting__label">First Name: </label>
+                <span><%= user.firstName %></span>
+                <!--<input type="text" class="account-setting__input" placeholder="First Name" name="firstName"
+                  value="<%= user.firstName %>" />-->
+              </div>
+              <div>
+                <label for="lastName" class="account-setting__label">Last Name: </label>
+                <span><%= user.lastName %></span>
+                <!--<input type="text" class="account-setting__input" placeholder="Last Name" name="lastName"
+                  value="<%= user.lastName %>" />-->
+              </div>
+              <div>
+                <label for="emailaddress" class="account-setting__label">E-mail: </label>
+                <span><%= user.email %></span>
+                <!--<input type="email" class="account-setting__input" placeholder="Email Address" name="emailaddress"
+                  value="<%= user.email %>" />-->
+              </div>
+              <div>
+                <label for="phonenumber" class="account-setting__label">Phone Number: </label>
+                <span><%= user.phoneNumber %></span>
+                <!--<input type="number" class="account-setting__input" placeholder="Phone Number" name="phonenumber"
+                  value="<%= user.phoneNumber %>" />-->
+              </div>
+              <div>
+                <label for="city" class="account-setting__label">City: </label>
+                <span><%= user.city %></span>
+                <!--<input type="text" class="account-setting__input" placeholder="City Name" name="city"
+                  value="<%= user.city %>" />-->
+              </div>
+              <div>
+                <label for="state" class="account-setting__label">State: </label>
+                <span><%= user.sate %></span>
+                <!--<input type="text" class="account-setting__input" placeholder="Sate Name" name="state"
+                  value="<%= user.state %>" />-->
+              </div>
+              <div>
+                <label for="bloodType" class="account-setting__label">Blood Type: </label>
+                <span><%= user.bloodType %></span>
+                <!--<input type="text" class="account-setting__input" placeholder="Sate Name" name="state"
+                  value="<%= user.state %>" />-->
+              </div>
+            </div>
           </div>
-        <div>
-        <label for="emailaddress" class="account-setting__label">Email Address</label>
-        <input type="email" class="account-setting__input" placeholder="Email Address" name="emailaddress" value="<%= user.email %>"/>
-        </div>
-        <div>
-        <label for="phonenumber" class="account-setting__label">Phone Number</label>
-        <input type="number" class="account-setting__input" placeholder="Phone Number" name="phonenumber" value="<%= user.phoneNumber %>"/>
-        </div>
-        <div>
-        <label for="city" class="account-setting__label">City</label>
-        <input type="text" class="account-setting__input" placeholder="City Name" name="city" value="<%= user.city %>"/>
-        </div>
-        <div>
-        <label for="state" class="account-setting__label">State</label>
-                  <input type="text" class="account-setting__input" placeholder="Sate Name" name="state" value="<%= user.state %>"/>  
+          <div class="account-setting__form">
+            <h2>You can Change your password below:- </h2>
+            <h3><a href="/user/password/<%= user.id %>/edit">Change Password</a></h3>
+          </div>
+          <div class="save">
+            <a href="/user/<%= user.id %>/edit" class="save__btn">Edit</a>
+          </div>
       </div>
-      </div>
-    </div>
-    <div class="account-setting__form">
-      <h3>Change Password</h3>
-      <div class="form-container">
-      <div>
-       <label for="oldpassword" class="account-setting__label">Old Password</label>
-       <input type="password" class="account-setting__input" placeholder="Old Password" name="oldpassword"/>
-       </div>
-       <div>
-         <label for="newpassword" class="account-setting__label">New Password</label>
-         <input type="password" class="account-setting__input" placeholder="New Password" name="newpassword"/>
-         </div>
-       <div>
-       <label for="confirmpassword" class="account-setting__label">Confirm Password</label>
-       <input type="password" class="account-setting__input" placeholder="Confirm Password" name="confirmpassword"/>
-       </div>
-       <div class="change">
-        <input type="button" class="change__btn" value="Change">  
-       </div>
-    </div>
-       
-      
-      
-</div>
-<div class="save">
-  <a href="/user/<%= user.id %>/edit" class="save__btn">Edit</a> 
-</div>
-      </form>	
+      </form>
     </div>
   </div>
-</div>
+  </div>
 </section>
 <!-- 
   <main class="myContainer">
@@ -108,4 +107,4 @@
     <a href="/user/<%= user.id %>/edit">Edit</a>
   </main> -->
 
-  <%- include('../includes/bottom.ejs') %>
+<%- include('../includes/bottom.ejs') %>
