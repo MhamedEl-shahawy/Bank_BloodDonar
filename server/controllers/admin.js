@@ -5,6 +5,7 @@ const Needed = require('../models/neededblood');
 const Hospital = require('../models/hospital');
 const User = require('../models/user');
 const Bag = require('../models/bag');
+const City = require('../models/city');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const getCurrentDate = () => {
@@ -1054,5 +1055,151 @@ exports.UpdateUser = async (req, res) => {
     }
   }
 }
+
+
+/* Start  Add City */
+exports.getAddCity = (req, res, next) => {
+  res.render('city/add-city', {
+    pageTitle: 'Add City'
+  });
+};
+
+exports.postAddCity = (req, res, next) => {
+  const today = getCurrentDate();
+  const cityName = req.body.cityName;
+  const address = req.body.address;
+  const phoneNumber = req.body.phoneNumber;
+  const hospital = req.body.hospital;
+
+  const city = new City({
+    name:cityName,
+    hospital:hospital,
+    phoneNumber:phoneNumber,
+    address:address,
+    userId: req.user._id
+  });
+  city
+    .save()
+    .then(result => {
+      console.log(today, `City added. Date: ${today}. CityName: ${cityName}`);
+      res.redirect('/display-cities');
+    })
+    .catch(err => {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    });
+};
+
+exports.getCities = (req, res, next) => {
+  const currentUser = req.user;
+  const page = parseInt(req.query.page) || 1;
+  let totalItems;
+  let itemCounterStartInCurrentPage;
+  City
+    .estimatedDocumentCount()
+    .then(number => {
+      totalItems = number;
+      itemCounterStartInCurrentPage = totalItems - ITEMS_PER_PAGE * (page - 1);
+      return City
+        .find()
+        .sort({ date: -1 })
+        .skip((page - 1) * ITEMS_PER_PAGE)
+        .limit(ITEMS_PER_PAGE)
+        .populate('userId');
+    })
+    .then(cities => {
+      res.render('city/cities', {
+        itemCounterStartInCurrentPage,
+        cities,
+        pageTitle: 'City',
+        currentUser,
+        paginationObject: paginator(page, ITEMS_PER_PAGE, totalItems)
+      });
+    }).catch(err => {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    });
+};
+
+exports.getEditCity = (req, res, next) => {
+  const editMode = req.query.edit;
+  if (!editMode) {
+    return res.redirect('/');
+  }
+  const cityId = req.params.cityId;
+  City.findById(cityId)
+    .then(city => {
+      if (!city) {
+        return res.redirect('/');
+      }
+      res.render('city/edit-city', {
+        pageTitle: 'Edit City',
+        editing: editMode,
+        city
+      });
+    })
+    .catch(err => {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    });
+};
+
+
+exports.postEditCity = (req, res, next) => {
+  const today = getCurrentDate();
+  const cityId = req.body.cityId;
+  const updateCityName = req.body.cityName;
+  const updateHospital = req.body.hospital;
+  const updateAddress = req.body.address;
+  const updatePhoneNumber = req.body.phoneNumber;
+  City.findById(cityId)
+    .then(city => {
+      if (city.userId.toString() !== req.user._id.toString()) {
+        return res.redirect('/');
+      }
+      city.name = updateCityName;
+      city.hospital = updateHospital;
+      city.address = updateAddress;
+      city.phoneNumber = updatePhoneNumber;
+      return city.save()
+        .then(result => {
+          console.log(today, `City edited. Edit Date: ${today}. CityName: ${updateCityName}`);
+          res.redirect('/display-cities');
+        })
+        .catch(err => {
+          const error = new Error(err);
+          error.httpStatusCode = 500;
+          return next(error);
+        });
+    })
+    .catch(err => {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    });
+};
+
+
+exports.postDeleteCity = (req, res, next) => {
+  const cityId = req.body.cityId;
+City.deleteOne({
+    _id: cityId,
+    userId: req.user._id
+  })
+    .then(() => {
+      console.log(`City with id ${cityId} has been deleted.`);
+      res.redirect('/display-cities');
+    })
+    .catch(err => {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    });
+};
+
+/* End */
 
 

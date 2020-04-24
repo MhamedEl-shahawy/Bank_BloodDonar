@@ -1,5 +1,6 @@
 const User = require('../models/user');
 const Donor = require('../models/donor');
+const City = require('../models/city');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
@@ -12,13 +13,27 @@ exports.getHome = (req, res, next) => {
     });
 };
 
-exports.getUserDonate = (req, res, next) => {
-    res.render('user/userDonate', {
-        pageTitle: 'Search By zip'
-    });
+exports.getUserDonate = async (req, res, next) => {
+    let searchOptions = {};
+    if (req.query.name != null && req.query.name !== '') {
+        searchOptions.name = new RegExp(req.query.name, 'i');
+    }
+    try {
+        const cities = await City.find(searchOptions);
+        res.render('user/userDonate', {
+            pageTitle:'Search',
+            cities: cities,
+            searchOptions: req.query
+        });
+    } catch (err) {
+        const error = new Error(err);
+        error.httpStatusCode = 500;
+        return next(error);
+    }
+
 };
 
-exports.getUserAppointment = async(req, res, next) => {
+exports.getUserAppointment = async (req, res, next) => {
 
     const currentUser = req.user;
     try {
@@ -34,10 +49,10 @@ exports.getUserAppointment = async(req, res, next) => {
         error.httpStatusCode = 500;
         return next(error);
     }
-  
+
 };
 
-exports.getUserDonation = async(req, res, next) => {
+exports.getUserDonation = async (req, res, next) => {
     const currentUser = req.user;
     try {
         const donors = await Donor.find();
@@ -52,7 +67,7 @@ exports.getUserDonation = async(req, res, next) => {
         error.httpStatusCode = 500;
         return next(error);
     }
-    
+
 };
 
 exports.getUserRate = (req, res, next) => {
@@ -100,7 +115,7 @@ exports.getUserAccount = async (req, res, next) => {
     }
 };
 
-exports.getUserById = async (req, res,next) => {
+exports.getUserById = async (req, res, next) => {
     try {
         const user = await User.findById(req.params.id);
 
@@ -130,7 +145,7 @@ exports.getEditInfo = async (req, res, next) => {
     }
 }
 
-exports.UpdateUser = async (req, res,next) => {
+exports.UpdateUser = async (req, res, next) => {
     let user;
     try {
         user = await User.findById(req.params.id);
@@ -200,3 +215,6 @@ exports.UpdatePassword = async (req, res, next) => {
         }
     }
 }
+
+
+/* */

@@ -88,4 +88,15 @@ router.put('/user/:id', isAuth, adminController.UpdateUser);
 
 
 
+/*Start city Routes */
+router.get('/add-city', isAuth, adminController.getAddCity);
+router.post('/add-city', isAuth, adminController.postAddCity);
+router.get('/display-cities', adminController.getCities);
+router.get('/edit-city/:cityId', isAuth, adminController.getEditCity);
+router.post('/edit-city', isAuth, adminController.postEditCity);
+router.post('/delete-city', isAuth, adminController.postDeleteCity);
+/*End city Routes */
+
+
+
 module.exports = router;
