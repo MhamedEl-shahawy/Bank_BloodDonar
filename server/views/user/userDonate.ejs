@@ -23,12 +23,11 @@
       </div>
     </div>
     <div class="main__info">
-      <h2>Search by Zip</h2>
+      <h2>Search City</h2>
       <p>
         We value your time and do our best to provide donor centers and mobile
         drives that are convenient for you.
       </p>
-      <h2>Search City</h2>
       <form action="/donor/schedules/city" method="GET">
         <label>Name</label>
         <input type="text" name="name" value="<%= searchOptions.name %>">
@@ -43,7 +42,7 @@
         <div><%= city.phoneNumber%></div>
         <br>
         <br>
-       
+
             <% }%>
       <% })  %>
 

@@ -1,18 +1,19 @@
-<nav class=" nav">
-    <ul class="nav__link">
-      <li><a href="/donor/home/index">HOME</a></li>
-      <li><a href="/donor/schedules/city">DONATE NOW</a></li>
-      <li><a href="/donor/appointment/list"> MY APPOINTMENTS</a></li>
-      <li><a href="/donor/history"> MY DONATIONS</a></li>
-      <li>
-        <a href="/donor/rateourstaff"> RATE OUR STAFF</a>
-      </li>
-      <li><a href="/donor/store"> STORE</a></li>
-      <li class="active"><a href="/donor/account/view"> MY ACCOUNT</a></li>
-      <form class="log__form" action="/log-out" method="post">
-        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />            
-        <button class="myButtonThatLooksLikeLink" type="submit"><span>LOG OUT</span></button>
-      </form>
-      
-    </ul>
-  </nav>
+<nav class="nav">
+  <ul class="nav__link">
+    <li><a href="/donor/home/index">HOME</a></li>
+    <li><a href="/donor/schedules/city">DONATE NOW</a></li>
+    <li><a href="/donor/appointment/list"> MY APPOINTMENTS</a></li>
+    <li><a href="/donor/history"> MY DONATIONS</a></li>
+    <li>
+      <a href="/donor/rateourstaff"> RATE OUR STAFF</a>
+    </li>
+    <li><a href="/donor/store"> STORE</a></li>
+    <li><a href="/donor/account/view"> MY ACCOUNT</a></li>
+    <form class="log__form" action="/log-out" method="post">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      <button class="myButtonThatLooksLikeLink" type="submit">
+        <span>LOG OUT</span>
+      </button>
+    </form>
+  </ul>
+</nav>
