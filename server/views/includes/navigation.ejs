@@ -88,12 +88,28 @@
                         <span>Account</span>
                     </a>
                 </li>
+
+                <li  class="tablinks">
+                    <a href="/users">
+                        <span><i class="fas fa-user-circle"></i></span>
+                        <span>Users</span>
+                    </a>
+                </li>
+
+                <li  class="tablinks">
+                    <a href="/sendEmail">
+                        <span><i class="fas fa-user-circle"></i></span>
+                        <span>Send Email</span>
+                    </a>
+                </li>
                 
                 <li class="tablinks">
-                    <a href="/">
-                        <span><i class="fas fa-sign-out-alt"></i></span>
-                        <span>Log Out</span>
-                    </a>
+                    <form class="log__form" action="/log-out" method="post">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                        <button class="myButtonThatLooksLikeLink" type="submit">
+                          <span>LOG OUT</span>
+                        </button>
+                      </form>`
                 </li>
             </ul>
         </nav>

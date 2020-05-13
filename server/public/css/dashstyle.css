@@ -143,6 +143,10 @@ span:after {
   font-size: 14px;
   font-weight: 600;
 }
+.none {
+  background: none;
+  border: none;
+}
 /* main content styles */
 .main-content {
   margin-top: 0;

@@ -7,7 +7,8 @@ const flash = require('connect-flash');
 const csrf = require('csurf');
 const methodOverride = require('method-override');
 const helmet = require('helmet');
-const compression = require('compression')
+const compression = require('compression');
+const socketio = require('socket.io');
 
 const errorController = require('./controllers/error');
 const mainRoutes = require('./routes/main');
@@ -58,9 +59,9 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
     if (!req.session.user) {
         return next();
-    }    
+    }
     User.findById(req.session.user._id)
-        .then(user => {            
+        .then(user => {
             if (!user) {
                 return next();
             }
@@ -80,6 +81,7 @@ app.use(userRoutes);
 app.use(adminRoutes);
 app.use(authRoutes);
 
+
 app.get('/500', errorController.get500);
 
 app.use(errorController.get404);
@@ -90,12 +92,19 @@ app.use((error, req, res, next) => {
         isAuthenticated: req.session.isLoggedIn
     });
 });
- 
+
 mongoose
-    .connect(MONGODB_URI,{useNewUrlParser: true,useUnifiedTopology: true})
-    .then(result => {
-        app.listen(PORT, process.env.IP, () => {
-            console.log(`App listening on port ${PORT}.`);
-        });
+    .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+const server = app.listen(PORT, process.env.IP, () => {
+    console.log(`App listening on port ${PORT}.`);
+});
+
+// Connect to socket.io
+const io = socketio(server);
+io.on('connection', (socket) => {
+    console.log('Connected');
+    io.on('disconnect', () => {
+        console.log('Disconnected');
     })
-    .catch(err => console.log(err));
+});

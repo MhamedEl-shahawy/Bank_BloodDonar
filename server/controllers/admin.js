@@ -7,7 +7,12 @@ const User = require('../models/user');
 const Bag = require('../models/bag');
 const City = require('../models/city');
 const bcrypt = require('bcryptjs');
+const Nexmo = require('nexmo');
+const sokcetio = require('socket.io');
+const nodemailer = require('nodemailer');
+const sendgridTransport = require('nodemailer-sendgrid-transport');
 const { validationResult } = require('express-validator');
+const crypto = require('crypto');
 const getCurrentDate = () => {
   return new Date();
 };
@@ -17,6 +22,19 @@ const getCurrentDate = () => {
   error.httpStatusCode = 500;
   return next(error);
 };*/
+
+const transporter = nodemailer.createTransport(
+  sendgridTransport({
+    auth: {
+      api_key: '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'
+    }
+  }));
+
+//Init Nexmo
+const nexmo = new Nexmo({
+  apiKey: '191d2595',
+  apiSecret: '2rthPYhF9RXQOlfJ'
+}, { debug: true });
 
 const ITEMS_PER_PAGE = 5;
 const paginator = (page, ITEMS_PER_PAGE, totalItems) => {
@@ -971,61 +989,61 @@ exports.getUserById = async (req, res) => {
   }
 }
 
-exports.getEditInfo = async (req, res,next) => {
+exports.getEditInfo = async (req, res, next) => {
   try {
     const user = await User.findById(req.params.id);
-    res.render('account/edit', 
-    { 
-      user: user,
-      pageTitle:'Edit User' 
-    });
-  } catch(err) {
+    res.render('account/edit',
+      {
+        user: user,
+        pageTitle: 'Edit User'
+      });
+  } catch (err) {
     const error = new Error(err);
     error.httpStatusCode = 500;
     return next(error);
   }
 }
 
-exports.getChangePassword = async (req,res,next) => {
-  try{
+exports.getChangePassword = async (req, res, next) => {
+  try {
     const user = await User.findById(req.params.id);
-    res.render('account/edit-password',{
-      user:user,
-      pageTitle:'Change password'
+    res.render('account/edit-password', {
+      user: user,
+      pageTitle: 'Change password'
     });
-  }catch(err){
+  } catch (err) {
     const error = new Error(err);
     error.httpStatusCode = 500;
     return next(error);
   }
 }
 
-exports.changePassword = async (req,res,next) => {
+exports.changePassword = async (req, res, next) => {
   let user;
   const errors = validationResult(req);
-  try{
-    if(!errors.isEmpty()){
+  try {
+    if (!errors.isEmpty()) {
       console.log(errors.array());
-      return res.status(422).render('account/edit-password', {     
+      return res.status(422).render('account/edit-password', {
         pageTitle: 'Change password',
         errorMessage: errors.array()[0].msg,
       });
     }
-    let password = await bcrypt.hash(req.body.password,12);
+    let password = await bcrypt.hash(req.body.password, 12);
     user = await User.findById(req.params.id);
     user.password = password;
     await user.save();
     res.redirect(`/user/${user.id}`);
-  }catch(err){
-    if(user == null) {
+  } catch (err) {
+    if (user == null) {
       const error = new Error(err);
       error.httpStatusCode = 500;
       return next(error);
     } else {
-      res.render('account/edit',{
-        user:user,
-        errorMessage:errors.array()[0].msg,
-        pageTitle:'Edit'
+      res.render('account/edit', {
+        user: user,
+        errorMessage: errors.array()[0].msg,
+        pageTitle: 'Edit'
       });
     }
 
@@ -1050,7 +1068,7 @@ exports.UpdateUser = async (req, res) => {
       res.render('account/edit', {
         user: user,
         errorMessage: 'Error updating User',
-        pageTitle:'Edit'
+        pageTitle: 'Edit'
       })
     }
   }
@@ -1072,10 +1090,10 @@ exports.postAddCity = (req, res, next) => {
   const hospital = req.body.hospital;
 
   const city = new City({
-    name:cityName,
-    hospital:hospital,
-    phoneNumber:phoneNumber,
-    address:address,
+    name: cityName,
+    hospital: hospital,
+    phoneNumber: phoneNumber,
+    address: address,
     userId: req.user._id
   });
   city
@@ -1185,7 +1203,7 @@ exports.postEditCity = (req, res, next) => {
 
 exports.postDeleteCity = (req, res, next) => {
   const cityId = req.body.cityId;
-City.deleteOne({
+  City.deleteOne({
     _id: cityId,
     userId: req.user._id
   })
@@ -1203,3 +1221,122 @@ City.deleteOne({
 /* End */
 
 
+
+exports.getUsers = (req, res, next) => {
+  const currentUser = req.user;
+  const page = parseInt(req.query.page) || 1;
+  let totalItems;
+  let itemCounterStartInCurrentPage;
+  User
+    .estimatedDocumentCount()
+    .then(number => {
+      totalItems = number;
+      itemCounterStartInCurrentPage = totalItems - ITEMS_PER_PAGE * (page - 1);
+      return User
+        .find()
+        .sort({ date: -1 })
+        .skip((page - 1) * ITEMS_PER_PAGE)
+        .limit(ITEMS_PER_PAGE)
+        .populate('userId');
+    })
+    .then(users => {
+      res.render('donor/users', {
+        itemCounterStartInCurrentPage,
+        users,
+        pageTitle: 'Users',
+        currentUser,
+        paginationObject: paginator(page, ITEMS_PER_PAGE, totalItems)
+      });
+    }).catch(err => {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    });
+};
+
+
+exports.postMessage = (req, res, next) => {
+  const { number, text } = req.body;
+  nexmo.message.sendSms(
+    'Vonage SMS API', number, text, { type: 'unicode' },
+    (err, responseData) => {
+      if (err) {
+        console.log(err);
+      } else {
+        const { messages } = responseData;
+        const { ['message-id']: id, ['to']: number, ['error-text']: error } = messages[0];
+        console.dir(responseData);
+        // Get data from response
+        const data = {
+          id,
+          number,
+          error
+        };
+        // Emit to the client
+        io.emit('smsStatus', data);
+      }
+    }
+  );
+};
+
+
+//Send EMail to users
+
+exports.getEmails = (req, res, next) => {
+  const currentUser = req.user;
+  const page = parseInt(req.query.page) || 1;
+  let totalItems;
+  let itemCounterStartInCurrentPage;
+  User
+    .estimatedDocumentCount()
+    .then(number => {
+      totalItems = number;
+      itemCounterStartInCurrentPage = totalItems - ITEMS_PER_PAGE * (page - 1);
+      return User
+        .find()
+        .sort({ date: -1 })
+        .skip((page - 1) * ITEMS_PER_PAGE)
+        .limit(ITEMS_PER_PAGE)
+        .populate('userId');
+    })
+    .then(users => {
+      res.render('donor/emails', {
+        itemCounterStartInCurrentPage,
+        users,
+        pageTitle: 'Users',
+        currentUser,
+        paginationObject: paginator(page, ITEMS_PER_PAGE, totalItems)
+      });
+    }).catch(err => {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
+    });
+};
+
+
+exports.postEmail = async (req, res, next) => {
+
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+      req.flash('error', 'No account with that email found.');
+      return res.redirect('/index');
+    }
+    res.redirect('/index');
+    transporter.sendMail({
+      to: req.body.email,
+      from: 'bloodbankManagementsystem@protonmail.com',
+      subject: 'Request a blood bag',
+      html: `
+          <p>Please, go to the hospital * as soon as you need a blood bag of your kind</p>
+          
+        `
+    })
+  } catch (err) {
+    const error = new Error(err);
+    error.httpStatusCode = 500;
+    return next(error);
+  }
+
+}

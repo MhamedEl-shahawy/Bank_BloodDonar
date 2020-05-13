@@ -17,7 +17,7 @@
 				<img src="/images/login/logbg.svg">
 			</div>
 			<div class="login-content">
-				<form class="login" action="/log-in" method="POST">
+				<form class="login" action="/reset" method="POST">
 					<img src="/images/login/logavatar.svg">
 					<h2 class="title">Welcome</h2>
 					<div class="input-div one">
@@ -26,12 +26,11 @@
 						</div>
 						<div class="div">
 							<h5>E-Mail</h5>
-                           
                             <input type="email" class="input" name="email" id="email">
 						</div>
 					</div>
-                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-                    <button class="btn" type="submit">Reset Password</button>
+					<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+					<button class="btn" type="submit">Reset Password</button>
 					<p>Or</p>
 					<a href="/sign-up" class="btn">SignUp</a>
 					<% if (errorMessage) { %>

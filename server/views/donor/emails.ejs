@@ -1,0 +1,54 @@
+<%- include('../includes/navigation.ejs') %>
+  <section class="main">
+  <div class="main-content tabcontent" id="bloodDonar">
+    
+      
+<div class="pd-1">
+   <div class="container">
+     <table>
+    <thead>
+      <tr>
+        <th scope="col">User Name</th>
+        <th scope="col" class="center">Blood type</th>
+        <th scope="col">E-mail</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (users.length > 0) {
+        let i = itemCounterStartInCurrentPage;
+        for (let user of users) { %>
+      <tr>
+          <td data-label="phone"><%= user.firstName.concat(' ', user.lastName) %></td>
+          <td data-label="bloodType"> <%= user.bloodType %></td>
+          
+          <td>
+              <form action="/sendEmail" method="POST">
+                <input class="none" type="email" name="email" id="email" value="<%= user.email %>" placeholder="Enter Your email....">
+                <td>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                        <button class="btn" type="submit">Send Email</button>
+                </td>
+                </form>
+         </td>
+          
+      <% if (isAuthenticated && user._id.toString() === currentUser._id.toString()) { %>
+          <span>
+              <input type="hidden" value="<%= user._id %>" name="userId">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+          </span>
+        
+          <% } %> 
+        </tr> 
+        <% i--; } %>
+        <% } else { %>
+        <p>No users found.</p>
+        <% } %>
+      </tbody>
+ </table>
+   </div> 		
+</div>
+</div> 
+</section>
+  <%- include('../includes/pagination.ejs', paginationObject) %>
+  <%- include('../includes/bottom.ejs') %>
