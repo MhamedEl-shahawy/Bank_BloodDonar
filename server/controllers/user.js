@@ -3,9 +3,16 @@ const Donor = require('../models/donor');
 const City = require('../models/city');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const nodemailer = require('nodemailer');
+const sendgridTransport = require('nodemailer-sendgrid-transport');
 
 
-
+const transporter = nodemailer.createTransport(
+    sendgridTransport({
+        auth: {
+            api_key: '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'
+        }
+    }));
 
 exports.getHome = (req, res, next) => {
     res.render('user/userHome', {
@@ -15,14 +22,14 @@ exports.getHome = (req, res, next) => {
 
 exports.getUserDonate = async (req, res, next) => {
     let searchOptions = {};
-    if (req.query.name != null && req.query.name !== '') {
-        searchOptions.name = new RegExp(req.query.name, 'i');
+    if (req.query.city != null && req.query.city !== '') {
+        searchOptions.city = new RegExp(req.query.city, 'i');
     }
     try {
-        const cities = await City.find(searchOptions);
+        const users = await User.find(searchOptions);
         res.render('user/userDonate', {
-            pageTitle:'Search',
-            cities: cities,
+            pageTitle: 'Search',
+            users: users,
             searchOptions: req.query
         });
     } catch (err) {
@@ -31,6 +38,30 @@ exports.getUserDonate = async (req, res, next) => {
         return next(error);
     }
 
+};
+
+exports.postSendEmail = async (req, res, next) => {
+    try {
+        const user = await User.findOne({ email: req.body.email });
+        if (!user) {
+            req.flash('error', 'No account with that email found.');
+            return res.redirect('/donor/home/index');
+        }
+        res.redirect('/donor/home/index');
+        transporter.sendMail({
+            to: req.body.email,
+            from: 'bloodbankManagementsystem@protonmail.com',
+            subject: 'Request a blood bag',
+            html: `
+              <p>Please, go to the hospital * as soon as you need a blood bag of your kind</p>
+
+            `
+        })
+    } catch (err) {
+        const error = new Error(err);
+        error.httpStatusCode = 500;
+        return next(error);
+    }
 };
 
 exports.getUserAppointment = async (req, res, next) => {

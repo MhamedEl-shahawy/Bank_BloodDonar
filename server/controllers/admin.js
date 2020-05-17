@@ -1282,36 +1282,60 @@ exports.postMessage = (req, res, next) => {
 
 //Send EMail to users
 
-exports.getEmails = (req, res, next) => {
+exports.getEmails = async (req, res, next) => {
   const currentUser = req.user;
   const page = parseInt(req.query.page) || 1;
   let totalItems;
   let itemCounterStartInCurrentPage;
-  User
-    .estimatedDocumentCount()
-    .then(number => {
-      totalItems = number;
-      itemCounterStartInCurrentPage = totalItems - ITEMS_PER_PAGE * (page - 1);
-      return User
-        .find()
-        .sort({ date: -1 })
-        .skip((page - 1) * ITEMS_PER_PAGE)
-        .limit(ITEMS_PER_PAGE)
-        .populate('userId');
-    })
-    .then(users => {
-      res.render('donor/emails', {
-        itemCounterStartInCurrentPage,
-        users,
-        pageTitle: 'Users',
-        currentUser,
-        paginationObject: paginator(page, ITEMS_PER_PAGE, totalItems)
-      });
-    }).catch(err => {
-      const error = new Error(err);
-      error.httpStatusCode = 500;
-      return next(error);
+  let searchOptions = {};
+  if (req.query.bloodType != null && req.query.bloodType !== '') {
+    searchOptions.bloodType = new RegExp(req.query.bloodType, 'i');
+  }
+  try {
+    let number = await User.estimatedDocumentCount();
+    totalItems = number;
+    itemCounterStartInCurrentPage = totalItems - ITEMS_PER_PAGE * (page - 1);
+    let users = await User.find().sort({ date: -1 }).skip((page - 1) * ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE).populate('userId');
+    let types = await User.find(searchOptions);
+    res.render('donor/emails', {
+      itemCounterStartInCurrentPage,
+      users,
+      types: types,
+      pageTitle: 'Users',
+      searchOptions: req.query,
+      currentUser,
+      paginationObject: paginator(page, ITEMS_PER_PAGE, totalItems)
     });
+  } catch (err) {
+    const error = new Error(err);
+    error.httpStatusCode = 500;
+    return next(error);
+  }
+  // User
+  //   .estimatedDocumentCount()
+  //   .then(number => {
+  //     totalItems = number;
+  //     itemCounterStartInCurrentPage = totalItems - ITEMS_PER_PAGE * (page - 1);
+  //     return User
+  //       .find()
+  //       .sort({ date: -1 })
+  //       .skip((page - 1) * ITEMS_PER_PAGE)
+  //       .limit(ITEMS_PER_PAGE)
+  //       .populate('userId');
+  //   })
+  //   .then(users => {
+  //     res.render('donor/emails', {
+  //       itemCounterStartInCurrentPage,
+  //       users,
+  //       pageTitle: 'Users',
+  //       currentUser,
+  //       paginationObject: paginator(page, ITEMS_PER_PAGE, totalItems)
+  //     });
+  //   }).catch(err => {
+  //     const error = new Error(err);
+  //     error.httpStatusCode = 500;
+  //     return next(error);
+  //   });
 };
 
 
@@ -1321,9 +1345,9 @@ exports.postEmail = async (req, res, next) => {
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
       req.flash('error', 'No account with that email found.');
-      return res.redirect('/index');
+      return res.redirect('/sendEmail');
     }
-    res.redirect('/index');
+    res.redirect('/sendEmail');
     transporter.sendMail({
       to: req.body.email,
       from: 'bloodbankManagementsystem@protonmail.com',

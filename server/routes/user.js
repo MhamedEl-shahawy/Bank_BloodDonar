@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get('/donor/home/index', isAuth, userController.getHome);
 router.get('/donor/schedules/city', isAuth, userController.getUserDonate);
+router.post('/donor/schedules/city', isAuth, userController.postSendEmail);
 router.get('/donor/appointment/list', isAuth, userController.getUserAppointment);
 router.get('/donor/history', isAuth, userController.getUserDonation);
 router.get('/donor/rateourstaff', isAuth, userController.getUserRate);
@@ -35,6 +36,8 @@ router.put('/donor/password/:id', [
             return true;
         })
 ], isAuth, userController.UpdatePassword);
+
+
 
 
 module.exports = router;
