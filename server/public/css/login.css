@@ -3,6 +3,13 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+:root {
+	--backgroundColor: #f2f5fa;
+	--main-color: #0f1048;
+	--second-color: #4b48b1;
+	--text-color: #7375a8;
+	--alertColor:#eb4d4b;
+}
 
 body{
     font-family: 'Poppins', sans-serif;
@@ -103,7 +110,7 @@ form{
 	bottom: -2px;
 	width: 0%;
 	height: 2px;
-	background-color: #F75449;
+	background-color: var(--second-color);
 	transition: .4s;
 }
 
@@ -125,7 +132,7 @@ form{
 }
 
 .input-div.focus > .i > i{
-	color: #F75449;
+	color: var(--second-color);
 }
 
 .input-div > div > input{
@@ -157,7 +164,7 @@ a{
 }
 
 a:not(a.btn):hover{
-	color: #F75449;
+	color: var(--second-color);
 }
 
 .btn{
@@ -167,7 +174,7 @@ a:not(a.btn):hover{
 	border-radius: 25px;
 	outline: none;
 	border: none;
-	background-color: #F75449;
+	background-color: var(--second-color);
 	font-size: 1.2rem;
 	color: #fff;
 	font-family: 'Poppins', sans-serif;
@@ -190,7 +197,7 @@ p{
 .p_border:before{
 	 content:""; 
 	 position: absolute;
-     border:1px solid #f00;
+     border:1px solid var(--alertColor);
      width:39%; 
      top:50%;
      right:6%;   
@@ -205,7 +212,7 @@ p{
 
 /* start error  message*/
 .user-message{
-	 color: #f00;
+	 color:var(--alertColor);
 }
 @media screen and (max-width: 1050px){
 	.container{

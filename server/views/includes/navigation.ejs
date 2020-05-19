@@ -78,17 +78,10 @@
                 </li>
                 <li  class="tablinks">
                     <a href="/display-cities">
-                        <span><i class="fas fa-user-circle"></i></span>
+                        <span><i class="fas fa-city"></i></span>
                         <span>Cities</span>
                     </a>
                 </li>
-                <li  class="tablinks">
-                    <a href="/user">
-                        <span><i class="fas fa-user-circle"></i></span>
-                        <span>Account</span>
-                    </a>
-                </li>
-
                 <li  class="tablinks">
                     <a href="/users">
                         <span><i class="fas fa-user-circle"></i></span>
@@ -98,17 +91,25 @@
 
                 <li  class="tablinks">
                     <a href="/sendEmail">
-                        <span><i class="fas fa-user-circle"></i></span>
+                        <span><i class="fas fa-mail-bulk"></i></span>
                         <span>Send Email</span>
                     </a>
                 </li>
-                
+                <li  class="tablinks">
+                    <a href="/user">
+                        <span><i class="fas fa-cog"></i></span>
+                        <span>Account</span>
+                    </a>
+                </li>
                 <li class="tablinks">
                     <form class="log__form" action="/log-out" method="post">
                         <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                        <a>
                         <button class="myButtonThatLooksLikeLink" type="submit">
-                          <span>LOG OUT</span>
-                        </button>
+                                <span><i class="fas fa-user-circle"></i></span>
+                                <span>Log Out</span>
+                            </button>
+                        </a>
                       </form>`
                 </li>
             </ul>

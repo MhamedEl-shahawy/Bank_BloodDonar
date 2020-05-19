@@ -1,10 +1,14 @@
-:root {
-  --main-color: #eb4d4b;
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+	--backgroundColor: #f2f5fa;
+	--main-color: #0f1048;
+	--second-color: #4b48b1;
+	--text-color: #7375a8;
+	--alertColor:#eb4d4b;
 }
 a {
   text-decoration: none;
@@ -31,7 +35,7 @@ body {
   z-index: 3;
   height: 44px;
   background-color: #fff;
-  border-bottom: 3px solid #2d3d51;
+  border-bottom: 3px solid var(--second-color);
 }
 /* logo in header(mobile version) and side-nav (tablet & desktop) */
 .logo {
@@ -43,8 +47,8 @@ body {
   color: #233245;
 }
 .side-nav .logo {
-  background-color: #233245;
-  color: #fff;
+  background-color: var(--second-color);
+  color: var(--backgroundColor);
 }
 .header .logo {
   float: left;
@@ -76,7 +80,7 @@ body {
 span:after {
   width: 20px;
   height: 2px;
-  background-color: #35475e;
+  background-color: var(--second-color);
   position: absolute;
 }
 .nav-trigger span {
@@ -97,7 +101,7 @@ span:after {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: #35475e;
+  background-color: var(--second-color);
   z-index: 1;
   display: none;
 }
@@ -113,12 +117,11 @@ span:after {
   border-bottom: 1px solid #3c506a;
   position: relative;
 }
-.side-nav ul li:last-child {
-  position: absolute;
-  bottom: 1%;
-  width: 100%;
-  padding-left: 1.2em;
+.side-nav ul li:last-child  button{
+  background: none;
+  color: var(--backgroundColor);
 }
+
 .side-nav ul li.active:before {
   content: "";
   position: absolute;
@@ -126,15 +129,15 @@ span:after {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: var(--main-color);
+  background-color: var(--alertColor);
 }
 .side-nav ul li a {
-  color: #fff;
+  color: var(--backgroundColor);
   display: block;
   text-decoration: none;
 }
 .side-nav ul li i {
-  color: #fff;
+  color: var(--backgroundColor);
   min-width: 20px;
   text-align: center;
 }
@@ -228,7 +231,7 @@ span:after {
   left: 22%;
   height: auto;
   width: 35%;
-  background-color: #fff;
+  background-color:var(--backgroundColor);
   display: block;
   border-radius: 5px;
   padding: 2em;
@@ -256,7 +259,7 @@ span:after {
 .container {
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--backgroundColor);
   border: 1px solid #f1f1f1;
   padding-top: 2em;
 }
@@ -397,7 +400,7 @@ hr {
   background: #0984e3;
   padding: 0.5em 2.3em;
   border: none;
-  color: #fff;
+  color: var(--backgroundColor);
   font-size: 1.2em;
   margin-top: 1.1em;
   cursor: pointer;
@@ -411,7 +414,7 @@ hr {
   background-color: #2cd257;
   padding: 0.5em 2.3em;
   border: none;
-  color: #fff;
+  color: var(--backgroundColor);
   font-size: 1.2em;
   margin-top: 1.1em;
   cursor: pointer;
@@ -420,7 +423,7 @@ hr {
 /* set element styles to fit tablet and higher(desktop) */
 @media screen and (min-width: 600px) {
   .header {
-    background-color: #35475e;
+    background-color: var(--second-color);
     z-index: 1;
   }
   .header .logo {
@@ -432,7 +435,7 @@ hr {
   .nav-trigger span,
   .nav-trigger span:before,
   span:after {
-    background-color: #fff;
+    background-color:var(--backgroundColor);
   }
   .side-nav {
     display: block;

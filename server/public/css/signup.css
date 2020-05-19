@@ -1,3 +1,15 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+:root {
+	--backgroundColor: #f2f5fa;
+	--main-color: #0f1048;
+	--second-color: #4b48b1;
+	--text-color: #7375a8;
+	--alertColor:#eb4d4b;
+}
 body{
    background-image: url(/images/login/logwave.png);
     background-repeat: no-repeat;
@@ -50,7 +62,7 @@ body{
  }
  .form__input:focus{
     outline: none;
-    border: 1px solid #eb3b5a;
+    border: 1px solid var(--second-color);
  }
  .form__container_w .form__input {
      width: 100%;
@@ -72,7 +84,7 @@ body{
  }
  .form__button{
     padding:0.5em 0; 
-    background-color:#F75449; 
+    background-color:var(--second-color); 
     border:none;
     border-radius:20px;  
     width:100%;
