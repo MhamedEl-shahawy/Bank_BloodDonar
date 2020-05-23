@@ -9,54 +9,33 @@
         <form class="account-setting">
           <div class="account-setting__form">
             <h3>Account Info</h3>
-            <div class="form-container">
+            <div class="form-container block">
               <div>
-                <label for="firstName" class="account-setting__label">First Name: </label>
-                <span><%= user.firstName %></span>
-                <!--<input type="text" class="account-setting__input" placeholder="First Name" name="firstName"
-                  value="<%= user.firstName %>" />-->
+                <p class="account-info"><span class="label">First Name: </span><span class="label-info"><%= user.firstName %></span></p>
               </div>
               <div>
-                <label for="lastName" class="account-setting__label">Last Name: </label>
-                <span><%= user.lastName %></span>
-                <!--<input type="text" class="account-setting__input" placeholder="Last Name" name="lastName"
-                  value="<%= user.lastName %>" />-->
+                <p  class="account-info"><span class="label">Last Name: </span><span class="label-info"> <%= user.lastName %></span></p>
               </div>
               <div>
-                <label for="emailaddress" class="account-setting__label">E-mail: </label>
-                <span><%= user.email %></span>
-                <!--<input type="email" class="account-setting__input" placeholder="Email Address" name="emailaddress"
-                  value="<%= user.email %>" />-->
+                <p  class="account-info"><span class="label">E-mail: </span><span class="label-info"><%= user.email %></span></p>
               </div>
               <div>
-                <label for="phonenumber" class="account-setting__label">Phone Number: </label>
-                <span><%= user.phoneNumber %></span>
-                <!--<input type="number" class="account-setting__input" placeholder="Phone Number" name="phonenumber"
-                  value="<%= user.phoneNumber %>" />-->
+               <p  class="account-info"><span class="label">Phone Number: </span><span class="label-info"><%= user.phoneNumber %></span></p>
               </div>
               <div>
-                <label for="city" class="account-setting__label">City: </label>
-                <span><%= user.city %></span>
-                <!--<input type="text" class="account-setting__input" placeholder="City Name" name="city"
-                  value="<%= user.city %>" />-->
+                <p  class="account-info"><span class="label">City: </span><span class="label-info"><%= user.city %></span></p>
               </div>
               <div>
-                <label for="state" class="account-setting__label">State: </label>
-                <span><%= user.sate %></span>
-                <!--<input type="text" class="account-setting__input" placeholder="Sate Name" name="state"
-                  value="<%= user.state %>" />-->
+                <p  class="account-info"><span class="label">State: </span><span class="label-info"><%= user.state %></span></p>
               </div>
               <div>
-                <label for="bloodType" class="account-setting__label">Blood Type: </label>
-                <span><%= user.bloodType %></span>
-                <!--<input type="text" class="account-setting__input" placeholder="Sate Name" name="state"
-                  value="<%= user.state %>" />-->
+               <p  class="account-info"><span class="label">Blood Type: </span><span class="label-info"><%= user.bloodType %></span></p>
               </div>
             </div>
           </div>
           <div class="account-setting__form">
-            <h2>You can Change your password below:- </h2>
-            <h3><a href="/user/password/<%= user.id %>/edit">Change Password</a></h3>
+            <h2 class="account-setting__h2">You can Change your password below:- </h2>
+            <h3 class="account-setting__h3"><a href="/user/password/<%= user.id %>/edit">Change Password</a></h3>
           </div>
           <div class="save">
             <a href="/user/<%= user.id %>/edit" class="save__btn">Edit</a>

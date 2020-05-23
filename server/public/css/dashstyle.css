@@ -9,6 +9,7 @@
 	--second-color: #4b48b1;
 	--text-color: #7375a8;
 	--alertColor:#eb4d4b;
+  --higlight:#ff4757;
 }
 a {
   text-decoration: none;
@@ -19,13 +20,13 @@ li {
   list-style: none;
 }
 body {
-  font-family: "Source Sans Pro", sans-serif;
   background-color: #d5dae5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /*start header*/
@@ -341,6 +342,26 @@ td.blood-type {
 .done {
   background-color: #26de81;
 }
+.view{
+  display:inline-block; 
+  color: var(--second-color);
+  text-decoration: underline;
+  padding: 1em;
+  font-weight: bolder;
+  font-size:1.1em; 
+}
+
+.edit{
+  text-decoration: underline;
+  display:inline-block; 
+  font-weight: bolder;
+  color:var(--higlight);
+  font-size:1.1em; 
+  
+}
+.account__bio{
+   font-size:1.3em; 
+}
 form button {
   border: none;
   cursor: pointer;
@@ -361,7 +382,7 @@ hr {
 }
 .account-setting__form {
   width: 100%;
-  padding: 1em;
+  padding: 0.5em;
   position: relative;
   color: #777;
 }
@@ -374,30 +395,31 @@ hr {
 .form-container:last-child {
   grid-template-columns: repeat(4, 1fr);
 }
+.block{
+  display: block;  
+}
 
 .account-setting__form h3 {
   margin-bottom: 1em;
   color: #555;
 }
 .account-setting__input {
-  width: 92%;
+  width: 25%;
   padding-top: 0.7em;
   padding-bottom: 0.7em;
   font-size: 1.1em;
-  border: 1px solid #ecf0f1;
+  border:none;
+  color: var(--higlight);
   border-radius: 3px;
   padding-left: 0.4em;
   margin-top: 10px;
 }
 .account-setting__label {
-  display: block;
   font-size: 1.2em;
 }
-.change {
-  padding: 1em;
-}
+
 .change__btn {
-  background: #0984e3;
+  background: var(--second-color);
   padding: 0.5em 2.3em;
   border: none;
   color: var(--backgroundColor);
@@ -411,13 +433,50 @@ hr {
   padding: 1em;
 }
 .save__btn {
-  background-color: #2cd257;
+  background-color: var(--second-color);
   padding: 0.5em 2.3em;
   border: none;
   color: var(--backgroundColor);
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-top: 1.1em;
   cursor: pointer;
+}
+.search-bar{
+  padding: 1em;
+    border-radius: 3px;
+    margin-left:1em;
+    width:30%;  
+    border: 1px solid #000;
+}
+.floating-right{
+   float: right;
+}
+.label-info{
+   font-size:1.444em;
+   color:var(--higlight); 
+}
+.account-info {
+    text-transform: capitalize;
+}
+.account-setting__selector{
+  width:20%; 
+  color: var(--higlight);
+}
+.label{
+    color: #686de0;
+    font-size: 1.5em;
+    line-height: 51px;
+}
+.account-setting__h2{
+  margin-bottom:0.4em;
+  text-transform: capitalize;
+}
+.account-setting__h3 a{
+   color: #ff4757; 
+}
+.setting-center{
+   text-align:center;
+   margin-top:3em;  
 }
 /*start media*/
 /* set element styles to fit tablet and higher(desktop) */
@@ -522,6 +581,7 @@ hr {
   .not-done {
     margin: auto;
   }
+ 
 }
 
 @media screen and (max-width: 600px) {
