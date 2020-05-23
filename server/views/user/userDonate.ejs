@@ -23,40 +23,38 @@
       </div>
     </div>
     <div class="main__info">
-      <h2>Search City</h2>
+      <h2 class="header">Search City</h2>
       <p>
         We value your time and do our best to provide donor centers and mobile
         drives that are convenient for you.
       </p>
-      <form action="/donor/schedules/city" method="GET">
-        <label>Name</label>
-        <input type="text" name="city" value="<%= searchOptions.city %>">
+      <form class="user-search" action="/donor/schedules/city" method="GET">
+        <!-- <label>Name</label> -->
+        <input type="text" name="city" placeholder="Enter city" value="<%= searchOptions.city %>">
         <button type="submit">Search</button>
       </form>
       <br>
+
+      <div class="form-search">
+        <h4 class="header">Names list:</h4>
       <% users.forEach(user => { %>
-        <%if(user.city === searchOptions.city) { %>
-        <div><%= user.firstName.concat(' ',user.lastName) %></div>
-        <div><%= user.bloodType%></div>
-        <div><%= user.phoneNumber%></div>
-        <div>
-          
-          <form action="/donor/schedules/city" method="POST">
-            <input class="none" type="email" name="email" id="email" value="<%= user.email %>" placeholder="Enter Your email....">
-            <td>
-                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-                    <button class="btn" type="submit">Send Email</button>
-            </td>
-            </form>
-          
-        </div>
-        <br>
-        <br>
-
-            <% }%>
+          <%if(user.city === searchOptions.city) { %>
+            <div class="result">
+              <div class="grid">
+                <div><%= user.firstName.concat(' ',user.lastName) %></div>
+                <div><%= user.bloodType%></div>
+                <!-- <div><%= user.phoneNumber%></div> -->
+              </div>
+              <form action="/donor/schedules/city" method="POST">
+                <input  class="disabled" type="email" name="email" id="email" value="<%= user.email %>" placeholder="Enter Your email....">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                  <button class="btn " type="submit">Send Email</button>
+              </form>
+            </div>
+          <% }%>
       <% })  %>
+      </div>
 
-    </div>
 
   </main>
 </body>
