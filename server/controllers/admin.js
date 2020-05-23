@@ -1356,7 +1356,8 @@ exports.postEmail = async (req, res, next) => {
           <p>Please, go to the hospital * as soon as you need a blood bag of your kind</p>
           
         `
-    })
+    });
+
   } catch (err) {
     const error = new Error(err);
     error.httpStatusCode = 500;

@@ -1,11 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
 :root {
-  /* --main-color: #a4243b;
-  --second-color: #bac1d2;
-  --text-color: #414141;
-  --a-color: #00a8c4; */
+
   --backgroundColor: #f2f5fa;
-  --second-color: #0f1048;
+  --second-color: #4b48b1;
   --main-color: #4b48b1;
   --text-color: #7375a8;
 }
