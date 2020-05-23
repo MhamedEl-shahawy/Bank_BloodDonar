@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
 :root {
-
   --backgroundColor: #f2f5fa;
-  --second-color: #4b48b1;
   --main-color: #4b48b1;
+  --second-color: #0f1048;
   --text-color: #7375a8;
 }
 
@@ -19,6 +18,7 @@ body {
   height: 100%;
   font-family: "Rubik", sans-serif;
   background-color: var(--backgroundColor);
+  overflow-x: hidden;
 }
 
 a {
@@ -167,6 +167,7 @@ main .main__info .form-user {
   width: 80%;
   margin: 1.2em auto;
   text-align: center;
+  padding: 1em;
   border: 1px solid var(--text-color);
 }
 
@@ -204,9 +205,12 @@ main .main__info .form-user .form-group {
 }
 main .main__info .form-user .form-group label {
   padding: 6px;
+  color:var(--second-color)
+
 }
 main .main__info .form-user .form-group label.value {
   font-weight: normal;
+  color: var(--main-color);
 }
 main .main__info .form-user .form-group input[type="checkbox"] {
   position: relative;
@@ -296,13 +300,14 @@ main .main__info .form-user button {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-main .main__info .form-user button.btn-back {
-  background: #fff;
-  color: black;
-  border-color: black;
+main .main__info .form-user a.btn-back {
+  background: black;
+  color: white;
+  padding: 10px 28px;
+
 }
 
-main .main__info .form-user button:active {
+main .main__info .form-user a:active {
   position: relative;
   top: 1px;
 }
@@ -329,8 +334,8 @@ main .main__info--links div i {
 main .main__info--links div h3 {
   color: black;
 }
-main .main__info .btn {
-  background-color: #f44336; /* Green */
+ .btn {
+  background-color: #f44336;
   border: none;
   color: white;
   padding: 10px 28px;
@@ -423,15 +428,53 @@ h5.underline {
 }
 /* form Search */
 .form-search {
-  border: 1px solid var(--text-color);
+  /* border: 1px solid var(--text-color); */
   padding: 10px;
   width: 80%;
   margin: 10px auto;
 }
+.form-search h4 {
+  color: var(--main-color);
+  text-align: center;
+  margin: .3em auto .5em;
+}
 .form-search .result {
   border: 1px solid var(--text-color);
   margin-top: 10px;
-  padding: 1em;
+  padding: .6em;
+}
+.form-search .result {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  align-items: center;
+  justify-items: center;
+  /* justify-content: space-around; */
+}
+.form-search .result .btn{
+  background-color: var(--main-color);
+}
+.form-search .result .btn:active{
+ position: relative;
+ top: 2px;
+}
+.form-search .result .grid{
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  align-items: center;
+}
+.form-search .result .grid img{
+  max-width: 110%;
+  margin-bottom: .3em;
+}
+.form-search .result .grid .result__desc{
+  color: var(--second-color);
+  font-size: 1.1em;
+  margin-left: .7em;
+}
+.form-search .result .grid .result__desc div:last-of-type{
+  color: red;
+  text-transform: uppercase;
+margin-top: 5px;
 }
 .disabled {
   display: none;
@@ -445,10 +488,10 @@ h5.underline {
 .user-search input {
   padding: 0.5em;
   color: black;
-  width: 11vw;
+  width: 14vw;
   height: 5vh;
   font-size: 1em;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24);
   border-radius: 3px;
   margin-bottom: 1em;
 }
@@ -456,10 +499,15 @@ h5.underline {
 .user-search button {
   background-color: var(--main-color);
   color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   font-size: 1em;
   padding: 0.5em 1em;
   border-radius: 3px;
   margin-left: 1em;
+}
+.user-search button:active{
+  position: relative;
+  top: 2px;
 }
 
 /* form Search */

@@ -36,16 +36,19 @@
       <br>
 
       <div class="form-search">
-        <h4 class="header">Names list:</h4>
+        <!-- <h4 >Names list</h4> -->
       <% users.forEach(user => { %>
           <%if(user.city === searchOptions.city) { %>
             <div class="result">
               <div class="grid">
-                <div><%= user.firstName.concat(' ',user.lastName) %></div>
-                <div><%= user.bloodType%></div>
-                <!-- <div><%= user.phoneNumber%></div> -->
+                <img src="/images/user/profile.svg" alt="User avatar" />
+                <div class="result__desc">
+                  <div><%= user.firstName.concat(' ',user.lastName) %></div>
+                  <div><%= user.bloodType%></div>
+                  <!-- <div><%= user.phoneNumber%></div> -->
+                </div>
               </div>
-              <form action="/donor/schedules/city" method="POST">
+              <form  action="/donor/schedules/city" method="POST">
                 <input  class="disabled" type="email" name="email" id="email" value="<%= user.email %>" placeholder="Enter Your email....">
                   <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                   <button class="btn " type="submit">Send Email</button>
