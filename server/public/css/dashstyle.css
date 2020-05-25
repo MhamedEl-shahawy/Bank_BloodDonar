@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 :root {
-	--backgroundColor: #f2f5fa;
+  --backgroundColor: #f2f5fa;
 	--main-color: #0f1048;
 	--second-color: #4b48b1;
 	--text-color: #7375a8;
@@ -20,7 +20,7 @@ li {
   list-style: none;
 }
 body {
-  background-color: #d5dae5;
+  background-color: var(--backgroundColor);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
@@ -34,9 +34,9 @@ body {
   position: absolute;
   width: 100%;
   z-index: 3;
-  height: 44px;
+  height: 47px;
   background-color: #fff;
-  border-bottom: 3px solid var(--second-color);
+  border-bottom: 3px solid #eaeff7;
 }
 /* logo in header(mobile version) and side-nav (tablet & desktop) */
 .logo {
@@ -102,7 +102,7 @@ span:after {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: var(--second-color);
+  background-color: #eaeff7;
   z-index: 1;
   display: none;
 }
@@ -117,10 +117,11 @@ span:after {
   padding: 16px 16px;
   border-bottom: 1px solid #3c506a;
   position: relative;
+  color:var(--second-color);
 }
 .side-nav ul li:last-child  button{
   background: none;
-  color: var(--backgroundColor);
+  color: var(--second-color);
 }
 
 .side-nav ul li.active:before {
@@ -133,12 +134,12 @@ span:after {
   background-color: var(--alertColor);
 }
 .side-nav ul li a {
-  color: var(--backgroundColor);
+  color: var(--second-color);
   display: block;
   text-decoration: none;
 }
 .side-nav ul li i {
-  color: var(--backgroundColor);
+  color: var(--second-color);
   min-width: 20px;
   text-align: center;
 }
@@ -343,24 +344,24 @@ td.blood-type {
   background-color: #26de81;
 }
 .view{
-  display:inline-block; 
+  display:inline-block;
   color: var(--second-color);
   text-decoration: underline;
   padding: 1em;
   font-weight: bolder;
-  font-size:1.1em; 
+  font-size:1.1em;
 }
 
 .edit{
   text-decoration: underline;
-  display:inline-block; 
+  display:inline-block;
   font-weight: bolder;
   color:var(--higlight);
-  font-size:1.1em; 
-  
+  font-size:1.1em;
+
 }
 .account__bio{
-   font-size:1.3em; 
+   font-size:1.3em;
 }
 form button {
   border: none;
@@ -396,7 +397,7 @@ hr {
   grid-template-columns: repeat(4, 1fr);
 }
 .block{
-  display: block;  
+  display: block;
 }
 
 .account-setting__form h3 {
@@ -445,7 +446,7 @@ hr {
   padding: 1em;
     border-radius: 3px;
     margin-left:1em;
-    width:30%;  
+    width:30%;
     border: 1px solid #000;
 }
 .floating-right{
@@ -453,13 +454,13 @@ hr {
 }
 .label-info{
    font-size:1.444em;
-   color:var(--higlight); 
+   color:var(--higlight);
 }
 .account-info {
     text-transform: capitalize;
 }
 .account-setting__selector{
-  width:20%; 
+  width:20%;
   color: var(--higlight);
 }
 .label{
@@ -472,11 +473,11 @@ hr {
   text-transform: capitalize;
 }
 .account-setting__h3 a{
-   color: #ff4757; 
+   color: #ff4757;
 }
 .setting-center{
    text-align:center;
-   margin-top:3em;  
+   margin-top:3em;
 }
 /*start media*/
 /* set element styles to fit tablet and higher(desktop) */
@@ -581,7 +582,7 @@ hr {
   .not-done {
     margin: auto;
   }
- 
+
 }
 
 @media screen and (max-width: 600px) {

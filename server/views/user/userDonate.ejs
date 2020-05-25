@@ -31,13 +31,15 @@
       <form class="user-search" action="/donor/schedules/city" method="GET">
         <!-- <label>Name</label> -->
         <input type="text" name="city" placeholder="Enter city" value="<%= searchOptions.city %>">
+        <input type="text" placeholder="enter message">
         <button type="submit">Search</button>
       </form>
       <br>
 
       <div class="form-search">
         <!-- <h4 >Names list</h4> -->
-      <% users.forEach(user => { %>
+
+        <% users.forEach(user => { %>
           <%if(user.city === searchOptions.city) { %>
             <div class="result">
               <div class="grid">
