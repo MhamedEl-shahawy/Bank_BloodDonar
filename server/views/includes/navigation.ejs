@@ -35,84 +35,97 @@
         </div>
         <nav>
             <ul>
-                <li  class="tablinks active">
-                    <a href="/index">
-                        <span><i class="fas fa-chart-pie"></i></span>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li  class="tablinks">
-                    <a href="/display-bloods">
-                        <span><i class="far fa-bookmark"></i></span>
-                        <span>Availabel Blood</span>
-                    </a>
-                </li>
-                <li class="tablinks">
-                    <a href="/display-neededBlood">
-                        <span><i class="fas fa-ambulance"></i></span>
-                        <span>Need Blood</span>
-                    </a>
-                </li>
-                <li  class="tablinks">
-                    <a href="/display-bags">
-                        <span><i class="fas fa-plus-circle"></i></span>
-                        <span>Add Blood Bags</span>
-                    </a>
-                </li>
-                <li  class="tablinks">
-                    <a href="/display-donors">
-                        <span><i class="fas fa-user-plus"></i></span>
-                        <span>Donars</span>
-                    </a>
-                </li>
-                    <li  class="tablinks">
-                    <a href="/display-patients">
-                        <span><i class="fas fa-user-injured"></i></span>
-                        <span>Patient</span>
-                    </a>
-                </li>
-                    <li  class="tablinks">
-                    <a href="/display-charities">
-                        <span><i class="fas fa-handshake"></i></span>
-                        <span>Charity</span>
-                    </a>
-                </li>
-                <li  class="tablinks">
-                    <a href="/display-cities">
-                        <span><i class="fas fa-city"></i></span>
-                        <span>Cities</span>
-                    </a>
-                </li>
-                <li  class="tablinks">
-                    <a href="/users">
-                        <span><i class="fas fa-user-circle"></i></span>
-                        <span>Users</span>
-                    </a>
-                </li>
 
-                <li  class="tablinks">
-                    <a href="/sendEmail">
-                        <span><i class="fas fa-mail-bulk"></i></span>
-                        <span>Send Email</span>
-                    </a>
-                </li>
-                <li  class="tablinks">
-                    <a href="/user">
-                        <span><i class="fas fa-cog"></i></span>
-                        <span>Account</span>
-                    </a>
-                </li>
-                <li class="tablinks">
-                    <form class="log__form" action="/log-out" method="post">
-                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-                        <a>
-                        <button class="myButtonThatLooksLikeLink" type="submit">
-                                <span><i class="fas fa-user-circle"></i></span>
-                                <span>Log Out</span>
-                            </button>
+                <% if (!isAuthenticated) { %>
+                    <li class="main-header__item">
+                        <a class="<%= path === '/login' ? 'active' : '' %>" href="/log-in">Login</a>
+                    </li>
+                    <li class="main-header__item">
+                        <a class="<%= path === '/signup' ? 'active' : '' %>" href="/sign-up">Signup</a>
+                    </li>
+                <% } else { %>
+                    
+                    <li  class="tablinks active">
+                        <a href="/index">
+                            <span><i class="fas fa-chart-pie"></i></span>
+                            <span>Dashboard</span>
                         </a>
-                      </form>`
-                </li>
+                    </li>
+                    <li  class="tablinks">
+                        <a href="/display-bloods">
+                            <span><i class="far fa-bookmark"></i></span>
+                            <span>Availabel Blood</span>
+                        </a>
+                    </li>
+                    <li class="tablinks">
+                        <a href="/display-neededBlood">
+                            <span><i class="fas fa-ambulance"></i></span>
+                            <span>Need Blood</span>
+                        </a>
+                    </li>
+                    <li  class="tablinks">
+                        <a href="/display-bags">
+                            <span><i class="fas fa-plus-circle"></i></span>
+                            <span>Add Blood Bags</span>
+                        </a>
+                    </li>
+                    <li  class="tablinks">
+                        <a href="/display-donors">
+                            <span><i class="fas fa-user-plus"></i></span>
+                            <span>Donars</span>
+                        </a>
+                    </li>
+                        <li  class="tablinks">
+                        <a href="/display-patients">
+                            <span><i class="fas fa-user-injured"></i></span>
+                            <span>Patient</span>
+                        </a>
+                    </li>
+                        <li  class="tablinks">
+                        <a href="/display-charities">
+                            <span><i class="fas fa-handshake"></i></span>
+                            <span>Charity</span>
+                        </a>
+                    </li>
+                    <li  class="tablinks">
+                        <a href="/display-cities">
+                            <span><i class="fas fa-city"></i></span>
+                            <span>Cities</span>
+                        </a>
+                    </li>
+                    <li  class="tablinks">
+                        <a href="/users">
+                            <span><i class="fas fa-user-circle"></i></span>
+                            <span>Users</span>
+                        </a>
+                    </li>
+    
+                    <li  class="tablinks">
+                        <a href="/sendEmail">
+                            <span><i class="fas fa-mail-bulk"></i></span>
+                            <span>Send Email</span>
+                        </a>
+                    </li>
+                    <li  class="tablinks">
+                        <a href="/user">
+                            <span><i class="fas fa-cog"></i></span>
+                            <span>Account</span>
+                        </a>
+                    </li>
+                    <li class="tablinks">
+                        <form class="log__form" action="/logout" method="post">
+                            <a>
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                            <button class="myButtonThatLooksLikeLink" type="submit">
+                                    <span><i class="fas fa-user-circle"></i></span>
+                                    <span>Log Out</span>
+                                </button>
+                            </a>
+                          </form>
+                    </li>
+                    
+                <% } %>
+                
             </ul>
         </nav>
     </div>

@@ -42,10 +42,11 @@ exports.getLogIn = (req, res, next) => {
 exports.postLogIn = (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
+
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).render('auth/login', {
-      pageTitle: 'Log In',
+      pageTitle: 'Login',
       errorMessage: errors.array()[0].msg,
       oldInput: { email, password },
       validationErrors: errors.array()
@@ -92,11 +93,6 @@ exports.postLogIn = (req, res, next) => {
     .catch(err => console.log(err));
 };
 
-exports.postLogOut = (req, res, next) => {
-  req.session.destroy(() => {
-    res.redirect('/');
-  });
-};
 
 exports.getSignUp = (req, res, next) => {
   let message = req.flash('error');
@@ -165,16 +161,24 @@ exports.postSignUp = (req, res, next) => {
     })
     .then(result => {
       res.redirect('/log-in');
-      return transporter.sendMail({
-        to: email,
-        from: 'blood-Bank@bb.com',
-        subject: 'Successful Signup',
-        html: '<h3>You successfully signed up for the BloodBank System</h3>'
-      }).catch(err => handleError(err));
+      // return transporter.sendMail({
+      //   to: email,
+      //   from: 'blood-Bank@bb.com',
+      //   subject: 'Successful Signup',
+      //   html: '<h3>You successfully signed up for the BloodBank System</h3>});'
+    }).catch(err => {
+      const error = new Error(err);
+      error.httpStatusCode = 500;
+      return next(error);
     });
-
 };
 
+exports.postlogout = (req, res, next) => {
+  req.session.destroy(err => {
+    console.log(err);
+    res.redirect('/');
+  });
+};
 
 exports.getReset = (req, res, next) => {
   let message = req.flash('error');

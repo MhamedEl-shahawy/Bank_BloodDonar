@@ -1,0 +1,7 @@
+{
+    "env": {
+        "MONGO_USER": "mego",
+        "MONGO_PASSWORD": "Manchesterunited4ever",
+        "MONGO_DEFAULT_DATABASE": "bloodBank"
+    }
+}
