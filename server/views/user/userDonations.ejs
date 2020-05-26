@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="main__info">
-      <!-- <h2>Donation Information</h2> -->
+      <h2>Donation Information</h2>
       <% if(donors.length > 0) { donors.forEach(donor => { %>
         <% if (isAuthenticated && donor.email === currentUser.email) { %>
           <div class="donation">
