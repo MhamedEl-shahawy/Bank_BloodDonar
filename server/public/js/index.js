@@ -3,6 +3,7 @@ const dataContent = document.querySelectorAll('[data-target-content]');
 const btnMenu = document.querySelector('.menu-small');
 const menuShow = document.querySelector('.main-nav');
 const loading = document.querySelector('.loader-page');
+const hey = document.getElementById('fathy');
 
 
 // window.setTimeout(function() {

@@ -1,6 +1,5 @@
 <%- include('../includes/head.ejs')%>
 </head>
-
 <body>
   <%-include('../includes/userNavigation.ejs')%>
   <main>
@@ -31,13 +30,13 @@
       <form class="user-search" action="/donor/schedules/city" method="GET">
         <!-- <label>Name</label> -->
         <input type="text" name="city" placeholder="Enter city" value="<%= searchOptions.city %>">
-        <input type="text" placeholder="enter message">
         <button type="submit">Search</button>
       </form>
       <br>
 
       <div class="form-search">
-        <!-- <h4 >Names list</h4> -->
+        <!-- <h4 >Names list</h4>
+        <input type="text" placeholder="enter message"> -->
 
         <% users.forEach(user => { %>
           <%if(user.city === searchOptions.city) { %>
@@ -50,6 +49,7 @@
                   <!-- <div><%= user.phoneNumber%></div> -->
                 </div>
               </div>
+
               <form  action="/donor/schedules/city" method="POST">
                 <input  class="disabled" type="email" name="email" id="email" value="<%= user.email %>" placeholder="Enter Your email....">
                   <input type="hidden" name="_csrf" value="<%= csrfToken %>" />

@@ -1,6 +1,5 @@
 <%- include('../includes/head.ejs')%>
 </head>
-
 <body>
   <%-include('../includes/userNavigation.ejs')%>
   <main>
@@ -32,39 +31,34 @@
       </div>
     </div>
     <div class="main__info">
-      <h2>Donation History</h2>
-      <p>
-        Your upcoming Donation are below , If you are a first time donor, you can come back to this step after your first donation.
-      </p>
-
-      <% if(donors.length > 0) {
-       donors.forEach(donor => { %>
+      <!-- <h2>Donation Information</h2> -->
+      <% if(donors.length > 0) { donors.forEach(donor => { %>
         <% if (isAuthenticated && donor.email === currentUser.email) { %>
-          <div>Your name in our Database is :<%= donor.donorName%></div>
-          <div>You have donated a blood bag and your blood type is : <%= donor.bloodType%></div>
-          <div>Your address is : <%= donor.address %></div>
-      <% } %>
-    <%})%>
-    <%} else { %>
+          <div class="donation">
+            <img class="donation__img" src="/images/user/profile.svg" alt="Donor avatar" />
+            <div class="donation__information">
+              <h3><%= donor.donorName%> </h3>
+              <p> <i class="fas fa-city"></i> <%= donor.address %> <span> <i class="fas fa-map-marker"></i> <%= donor.bloodType%></span></p>
+              <div class="donation__information--date">
+                <h4><i class="fas fa-calendar-check"></i>Past Appointments</h4>
+                <p class="past"><%= donor.nextDonationDay %></p>
+              </div>
+              <div class="donation__information--date">
+                <h4> <i class="fas fa-calendar-check"></i>Future Appointments</h4>
+                <p class="future"><%= donor.donationDay %> </p>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      <%})%>
+      <%} else { %>
       <div class="info">
         The content of this page is not available because your E-mail is not linked to our Donor Database.
+        Your upcoming Donation are below , If you are a first time donor, you can come back to this step after your first donation.
       </div>
-      <br>
-      <p class="intro">
-        If you are a first time donor, you can come back to this step after your first donation.
-      </p>
-      <br>
-      <br>
-
-      <br>
-      <br>
-    </div>
       <% } %>
 
-      
-     
     </div>
   </main>
 </body>
-
 </html>
