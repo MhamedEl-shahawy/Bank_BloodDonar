@@ -23,7 +23,7 @@ const User = require('./models/user');
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${
     process.env.MONGO_PASSWORD
-    }@graduation-project-gzx5f.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority`;
+    }@bloodbankmanagementsystem-5yuou.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority`;
 
 
 const app = express();
