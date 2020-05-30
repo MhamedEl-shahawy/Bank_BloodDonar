@@ -5,7 +5,7 @@
       
  <div class="pd-1">
       <div class="container">
-         <a href="/add-city" class="add-new addMain">new need</a>
+         <a href="/add-city" class="add-new addMain">new city</a>
         <table>
        <thead>
          <tr>
@@ -13,7 +13,6 @@
            <th scope="col">Hospital</th>
            <th scope="col">Address</th>
            <th scope="col">Phone</th>
-           
          </tr>
        </thead>
        <tbody>
@@ -43,7 +42,9 @@
           </tr> 
           <% i--; } %>
         <% } else { %>
-          <p>No Cities found.</p>
+          <div class="not-found">
+          <p><i class="fas fa-exclamation-triangle"></i> No Cities found.</p>
+          </div>
           <% } %>
        
            

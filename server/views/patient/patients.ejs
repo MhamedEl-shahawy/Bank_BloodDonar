@@ -1,5 +1,3 @@
-
-
 <%- include('../includes/navigation.ejs') %>
 
   <section class="main">
@@ -18,8 +16,6 @@
         <th scope="col">donation day</th>
         <th scope="col">email</th>
         <th scope="col" class="center">blood type</th>
-        
-        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -51,7 +47,9 @@
       </tr> 
       <% i--; } %>
     <% } else { %>
-      <p>No Patients found.</p>
+      <div class="not-found">
+      <p><i class="fas fa-exclamation-triangle"></i> No Patients found.</p>
+    </div>
       <% } %>
     </tbody>
  </table>
@@ -65,65 +63,6 @@
 
 
 
- <!--  <main class="myContainer">
-    <% if (patients.length > 0) {
-      let i = itemCounterStartInCurrentPage;
-      for (let patient of patients) { %>
-        <li class="myBox">
-          <div class="myItem">          
-              <p><%= i %></p>
-            </div>
-          
-          <p>Patient Name:</p>
-          <div class="myItem">
-            <%= patient.patientName %>
-          </div>
-          <p>National Id</p>
-          <div class="myItem">
-            <%= patient.nationalId %>
-          </div>
-          <p>Address</p>
-          <div class="myItem">
-            <%= patient.address %>
-          </div>
-          <p>Phone Number</p>
-          <div class="myItem">
-            <%= patient.phoneNumber %>
-          </div>
-          <p>Blood Type</p>
-          <div class="myItem">
-            <%= patient.bloodType %>
-          </div>
-          <p>Donation Day</p>
-          <div class="myItem">
-            <%= patient.donationDay %>
-          </div>
-          <p>Next Donation Day</p>
-          <div class="myItem">
-            <%= patient.nextDonationDay %>
-          </div>
-
-          <% if (isAuthenticated && patient.userId._id.toString() === currentUser._id.toString()) { %>
-          <div class="myItem">
-            <a href="/edit-patient/<%= patient._id %>?edit=true" class="btn">Edit</a>
-          </div>
-          <div class="myItem">
-            <form action="delete-patient" method="POST">
-              <input type="hidden" value="<%= patient._id %>" name="patientId">
-              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-              <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
-            </form>
-            <% } %>
-          </div>
-        </li>
-    <% i--; } %>
-
-    <% } else { %>
-    <p>No Patients found.</p>
-    <% } %>
-
-    
-  </main> -->
   <%- include('../includes/pagination.ejs', paginationObject) %>
 
   <%- include('../includes/bottom.ejs') %>

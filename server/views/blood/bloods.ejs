@@ -12,7 +12,6 @@
             <tr>
               <th scope="col">blod</th>
               <th scope="col">quantity</th>
-              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -38,7 +37,9 @@
             </tr> 
             <% i--; } %>
           <% } else { %>
-            <p>No Patients found.</p>
+            <div class="not-found">
+            <p><i class="fas fa-exclamation-triangle"></i> No Bloods found.</p>
+            </div>
             <% } %>
           </tbody>
         </table>
@@ -47,61 +48,5 @@
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-
-
-<!-- 
-  <main class="myContainer">
-    <% if (bloods.length > 0) {
-      let i = itemCounterStartInCurrentPage;
-      for (let blood of bloods) { %>
-        <li class="myBox">
-          <div class="myItem">          
-              <p><%= i %></p>
-            </div>
-          
-          <p>Blood Type</p>
-          <div class="myItem">
-            <%= blood.bloodType %>
-          </div>  
-
-          <p>Quantity:</p>
-          <div class="myItem">
-            <%= blood.bloodQuantity %>
-          </div>
-
-          <p>Date</p>
-          <div class="myItem">
-            <%=blood.date%>
-          </div>
-
-          <% if (isAuthenticated && blood.userId._id.toString() === currentUser._id.toString()) { %>
-          <div class="myItem">
-            <a href="/edit-blood/<%= blood._id %>?edit=true" class="btn">Edit</a>
-          </div>
-          <div class="myItem">
-            <form action="delete-blood" method="POST">
-              <input type="hidden" value="<%= blood._id %>" name="bloodId">
-              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-              <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
-            </form>
-            <% } %>
-          </div>
-        </li>
-    <% i--; } %>
-
-    <% } else { %>
-    <p>No Bloods found.</p>
-    <% } %>
-
-    <%- include('../includes/pagination.ejs', paginationObject) %>
-
-  </main> -->
 
 <%- include('../includes/bottom.ejs') %>

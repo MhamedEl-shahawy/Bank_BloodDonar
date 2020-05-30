@@ -15,7 +15,6 @@
            <th scope="col">quantity</th>
            <th scope="col">date</th>
            <th scope="col" class="center">done</th>
-           <th scope="col"></th>
          </tr>
        </thead>
        <tbody>
@@ -48,7 +47,9 @@
           </tr> 
           <% i--; } %>
         <% } else { %>
-          <p>No Patients found.</p>
+          <div class="not-found">
+          <p><i class="fas fa-exclamation-triangle"></i> No Needs found.</p>
+          </div>
           <% } %>
        
            
@@ -58,61 +59,6 @@
  </div>
 </div>
   </section>
-  <!-- <main class="myContainer">
-    <% if (patients.length > 0) {
-      let i = itemCounterStartInCurrentPage;
-      for (let patient of patients) { %>
-        <li class="myBox">
-          <div class="myItem">          
-              <p><%= i %></p>
-            </div>
-          
-          <p>Blood Type</p>
-          <div class="myItem">
-            <%= patient.bloodType %>
-          </div>  
-
-          <p>Department:</p>
-          <div class="myItem">
-            <%= patient.department %>
-          </div>
-
-          <p>Patient Name:</p>
-          <div class="myItem">
-            <%= patient.patientName %>
-          </div>
-
-          <p>Quantity:</p>
-          <div class="myItem">
-            <%= patient.quantity %>
-          </div>
-
-          <p>Date</p>
-          <div class="myItem">
-            <%=patient.date%>
-          </div>
-
-          <% if (isAuthenticated && patient.userId._id.toString() === currentUser._id.toString()) { %>
-          <div class="myItem">
-            <a href="/edit-neededBlood/<%= patient._id %>?edit=true" class="btn">Edit</a>
-          </div>
-          <div class="myItem">
-            <form action="delete-neededBlood" method="POST">
-              <input type="hidden" value="<%= patient._id %>" name="patientId">
-              <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-              <button class="myButtonThatLooksLikeLink" type="submit">Delete</button>
-            </form>
-            <% } %>
-          </div>
-        </li>
-    <% i--; } %>
-
-    <% } else { %>
-    <p>No Patients found.</p>
-    <% } %>
-
-    <%- include('../includes/pagination.ejs', paginationObject) %>
-
-  </main> -->
+  
 
   <%- include('../includes/bottom.ejs') %>

@@ -4,12 +4,14 @@
 	box-sizing: border-box;
 }
 :root {
-  --backgroundColor: #f2f5fa;
+  --backgroundColor: #f6f7fb;
 	--main-color: #0f1048;
 	--second-color: #4b48b1;
 	--text-color: #7375a8;
 	--alertColor:#eb4d4b;
   --higlight:#ff4757;
+  --main-borderColor:#e2e5e8;
+  --active-color:#a29bfe;
 }
 a {
   text-decoration: none;
@@ -34,13 +36,13 @@ body {
   position: absolute;
   width: 100%;
   z-index: 3;
-  height: 47px;
+  height: 50px;
   background-color: #fff;
   border-bottom: 3px solid #eaeff7;
 }
 /* logo in header(mobile version) and side-nav (tablet & desktop) */
 .logo {
-  height: 44px;
+  height: 47px;
   padding: 10px;
   font-weight: 700;
 }
@@ -71,40 +73,21 @@ body {
 .nav-trigger {
   position: relative;
   float: right;
-  width: 20px;
+  width: 42px;
   height: 44px;
-  right: 30px;
-  display: block;
-}
-.nav-trigger span,
-.nav-trigger span:before,
-span:after {
-  width: 20px;
-  height: 2px;
-  background-color: var(--second-color);
-  position: absolute;
-}
-.nav-trigger span {
-  top: 50%;
-}
-.nav-trigger span:before,
-.nav-trigger span:after {
-  content: "";
-}
-.nav-trigger span:before {
-  top: -6px;
-}
-.nav-trigger span:after {
-  top: 6px;
+  right: 70px;
+  display: flex;
+  justify-content: space-around;
 }
 /* side navigation styles */
 .side-nav {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: #eaeff7;
+  background-color: #fff;
   z-index: 1;
   display: none;
+  border-right: 2px solid var(--main-borderColor);
 }
 .side-nav.visible {
   display: block;
@@ -112,10 +95,13 @@ span:after {
 .side-nav ul {
   margin: 0;
   padding: 0;
+ 
 }
 .side-nav ul li {
   padding: 16px 16px;
-  border-bottom: 1px solid #3c506a;
+  border-bottom: 1px solid var(--main-borderColor);
+  border-top: 1px solid var(--main-borderColor);
+
   position: relative;
   color:var(--second-color);
 }
@@ -131,7 +117,7 @@ span:after {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: var(--alertColor);
+  background-color: var(--active-color);
 }
 .side-nav ul li a {
   color: var(--second-color);
@@ -276,6 +262,7 @@ span:after {
   float: right;
   margin: 1em;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .add-new_float {
@@ -287,11 +274,11 @@ span:after {
 table {
   border: 1px solid #ccc;
   border-collapse: collapse;
-
   margin: 0;
   padding: 0;
   width: 100%;
   table-layout: fixed;
+  margin-top:2em;
 }
 
 table caption {
@@ -447,7 +434,7 @@ hr {
     border-radius: 3px;
     margin-left:1em;
     width:30%;
-    border: 1px solid #000;
+    border: 2px solid #000;
 }
 .floating-right{
    float: right;
@@ -479,6 +466,40 @@ hr {
    text-align:center;
    margin-top:3em;
 }
+.not-found{
+   text-align: center;
+   color: var(--alertColor);
+   font-size: 1.5em;
+   position: absolute;
+   top: 40%;
+   left:50%;
+   transform: translate(-50%,-50%);
+   -webkit-transform: translate(-50%,-50%);
+   -moz-transform: translate(-50%,-50%);
+   -ms-transform: translate(-50%,-50%);
+   -o-transform: translate(-50%,-50%);
+}
+
+.nav-trigger img{
+   border-radius:100%;
+   -webkit-border-radius:100%;
+   -moz-border-radius:100%;
+   -ms-border-radius:100%;
+   -o-border-radius:100%;
+   max-width:100%;
+   max-height:100%;
+   margin-top:0.2em;
+   float: right;
+
+}
+.nav-trigger h1{
+   font-size: 1em;
+   padding-top: 0.7em;
+   padding-right: 0.4em;
+   color:var(--main-borderColor);
+}
+
+
 /*start media*/
 /* set element styles to fit tablet and higher(desktop) */
 @media screen and (min-width: 600px) {
@@ -489,18 +510,11 @@ hr {
   .header .logo {
     display: none;
   }
-  .nav-trigger {
-    display: none;
-  }
-  .nav-trigger span,
-  .nav-trigger span:before,
-  span:after {
-    background-color:var(--backgroundColor);
-  }
   .side-nav {
     display: block;
     width: 70px;
     z-index: 2;
+    background-color: var(--main-borderColor);
   }
   .side-nav ul li span:nth-child(2) {
     display: none;
@@ -560,6 +574,9 @@ hr {
   }
   .main-content {
     margin-left: 182px;
+  }
+  .container{
+    padding-top: 3em;
   }
 }
 @media screen and (min-width: 1101px) {
