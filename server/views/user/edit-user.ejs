@@ -36,7 +36,7 @@
             <p>
                 Update your account at any time by clicking the "Edit" button below.
             </p>
-            <form action="/donor/<%= user.id %>?_method=PUT" method="POST">
+            <form class="form-user" action="/donor/<%= user.id %>?_method=PUT" method="POST">
 
                 <div class="form-group">
                     <label for="firstname" class="control-label">First Name:</label>
@@ -79,13 +79,14 @@
                 </div>
 
 
-                
-                <div><a href="/donor/password/<%= user.id %>/edit">Change password</a></div>
-                <button type="submit">Edit</button>
-                <a href="/donor/account/view">Cancel</a>
+
+                <div><a class="password" href="/donor/password/<%= user.id %>/edit">Change password</a></div>
+                <button class="save"  type="submit">Save</button>
+                <a class="btn" href="/donor/account/view">Cancel</a>
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
 
             </form>
+
         </div>
     </main>
 </body>
