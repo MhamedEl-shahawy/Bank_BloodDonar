@@ -33,14 +33,15 @@
             <option value="ab-">ab-</option>
           </select>
 
-          <label class="new-items_label" for="donationDay">Donation Dy</label>
-          <input class="new-items_input" type="date" name="donationDay" id="donationDay" />
+          <label class="new-items_label" for="donationDay">Donation Day</label>
+          <input class="new-items_input" type="date" name="donationDay"  />
 
           <label class="new-items_label" for="nextDonationDay">Next Donation Day</label>
-          <input class="new-items_input" type="date" name="nextDonationDay" id="nextDonationDay" />
+          <input class="new-items_input" type="date" name="nextDonationDay" id="nextDonationDay" disabled />
 
           <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
           <button class="add-new add-new_float addnewrs" type="submit">Submit</button>
+
         </form>
       </div>
     </div>
