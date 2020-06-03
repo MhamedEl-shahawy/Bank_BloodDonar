@@ -264,6 +264,7 @@ body {
   margin-bottom: 1em;
   cursor: pointer;
   border-radius: 3px;
+  margin-top:0.5em; 
 }
 
 .add-new_float {

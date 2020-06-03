@@ -86,6 +86,11 @@
             value="<% if (editing) { %><%= donor.nextDonationDay %><% } %>"
             disabled
           />
+
+          <label class="new-items_label" for="nextDonationDay">Next Donation Day</label>
+          <input class="new-items_input" type="date" name="nextDonationDay" id="nextDonationDay"
+            value="<% if (editing) { %><%= donor.nextDonationDay %><% } %>" disabled />
+
           <% if (editing) { %>
           <input type="hidden" value="<%= donor._id %>" name="donorId" />
           <% } %>
