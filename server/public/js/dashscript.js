@@ -28,5 +28,9 @@ window.onload = () => {
    }
 
    nextDonationDay.textContent = `${years}-${newMonths}-${newDays}`;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> e94133492c71b48767983ca1154b1c6f9f9e1394
 }

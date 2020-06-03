@@ -75,6 +75,7 @@
             value="<% if (editing) { %><%= donor.donationDay %><% } %>"
           />
 
+<<<<<<< HEAD
           <label class="new-items_label" for="nextDonationDay"
             >Next Donation Day</label
           >
@@ -86,6 +87,11 @@
             value="<% if (editing) { %><%= donor.nextDonationDay %><% } %>"
             disabled
           />
+=======
+          <label class="new-items_label" for="nextDonationDay">Next Donation Day</label>
+          <input class="new-items_input" type="date" name="nextDonationDay" id="nextDonationDay"
+            value="<% if (editing) { %><%= donor.nextDonationDay %><% } %>" disabled />
+>>>>>>> e94133492c71b48767983ca1154b1c6f9f9e1394
           <% if (editing) { %>
           <input type="hidden" value="<%= donor._id %>" name="donorId" />
           <% } %>
