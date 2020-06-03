@@ -12,8 +12,8 @@
         <th scope="col">donar name</th>
         <th scope="col" >national id</th>
         <th scope="col">phone</th>
-        <th scope="col">Next donation day</th>
         <th scope="col">last donate day</th>
+        <th scope="col">Next donation day</th>
         <th scope="col">address</th>
         <th scope="col" >email</th>
         <th scope="col" class="center">blood type</th>
@@ -27,8 +27,8 @@
         <td data-label="name"> <%= donor.donorName %></td>
         <td data-label="national id"> <%= donor.nationalId %></td>
         <td data-label="phone"> <%= donor.phoneNumber %></td>
-        <td data-label="last year" class="center"><%= donor.nextDonationDay %></td>
-        <td data-label="last month" class="center"> <%= donor.donationDay %></td>
+        <td data-label="last month" class="center" id="donationDay"> <%= donor.donationDay %></td>
+        <td data-label="last year" class="center" id="nextDonationDay"></td>
         <td data-label="address"><%= donor.address %> </td>
         <td data-label="email" class="email"><%= donor.email %></td>
         <td data-label="blood type" class="center blood-type"><%= donor.bloodType %></td>

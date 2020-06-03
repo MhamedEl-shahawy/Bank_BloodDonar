@@ -1,56 +1,32 @@
-let targets = document.querySelectorAll('.addnew');
-let availTables  = document.querySelectorAll('table tbody');
-let newItems  = document.querySelectorAll('.new-items');
-let selectType  = document.querySelectorAll('.type');
-let quantity =  document.querySelectorAll('.new-items_input');
-let addNew =  document.querySelectorAll('.addMain');
+let donationDay = document.getElementById("donationDay");
+let nextDonationDay = document.getElementById("nextDonationDay");
 
+window.onload = () => {
+  let newDate = donationDay.textContent.split('-');
+  let years = Number(newDate[0]);
+  let months = 3 + Number(newDate[1]);
+  let days = 22 + Number(newDate[2]);
+/*   console.log(newDate)
+  console.log(years)
+ console.log(months)
+ console.log(days) */
 
+   let newDays = 0;
+   let newMonths = 0;
 
-/* add new item */
-addNew.forEach((val)=>{
-  val.addEventListener("click",()=>{
-   newItems.forEach((newItem)=>{
-    newItem.classList.toggle("show");
-   })
-   });
-      
-});
+  if(days > 30){
+     newDays = days - 30;
+     months++;
+  }else {
+     newDays = days;
+  }
+   if(months > 12){
+      newMonths = months - 12;
+      years++;
+   }else{
+    newMonths = months;
+   }
 
-targets.forEach((target)=>{
-  target.addEventListener("click",()=>{
-   newItems.forEach((newItem)=>{
-    newItem.classList.toggle("show");
-   })
-   let vals = [selectType.value,quantity.value];
-   let tr =  document.createElement("tr");
-   let iconsTd = `
-      <td data-label="edit">
-         <span><a><i class="fas fa-edit"></i></a></span>
-         <span><a><i class="fas fa-trash-alt"></i></a></span>
-       </td>
-   `;
-   vals.forEach((val)=>{
-     let td = document.createElement("td");
-     td.setAttribute("data-label","quantity");
-     td.innerHTML = val; 
-     tr.appendChild(td);   
-   });
-    
-
-   tr.insertAdjacentHTML('beforeend',iconsTd);
-   availTables.forEach((availTable)=>{
-   availTable.appendChild(tr);
-   });
-   addTrash();
-});
-});
-/* add event remove to all trash icons */
-function addTrash(){
-document.querySelectorAll('.fa-trash-alt').forEach(item => {
-  item.addEventListener('click', event => {
-  item.offsetParent.parentNode.remove();
-  })
-});
+   nextDonationDay.textContent = `${years}-${newMonths}-${newDays}`;
+  
 }
-addTrash();
