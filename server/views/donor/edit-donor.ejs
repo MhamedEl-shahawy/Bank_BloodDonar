@@ -86,6 +86,9 @@
             value="<% if (editing) { %><%= donor.nextDonationDay %><% } %>"
             disabled
           />
+
+       
+
           <% if (editing) { %>
           <input type="hidden" value="<%= donor._id %>" name="donorId" />
           <% } %>
