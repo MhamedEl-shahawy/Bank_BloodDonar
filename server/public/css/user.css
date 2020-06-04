@@ -10,7 +10,6 @@
 }
 
 * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
   border: 0;
@@ -41,18 +40,12 @@ ul {
 
 .nav__link {
   background-color: #fffffe;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 0;
   border-radius: 10px;
-  /* height: 9vh; */
+  height: 9vh;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -91,8 +84,10 @@ ul {
 .nav__link li:hover a,
 .nav__link li:hover i {
   color: var(--main-color);
-  animation: navbarHover 1s ease;
-  animation-iteration-count: 1;
+  -webkit-animation: navbarHover 1s ease;
+          animation: navbarHover 1s ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
 }
 
 .nav__link .log__form span {
@@ -193,7 +188,6 @@ main .main__info .form-user input[type="date"] {
   width: 11vw;
   height: 5vh;
   font-size: 1.1em;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
 }
@@ -251,7 +245,6 @@ main .main__info .form-user select {
   width: 9vw;
   height: 5vh;
   font-size: 1.1em;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
 }
@@ -386,7 +379,6 @@ input[type="password"] {
   width: 12vw;
   height: 5vh;
   font-size: 1.1em;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
 }
@@ -584,6 +576,26 @@ h5.underline {
 /*End  Donation Information */
 
 /* animation */
+@-webkit-keyframes navbarHover {
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  65% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 @keyframes navbarHover {
   15% {
     transform: translateX(5px);
