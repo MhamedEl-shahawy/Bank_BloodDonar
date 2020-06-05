@@ -1,15 +1,12 @@
 let donationDay = document.getElementById("donationDay");
 let nextDonationDay = document.getElementById("nextDonationDay");
 
-window.onload = () => {
-  let newDate = donationDay.textContent.split('-');
+donationDay.onchange = () => {
+  let newDate = donationDay.value.split('-');
   let years = Number(newDate[0]);
   let months = 3 + Number(newDate[1]);
   let days = 22 + Number(newDate[2]);
-/*   console.log(newDate)
-  console.log(years)
- console.log(months)
- console.log(days) */
+
 
    let newDays = 0;
    let newMonths = 0;
@@ -27,6 +24,6 @@ window.onload = () => {
     newMonths = months;
    }
 
-   nextDonationDay.textContent = `${years}-${newMonths}-${newDays}`;
-
+   nextDonationDay.value = `${years}-${newMonths}-${newDays}`;
+  
 }

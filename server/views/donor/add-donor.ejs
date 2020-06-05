@@ -34,10 +34,10 @@
           </select>
 
           <label class="new-items_label" for="donationDay">Donation Day</label>
-          <input class="new-items_input" type="date" name="donationDay"  />
-
+          <input class="new-items_input" type="date" name="donationDay" id="donationDay" />
+          
           <label class="new-items_label" for="nextDonationDay">Next Donation Day</label>
-          <input class="new-items_input" type="date" name="nextDonationDay" id="nextDonationDay" disabled />
+          <input class="new-items_input" type="date" name="nextDonationDay" id="nextDonationDay"  />
 
           <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
           <button class="add-new add-new_float addnewrs" type="submit">Submit</button>
@@ -47,5 +47,4 @@
     </div>
   </div>
 </section>
-
 <%- include('../includes/bottom.ejs') %>

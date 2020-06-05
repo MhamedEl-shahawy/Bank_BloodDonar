@@ -1,8 +1,8 @@
 <%- include('../includes/navigation.ejs') %>
   <section class="main">
   <div class="main-content tabcontent" id="bloodDonar">
-
-
+    
+      
 <div class="pd-1">
    <div class="container">
       <a href="/add-donor" class="add-new addMain">add Donar</a>
@@ -27,14 +27,14 @@
         <td data-label="name"> <%= donor.donorName %></td>
         <td data-label="national id"> <%= donor.nationalId %></td>
         <td data-label="phone"> <%= donor.phoneNumber %></td>
-        <td data-label="last month" class="center" id="donationDay"> <%= donor.donationDay %></td>
-        <td data-label="last year" class="center" id="nextDonationDay"></td>
+        <td data-label="last month" class="center"> <%= donor.donationDay %></td>
+        <td data-label="last year" class="center"><%= donor.nextDonationDay %></td>
         <td data-label="address"><%= donor.address %> </td>
         <td data-label="email" class="email"><%= donor.email %></td>
         <td data-label="blood type" class="center blood-type"><%= donor.bloodType %></td>
-
+        
       <% if (isAuthenticated && donor.userId._id.toString() === currentUser._id.toString()) { %>
-
+        
         <td data-label="edit" class="right">
           <span><a href="/edit-donor/<%= donor._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
           <span>
@@ -45,10 +45,13 @@
             </form>
           </span>
         </td>
-          <% } %>
+          <% } %> 
 
-        </tr>
+
+        
+        </tr> 
         <% i--; } %>
+
         <% } else { %>
           <div class="not-found">
         <p><i class="fas fa-exclamation-triangle"></i> No donors found.</p>
@@ -56,12 +59,12 @@
         <% } %>
       </tbody>
  </table>
-   </div>
+   </div> 		
 </div>
-</div>
+</div> 
 </section>
-
+  
   <%- include('../includes/pagination.ejs', paginationObject) %>
-
+    
 
   <%- include('../includes/bottom.ejs') %>
