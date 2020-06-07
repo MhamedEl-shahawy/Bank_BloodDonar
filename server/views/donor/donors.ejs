@@ -1,8 +1,8 @@
 <%- include('../includes/navigation.ejs') %>
   <section class="main">
   <div class="main-content tabcontent" id="bloodDonar">
-    
-      
+
+
 <div class="pd-1">
    <div class="container">
       <a href="/add-donor" class="add-new addMain">add Donar</a>
@@ -17,6 +17,7 @@
         <th scope="col">address</th>
         <th scope="col" >email</th>
         <th scope="col" class="center">blood type</th>
+        <th scope="col" ></th>
       </tr>
     </thead>
     <tbody>
@@ -32,9 +33,9 @@
         <td data-label="address"><%= donor.address %> </td>
         <td data-label="email" class="email"><%= donor.email %></td>
         <td data-label="blood type" class="center blood-type"><%= donor.bloodType %></td>
-        
+
       <% if (isAuthenticated && donor.userId._id.toString() === currentUser._id.toString()) { %>
-        
+
         <td data-label="edit" class="right">
           <span><a href="/edit-donor/<%= donor._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
           <span>
@@ -45,11 +46,11 @@
             </form>
           </span>
         </td>
-          <% } %> 
+          <% } %>
 
 
-        
-        </tr> 
+
+        </tr>
         <% i--; } %>
 
         <% } else { %>
@@ -59,12 +60,12 @@
         <% } %>
       </tbody>
  </table>
-   </div> 		
+   </div>
 </div>
-</div> 
+</div>
 </section>
-  
+
   <%- include('../includes/pagination.ejs', paginationObject) %>
-    
+
 
   <%- include('../includes/bottom.ejs') %>

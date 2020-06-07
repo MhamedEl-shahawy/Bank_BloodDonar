@@ -1,8 +1,8 @@
 <%- include('../includes/navigation.ejs') %>
   <section class="main">
   <div class="main-content tabcontent" id="bloodDonar">
-    
-      
+
+
 <div class="pd-1">
    <div class="container">
      <table>
@@ -24,23 +24,23 @@
           <td data-label="bloodType"> <%= user.bloodType %></td>
           <td data-label="phone"><input class="none" type="tel" name="number" id="number" value="<%= user.code.concat(user.phoneNumber) %>" placeholder="Enter Phone Number..."></td>
           <td data-label="text"><input class="none" type="text" name="msg" id="msg" value="Please success" placeholder="Enter Text Message..."></td>
-          
-  
+
+
           <td><button type="button" id="button" value="Send Text" class="save__btn">SendSMS</button></td>
             <p class="response"></p>
-          
+
       <% if (isAuthenticated && user._id.toString() === currentUser._id.toString()) { %>
-          
+
           <span>
               <input type="hidden" value="<%= user._id %>" name="userId">
               <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
           </span>
         </td>
-          <% } %> 
+          <% } %>
 
 
-        
-        </tr> 
+
+        </tr>
         <% i--; } %>
 
         <% } else { %>
@@ -50,12 +50,12 @@
         <% } %>
       </tbody>
  </table>
-   </div> 		
+   </div>
 </div>
-</div> 
+</div>
 </section>
   <%- include('../includes/pagination.ejs', paginationObject) %>
-    
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/main.js"></script>
   <%- include('../includes/bottom.ejs') %>
