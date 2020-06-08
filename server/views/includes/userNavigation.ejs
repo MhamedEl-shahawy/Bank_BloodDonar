@@ -1,3 +1,5 @@
+<%- include('../includes/head.ejs')%>
+  </head>
 <nav class="nav">
   <ul class="nav__link">
     <% if (!isAuthenticated) { %>
@@ -8,15 +10,15 @@
           <a class="<%= path === '/signup' ? 'active' : '' %>" href="/sign-up">Signup</a>
       </li>
   <% } else { %>
-    <li><a href="/donor/home/index">HOME</a></li>
-    <li><a href="/donor/schedules/city">DONATE NOW</a></li>
-    <!-- <li><a href="/donor/appointment/list"> MY APPOINTMENTS</a></li> -->
-    <li><a href="/donor/history"> MY DONATIONS</a></li>
-    <li><a href="/donor/account/view"> MY ACCOUNT</a></li>
+    <li class="avatar"><a href="/donor/account/view"> <img src="/images/user/profile.svg" alt="User Avatar"></a></li>
+    <li><a href="/donor/home/index"> <i class="fas fa-home"></i> HOME</a></li>
+    <li><a href="/donor/schedules/city"><i class="fas fa-burn"></i>DONATE NOW</a></li>
+    <li><a href="/donor/history"> <i class="fas fa-business-time"></i> MY DONATIONS</a></li>
+    <li><a href="/donor/account/view"> <i class="fas fa-user-cog"></i> MY ACCOUNT</a></li>
     <form class="log__form" action="/logout" method="post">
       <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
       <button class="" type="submit">
-        <span>LOG OUT</span>
+        <span><i class="fas fa-sign-in-alt"></i>LOG OUT</span>
       </button>
     </form>
     <% } %>
