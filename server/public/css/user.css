@@ -52,7 +52,7 @@ ul {
   justify-content: center;
   margin-top: 0;
   border-radius: 10px;
-  height: 9vh;
+  height: 8vh;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -127,6 +127,7 @@ main .main__info .header {
 }
 
 main .main__info p {
+  margin-top: 1.5em;
   line-height: 1.9;
   color: var(--paragraph-color);
   text-align: center;
@@ -135,8 +136,9 @@ main .main__info p .span-header {
   color: var(--heading-color);
   font-size: 1.2em;
 }
-main .main__info p.warning{
-  width:80%;
+main .main__info p.warning {
+  width: 85%;
+  font-size: 1.1em;
   text-align: center;
   margin: auto;
 }
@@ -147,12 +149,12 @@ main .main__info p.warning-date {
   text-align: start;
 }
 .table-dates {
-  margin:2em auto 0;
+  margin: 2em auto 0;
   text-align: center;
   border-radius: 15px;
   /* box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1); */
 }
-.table-dates tr th{
+.table-dates tr th {
   font-size: 1.3em;
 }
 .table-dates tr th,
