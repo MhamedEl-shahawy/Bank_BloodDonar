@@ -145,6 +145,15 @@ main .main__info p.warning {
 main .main__info p.warning i {
   color: red;
 }
+main .main__info p.warningDonation {
+  width: 75%;
+  font-size: .9em;
+  text-align: center;
+  margin: auto;
+}
+main .main__info p.warningDonation i {
+  color: red;
+}
 main .main__info p.warning-date {
   text-align: start;
 }

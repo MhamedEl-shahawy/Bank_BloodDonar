@@ -4,7 +4,7 @@
   <%-include('../includes/userNavigation.ejs')%>
   <main>
     <div class="main__info">
-      <h2 class="header">Donation Information</h2>
+      <p class="warningDonation"> <i class="fas fa-exclamation-circle "></i>Your upcoming Donation are below , If you are a first time donor, you can come back to this step after your first donation.</p>
       <% if(donors.length > 0) { donors.forEach(donor => { %>
         <% if (isAuthenticated && donor.email === currentUser.email) { %>
           <div class="donation">
@@ -25,12 +25,11 @@
           </div>
         <% } %>
       <%})%>
-      <%} else { %>
+      <!-- <%} else { %>
       <div class="info">
-        The content of this page is not available because your E-mail is not linked to our Donor Database.
         Your upcoming Donation are below , If you are a first time donor, you can come back to this step after your first donation.
       </div>
-      <% } %>
+      <% } %> -->
 
     </div>
   </main>

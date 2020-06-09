@@ -30,7 +30,7 @@
               <div>
                 <p  class="account-info"><span class="label">State: </span><span class="label-info"><%= user.state %></span></p>
               </div>
-              <div>
+              <div class="hidden">
                 <label for="bloodType" class="account-setting__label label">Blood Type: </label>
                 <select class="new-items_select account-setting__selector" name="bloodType" id="bloodType">
                   <option value="a+">a+</option>
@@ -51,7 +51,7 @@
             <div class="account-setting__form">
               <h2 class="account-setting__h2">You can Change your password below:- </h2>
               <h3 class="account-setting__h3"><a href="/user/password/<%= user.id %>/edit">Change Password</a></h3>
-            </div> 
+            </div>
           </div>
 
           <div class="save">
