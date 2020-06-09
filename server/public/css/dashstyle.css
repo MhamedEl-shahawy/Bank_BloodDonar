@@ -278,8 +278,11 @@ margin-left: 1em;
 .add-new_float {
   float: left;
   margin-left: 0;
+  margin-top: 0.5em;
 }
-
+#nextDonationDay{
+  pointer-events: none;
+}
 /* start table */
 table {
   border: 1px solid #ccc;
