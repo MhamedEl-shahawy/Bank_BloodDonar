@@ -3,33 +3,6 @@
 <body>
   <%-include('../includes/userNavigation.ejs')%>
   <main>
-    <!-- <div class="main__nav">
-      <div class="main__nav--header">
-        <h3>Donor Snapshot</h3>
-        <img src="/images/user/profile.svg" alt="Donor Snapshot avatar" />
-      </div>
-      <div class="main__nav--desc">
-        <h4>Welcome USER</h4>
-        <h4>Why donate?</h4>
-        <p>
-          Your generous donations help the patients in our community, from
-          children to adults, and help ensure that lifesaving blood products
-          are available when they are needed most.
-        </p>
-        <h4>What happens after I donate?</h4>
-        <p>
-          Your donation history and future appointment schedule will be
-          maintained within this secure Donor Portal, making it easier for you
-          to keep track of your donations, make needed changes or view test
-          results and other information specific to you.
-        </p>
-        <h4>Did You Know?</h4>
-        <p>
-          Search for drives or donor centers by city, county and zip code, or
-          by using map views!
-        </p>
-      </div>
-    </div> -->
     <div class="main__info">
       <h2 class="header">Donation Information</h2>
       <% if(donors.length > 0) { donors.forEach(donor => { %>
@@ -41,12 +14,12 @@
               <p> <i class="fas fa-city"></i> <%= donor.address %> <span> <i class="fas fa-map-marker"></i> <%= donor.bloodType%></span></p>
               <div class="donation__information--date">
                 <h4><i class="fas fa-calendar-check"></i>Past Appointments</h4>
-                <p class="future"><%= donor.donationDay %> </p>
+                <p class="past"><%= donor.donationDay %> </p>
               </div>
               <div class="donation__information--date">
                 <h4> <i class="fas fa-calendar-check"></i>Future Appointments</h4>
 
-                <p class="past"><%= donor.nextDonationDay %></p>
+                <p class=" future"><%= donor.nextDonationDay %></p>
               </div>
             </div>
           </div>

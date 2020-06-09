@@ -123,7 +123,7 @@ main .main__info {
 main .main__info .header {
   color: var(--heading-color);
   margin: 0.5em;
-  /* text-align: center; */
+  text-align: center;
 }
 
 main .main__info p {
@@ -169,88 +169,53 @@ main .main__info .form-user {
   width: 65%;
   margin: 1.2em auto;
   text-align: center;
-  padding: 1em;
+  padding: .5em 1em 1em;
   background-color: #fffffe;
   border-radius: 5px;
-  /* border: 1px solid var(--text-color); */
 }
 
 main .main__info .form-user label {
-  /* margin-right: 3em; */
-  font-weight: bold;
-  color: var(--main-color);
   font-size: 1.2em;
+  font-weight: bold;
 }
 
-main .main__info .form-user input {
+.form-user input {
   margin-bottom: 0.5em;
   text-align: start;
 }
+.form-user table {
+  margin: 1em auto;
+  text-align: start;
+}
+.form-user table tr{
+  text-align: start;
+}
 
-main .main__info .form-user input[type="text"],
-main .main__info .form-user input[type="date"] {
-  padding: 0.5em;
-  color: black;
-  background: #fefefe;
-  width: 11vw;
+.form-user table tr td {
   height: 5vh;
-  font-size: 1.1em;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 7px;
+  padding: 0.5em 0;
+  width: 240px;
 }
-
-main .main__info .form-user input[type="radio"] {
-  cursor: pointer;
-}
-main .main__info .form-user .form-group {
-  display: flex;
-  margin-bottom: 1em;
-}
-main .main__info .form-user .form-group label {
-  padding: 6px;
-  color: var(--heading-color);
-}
-main .main__info .form-user .form-group label.value {
+.form-user table tr td label.value {
   font-weight: normal;
   color: var(--main-color);
 }
-main .main__info .form-user .form-group input[type="checkbox"] {
-  position: relative;
-  width: 43px;
-  height: 23px;
-  cursor: pointer;
-  -webkit-appearance: none;
-  background: red;
-  outline: none;
-  border-radius: 20px;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-  transition: 0.5s;
+.form-user table tr.edit td{
+  /* display: flex;
+  justify-content: center; */
 }
-main .main__info .form-user .form-group input[type="checkbox"]:before {
-  content: " ";
-  position: absolute;
-  width: 23px;
-  height: 23px;
-  border-radius: 20px;
-  top: 0;
-  left: 0;
-  background: #fff;
-  transform: scale(1.1);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: 0.5s;
+
+.form-user table tfoot td{
+  text-align: center;
+  margin-top: 5em;
+
 }
-main .main__info .form-user .form-group input:checked[type="checkbox"] {
-  background-color: green;
-}
-main .main__info .form-user .form-group input:checked[type="checkbox"]:before {
-  left: 23px;
-}
-main .main__info .form-user select {
+
+.form-user input[type="text"] {
+  padding: 0.5em;
   color: black;
-  margin-bottom: 1.2em;
   background: #fefefe;
-  width: 9vw;
+  width: 8vw;
   height: 5vh;
   font-size: 1.1em;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -258,40 +223,36 @@ main .main__info .form-user select {
   border-radius: 7px;
 }
 
-main .main__info .form-user select option {
-  color: black;
-  font-size: 1.1em;
-}
-
-main .main__info .form-user input[type="range"] {
-  -webkit-appearance: none;
-  width: calc(60% - (73px));
-  height: 10px;
-  border-radius: 5px;
-  background: #d7dcdf;
-  outline: none;
-  padding: 0;
-  margin: 0;
-}
-
-main .main__info .form-user input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--text-color);
+.form-user input[type="radio"] {
   cursor: pointer;
 }
 
-main .main__info .form-user input[type="range"]::-webkit-slider-thumb:hover {
-  background-color: var(--main-color);
+.form-user .form-group label {
+  padding: 6px;
+  color: var(--heading-color);
+}
+
+.form-user select {
+  color: black;
+  /* margin-bot tom: 1.2em; */
+  background: #fefefe;
+  width: 8vw;
+  height: 5vh;
+  font-size: 1.1em;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+.form-user select option {
+  color: black;
+  font-size: 1.1em;
 }
 
 main .main__info .form-user button {
   display: inline-block;
-  width: 20%;
-  margin: 2em auto 0;
+  width: 30%;
+  /* margin: 2em auto 0; */
   padding: 0.5em 1em;
   font-size: 14px;
   font-weight: 400;
@@ -301,7 +262,6 @@ main .main__info .form-user button {
   background: var(--main-color);
   color: #fff;
   border: 1px solid transparent;
-  /* border-radius: 4px; */
 }
 
 main .main__info .form-user a.btn-back {
@@ -525,7 +485,7 @@ h5.underline {
 /* End form Search */
 /* Donation Information */
 .donation {
-  background-color: #eaeff7b0;
+  background-color: #fffffe;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 500px;
@@ -545,12 +505,12 @@ h5.underline {
   top: -5em;
 }
 .donation .donation__information h3 {
-  color: var(--main-color);
+  color: var(--heading-color);
   margin: 0.7em;
   text-transform: capitalize;
 }
 .donation .donation__information > p {
-  color: var(--text-color);
+  color: var(--heading-color);
   margin: auto;
   padding-bottom: 1em;
   margin-bottom: 1.5em;
@@ -567,7 +527,7 @@ h5.underline {
   transform: rotate(0.5turn);
 }
 .donation__information h4 {
-  color: var(--text-color);
+  color: var(--heading-color);
   margin: 0.5em;
 }
 .donation__information h4 > i {

@@ -9,54 +9,57 @@
                 Update your account at any time by clicking the "Edit" button below.
             </p>
             <form class="form-user" action="/donor/<%= user.id %>?_method=PUT" method="POST">
+                <table>
+                    <tr>
+                       <td> <label for="firstname" class="control-label">First Name:</label></td>
+                       <td> <label for="firstname" class="value"><%= user.firstName%></label></td>
+                    </tr>
+                    <tr>
+                       <td> <label for="lastname" class="control-label">Last Name:</label></td>
+                       <td> <label for="lastname" class="value"><%= user.lastName %></label></td>
+                    </tr>
+                    <tr>
+                      <td>  <label for="username" class="control-label">User Name:</label></td>
+                        <!-- <%= user.firstName.concat('',user.lastName)%> -->
+                      <td>  <label for="username" class="value"><%= user.firstName.concat(' ',user.lastName)%></label></td>
+                    </tr>
+                    <tr>
+                      <td>  <label for="PrimaryEmail" class="control-label">Primary Email:</label></td>
+                      <td>  <label for="PrimaryEmail" class="value"><%= user.email%></label></td>
+                    </tr>
+                    <tr>
+                      <td>  <label for="enableAvatar" class="control-label">City:</label></td>
+                      <td>  <input type="text" name="city" value="<%= user.city %>"></td>
+                    </tr>
+                    <tr>
+                      <td>  <label for="phone" class="control-label">Phone:</label></td>
+                      <td>  <input type="text" name="phoneNumber" value="<%= user.phoneNumber %>"></td>
+                    </tr>
+                    <tr>
+                      <td>  <label for="avatarPreview" class="control-label">Blood Type:</label> </td>
+                       <td> <select class="new-items_select type" name="bloodType" id="bloodType">
+                            <option value="a+">a+</option>
+                            <option value="a-">a-</option>
+                            <option value="o+">o+</option>
+                            <option value="o-">o-</option>
+                            <option value="b+">b+</option>
+                            <option value="b-">b-</option>
+                            <option value="ab+">ab+</option>
+                            <option value="ab-">ab-</option>
+                            <option value="<%= user.bloodType %>"></option>
+                        </select> </td>
+                    </tr>
 
-                <div class="form-group">
-                    <label for="firstname" class="control-label">First Name:</label>
-                    <label for="firstname" class="value"><%= user.firstName%></label>
-                </div>
-                <div class="form-group">
-                    <label for="lastname" class="control-label">Last Name:</label>
-                    <label for="lastname" class="value"><%= user.lastName %></label>
-                </div>
-                <div class="form-group">
-                    <label for="username" class="control-label">User Name:</label>
-                    <!-- <%= user.firstName.concat('',user.lastName)%> -->
-                    <label for="username" class="value"><%= user.firstName.concat(' ',user.lastName)%></label>
-                </div>
-                <div class="form-group">
-                    <label for="PrimaryEmail" class="control-label">Primary Email:</label>
-                    <label for="PrimaryEmail" class="value"><%= user.email%></label>
-                </div>
-                <div class="form-group">
-                    <label for="enableAvatar" class="control-label">City:</label>
-                    <input type="text" name="city" value="<%= user.city %>">
-                </div>
-                <div class="form-group">
-                    <label for="phone" class="control-label">Phone:</label>
-                    <input type="text" name="phoneNumber" value="<%= user.phoneNumber %>">
-                </div>
-                <div class="form-group">
-                    <label for="avatarPreview" class="control-label">Blood Type:</label>
-                    <select class="new-items_select type" name="bloodType" id="bloodType">
-                        <option value="a+">a+</option>
-                        <option value="a-">a-</option>
-                        <option value="o+">o+</option>
-                        <option value="o-">o-</option>
-                        <option value="b+">b+</option>
-                        <option value="b-">b-</option>
-                        <option value="ab+">ab+</option>
-                        <option value="ab-">ab-</option>
-                        <option value="<%= user.bloodType %>"></option>
-                    </select>
-                </div>
 
 
+                   <td> <div><a class="password" href="/donor/password/<%= user.id %>/edit">Change password</a></div></td>
+                   <tr class="edit">
+                       <td><button class="save"  type="submit">Save</button>
+                       <a class="btn" href="/donor/account/view">Cancel</a></td>
+                       <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
 
-                <div><a class="password" href="/donor/password/<%= user.id %>/edit">Change password</a></div>
-                <button class="save"  type="submit">Save</button>
-                <a class="btn" href="/donor/account/view">Cancel</a>
-                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-
+                   </tr>
+                </table>
             </form>
 
         </div>
