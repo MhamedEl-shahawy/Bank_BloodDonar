@@ -75,7 +75,7 @@ ul {
   position: absolute;
   width: 28px;
   height: 22px;
-  top: 21px;
+  /* top: 21px; */
   right: 12px;
   z-index: 2;
   cursor: pointer;
@@ -165,7 +165,7 @@ ul {
   position: absolute;
   width: 28px;
   height: 22px;
-  top: 16px;
+  /* top: 16px; */
   right: 12px;
   z-index: 2;
   cursor: pointer;
@@ -683,6 +683,7 @@ ul {
   }
   .instructions > img {
     width: 95%;
+    padding: 0 1em;
   }
   .instructions h3 {
     font-size: 1.4em;
@@ -709,7 +710,7 @@ ul {
     display: -webkit-box;
     display: flex;
     position: relative;
-    top: 6px;
+    /* top: 6px; */
     right: 10px;
   }
   .main-nav ul.main-nav__right li.user-btn i {
@@ -772,7 +773,7 @@ ul {
     width: 100%;
   }
   .acceptable__header--menu {
-    width: 85%;
+    width: 95%;
   }
   .acceptable__main .content-desc {
     padding: 1em 3.5em;
@@ -803,8 +804,14 @@ ul {
     width: 70%;
     margin: 1em auto;
   }
+  .instructions .instructions__items {
+    gap: 2em 4em;
+  }
   .search {
     padding: 0 0 1em;
+  }
+  .quotes{
+    font-size: 1em;
   }
 }
 
