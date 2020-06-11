@@ -182,13 +182,13 @@
                 }
                 @keyframes heart {
                     0% {
-                        transform: scale(0.4);
+                        transform: scale(0.5);
                     }
                     50% {
-                        transform: scale(0.6);
+                        transform: scale(0.8);
                     }
                     100% {
-                        transform: scale(0.4);
+                        transform: scale(0.6);
                     }
                 }
 </style>

@@ -209,10 +209,7 @@ main .main__info .form-user label {
   font-weight: normal;
   color: var(--main-color);
 }
-.form-user table tr.edit td{
-  /* display: flex;
-  justify-content: center; */
-}
+
 
 .form-user table tfoot td{
   text-align: center;
