@@ -1,65 +1,76 @@
 <%- include('../includes/navigation.ejs') %>
 
-  <section class="main">
-    <div class="main-content tabcontent" id="needBlood">
-      
- <div class="pd-1">
+<section class="main">
+  <div class="main-content tabcontent" id="needBlood">
+    <div class="pd-1">
       <div class="container">
-         <a href="/add-neededBlood" class="add-new addMain">new need</a>
+        <a href="/add-neededBlood" class="add-new addMain">new need</a>
         <table>
-       <thead>
-         <tr>
-           <th scope="col">blood type</th>
-           <th scope="col">department</th>
-           <th scope="col">patient</th>
-           <th scope="col">quantity</th>
-           <th scope="col">date</th>
-           <th scope="col" class="center">done</th>
-           <th scope="col"></th>
-         </tr>
-       </thead>
-       <tbody>
-        <% if (patients.length > 0) {
-          let i = itemCounterStartInCurrentPage;
-          for (let patient of patients) { %>
-         <tr>
-           <td data-label="blood type" class="blood-type"><%= patient.bloodType %></td>
-           <td data-label="department"><%= patient.department %></td>
-           <td data-label="patient"> <%= patient.patientName %></td>
-           <td data-label="quantity"> <%= patient.quantity %></td>
-            <td data-label="date">  <%=patient.date%></td>
-           <td data-label="done"><p class="not-done"></p></td>
-     
-           <% if (isAuthenticated && patient.userId._id.toString() === currentUser._id.toString()) { %>
-            <td data-label="edit" class="right">
-              <span><a href="/edit-neededBlood/<%= patient._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
-              <span>
-                <form action="/delete-patient" method="POST" style="display: inline-block;">
-                   <input type="hidden" value="<%= patient._id %>" name="patientId">
-                  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-                  <button style="border: none;"  type="submit"><i class="fas fa-trash-alt"></i></button>
-                </form>
-              </span>
-            </td>
-            <% } %> 
-            
+          <thead>
+            <tr>
+              <th scope="col">blood type</th>
+              <th scope="col">department</th>
+              <th scope="col">patient</th>
+              <th scope="col">quantity</th>
+              <th scope="col">date</th>
+              <th scope="col" class="center">done</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (patients.length > 0) { let i = itemCounterStartInCurrentPage;
+            for (let patient of patients) { %>
+            <tr>
+              <td data-label="blood type" class="blood-type">
+                <%= patient.bloodType %>
+              </td>
+              <td data-label="department"><%= patient.department %></td>
+              <td data-label="patient"><%= patient.patientName %></td>
+              <td data-label="quantity"><%= patient.quantity %></td>
+              <td data-label="date"><%=patient.date%></td>
+              <td data-label="done"><p class="not-done"></p></td>
 
-      
-          </tr> 
-          <% i--; } %>
-        <% } else { %>
-          <div class="not-found">
-          <p><i class="fas fa-exclamation-triangle"></i> No Needs found.</p>
-          </div>
-          <% } %>
-       
-           
-       </tbody>
-    </table>
-      </div> 		
- </div>
-</div>
-  </section>
-  
+              <% if (isAuthenticated && patient.userId._id.toString() ===
+              currentUser._id.toString()) { %>
+              <td data-label="edit" class="right">
+                <span
+                  ><a href="/edit-neededBlood/<%= patient._id %>?edit=true"
+                    ><i class="fas fa-edit"></i></a
+                ></span>
+                <span>
+                  <form
+                    action="/delete-neededBlood"
+                    method="POST"
+                    style="display: inline-block;"
+                  >
+                    <input
+                      type="hidden"
+                      value="<%= patient._id %>"
+                      name="patientId"
+                    />
+                    <input
+                      type="hidden"
+                      name="_csrf"
+                      value="<%= csrfToken %>"
+                    />
+                    <button style="border: none;" type="submit">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </form>
+                </span>
+              </td>
+              <% } %>
+            </tr>
+            <% i--; } %> <% } else { %>
+            <div class="not-found">
+              <p><i class="fas fa-exclamation-triangle"></i> No Needs found.</p>
+            </div>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <%- include('../includes/dateFixerEnd.ejs') %>
+<%- include('../includes/dateFixerEnd.ejs') %>

@@ -136,6 +136,7 @@ body {
 .none {
   background: none;
   border: none;
+  pointer-events: none;
 }
 /* main content styles */
 .main-content {
@@ -689,4 +690,5 @@ hr {
 }
 .hidden {
   display: none;
+
 }
