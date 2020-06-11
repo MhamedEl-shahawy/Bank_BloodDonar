@@ -34,7 +34,7 @@
             <td data-label="edit" class="right">
               <span><a href="/edit-neededBlood/<%= patient._id %>?edit=true"><i class="fas fa-edit"></i></a></span>
               <span>
-                <form action="/delete-patient" method="POST" style="display: inline-block;">
+                <form action="/delete-neededBlood" method="POST" style="display: inline-block;">
                    <input type="hidden" value="<%= patient._id %>" name="patientId">
                   <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                   <button style="border: none;"  type="submit"><i class="fas fa-trash-alt"></i></button>
