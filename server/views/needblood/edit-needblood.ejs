@@ -6,16 +6,16 @@
         <h2>need bloods</h2>
         <p class="red">needs quantity</p>
         <p class="red">   <%= patient.date %></p>
-        <form action="/edit-neededBlood" method="POST" class="new-items_form"> 
+        <form action="/edit-neededBlood" method="POST" class="new-items_form">
           <label for="patientName" class="new-items_label">Patient</label>
           <input class="new-items_input" type="text" name="patientName" id="patientName" value="<% if (editing) { %><%= patient.patientName %><% } %>" />
-    
+
           <label for="department" class="new-items_label">Department</label>
           <input class="new-items_input" type="text" name="department" id="department" value="<% if (editing) { %><%= patient.department %><% } %>" />
-    
+
           <label for="quantity" class="new-items_label">Quantity</label>
           <input class="new-items_input" type="text" name="quantity" id="quantity"  value="<% if (editing) { %><%= patient.quantity %><% } %>"/>
-    
+
           <label for="bloodType" class="new-items_label">Blood Type</label>
           <select name="bloodType" id="bloodType" class="new-items_select type">
             <option value="a+">a+</option>
@@ -32,7 +32,7 @@
           <% if (editing) { %>
             <input type="hidden" value="<%= patient._id %>" name="patientId">
             <% } %>
-          <input type="hidden" name="_csrf" value="<%= csrfToken %>" /> 
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
           <button class="add-new add-new_float addnewrs" type="submit">Submit</button>
         </form>
       </div>
@@ -43,6 +43,6 @@
 
 
 
-  
+
 
   <%- include('../includes/bottom.ejs') %>
