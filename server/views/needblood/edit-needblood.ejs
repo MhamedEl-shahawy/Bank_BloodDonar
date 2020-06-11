@@ -1,11 +1,10 @@
 <%- include('../includes/navigation.ejs') %>
 <section class="main">
   <div class="main-content tabcontent" id="patient">
-    <div class="new-items">
+    <div class="new-items ">
       <div class="new-items_conatiner">
         <h2>need bloods</h2>
         <p class="red">needs quantity</p>
-
         <p class="red">   <%= patient.date %></p>
         <form action="/edit-neededBlood" method="POST" class="new-items_form">
           <label for="patientName" class="new-items_label">Patient</label>
@@ -16,36 +15,6 @@
 
           <label for="quantity" class="new-items_label">Quantity</label>
           <input class="new-items_input" type="text" name="quantity" id="quantity"  value="<% if (editing) { %><%= patient.quantity %><% } %>"/>
-
-        <!-- <p class="red">   <%= patient.date %></p> -->
-        <form action="/edit-neededBlood" method="POST" class="new-items_form">
-          <label for="patientName" class="new-items_label">Patient</label>
-          <input
-            class="new-items_input"
-            type="text"
-            name="patientName"
-            id="patientName"
-            value="<% if (editing) { %><%= patient.patientName %><% } %>"
-          />
-
-          <label for="department" class="new-items_label">Department</label>
-          <input
-            class="new-items_input"
-            type="text"
-            name="department"
-            id="department"
-            value="<% if (editing) { %><%= patient.department %><% } %>"
-          />
-
-          <label for="quantity" class="new-items_label">Quantity</label>
-          <input
-            class="new-items_input"
-            type="text"
-            name="quantity"
-            id="quantity"
-            value="<% if (editing) { %><%= patient.quantity %><% } %>"
-          />
-
 
           <label for="bloodType" class="new-items_label">Blood Type</label>
           <select name="bloodType" id="bloodType" class="new-items_select type">
@@ -58,35 +27,22 @@
             <option value="ab+">ab+</option>
             <option value="ab-">ab-</option>
             <option value="<%if(editing) {%><%=patient.bloodType%><% } %>">
-              <%if(editing) {%><%=patient.bloodType%><% } %></option
-            >
+              <%if(editing) {%><%=patient.bloodType%><% } %></option>
           </select>
           <% if (editing) { %>
-
             <input type="hidden" value="<%= patient._id %>" name="patientId">
             <% } %>
           <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
           <button class="add-new add-new_float addnewrs" type="submit">Submit</button>
-
-          <input type="hidden" value="<%= patient._id %>" name="patientId" />
-          <% } %>
-          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-          <button class="add-new add-new_float addnewrs" type="submit">
-            Submit
-          </button>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<<<<<<< HEAD
 
 
 
 
 
   <%- include('../includes/bottom.ejs') %>
-=======
-<%- include('../includes/bottom.ejs') %>
->>>>>>> 45c855bdb436be87de5891eff9fe5903cc08ee34
