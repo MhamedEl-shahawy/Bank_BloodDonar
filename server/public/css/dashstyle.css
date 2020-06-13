@@ -692,3 +692,7 @@ hr {
   display: none;
 
 }
+.pagination{
+  display: flex;
+  justify-content: center;
+}
