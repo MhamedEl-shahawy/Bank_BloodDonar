@@ -68,8 +68,8 @@
 
         <div class="form__container">
             <select class="form__input form__input_select <%= validationErrors.find(e => e.param === 'code') ? 'invalid' : '' %>" name="code" id="code" value="<%= oldInput.code %>">
-                <option value="+20">+20</option>
-                <option value="+966">+966</option>
+                <option value="20">+20</option>
+                <option value="966">+966</option>
                 <option value="<%= oldInput.code%>"><%= oldInput.code%></option>
               </select>
             <input

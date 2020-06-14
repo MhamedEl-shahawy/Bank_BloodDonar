@@ -97,11 +97,13 @@ router.post('/edit-city', isAuth, adminController.postEditCity);
 router.post('/delete-city', isAuth, adminController.postDeleteCity);
 /*End city Routes */
 
-router.get('/users', isAuth, adminController.getUsers);
-router.post('/users', isAuth, adminController.postMessage);
+router.get('/sendSms', isAuth, adminController.getUsers);
+router.post('/sendSms',isAuth,adminController.postSms);
+//router.post('/users', isAuth, adminController.postMessage);
 
 //Send Email
 router.get('/sendEmail', adminController.getEmails);
 router.post('/sendEmail', adminController.postEmail);
+
 
 module.exports = router;

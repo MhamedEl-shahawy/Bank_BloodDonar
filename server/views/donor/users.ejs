@@ -5,29 +5,63 @@
 
 <div class="pd-1">
    <div class="container">
+    <form class="email__search" action="/sendSms" method="GET">
+      <input type="text" class="search-bar" placeholder="Search with bloodType" name="bloodType" value="<%= searchOptions.city %>">
+      <button type="submit" class="add-new addMain">Search</button>
+   </form>
      <table>
     <thead>
       <tr>
         <th scope="col">User Name</th>
         <th scope="col">blood type</th>
-        <th scope="col">phone</th>
-        <th scope="col">Message</th>
+        <!-- <th scope="col">phone</th> -->
+        <!-- <th scope="col">Message</th> -->
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <% if (users.length > 0) {
+      <% types.forEach(type => { %>
+        <%if(type.bloodType === searchOptions.bloodType) { %>
+          <tr>
+            <td data-label="phone"><%= type.firstName.concat(' ', type.lastName) %></td>
+            <td data-label="bloodType"> <%= type.bloodType %></td>
+
+            <td>
+                <form action="/sendSms?bloodType=<%=searchOptions.bloodType%>" method="POST">
+                  <input hidden class="none" type="tel" name="phoneNumber" id="phoneNumber" value="<%= type.code.concat(type.phoneNumber) %>" >
+                  <td>
+                      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                          <button class="btn save__btn floating-right" type="submit">Send Email</button>
+                  </td>
+                  </form>
+           </td>
+           <td></td>
+
+        <% }%>
+      <% })  %>
+
+
+      <% if (users.length > 0  && !searchOptions.bloodType) {
         let i = itemCounterStartInCurrentPage;
         for (let user of users) { %>
       <tr>
           <td data-label="phone"><%= user.firstName.concat(' ', user.lastName) %></td>
           <td data-label="bloodType"> <%= user.bloodType %></td>
-          <td data-label="phone"><input class="none" type="tel" name="number" id="number" value="<%= user.code.concat(user.phoneNumber) %>" placeholder="Enter Phone Number..."></td>
-          <td data-label="text"><input class="none" type="text" name="msg" id="msg" value="Please success" placeholder="Enter Text Message..."></td>
+          <!-- <td data-label="phone"><input class="none" type="tel" name="number" id="number" value="<%= user.code.concat(user.phoneNumber) %>" placeholder="Enter Phone Number..."></td>
+          <td data-label="text"><input class="none" type="text" name="msg" id="msg" value="Please success" placeholder="Enter Text Message..."></td> -->
+          <td>
 
+            <form action="/sendSms" method="POST">
+              <input hidden class="none" type="number" name="phoneNumber" id="phoneNumber" value="<%= user.code.concat(user.phoneNumber) %>" >
+                    <td>  
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                            <button class="btn save__btn floating-right" type="submit">Send SMS</button>
+                    </td>
+            </form>
+          </td>
 
-          <td><button type="button" id="button" value="Send Text" class="save__btn">SendSMS</button></td>
-            <p class="response"></p>
+          <!-- <td><button type="button" id="button" value="Send Text" class="save__btn">SendSMS</button></td>
+            <p class="response"></p> -->
 
       <% if (isAuthenticated && user._id.toString() === currentUser._id.toString()) { %>
 
@@ -43,7 +77,7 @@
         </tr>
         <% i--; } %>
 
-        <% } else { %>
+        <% } else if(users.length <= 0 && searchOptions.bloodType) { %>
           <div class="not-found">
         <p><i class="fas fa-exclamation-triangle"></i> No users found.</p>
         </div>

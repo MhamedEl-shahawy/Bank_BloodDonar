@@ -34,7 +34,7 @@ const transporter = nodemailer.createTransport(
 const nexmo = new Nexmo({
   apiKey: '191d2595',
   apiSecret: '2rthPYhF9RXQOlfJ'
-}, { debug: true });
+});
 
 const ITEMS_PER_PAGE = 5;
 const paginator = (page, ITEMS_PER_PAGE, totalItems) => {
@@ -731,7 +731,7 @@ exports.getEditBlood = (req, res, next) => {
       if (!blood) {
         return res.redirect('/');
       }
-      res.render('blood/edit-blood  ', {
+      res.render('blood/edit-blood', {
         pageTitle: 'Edit Blood',
         editing: editMode,
         blood
@@ -795,7 +795,6 @@ exports.postDeleteBlood = (req, res, next) => {
 
 
 /*End Blood */
-
 /* Start Bags */
 
 exports.getAddBag = (req, res, next) => {
@@ -1222,62 +1221,80 @@ exports.postDeleteCity = (req, res, next) => {
 
 
 
-exports.getUsers = (req, res, next) => {
+exports.getUsers = async(req, res, next) => {
   const currentUser = req.user;
   const page = parseInt(req.query.page) || 1;
   let totalItems;
   let itemCounterStartInCurrentPage;
-  User
-    .estimatedDocumentCount()
-    .then(number => {
-      totalItems = number;
-      itemCounterStartInCurrentPage = totalItems - ITEMS_PER_PAGE * (page - 1);
-      return User
-        .find()
-        .sort({ date: -1 })
-        .skip((page - 1) * ITEMS_PER_PAGE)
-        .limit(ITEMS_PER_PAGE)
-        .populate('userId');
-    })
-    .then(users => {
-      res.render('donor/users', {
-        itemCounterStartInCurrentPage,
-        users,
-        pageTitle: 'Users',
-        currentUser,
-        paginationObject: paginator(page, ITEMS_PER_PAGE, totalItems)
-      });
-    }).catch(err => {
+  let searchOptions = {};
+  if (req.query.bloodType != null && req.query.bloodType !== '') {
+    searchOptions.bloodType = new RegExp(req.query.bloodType, 'i');
+  }
+  try{
+    let number = await User.estimatedDocumentCount();
+    totalItems = number;
+    itemCounterStartInCurrentPage = totalItems - ITEMS_PER_PAGE * (page - 1);
+    let users = await User.find().sort({ date: -1 }).skip((page - 1) * ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE).populate('userId');
+    let types = await User.find(searchOptions);
+    res.render('donor/users', {
+      itemCounterStartInCurrentPage,
+      users,
+      types: types,
+      pageTitle: 'Users',
+      searchOptions: req.query,
+      currentUser,
+      paginationObject: paginator(page, ITEMS_PER_PAGE, totalItems)
+    });
+  }catch(err){
       const error = new Error(err);
       error.httpStatusCode = 500;
       return next(error);
-    });
+  }
+  // User
+  //   .estimatedDocumentCount()
+  //   .then(number => {
+  //     totalItems = number;
+  //     itemCounterStartInCurrentPage = totalItems - ITEMS_PER_PAGE * (page - 1);
+  //     return User
+  //       .find()
+  //       .sort({ date: -1 })
+  //       .skip((page - 1) * ITEMS_PER_PAGE)
+  //       .limit(ITEMS_PER_PAGE)
+  //       .populate('userId');
+  //   })
+  //   .then(users => {
+  //     res.render('donor/users', {
+  //       itemCounterStartInCurrentPage,
+  //       users,
+  //       pageTitle: 'Users',
+  //       currentUser,
+  //       paginationObject: paginator(page, ITEMS_PER_PAGE, totalItems)
+  //     });
+  //   }).catch(err => {
+  //     const error = new Error(err);
+  //     error.httpStatusCode = 500;
+  //     return next(error);
+  //   });
 };
 
 
-exports.postMessage = (req, res, next) => {
-  const { number, text } = req.body;
-  nexmo.message.sendSms(
-    'Vonage SMS API', number, text, { type: 'unicode' },
-    (err, responseData) => {
-      if (err) {
-        console.log(err);
-      } else {
-        const { messages } = responseData;
-        const { ['message-id']: id, ['to']: number, ['error-text']: error } = messages[0];
-        console.dir(responseData);
-        // Get data from response
-        const data = {
-          id,
-          number,
-          error
-        };
-        // Emit to the client
-        io.emit('smsStatus', data);
-      }
-    }
-  );
-};
+
+
+exports.postSms = async(req,res,next) => {
+  try{
+    const number = req.body.phoneNumber;
+    const from = 'Vonage APIs';
+    const to = number;
+    const text = 'Mohammed Aboabdo xD';
+    res.redirect('/sendSms');
+    nexmo.message.sendSms(from,to,text);
+
+  }catch(err){
+    const error = new Error(err);
+    error.httpStatusCode = 500;
+    return next(error);
+  }
+}
 
 
 //Send EMail to users

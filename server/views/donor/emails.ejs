@@ -14,7 +14,7 @@
       <tr>
         <th scope="col">User Name</th>
         <th scope="col">Blood type</th>
-        <th scope="col">E-mail</th>
+        <!-- <th scope="col">E-mail</th> -->
         <th scope="col"></th>
         <th scope="col"></th>
       </tr>
@@ -28,7 +28,7 @@
 
             <td>
                 <form action="/sendEmail?bloodType=<%=searchOptions.bloodType%>" method="POST">
-                  <input class="none" type="email" name="email" id="email" value="<%= type.email %>" placeholder="Enter Your email....">
+                  <input hidden class="none" type="email" name="email" id="email" value="<%= type.email %>" placeholder="Enter Your email....">
                   <td>
                       <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                           <button class="btn save__btn floating-right" type="submit">Send Email</button>
@@ -52,7 +52,7 @@
 
           <td>
               <form action="/sendEmail" method="POST">
-                <input class="none" type="email" name="email" id="email" value="<%= user.email %>" placeholder="Enter Your email....">
+                <input hidden class="none" type="email" name="email" id="email" value="<%= user.email %>" placeholder="Enter Your email....">
                 <td>
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                         <button class="btn save__btn floating-right" type="submit">Send Email</button>
