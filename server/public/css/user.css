@@ -10,7 +10,6 @@
 }
 
 * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
   border: 0;
@@ -34,21 +33,16 @@ ul {
 }
 
 .nav {
-  width: 60%;
+  grid-area: nav;
+  width: 58%;
   height: 9vh;
   margin: 0 auto;
 }
 
 .nav__link {
   background-color: #fffffe;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 0;
   border-radius: 10px;
@@ -63,10 +57,10 @@ ul {
 }
 
 .nav__link li.avatar {
-  margin-right: 2em;
+  margin: auto 1em;
 }
 .nav__link li.avatar img {
-  max-width: 17px;
+  width: 17px;
   height: 30%;
   transform: scale(2.6);
 }
@@ -91,16 +85,18 @@ ul {
 .nav__link li:hover a,
 .nav__link li:hover i {
   color: var(--main-color);
+  -webkit-animation: navbarHover 1s ease;
   animation: navbarHover 1s ease;
+  -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
 
-.nav__link .log__form span {
+.nav__link .log__form button {
   color: var(--heading-color);
   background-color: #fffffe;
   font-size: 1.1em;
   border: 0;
-  padding-left: 1em;
+  padding-left: 0.2em;
   cursor: pointer;
 }
 .nav__link .log__form span i {
@@ -111,6 +107,7 @@ ul {
 }
 
 main {
+  grid-area: main;
   margin: 0 auto;
   height: 85vh;
   background-color: #eaeff7;
@@ -147,7 +144,7 @@ main .main__info p.warning i {
 }
 main .main__info p.warningDonation {
   width: 75%;
-  font-size: .9em;
+  font-size: 0.9em;
   text-align: center;
   margin: auto;
 }
@@ -161,7 +158,6 @@ main .main__info p.warning-date {
   margin: 2em auto 0;
   text-align: center;
   border-radius: 15px;
-  /* box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1); */
 }
 .table-dates tr th {
   font-size: 1.3em;
@@ -178,7 +174,7 @@ main .main__info .form-user {
   width: 65%;
   margin: 1.2em auto;
   text-align: center;
-  padding: .5em 1em 1em;
+  padding: 0.5em 1em 1em;
   background-color: #fffffe;
   border-radius: 5px;
 }
@@ -196,7 +192,7 @@ main .main__info .form-user label {
   margin: 1em auto;
   text-align: start;
 }
-.form-user table tr{
+.form-user table tr {
   text-align: start;
 }
 
@@ -210,11 +206,9 @@ main .main__info .form-user label {
   color: var(--main-color);
 }
 
-
-.form-user table tfoot td{
+.form-user table tfoot td {
   text-align: center;
   margin-top: 5em;
-
 }
 
 .form-user input[type="text"] {
@@ -224,7 +218,6 @@ main .main__info .form-user label {
   width: 8vw;
   height: 5vh;
   font-size: 1.1em;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
 }
@@ -240,12 +233,10 @@ main .main__info .form-user label {
 
 .form-user select {
   color: black;
-  /* margin-bot tom: 1.2em; */
   background: #fefefe;
   width: 8vw;
   height: 5vh;
   font-size: 1.1em;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
 }
@@ -258,7 +249,6 @@ main .main__info .form-user label {
 main .main__info .form-user button {
   display: inline-block;
   width: 30%;
-  /* margin: 2em auto 0; */
   padding: 0.5em 1em;
   font-size: 14px;
   font-weight: 400;
@@ -340,12 +330,6 @@ main .main__info--links div h3 {
   color: #00a8c4;
   text-decoration: underline;
 }
-iframe {
-  display: block; /* frames are inline by default */
-  background: #000;
-  border: none; /* Reset default border */ /* Viewport-relative units */
-  width: 80%;
-}
 
 input[type="password"] {
   padding: 0.5em;
@@ -354,7 +338,6 @@ input[type="password"] {
   width: 12vw;
   height: 5vh;
   font-size: 1.1em;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
 }
@@ -552,6 +535,26 @@ h5.underline {
 /*End  Donation Information */
 
 /* animation */
+@-webkit-keyframes navbarHover {
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  65% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 @keyframes navbarHover {
   15% {
     transform: translateX(5px);
@@ -570,5 +573,88 @@ h5.underline {
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .nav {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    width: 85%;
+  }
+  .nav__link li {
+    padding: 0 0.9em;
+    font-size: 1em;
+    text-align: center;
+  }
+  main .main__info {
+    width: 75%;
+  }
+  main .main__info p.warning {
+    width: 100%;
+    font-size: 1em;
+  }
+  .user-search input {
+    width: 25vw;
+  }
+  .form-search {
+    width: 75%;
+  }
+  main .main__info .form-user {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .nav {
+    max-width: 75%;
+  }
+  .nav__link li a span {
+    display: none;
+  }
+  .nav__link li.avatar {
+    display: none;
+  }
+  .nav__link .log__form button span {
+    display: none;
+  }
+  .nav__link li i {
+    /* padding-right: 1em; */
+    font-size: 1.5em;
+  }
+  main .main__info {
+    width: 90%;
+  }
+  main .main__info p {
+    font-size: 1.1em;
+  }
+  .user-search input {
+    width: 40vw;
+  }
+  main .main__info p.warningDonation {
+    width: 90%;
+  }
+  main .main__info .form-user {
+    width: 100%;
+  }
+  .form-user table tr td.edit input {
+    width: 60%;
+  }
+  input[type="password"] {
+    width: 35vw;
+  }
+  .donation {
+    width: 65vw;
+  }
+  .donation .donation__information {
+    top: -3em;
+  }
+  .donation .donation__img {
+    top: -2em;
+  }
+  .donation .donation__information p span {
+    padding-left: 1em;
   }
 }
