@@ -1,19 +1,20 @@
 <section class="pagination"> 
     <% if (paginationObject.hasItems) { %> 
-        <span class="gotopage">Go to page</span>   
+        <span class="gotopage"><i class='fas fa-angle-left'></i></span>   
     
         <% if (paginationObject.currentPage !== 1 && paginationObject.previousPage !== 1) { %>        
             <a href="?page=1">1</a>
         <% } %>
         <% if (paginationObject.hasPreviousPage) { %>
-            <a href="?page=<%= paginationObject.previousPage %>"><%= paginationObject.previousPage %></a>
+            <a class="pagination-Last" href="?page=<%= paginationObject.previousPage %>"><%= paginationObject.previousPage %></a>
         <% } %>
-        <a href="?page=<%= paginationObject.currentPage %>" class="active"><%= paginationObject.currentPage %></a>
+        <a href="?page=<%= paginationObject.currentPage %>" class="activePagination"><%= paginationObject.currentPage %></a>
         <% if (hasNextPage) { %>
-            <a href="?page=<%= paginationObject.nextPage %>"><%= paginationObject.nextPage %></a>
+            <a class="pagination-next" href="?page=<%= paginationObject.nextPage %>"><%= paginationObject.nextPage %></a>
         <% } %>
         <% if (paginationObject.lastPage !== paginationObject.currentPage && paginationObject.nextPage !== paginationObject.lastPage) { %>
-            <a href="?page=<%= paginationObject.lastPage %>"><%= paginationObject.lastPage %></a>
+            <a  href="?page=<%= paginationObject.lastPage %>"><%= paginationObject.lastPage %></a>
         <% } %>
+        <span class="gotopage"><i class='fas fa-angle-right'></i></span>   
     <% } %>
 </section>

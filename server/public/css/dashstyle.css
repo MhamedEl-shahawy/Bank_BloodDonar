@@ -17,7 +17,13 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-
+.activePagination{
+   color: var(--second-color);
+   border: 2px solid var(--higlight);
+   padding: 0.1em 0.5em;
+   font-size: 1.2em;
+   font-weight: bolder;
+}
 li {
   list-style: none;
 }
@@ -509,7 +515,17 @@ hr {
   padding-right: 0.4em;
   color: var(--main-borderColor);
 }
-
+.gotopage{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-size: 1.3em;
+}
+.pagination-next,.pagination-Last{
+  color: var(--second-color);
+  padding: 0.2em 1em;
+  font-size: 1.2em;
+  font-weight: bolder;
+}
 /*start media*/
 /* set element styles to fit tablet and higher(desktop) */
 @media screen and (min-width: 600px) {
