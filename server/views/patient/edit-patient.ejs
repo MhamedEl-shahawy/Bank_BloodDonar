@@ -6,7 +6,7 @@
       <div class="new-items_conatiner">
         <h2>new patient</h2>
         <p class="red">patient info</p>
-        <p class="red">   <%= patient.date %></p>
+        <!-- <p class="red">   <%= patient.date %></p> -->
         <form action="/edit-patient" method="POST" class="new-items_form">
           <label for="patientName" class="new-items_label">Patient Name</label>
           <input class="new-items_input" type="text" name="patientName" id="patientName" value="<% if (editing) { %><%= patient.patientName %><% } %>"/>
