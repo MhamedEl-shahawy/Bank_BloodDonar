@@ -71,7 +71,9 @@
         </tr>
         <% i--; } %>
         <% } else if(users.length <= 0 && searchOptions.bloodType) { %>
-        <p>No users found.</p>
+        <div class="not-found">
+      <p><i class="fas fa-exclamation-triangle"></i> No Patients found.</p>
+    </div>
         <% } %>
       </tbody>
  </table>

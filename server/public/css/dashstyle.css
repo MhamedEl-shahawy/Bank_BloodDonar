@@ -518,13 +518,15 @@ hr {
 .gotopage{
   padding-left: 0.5em;
   padding-right: 0.5em;
-  font-size: 1.3em;
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: var(--second-color);
 }
 .pagination-next,.pagination-Last{
   color: var(--second-color);
   padding: 0.2em 1em;
   font-size: 1.2em;
-  font-weight: bolder;
+  
 }
 /*start media*/
 /* set element styles to fit tablet and higher(desktop) */

@@ -1,7 +1,13 @@
 <section class="pagination"> 
     <% if (paginationObject.hasItems) { %> 
+    <% if (paginationObject.hasPreviousPage) { %>
+     <a class="gotopage" href="?page=<%= paginationObject.previousPage %>">
+        <span><i class='fas fa-angle-left'></i></span>   
+      </a>  
+    <% } %>
+    <% if (!paginationObject.hasPreviousPage) { %>
         <span class="gotopage"><i class='fas fa-angle-left'></i></span>   
-    
+    <% } %>
         <% if (paginationObject.currentPage !== 1 && paginationObject.previousPage !== 1) { %>        
             <a href="?page=1">1</a>
         <% } %>
@@ -15,6 +21,13 @@
         <% if (paginationObject.lastPage !== paginationObject.currentPage && paginationObject.nextPage !== paginationObject.lastPage) { %>
             <a  href="?page=<%= paginationObject.lastPage %>"><%= paginationObject.lastPage %></a>
         <% } %>
-        <span class="gotopage"><i class='fas fa-angle-right'></i></span>   
+         <% if (hasNextPage) { %>
+           <a class="gotopage" href="?page=<%= paginationObject.nextPage %>">
+            <span><i class='fas fa-angle-right'></i></span>   
+           </a>
+         <% } %>
+          <% if (!hasNextPage) { %>
+            <span class="gotopage"><i class='fas fa-angle-right'></i></span>   
+         <% } %>
     <% } %>
 </section>
