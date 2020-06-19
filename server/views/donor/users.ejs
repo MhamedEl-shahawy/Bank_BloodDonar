@@ -17,6 +17,7 @@
         <!-- <th scope="col">phone</th> -->
         <!-- <th scope="col">Message</th> -->
         <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -53,7 +54,7 @@
 
             <form action="/sendSms" method="POST">
               <input hidden class="none" type="number" name="phoneNumber" id="phoneNumber" value="<%= user.code.concat(user.phoneNumber) %>" >
-                    <td>  
+                    <td>
                         <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                             <button class="btn save__btn floating-right" type="submit">Send SMS</button>
                     </td>
