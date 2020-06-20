@@ -609,21 +609,22 @@ ul {
     display: block;
     z-index: 33;
     position: absolute;
-    top: -16px;
+    /* top: -16px; */
+    top: 53px;
     left: -2%;
     background: var(--backgroundColor);
     height: 100vh;
     width: 35%;
     padding: 30px 10px;
     opacity: 1;
-    /* border-right: 1px solid var(--main-color); */
+    border-right: 1px solid rgba(0, 0, 0, 0.04);
     -webkit-transform: translate(-500px);
     transform: translate(-500px);
     -webkit-transition: -webkit-transform 0.3s ease-in-out;
     transition: -webkit-transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-    box-shadow: -1px -2px 9px 0px #ccc;
+    /* box-shadow: -1px -2px 9px 0px #ccc; */
   }
   .main-nav ul.main-nav__link li {
     font-size: 1.5em;
@@ -681,7 +682,7 @@ ul {
   }
 
   .acceptable__img img {
-    max-width: 55%;
+    max-width: 65%;
   }
   .search img {
     width: 100%;
@@ -691,8 +692,8 @@ ul {
     font-size: 1em;
   }
   .instructions > img {
-    width: 95%;
-    padding: 0 1em;
+    width: 90%;
+    margin: 1em 2em;
   }
   .instructions h3 {
     font-size: 1.4em;
@@ -707,7 +708,7 @@ ul {
     margin-bottom: 1em;
   }
   .main-nav ul.main-nav__link {
-    width: 45%;
+    width: 58%;
   }
   .main-nav ul.main-nav__right {
     margin-right: 15px;
@@ -726,7 +727,7 @@ ul {
     color: var(--main-color);
   }
   .main-nav .menu-small {
-    top: 22px;
+    top: 18px;
     right: 3px;
   }
 
@@ -748,6 +749,7 @@ ul {
     height: 200px;
   }
   .main-header__desc h2 {
+    font-size: 2.3em;
     text-align: center;
     margin: auto;
     letter-spacing: 2px;
@@ -757,7 +759,7 @@ ul {
     text-align: center;
     line-height: 1.4;
     margin: 1em auto;
-    width: 90%;
+    width: 100%;
   }
   .main-header__desc a {
     margin: auto;
@@ -776,19 +778,20 @@ ul {
     margin: 0.4em 0;
   }
   .acceptable {
-    padding: 2em 0;
+    padding: 0;
   }
   .acceptable__header p {
     width: 100%;
+    font-size: 1em;
   }
   .acceptable__header--menu {
-    width: 95%;
+    width: 100%;
   }
   .acceptable__main .content-desc {
-    padding: 1em 3.5em;
+    padding: 1em 1.5em;
   }
   .acceptable__main .content-desc p {
-    width: 95%;
+    width: 100%;
   }
   .acceptable__main {
     padding-top: 0;
@@ -806,15 +809,17 @@ ul {
   }
   .instructions {
     padding: 0;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     grid-template-columns: repeat(auto-fit, minmax(300px, 90%));
   }
   .instructions > img {
     width: 70%;
-    margin: 1em auto;
+    margin: 0 auto 1em;
+    padding-top: 1em;
   }
   .instructions .instructions__items {
     gap: 2em 4em;
+    justify-content: unset;
   }
   .search {
     padding: 0 0 1em;
