@@ -30,7 +30,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 7rem;
-  padding:  2rem;
+  padding: 2rem;
 }
 
 .img {
@@ -129,8 +129,9 @@ form {
 }
 
 .input-div.focus > div > h5 {
-  top: -5px;
+  top: -10px;
   font-size: 15px;
+  color: #444141;
 }
 
 .input-div.focus > .i > i {
@@ -160,7 +161,7 @@ a {
   display: block;
   text-align: right;
   text-decoration: none;
-  color: #999;
+  color: #423c3c;
   font-size: 0.9rem;
   transition: 0.3s;
 }
