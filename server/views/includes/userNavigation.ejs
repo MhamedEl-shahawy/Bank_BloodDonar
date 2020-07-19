@@ -18,28 +18,32 @@
       /></a>
     </li>
     <li>
-
-      <a href="/donor/home/index"><i class="fas fa-home"></i> <span>HOME</span> </a>
+      <a class="nav__title" aria-label="Home" href="/donor/home/index"
+        ><i class="fas fa-home"></i> <span>HOME</span>
+      </a>
     </li>
     <li>
-
-      <a href="/donor/schedules/city"> <i class="fas fa-burn"></i><span> DONATE NOW</span></a>
-    </li>
-    <li>
-
-      <a href="/donor/history"><i class="fas fa-business-time"></i>
-       <span> MY DONATIONS</span></a
+      <a
+        class="nav__title"
+        aria-label="DONATE NOW"
+        href="/donor/schedules/city"
+      >
+        <i class="fas fa-burn"></i><span> DONATE NOW</span></a
       >
     </li>
     <li>
-
-      <a href="/donor/account/view"><i class="fas fa-user-cog"></i>
-     <span>   MY ACCOUNT</span></a
+      <a class="nav__title" aria-label="MY DONATIONS" href="/donor/history"
+        ><i class="fas fa-business-time"></i> <span> MY DONATIONS</span></a
+      >
+    </li>
+    <li>
+      <a class="nav__title" aria-label="My Account" href="/donor/account/view"
+        ><i class="fas fa-user-cog"></i> <span> MY ACCOUNT</span></a
       >
     </li>
     <form class="log__form" action="/logout" method="post">
       <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-      <button class="" type="submit">
+      <button class="nav__title" aria-label="log out" type="submit">
         <i class="fas fa-sign-in-alt"></i>
         <span>LOG OUT</span>
       </button>
