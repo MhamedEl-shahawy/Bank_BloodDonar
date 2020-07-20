@@ -232,17 +232,17 @@ p {
   .container {
     grid-template-columns: 1fr;
     grid-gap:0;
-   
+
   }
   form{
     width:97%;
   }
-  
 
-  
 
-  
-   
+
+
+
+
 
   .login-content h2 {
     font-size: 2.4rem;
