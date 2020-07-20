@@ -54,7 +54,7 @@
             value="<%= oldInput.city %>">
             <select  class="form__input form__input_select <%= validationErrors.find(e => e.param === 'bloodType') ? 'invalid' : '' %>" name="bloodType" id="bloodType" value="<%= oldInput.bloodType %>">
                 <!-- <option value="<%=oldInput.bloodType%>"><%=oldInput.bloodType%></option> -->
-                <option disabled value="b+">chose bloodtype</option>
+                <option disabled selected value="">bloodtype</option>
                 <option value="b+">B+</option>
                 <option value="b-">B-</option>
                 <option value="a+">a+</option>
